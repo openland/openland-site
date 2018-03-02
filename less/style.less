@@ -564,15 +564,12 @@ body {
 	&--box {
 		z-index: 2;
 		opacity: 0;
-		transform: translate(0, 40px);
-		transition: 300ms opacity ease,
-					300ms transform ease;
+		transition: 400ms opacity ease;
 
 		.position (absolute, 0, 0, 0, 0);
 
 		&.is-shown {
 			opacity: 1;
-			transform: translate(0, 0);
 		}
 	}
 
@@ -583,6 +580,8 @@ body {
 		border-radius: 29px;
 		padding: 7px 0 0;
 		margin: -14px 0 0 -14px;
+		transition: 400ms transform ease;
+		transform: scale(0, 0);
 
 		.size (29px, 29px);
 		.font (14px, 17px, 700);
@@ -596,6 +595,10 @@ body {
 			.size (58px, 58px);
 			.font (24px, 29px);
 		}
+	}
+
+	&--box.is-shown &--dot {
+		transform: scale(1, 1);
 	}
 }
 

@@ -889,20 +889,9 @@ body *:after {
 .map--box {
   z-index: 2;
   opacity: 0;
-  -webkit-transform: translate(0, 40px);
-  -ms-transform: translate(0, 40px);
-  transform: translate(0, 40px);
-  -webkit-transition: 300ms opacity ease,
-					300ms -webkit-transform ease;
-  transition: 300ms opacity ease,
-					300ms -webkit-transform ease;
-  -o-transition: 300ms opacity ease,
-					300ms transform ease;
-  transition: 300ms opacity ease,
-					300ms transform ease;
-  transition: 300ms opacity ease,
-					300ms transform ease,
-					300ms -webkit-transform ease;
+  -webkit-transition: 400ms opacity ease;
+  -o-transition: 400ms opacity ease;
+  transition: 400ms opacity ease;
   position: absolute;
   top: 0;
   right: 0;
@@ -911,9 +900,6 @@ body *:after {
 }
 .map--box.is-shown {
   opacity: 1;
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
 }
 .map--dot {
   background: #6B50FF;
@@ -923,6 +909,14 @@ body *:after {
   border-radius: 29px;
   padding: 7px 0 0;
   margin: -14px 0 0 -14px;
+  -webkit-transition: 400ms -webkit-transform ease;
+  transition: 400ms -webkit-transform ease;
+  -o-transition: 400ms transform ease;
+  transition: 400ms transform ease;
+  transition: 400ms transform ease, 400ms -webkit-transform ease;
+  -webkit-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  transform: scale(0, 0);
   width: 29px;
   height: 29px;
   font-size: 14px;
@@ -943,6 +937,11 @@ body *:after {
   height: 58px;
   font-size: 24px;
   line-height: 29px;
+}
+.map--box.is-shown .map--dot {
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 .more {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
