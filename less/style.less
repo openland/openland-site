@@ -324,7 +324,7 @@ body {
 // --------
 
 .page {
-
+	overflow: hidden;
 }
 
 .intro {
@@ -352,9 +352,20 @@ body {
 	}
 
 	&--illustration {
-		background: lightgrey;
+		.position (relative);
+		.size (auto, 265px);
+	}
 
-		.size (auto, 266px);
+	&--image {
+		.size (auto, 265px);
+		.position (absolute, 0, 0, 0, 0);
+
+		img {
+			margin: 0 auto;
+
+			.display (block);
+			.size (1097px);
+		}
 	}
 }
 
@@ -510,7 +521,6 @@ body {
 	&--icon {
 		svg {
 			margin: 0;
-			transition: 200ms transform ease;
 
 			.display (block);
 
@@ -528,8 +538,6 @@ body {
 	}
 
 	&--tab.is-active &--icon svg {
-		transform: scale(1.1, 1.1);
-
 		.fillPurple { fill: @purple-1; }
 	}
 

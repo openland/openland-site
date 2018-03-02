@@ -581,6 +581,9 @@ body *:after {
 .footer--btn {
   float: right;
 }
+.page {
+  overflow: hidden;
+}
 .intro {
   padding: 48px 0 107px;
 }
@@ -604,9 +607,28 @@ body *:after {
   height: auto;
 }
 .intro--illustration {
-  background: lightgrey;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
   width: auto;
-  height: 266px;
+  height: 265px;
+}
+.intro--image {
+  width: auto;
+  height: 265px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.intro--image img {
+  margin: 0 auto;
+  display: block;
+  width: 1097px;
+  height: auto;
 }
 .form {
   *zoom: 1;
@@ -797,11 +819,6 @@ body *:after {
 }
 .map--icon svg {
   margin: 0;
-  -webkit-transition: 200ms -webkit-transform ease;
-  transition: 200ms -webkit-transform ease;
-  -o-transition: 200ms transform ease;
-  transition: 200ms transform ease;
-  transition: 200ms transform ease, 200ms -webkit-transform ease;
   display: block;
 }
 .map--icon svg .fillWhite {
@@ -840,11 +857,6 @@ body *:after {
   right: auto;
   bottom: auto;
   left: 0;
-}
-.map--tab.is-active .map--icon svg {
-  -webkit-transform: scale(1.1, 1.1);
-  -ms-transform: scale(1.1, 1.1);
-  transform: scale(1.1, 1.1);
 }
 .map--tab.is-active .map--icon svg .fillPurple {
   fill: #6B50FF;
