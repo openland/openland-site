@@ -515,21 +515,10 @@ body {
 			.fillPurple { fill: @text-1; }
 		}
 
-		&.is-01 { .position-tl (absolute, 2px, 1px);
-			svg { .size (31px, 67px); }
-		}
-
-		&.is-02 { .position-tl (absolute, 15px, 0);
-			svg { .size (32px, 46px); }
-		}
-
-		&.is-03 { .position-tl (absolute, 21px, 0);
-			svg { .size (32px, 34px); }
-		}
-
-		&.is-04 { .position-tl (absolute, 23px, 0);
-			svg { .size (32px, 25px); }
-		}
+		&.is-01 { .position-tl (absolute, 2px, 1px); }
+		&.is-02 { .position-tl (absolute, 15px, 0); }
+		&.is-03 { .position-tl (absolute, 21px, 0); }
+		&.is-04 { .position-tl (absolute, 23px, 0); }
 	}
 
 	&--tab.is-active &--icon svg {
@@ -644,39 +633,18 @@ body {
 
 
 	&--icon { margin: 0 0 23px;
+		.size (auto, 23px);
+
 		svg { margin: 0;
 			.display (block);
 
-			path {
-				fill: #6B50FF;
-			}
-		}
-
-		&.is-01 { padding: 1px 0 0;
-			svg { .size (21px, 21px); }
-		}
-
-		&.is-02 { padding: 3px 0 0;
-			svg { .size (21px, 19px); }
-		}
-
-		&.is-03 { padding: 1px 0 0;
-			svg { .size (23px, 21px); }
-		}
-
-		&.is-04 { padding: 0 0 0.5px;
-			svg {
-				.size (21px, 22.5px);
-			}
-		}
-
-		&.is-05 svg {
-			.size (23px, 23px);
-		}
-
-		&.is-06 { padding: 0 0 4px;
-			svg {
-				.size (23px, 19px);
+			* {
+				stroke: #6B50FF;
+				stroke-width: 1;
+				fill: none;
+				fill-rule: evenodd;
+				stroke-linecap: round;
+				stroke-linejoin: round;
 			}
 		}
 	}

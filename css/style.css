@@ -811,20 +811,12 @@ body *:after {
   bottom: auto;
   left: 1px;
 }
-.map--icon.is-01 svg {
-  width: 31px;
-  height: 67px;
-}
 .map--icon.is-02 {
   position: absolute;
   top: 15px;
   right: auto;
   bottom: auto;
   left: 0;
-}
-.map--icon.is-02 svg {
-  width: 32px;
-  height: 46px;
 }
 .map--icon.is-03 {
   position: absolute;
@@ -833,20 +825,12 @@ body *:after {
   bottom: auto;
   left: 0;
 }
-.map--icon.is-03 svg {
-  width: 32px;
-  height: 34px;
-}
 .map--icon.is-04 {
   position: absolute;
   top: 23px;
   right: auto;
   bottom: auto;
   left: 0;
-}
-.map--icon.is-04 svg {
-  width: 32px;
-  height: 25px;
 }
 .map--tab.is-active .map--icon svg .fillPurple {
   fill: #6B50FF;
@@ -951,52 +935,20 @@ body *:after {
 }
 .feature--icon {
   margin: 0 0 23px;
+  width: auto;
+  height: 23px;
 }
 .feature--icon svg {
   margin: 0;
   display: block;
 }
-.feature--icon svg path {
-  fill: #6B50FF;
-}
-.feature--icon.is-01 {
-  padding: 1px 0 0;
-}
-.feature--icon.is-01 svg {
-  width: 21px;
-  height: 21px;
-}
-.feature--icon.is-02 {
-  padding: 3px 0 0;
-}
-.feature--icon.is-02 svg {
-  width: 21px;
-  height: 19px;
-}
-.feature--icon.is-03 {
-  padding: 1px 0 0;
-}
-.feature--icon.is-03 svg {
-  width: 23px;
-  height: 21px;
-}
-.feature--icon.is-04 {
-  padding: 0 0 0.5px;
-}
-.feature--icon.is-04 svg {
-  width: 21px;
-  height: 22.5px;
-}
-.feature--icon.is-05 svg {
-  width: 23px;
-  height: 23px;
-}
-.feature--icon.is-06 {
-  padding: 0 0 4px;
-}
-.feature--icon.is-06 svg {
-  width: 23px;
-  height: 19px;
+.feature--icon svg * {
+  stroke: #6B50FF;
+  stroke-width: 1;
+  fill: none;
+  fill-rule: evenodd;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .feature--title {
   margin: 0 0 12px;

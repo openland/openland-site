@@ -13,14 +13,16 @@ $(document).ready(function () {
 		$(this).addClass('is-active');
 	});
 
-	//anime({
-	//	targets: '.feature--icon path',
-	//	strokeDashoffset: [anime.setDashoffset, 0],
-	//	easing: 'easeInOutSine',
-	//	duration: 1500,
-	//	delay: function (el, i) { return i * 250 },
-	//	direction: 'alternate',
-	//	loop: true
-	//});
+	$('.feature--icon svg *').each(function () {
+		anime({
+			targets: $(this)[0],
+			strokeDashoffset: [anime.setDashoffset, 0],
+			easing: 'easeInOutSine',
+			duration: 1500,
+			delay: function (el, i) { return i * 250 },
+			direction: 'alternate',
+			loop: true
+		});
+	});
 
 });
