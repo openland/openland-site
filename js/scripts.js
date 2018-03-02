@@ -32,4 +32,18 @@ $(document).ready(function () {
 		$(target).css('transform', 'translate(' + x + 'px, ' + y + 'px)');
 	};
 
+	$('.header--open').on('click', function (e) {
+		e.preventDefault();
+
+		$('.menu').fadeIn(300);
+		$('.menu--in').addClass('is-shown');
+	});
+
+	$('.menu--close').on('click', function (e) {
+		e.preventDefault();
+
+		$('.menu').fadeOut(300);
+		$('.menu--in').removeClass('is-shown');
+	});
+
 });

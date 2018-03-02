@@ -69,12 +69,12 @@ mixin map--tab (icon, title, sites, units)
 		small #{units} units
 
 mixin form
-	form(method="POST" action="").form
+	form(method="POST" action="").form&attributes(attributes)
 		input(type="text" placeholder="E-mail").form--input
 		button(type="submit").form--submit Request access
 
 mixin feature (icon, title, text)
-	.feature
+	.feature&attributes(attributes)
 		.feature--icon: i(class='icon-feature-0' + icon)
 		.feature--title= title
 		.feature--text= text

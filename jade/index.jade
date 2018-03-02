@@ -42,16 +42,16 @@ html
 
 		.menu
 			a(href="#").menu--close
-			ul.menu--list
-				li.header--item.is-active: a(href="#") Land
-				li.header--item: a(href="#") Housing insights
-				li.header--item: a(href="#") Construction
-				li.header--item: a(href="#") Permits
-				li.header--item: a(href="#") Organizations
 
-			form(method="POST" action="").menu--form
-				input(type="text" placeholder="E-mail").menu--input
-				button(type="submit").menu--submit Request access
+			.menu--in: .container
+				ul.menu--list
+					li.menu--item.is-active: a(href="#") Land
+					li.menu--item: a(href="#") Housing insights
+					li.menu--item: a(href="#") Construction
+					li.menu--item: a(href="#") Permits
+					li.menu--item: a(href="#") Organizations
+
+				+form.is-light
 
 		.page: .container
 			.intro

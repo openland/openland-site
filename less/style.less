@@ -217,10 +217,68 @@ body {
 }
 
 .menu {
-	.display (none);
+	background: @purple-1;
+	color: @white;
+	z-index: 100;
 
-	@media @media-sm {
-		.display (none)!important;
+	.display (none);
+	.position (fixed, 0, 0, 0, 0);
+
+	@media @media-sm { .display (none)!important; }
+
+	&--close {
+		color: @white;
+		text-decoration: none;
+		text-align: center;
+		padding: 0 30px;
+
+		.display (block);
+		.position (absolute, 31px, 0);
+
+		&:before {
+			.icon ('\e906');
+			.font (13px, 42px);
+		}
+	}
+
+	&--in {
+		transform: translate(0, -50%);
+		padding: 6px 0 0;
+		margin: 20px 0 0;
+		opacity: 0;
+		transition: 400ms opacity ease,
+					400ms margin ease;
+
+		transition-delay: 200ms;
+
+		.position (absolute, 50%, 0, auto, 0);
+
+		&.is-shown {
+			opacity: 1;
+			margin: 0;
+		}
+	}
+
+	&--list {
+		list-style: none;
+		margin: 0;
+		padding: 0 0 29px;
+	}
+
+	&--item { margin: 0 0 24px;
+		.display (block);
+
+		a {
+			color: fade(@white, 70);
+			text-decoration: none;
+
+			.font (28px, 34px);
+			.display (block);
+
+			&:hover { color: @white; }
+		}
+
+		&.is-active a { color: @white; }
 	}
 }
 
@@ -423,6 +481,26 @@ body {
 		}
 
 		&:hover { background: @purple-2; }
+	}
+
+	@media @media-xs-only {
+		&.is-light & {
+			&--input {
+				background: none;
+				border-color: fade(@white, 50);
+				color: @white;
+
+				&::-webkit-input-placeholder { color: fade(@white, 70); }
+				&::-moz-placeholder { color: fade(@white, 70); }
+				&:-ms-input-placeholder { color: fade(@white, 70); }
+				&:-moz-placeholder { color: fade(@white, 70); }
+			}
+
+			&--submit {
+				background: @white;
+				color: @purple-1;
+			}
+		}
 	}
 }
 
