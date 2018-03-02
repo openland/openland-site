@@ -361,15 +361,29 @@ body {
 		border: 1px solid fade(@text-1, 25);
 		border-right: none;
 		border-radius: 4px 0 0 4px!important;
+		padding: 0 15px;
 
 		.display (block);
 		.size (~'calc(100% - 145px)', 48px);
+		.font (16px, 46px);
 	}
 
 	&--submit {
 		float: right;
+		border: none;
+		background: @purple-1;
+		color: @white;
+		border-radius: 0 4px 4px 0;
+		text-align: center;
+		transition: 200ms background ease;
 
-		.size (145px);
+		.size (145px, 48px);
+		.display (block);
+		.font (16px, 48px);
+
+		&:hover {
+			background: @purple-2;
+		}
 	}
 }
 

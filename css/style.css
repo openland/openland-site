@@ -610,15 +610,33 @@ body *:after {
   border-right: none;
   -webkit-border-radius: 4px 0 0 4px!important;
   border-radius: 4px 0 0 4px!important;
+  padding: 0 15px;
   display: block;
   width: -webkit-calc(100% - 145px);
   width: calc(100% - 145px);
   height: 48px;
+  font-size: 16px;
+  line-height: 46px;
 }
 .form--submit {
   float: right;
+  border: none;
+  background: #6B50FF;
+  color: #ffffff;
+  -webkit-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  text-align: center;
+  -webkit-transition: 200ms background ease;
+  -o-transition: 200ms background ease;
+  transition: 200ms background ease;
   width: 145px;
-  height: auto;
+  height: 48px;
+  display: block;
+  font-size: 16px;
+  line-height: 48px;
+}
+.form--submit:hover {
+  background: #462BD9;
 }
 .map {
   padding: 0 0 89px;
