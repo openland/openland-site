@@ -56,3 +56,21 @@ mixin google-analytics
 	//	gtag('js', new Date());
 
 	//	gtag('config', 'UA-99506931-2');
+
+mixin map--tab (icon, title, sites, units)
+	a(href="#").map--tab&attributes(attributes)
+		i(class='icon-house-' + icon)
+		span= title
+		small #{sites} candidate sites
+		small #{units} units
+
+mixin form
+	form(method="POST" action="").form
+		input(type="text" placeholder="E-mail").form--input
+		button(type="submit").form--submit Request access
+
+mixin feature (icon, title, text)
+	.feature
+		.feature--icon: i(class=icon)
+		.feature--title= title
+		.feature--text= text
