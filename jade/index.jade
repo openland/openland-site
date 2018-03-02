@@ -5,14 +5,53 @@ include ./_components.jade
 
 doctype html
 html
-	+head ('Statecraft')
-		meta(property="og:title" content="San Francisco Land Inventory")/
-		meta(property="og:url" content="https://statecrafthq.com/land")/
-		meta(property="og:description" content="Explore development capacity of the city, parcel by parcel")/
-		meta(property="og:image" content="https://statecrafthq.com/land/img/statecraft-land-og.png")/
+	head
+		meta(charset="utf-8")
+		title San Francisco Land Inventory
+
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no")
+		meta(name="format-detection" content="telephone=no")
+
+		meta(property="og:title" content="San Francisco Land Inventory")
+		meta(property="og:url" content="https://statecrafthq.com/land")
+		meta(property="og:description" content="Explore development capacity of the city, parcel by parcel")
+		meta(property="og:image" content="https://statecrafthq.com/land/img/statecraft-land-og.png")
+
+		link(rel="shortcut icon" href="favicon.ico")
+		link(rel="icon" href="favicon.png")
+
+		link(rel="stylesheet" type="text/css" href="css/style.css")
+
+		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
+
+		script(type="text/javascript" src="js/scripts.js")
 
 	body
-		+header
+		header.header&attributes(attributes): .container: .header--in
+			a(href="#").header--logo: img(src="img/logotype.svg" alt="")
+			a(href="#").header--open
+
+			nav.header--nav: ul.header--list
+				li.header--item.is-active: a(href="#") Land
+				li.header--item: a(href="#") Housing insights
+				li.header--item: a(href="#") Construction
+				li.header--item: a(href="#") Permits
+				li.header--item: a(href="#") Organizations
+
+			.header--btn: a(href="#requestAccess").btn.js-modal Request access
+
+		.menu
+			a(href="#").menu--close
+			ul.menu--list
+				li.header--item.is-active: a(href="#") Land
+				li.header--item: a(href="#") Housing insights
+				li.header--item: a(href="#") Construction
+				li.header--item: a(href="#") Permits
+				li.header--item: a(href="#") Organizations
+
+			form(method="POST" action="").menu--form
+				input(type="text" placeholder="E-mail").menu--input
+				button(type="submit").menu--submit Request access
 
 		.page: .container
 			.intro
@@ -70,7 +109,7 @@ html
 					.more--text We’ve already collected a bunch of useful and interesting housing insights, and we still are!
 					.more--form: +form
 
-				.more--counters
+				.more--counters.hidden-sm
 					.more--counter BB empty lots with expired permits
 					.more--counter GG lot merger candidate groups
 					.more--counter YY large private parking lots
@@ -112,5 +151,23 @@ html
 
 				.explore--btn: a(href='mailto:' + email).btn-outline= email
 
-		+footer
-		+google-analytics
+		footer.footer&attributes(attributes): .container: .footer--in
+			a(href="#").footer--logo: img(src="img/logotype.svg" alt="")
+
+			nav.footer--nav: ul.footer--list
+				li.footer--item.is-active: a(href="#") Land
+				li.footer--item: a(href="#") Housing insights
+				li.footer--item: a(href="#") Construction
+				li.footer--item: a(href="#") Permits
+				li.footer--item: a(href="#") Organizations
+
+			.footer--btn: a(href="#requestAccess").btn.js-modal Request access
+
+		// Global site tag (gtag.js) - Google Analytics
+		//script(async src="https://www.googletagmanager.com/gtag/js?id=UA-99506931-2")
+		//script.
+		//	window.dataLayer = window.dataLayer || [];
+		//	function gtag(){dataLayer.push(arguments);}
+		//	gtag('js', new Date());
+
+		//	gtag('config', 'UA-99506931-2');

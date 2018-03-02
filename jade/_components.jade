@@ -17,59 +17,6 @@ mixin head (title)
 
 		block
 
-mixin header
-	header.header&attributes(attributes): .container: .header--in
-		a(href="#").header--logo: img(src="img/logotype.svg" alt="")
-		a(href="#").header--open
-
-		nav.header--nav: ul.header--list
-			li.header--item.is-active: a(href="#") Land
-			li.header--item: a(href="#") Housing insights
-			li.header--item: a(href="#") Construction
-			li.header--item: a(href="#") Permits
-			li.header--item: a(href="#") Organizations
-
-		.header--btn: a(href="#requestAccess").btn.js-modal Request access
-
-	+menu
-
-mixin menu
-	.menu
-		a(href="#").menu--close
-		ul.menu--list
-			li.header--item.is-active: a(href="#") Land
-			li.header--item: a(href="#") Housing insights
-			li.header--item: a(href="#") Construction
-			li.header--item: a(href="#") Permits
-			li.header--item: a(href="#") Organizations
-
-		form(method="POST" action="").menu--form
-			input(type="text" placeholder="E-mail").menu--input
-			button(type="submit").menu--submit Request access
-
-mixin footer
-	footer.footer&attributes(attributes): .container: .footer--in
-		a(href="#").footer--logo: img(src="img/logotype.svg" alt="")
-
-		nav.footer--nav: ul.footer--list
-			li.footer--item.is-active: a(href="#") Land
-			li.footer--item: a(href="#") Housing insights
-			li.footer--item: a(href="#") Construction
-			li.footer--item: a(href="#") Permits
-			li.footer--item: a(href="#") Organizations
-
-		.footer--btn: a(href="#requestAccess").btn.js-modal Request access
-
-mixin google-analytics
-	// Global site tag (gtag.js) - Google Analytics
-	//script(async src="https://www.googletagmanager.com/gtag/js?id=UA-99506931-2")
-	//script.
-	//	window.dataLayer = window.dataLayer || [];
-	//	function gtag(){dataLayer.push(arguments);}
-	//	gtag('js', new Date());
-
-	//	gtag('config', 'UA-99506931-2');
-
 mixin map--tab (icon, title, sites, units)
 	a(href="#").map--tab&attributes(attributes)
 		.map--icon(class='is-0' + icon)
