@@ -107,12 +107,17 @@ body {
 	color: @white;
 	border-radius: 4px;
 	padding: 0 18px;
+	transition: 200ms border ease,
+				200ms color ease,
+				200ms background ease;
 
 	.display (inline-block);
 	.font (16px, 38px);
 
 	&:hover {
-		
+		background: @white;
+		color: @purple-1;
+		border-color: @white;
 	}
 }
 
@@ -415,10 +420,120 @@ body {
 
 	&--tabs {
 		float: left;
+		padding: 43px 0 0;
 	}
 
 	&--tab {
+		padding: 15px 0 15px 56px;
+		margin: 0 0 5px;
+		opacity: .50;
+		color: @text-1;
+		text-decoration: none;
+		transition: 200ms opacity ease,
+					200ms color ease;
+
 		.display (block);
+		.position (relative);
+		.font (0);
+
+		&:before {
+			content: "";
+			background: @purple-1;
+			border-radius: 48px;
+			transform: translate(-50%, -50%);
+			transition: 200ms width ease,
+						200ms height ease;
+
+			.display (block);
+			.position-tl (absolute, 37px, 16px);
+			.size (0, 0);
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+
+		span {
+			transition: 200ms padding ease;
+			margin: 0 0 2px;
+
+			.display (block);
+			.position (relative);
+			.font (20px, 24px, 500);
+
+			&:before {
+				content: "";
+				background: @purple-1;
+				transition: 200ms width ease;
+
+				.display (block);
+				.position-tl (absolute, 11px, 0);
+				.size (0, 2px);
+			}
+		}
+
+		small {
+			opacity: .60;
+			margin: 0 13px 0 0;
+
+			.font (14px, 20px);
+			.display (inline-block);
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&.is-active {
+			color: @purple-1;
+			opacity: 1;
+			cursor: default;
+
+			&:before {
+				.size (48px, 48px);
+			}
+
+			span {
+				padding: 0 0 0 28px;
+
+				&:before {
+					.size (20px, 2px);
+				}
+			}
+		}
+	}
+
+	&--icon {
+		svg { margin: 0;
+			.display (block);
+
+			.fillWhite { fill: @white; }
+			.fillPurple { fill: @text-1; }
+		}
+
+		&.is-01 { .position-tl (absolute, 2px, 1px);
+			svg { .size (31px, 67px); }
+		}
+
+		&.is-02 { .position-tl (absolute, 15px, 0);
+			svg { .size (32px, 46px); }
+		}
+
+		&.is-03 { .position-tl (absolute, 21px, 0);
+			svg { .size (32px, 34px); }
+		}
+
+		&.is-04 { .position-tl (absolute, 23px, 0);
+			svg { .size (32px, 25px); }
+		}
+	}
+
+	&--tab.is-active &--icon svg {
+		.fillPurple { fill: @purple-1; }
 	}
 
 	&--boxes {
@@ -528,11 +643,42 @@ body {
 .feature {
 
 
-	&--icon {
-		background: lightgrey;
-		margin: 0 0 23px;
+	&--icon { margin: 0 0 23px;
+		svg { margin: 0;
+			.display (block);
 
-		.size (auto, 22px);
+			path {
+				fill: #6B50FF;
+			}
+		}
+
+		&.is-01 { padding: 1px 0 0;
+			svg { .size (21px, 21px); }
+		}
+
+		&.is-02 { padding: 3px 0 0;
+			svg { .size (21px, 19px); }
+		}
+
+		&.is-03 { padding: 1px 0 0;
+			svg { .size (23px, 21px); }
+		}
+
+		&.is-04 { padding: 0 0 0.5px;
+			svg {
+				.size (21px, 22.5px);
+			}
+		}
+
+		&.is-05 svg {
+			.size (23px, 23px);
+		}
+
+		&.is-06 { padding: 0 0 4px;
+			svg {
+				.size (23px, 19px);
+			}
+		}
 	}
 
 	&--title {
