@@ -18,8 +18,8 @@ html
 				.intro--text Understanding development capacity of the city
 				.intro--form: +form
 				.intro--illustration
-					.intro--image.is-buildings: img(src="img/buildings.png" srcset="img/buildings@2x.png 2x")
-					.intro--image.is-clouds: img(src="img/clouds.png" srcset="img/clouds@2x.png 2x")
+					.intro--image.is-buildings: img(src="img/buildings.png" srcset="img/buildings@2x.png 2x" alt="")
+					.intro--image.is-clouds: img(src="img/clouds.png" srcset="img/clouds@2x.png 2x" alt="")
 
 			.map
 				.map--in
@@ -34,10 +34,34 @@ html
 						+map--tab (4, 'Auxiliary Dwelling Units', '15', '468')
 
 					.map--boxes
+						.map--bg: img(src="img/map.png" srcset="img/map@2x.png 2x" alt="")
 						.map--box.is-shown
+							.map--dot(style="top: 19%; left: 58%") 10
+							.map--dot(style="top: 24%; left: 42%") 17
+							.map--dot(style="top: 50%; left: 47%") 6
+							.map--dot(style="top: 69%; left: 42%") 3
+							.map--dot.is-large(style="top: 52%; left: 59%") 24
+
 						.map--box
+							.map--dot(style="top: 45%; left: 48%") 10
+							.map--dot(style="top: 34%; left: 32%") 17
+							.map--dot(style="top: 60%; left: 547%") 6
+							.map--dot(style="top: 79%; left: 32%") 3
+							.map--dot.is-large(style="top: 72%; left: 69%") 24
+
 						.map--box
+							.map--dot(style="top: 19%; left: 58%") 10
+							.map--dot(style="top: 24%; left: 42%") 17
+							.map--dot(style="top: 50%; left: 47%") 6
+							.map--dot(style="top: 69%; left: 42%") 3
+							.map--dot.is-large(style="top: 52%; left: 59%") 24
+
 						.map--box
+							.map--dot(style="top: 45%; left: 48%") 10
+							.map--dot(style="top: 34%; left: 32%") 17
+							.map--dot(style="top: 60%; left: 547%") 6
+							.map--dot(style="top: 79%; left: 32%") 3
+							.map--dot.is-large(style="top: 72%; left: 69%") 24
 
 			.more
 				.more--in

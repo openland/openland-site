@@ -9,8 +9,14 @@ $(document).ready(function () {
 	$('.map--tab').on('click', function (e) {
 		e.preventDefault();
 
+		var id = $(this).index() + 2;
+		var box = $('.map--box:nth-child(' + id + ')');
+
 		$('.map--tab').not(this).removeClass('is-active');
 		$(this).addClass('is-active');
+
+		$('.map--box').not(box).removeClass('is-shown');
+		$(box).addClass('is-shown');
 	});
 
 	$('body').on('mousemove', function (e) {

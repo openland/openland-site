@@ -708,7 +708,7 @@ body *:after {
 }
 .map--tabs {
   float: left;
-  padding: 43px 0 0;
+  padding: 38px 0 0;
 }
 .map--tab {
   padding: 15px 0 15px 56px;
@@ -863,17 +863,86 @@ body *:after {
 }
 .map--boxes {
   float: right;
+  z-index: 1;
   width: 728px;
+  height: 391px;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+.map--bg {
+  z-index: 1;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.map--bg img {
+  display: block;
+  width: 100%;
   height: auto;
 }
 .map--box {
-  background: lightgrey;
-  display: none;
-  width: auto;
-  height: 391px;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transform: translate(0, 40px);
+  -ms-transform: translate(0, 40px);
+  transform: translate(0, 40px);
+  -webkit-transition: 300ms opacity ease,
+					300ms -webkit-transform ease;
+  transition: 300ms opacity ease,
+					300ms -webkit-transform ease;
+  -o-transition: 300ms opacity ease,
+					300ms transform ease;
+  transition: 300ms opacity ease,
+					300ms transform ease;
+  transition: 300ms opacity ease,
+					300ms transform ease,
+					300ms -webkit-transform ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .map--box.is-shown {
-  display: block;
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.map--dot {
+  background: #6B50FF;
+  color: #ffffff;
+  text-align: center;
+  -webkit-border-radius: 29px;
+  border-radius: 29px;
+  padding: 7px 0 0;
+  margin: -14px 0 0 -14px;
+  width: 29px;
+  height: 29px;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+.map--dot.is-large {
+  -webkit-border-radius: 58px;
+  border-radius: 58px;
+  padding: 16px 0 0;
+  margin: -29px 0 0 -29px;
+  width: 58px;
+  height: 58px;
+  font-size: 24px;
+  line-height: 29px;
 }
 .more {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);

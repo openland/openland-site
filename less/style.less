@@ -431,7 +431,7 @@ body {
 
 	&--tabs {
 		float: left;
-		padding: 43px 0 0;
+		padding: 38px 0 0;
 	}
 
 	&--tab {
@@ -543,18 +543,58 @@ body {
 
 	&--boxes {
 		float: right;
+		z-index: 1;
 
-		.size (728px);
+		.size (728px, 391px);
+		.position (relative);
+	}
+
+	&--bg {
+		z-index: 1;
+		overflow: hidden;
+
+		.position (absolute, 0, 0, 0, 0);
+
+		img {
+			.display (block);
+			.size (100%);
+		}
 	}
 
 	&--box {
-		background: lightgrey;
+		z-index: 2;
+		opacity: 0;
+		transform: translate(0, 40px);
+		transition: 300ms opacity ease,
+					300ms transform ease;
 
-		.display (none);
-		.size (auto, 391px);
+		.position (absolute, 0, 0, 0, 0);
 
 		&.is-shown {
-			.display (block);
+			opacity: 1;
+			transform: translate(0, 0);
+		}
+	}
+
+	&--dot {
+		background: @purple-1;
+		color: @white;
+		text-align: center;
+		border-radius: 29px;
+		padding: 7px 0 0;
+		margin: -14px 0 0 -14px;
+
+		.size (29px, 29px);
+		.font (14px, 17px, 700);
+		.position (absolute);
+
+		&.is-large {
+			border-radius: 58px;
+			padding: 16px 0 0;
+			margin: -29px 0 0 -29px;
+
+			.size (58px, 58px);
+			.font (24px, 29px);
 		}
 	}
 }
