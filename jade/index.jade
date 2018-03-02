@@ -1,13 +1,15 @@
+- var email = 'hello@statecraft.one'
+- var call = 'https://cal.mixmax.com/yurylifshits/30'
+
 include ./_components.jade
 
 doctype html
 html
 	+head ('Statecraft')
-		//meta(property="og:title" content="Statecraft » Analytics solutions for local governments")/
-		//meta(property="og:url" content="https://statecraft.one")/
-		//meta(property="og:description" content="We help local governments use data to solve critical problems.")/
-		//meta(property="og:image" content="https://statecraft.one/img/statecraft-square.png")/
-		//meta(name="google-site-verification" content="daI_aYpVVCN6kKDwmz1C3ZKIdS1eYA2f4xIoUGe9Vpk")/
+		meta(property="og:title" content="San Francisco Land Inventory")/
+		meta(property="og:url" content="https://statecrafthq.com/land")/
+		meta(property="og:description" content="Explore development capacity of the city, parcel by parcel")/
+		meta(property="og:image" content="https://statecrafthq.com/land/img/statecraft-land-og.png")/
 
 	body
 		+header
@@ -101,14 +103,14 @@ html
 				.explore--col
 					.explore--subtitle Public and nonprofit organizations
 
-					a(href="#").explore--link Contact us for free access
+					a(href='mailto:' + email).explore--link Contact us for free access
 
 				.explore--col
 					.explore--subtitle Builders, brokers, real estate investors
 
-					a(href="#").explore--link Schedule a demo
+					a(href=call target="_blank").explore--link Schedule a demo
 
-				.explore--btn: a(href="#").btn-outline hello@statecraft.one
+				.explore--btn: a(href='mailto:' + email).btn-outline= email
 
 		+footer
 		+google-analytics

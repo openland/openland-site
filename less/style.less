@@ -133,13 +133,13 @@ body {
 
 	&--logo {
 		float: left;
-		padding: 7px 0 12px;
+		padding: 9px 0 14px;
 
 		.display (block);
 
 		img {
 			.display (block);
-			.size (88px, 21px);
+			.size (88px, 17px);
 		}
 	}
 
@@ -242,7 +242,7 @@ body {
 
 	&--logo {
 		float: left;
-		padding: 7px 0 12px;
+		padding: 9px 0 14px;
 
 		.display (block);
 
@@ -252,7 +252,7 @@ body {
 
 		img {
 			.display (block);
-			.size (88px, 21px);
+			.size (88px, 17px);
 		}
 	}
 
@@ -711,7 +711,7 @@ body {
 .explore {
 	background: @purple-1;
 	color: @white;
-	padding: 92px 0 114px;
+	padding: 92px 0 109px;
 
 	&--title {
 		margin: 0 0 36px;
@@ -736,9 +736,11 @@ body {
 	}
 
 	&--link {
-		color: fade(@white, 70);
-		transition: 200ms color ease;
+		opacity: .70;
+		color: @white;
+		transition: 200ms opacity ease;
 		text-decoration: none;
+		padding: 0 0 5px;
 
 		.font (16px, 20px);
 		.position (relative);
@@ -746,18 +748,19 @@ body {
 		&:before {
 			content: "";
 			background: @white;
-			transition: 200ms width ease;
+			transition: 200ms opacity ease;
+			opacity: .70;
 
 			.display (block);
-			.position (absolute, auto, auto, -5px, 0);
-			.size (0, 1px);
+			.position (absolute, auto, auto, 0, 0);
+			.size (100%, 1px);
 		}
 
 		&:hover {
-			color: @white;
+			opacity: 1;
 
 			&:before {
-				.size (64px, 1px);
+				opacity: 0;
 			}
 		}
 	}

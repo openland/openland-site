@@ -6,6 +6,9 @@ mixin head (title)
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no")
 		meta(name="format-detection" content="telephone=no")
 
+		link(rel="shortcut icon" href="favicon.ico")
+		link(rel="icon" href="favicon.png")
+
 		link(rel="stylesheet" type="text/css" href="css/style.css")
 
 		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
@@ -26,7 +29,7 @@ mixin header
 			li.header--item: a(href="#") Permits
 			li.header--item: a(href="#") Organizations
 
-		.header--btn: a(href="#").btn Request access
+		.header--btn: a(href="#requestAccess").btn.js-modal Request access
 
 	+menu
 
@@ -55,7 +58,7 @@ mixin footer
 			li.footer--item: a(href="#") Permits
 			li.footer--item: a(href="#") Organizations
 
-		.footer--btn: a(href="#").btn Request access
+		.footer--btn: a(href="#requestAccess").btn.js-modal Request access
 
 mixin google-analytics
 	// Global site tag (gtag.js) - Google Analytics
