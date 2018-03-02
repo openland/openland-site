@@ -307,9 +307,9 @@ body *:after {
     height: auto;
   }
 }
-@media (min-width: 960px) and (max-width: 1171px) {
+@media (min-width: 1000px) and (max-width: 1171px) {
   .container {
-    width: 960px;
+    width: 1000px;
     height: auto;
   }
 }
@@ -616,13 +616,14 @@ body *:after {
   height: 265px;
 }
 .intro--image {
-  width: auto;
+  margin: 0 0 0 -556px;
+  width: 1112px;
   height: 265px;
   position: absolute;
   top: 0;
-  right: 0;
+  right: auto;
   bottom: 0;
-  left: 0;
+  left: 50%;
 }
 .intro--image img {
   margin: 0 auto;
@@ -864,6 +865,10 @@ body *:after {
 .map--boxes {
   float: right;
   z-index: 1;
+  background: url(../img/map.png) center center no-repeat;
+  background-image: -webkit-image-set(url(../img/map.png) 1x, url(../img/map@2x.png) 2x);
+  -webkit-background-size: cover;
+  background-size: cover;
   width: 728px;
   height: 391px;
   position: relative;
@@ -872,22 +877,7 @@ body *:after {
   bottom: auto;
   left: auto;
 }
-.map--bg {
-  z-index: 1;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.map--bg img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 .map--box {
-  z-index: 2;
   opacity: 0;
   -webkit-transition: 400ms opacity ease;
   -o-transition: 400ms opacity ease;
@@ -1174,7 +1164,7 @@ body *:after {
     display: none !important;
   }
 }
-@media (min-width: 960px) and (max-width: 1171px) {
+@media (min-width: 1000px) and (max-width: 1171px) {
   .visible-md {
     display: block;
   }

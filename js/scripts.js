@@ -9,7 +9,7 @@ $(document).ready(function () {
 	$('.map--tab').on('click', function (e) {
 		e.preventDefault();
 
-		var id = $(this).index() + 2;
+		var id = $(this).index() + 1;
 		var box = $('.map--box:nth-child(' + id + ')');
 
 		$('.map--tab').not(this).removeClass('is-active');
@@ -20,8 +20,8 @@ $(document).ready(function () {
 	});
 
 	$('body').on('mousemove', function (e) {
-		parallax (e, $('.intro--image.is-buildings')[0], 1);
-		parallax (e, $('.intro--image.is-clouds')[0], 2);
+		//parallax (e, $('.intro--image.is-buildings')[0], 1);
+		parallax (e, $('.intro--image.is-clouds')[0], 1);
 	});
 
 	function parallax (e, target, layer) {
