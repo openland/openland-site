@@ -797,6 +797,11 @@ body *:after {
 }
 .map--icon svg {
   margin: 0;
+  -webkit-transition: 200ms -webkit-transform ease;
+  transition: 200ms -webkit-transform ease;
+  -o-transition: 200ms transform ease;
+  transition: 200ms transform ease;
+  transition: 200ms transform ease, 200ms -webkit-transform ease;
   display: block;
 }
 .map--icon svg .fillWhite {
@@ -804,6 +809,9 @@ body *:after {
 }
 .map--icon svg .fillPurple {
   fill: #1B1038;
+  -webkit-transition: 200ms color ease;
+  -o-transition: 200ms color ease;
+  transition: 200ms color ease;
 }
 .map--icon.is-01 {
   position: absolute;
@@ -832,6 +840,11 @@ body *:after {
   right: auto;
   bottom: auto;
   left: 0;
+}
+.map--tab.is-active .map--icon svg {
+  -webkit-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
 }
 .map--tab.is-active .map--icon svg .fillPurple {
   fill: #6B50FF;

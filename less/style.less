@@ -508,11 +508,17 @@ body {
 	}
 
 	&--icon {
-		svg { margin: 0;
+		svg {
+			margin: 0;
+			transition: 200ms transform ease;
+
 			.display (block);
 
 			.fillWhite { fill: @white; }
-			.fillPurple { fill: @text-1; }
+			.fillPurple {
+				fill: @text-1;
+				transition: 200ms color ease;
+			}
 		}
 
 		&.is-01 { .position-tl (absolute, 2px, 1px); }
@@ -522,6 +528,8 @@ body {
 	}
 
 	&--tab.is-active &--icon svg {
+		transform: scale(1.1, 1.1);
+
 		.fillPurple { fill: @purple-1; }
 	}
 
