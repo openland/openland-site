@@ -1,0 +1,248 @@
+@import "_mixins.less";
+@import "_reset.less";
+@import "_fonts.less";
+@import "_colors.less";
+
+// --------
+
+	@screen-xs-max: 767px;
+
+	@screen-sm-min: 768px;
+	@screen-sm-max: 959px;
+
+	@screen-md-min: 960px;
+	@screen-md-max: 1171px;
+
+	@screen-lg-min: 1172px;
+
+	@media-xs-only: ~"(max-width: @{screen-xs-max})";
+
+	@media-sm: ~"(min-width: @{screen-sm-min})";
+	@media-sm-only: ~"(min-width: @{screen-sm-min}) and (max-width: @{screen-sm-max})";
+
+	@media-xs-sm: ~"(max-width: @{screen-sm-max})";
+
+	@media-md: ~"(min-width: @{screen-md-min})";
+	@media-md-only: ~"(min-width: @{screen-md-min}) and (max-width: @{screen-md-max})";
+
+	@media-xs-md: ~"(max-width: @{screen-md-max})";
+	@media-sm-md: ~"(min-width: @{screen-sm-min}) and (max-width: @{screen-md-max})";
+
+	@media-lg: ~"(min-width: @{screen-lg-min})";
+
+// --------
+
+html { min-width: auto;
+	.size (auto, 100%);
+}
+
+body {
+	font: normal normal 14px/20px 'ApercuPro', arial, sans-serif;
+	background: @white;
+	color: @black;
+
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
+
+	.min-size (320px);
+	.position (relative);
+
+	input, textarea, button { font-family: 'ApercuPro', arial, sans-serif; }
+	*, *:before, *:after { box-sizing: border-box; }
+}
+
+.left { float: left; }
+.right { float: right; }
+.clearfix { *zoom: 1;
+	&:after { clear: both; }
+	&:before, &:after { content: " ";
+		.display (table);
+	}
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 30px;
+
+	.size (1172px);
+	.min-size (320px);
+	.position (relative);
+
+	@media @media-xs-only { padding: 0 15px;
+		.size (100%);
+	}
+
+	@media @media-sm-only { padding: 0 35px;
+		.size (768px);
+	}
+
+	@media @media-md-only {
+		.size (960px);
+	}
+}
+
+.btn {
+	text-decoration: none;
+	background: @purple-1;
+	color: @white;
+	border-radius: 4px;
+	padding: 0 16px;
+	transition: 200ms box-shadow ease,
+				200ms background ease;
+
+	.display (inline-block);
+	.font (16px, 40px);
+
+	&:hover {
+		background: @purple-2;
+		box-shadow: 0 6px 24px fade(@purple-1, 20);
+	}
+}
+
+// --------
+
+.header {
+	background: lightgrey;
+	padding: 24px 0;
+
+	&--in {
+		.position (relative);
+		.clearfix ();
+	}
+
+	&--logo {
+		float: left;
+		padding: 7px 0 12px;
+
+		.display (block);
+
+		img {
+			.display (block);
+			.size (88px, 21px);
+		}
+	}
+
+	&--open {
+		.display (none);
+
+		@media @media-xs-only {
+			.display (block);
+		}
+	}
+
+	&--nav {
+		transform: translate(-50%, 0);
+
+		.position-tl (absolute, 0, 50%);
+	}
+
+	&--list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		white-space: nowrap;
+
+		.font (0);
+	}
+
+	&--item {
+		margin: 0 12px;
+
+		.display (inline-block);
+
+		a {
+			color: @text-1;
+			text-decoration: none;
+
+			.display (block);
+			.font (16px, 40px);
+			.position (relative);
+
+			&:before {
+				content: "";
+				background: @text-1;
+				transition: 200ms width ease;
+
+				.display (block);
+				.position (absolute, auto, auto, 7px, 0);
+				.size (0, 1px);
+			}
+
+			&:hover {
+				&:before {
+					.size (34px, 1px);
+				}
+			}
+		}
+
+		&.is-active {
+
+
+			a {
+				color: @purple-1;
+
+				&:before {
+					background: @purple-1;
+
+					.size (34px, 1px);
+				}
+			}
+		}
+	}
+
+	&--btn {
+		float: right;
+	}
+}
+
+.menu {
+	.display (none);
+
+	@media @media-sm {
+		.display (none)!important;
+	}
+}
+
+.footer {
+	background: lightgrey;
+}
+
+// --------
+
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg,
+.visible-xs-ib,
+.visible-sm-ib,
+.visible-md-ib,
+.visible-lg-ib { .display (none); }
+
+@media @media-xs-only {
+	.visible-xs { .display (block); }
+	.visible-xs-ib { .display (inline-block); }
+
+	.hidden-xs { .display (none)!important; }
+}
+
+@media @media-sm-only {
+	.visible-sm { .display (block); }
+	.visible-sm-ib { .display (inline-block); }
+
+	.hidden-sm { .display (none)!important; }
+}
+
+@media @media-md-only {
+	.visible-md { .display (block); }
+	.visible-md-ib { .display (inline-block); }
+
+	.hidden-md { .display (none)!important; }
+}
+
+@media @media-lg {
+	.visible-lg { .display (block); }
+	.visible-lg-ib { .display (inline-block); }
+
+	.hidden-lg { .display (none)!important; }
+}

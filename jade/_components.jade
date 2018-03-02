@@ -1,0 +1,58 @@
+mixin head (title)
+	head
+		meta(charset="utf-8")
+		title= title
+
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no")
+		meta(name="format-detection" content="telephone=no")
+
+		link(rel="stylesheet" type="text/css" href="css/style.css")
+
+		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
+
+		script(type="text/javascript" src="js/scripts.js")
+
+		block
+
+mixin header
+	header.header&attributes(attributes): .container: .header--in
+		a(href="#").header--logo: img(src="img/logotype.svg" alt="")
+		a(href="#").header--open
+
+		nav.header--nav.hidden-xs: ul.header--list
+			li.header--item.is-active: a(href="#") Land
+			li.header--item: a(href="#") Housing insights
+			li.header--item: a(href="#") Construction
+			li.header--item: a(href="#") Permits
+			li.header--item: a(href="#") Organizations
+
+		.header--btn.hidden-xs.hidden-sm: a(href="#").btn Request access
+
+	+menu
+
+mixin menu
+	.menu
+		a(href="#").menu--close
+		ul.menu--list
+			li.header--item.is-active: a(href="#") Land
+			li.header--item: a(href="#") Housing insights
+			li.header--item: a(href="#") Construction
+			li.header--item: a(href="#") Permits
+			li.header--item: a(href="#") Organizations
+
+		form(method="POST" action="").menu--form
+			input(type="text" placeholder="E-mail").menu--input
+			button(type="submit").menu--submit Request access
+
+mixin footer
+	footer.footer&attributes(attributes): .container Footer
+
+mixin google-analytics
+	// Global site tag (gtag.js) - Google Analytics
+	//script(async src="https://www.googletagmanager.com/gtag/js?id=UA-99506931-2")
+	//script.
+	//	window.dataLayer = window.dataLayer || [];
+	//	function gtag(){dataLayer.push(arguments);}
+	//	gtag('js', new Date());
+
+	//	gtag('config', 'UA-99506931-2');
