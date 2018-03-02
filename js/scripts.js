@@ -19,7 +19,7 @@ $(document).ready(function () {
 	});
 
 	function parallax (e, target, layer) {
-		var layer_coeff = 50 / layer;
+		var layer_coeff = 75 / layer;
 		var x = -1 * ((e.pageX - ($(window).width() / 2)) / layer_coeff);
 		var y = -1 * ((e.pageY - ($(window).height() / 2)) / layer_coeff);
 
