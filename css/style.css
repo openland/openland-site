@@ -295,7 +295,7 @@ body *:after {
 }
 @media (max-width: 767px) {
   .container {
-    padding: 0 15px;
+    padding: 0 28px;
     width: 100%;
     height: auto;
   }
@@ -365,6 +365,11 @@ body *:after {
 .header {
   padding: 24px 0;
 }
+@media (max-width: 767px) {
+  .header {
+    padding: 31px 0;
+  }
+}
 .header--in {
   position: relative;
   top: auto;
@@ -392,7 +397,24 @@ body *:after {
   height: 17px;
 }
 .header--open {
+  text-decoration: none;
+  color: #1B1038;
+  float: right;
   display: none;
+}
+.header--open:before {
+  content: '\e907';
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 11px;
+  line-height: 42px;
 }
 @media (max-width: 767px) {
   .header--open {
@@ -502,6 +524,11 @@ body *:after {
 .footer {
   padding: 24px 0;
 }
+@media (max-width: 767px) {
+  .footer {
+    padding: 34px 0;
+  }
+}
 .footer--in {
   position: relative;
   top: auto;
@@ -523,6 +550,13 @@ body *:after {
   padding: 9px 0 14px;
   display: block;
 }
+@media (max-width: 767px) {
+  .footer--logo {
+    padding: 0;
+    float: none;
+    margin: 0 0 34px;
+  }
+}
 @media (min-width: 768px) and (max-width: 999px) {
   .footer--logo {
     display: none;
@@ -542,6 +576,19 @@ body *:after {
   right: auto;
   bottom: auto;
   left: 50%;
+}
+@media (max-width: 767px) {
+  .footer--nav {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    margin: 0 0 24px;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .footer--nav {
@@ -567,6 +614,12 @@ body *:after {
   margin: 0 12px;
   display: inline-block;
   vertical-align: top;
+}
+@media (max-width: 767px) {
+  .footer--item {
+    margin: 0;
+    display: block;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .footer--item:first-child {
@@ -615,11 +668,21 @@ body *:after {
 .footer--btn {
   float: right;
 }
+@media (max-width: 767px) {
+  .footer--btn {
+    float: none;
+  }
+}
 .page {
   overflow: hidden;
 }
 .intro {
   padding: 48px 0 107px;
+}
+@media (max-width: 767px) {
+  .intro {
+    padding: 14px 0 65px;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .intro {
@@ -632,6 +695,13 @@ body *:after {
   font-size: 56px;
   line-height: 64px;
   font-weight: 700;
+}
+@media (max-width: 767px) {
+  .intro--title {
+    margin: 0 0 24px;
+    font-size: 32px;
+    line-height: 40px;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .intro--title {
@@ -646,10 +716,24 @@ body *:after {
   font-size: 20px;
   line-height: 24px;
 }
+@media (max-width: 767px) {
+  .intro--text {
+    margin: 0 0 40px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
 .intro--form {
   margin: 0 auto 61px;
   width: 386px;
   height: auto;
+}
+@media (max-width: 767px) {
+  .intro--form {
+    margin: 0 auto 64px;
+    width: 264px;
+    height: auto;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .intro--form {
@@ -676,7 +760,7 @@ body *:after {
   bottom: 0;
   left: 50%;
 }
-@media (min-width: 768px) and (max-width: 999px) {
+@media (max-width: 999px) {
   .intro--image {
     -webkit-transform: none!important;
     -ms-transform: none!important;
@@ -714,6 +798,17 @@ body *:after {
   font-size: 16px;
   line-height: 46px;
 }
+@media (max-width: 767px) {
+  .form--input {
+    float: none;
+    border: 1px solid rgba(27, 16, 56, 0.25);
+    border-bottom: none;
+    -webkit-border-radius: 4px 4px 0 0!important;
+    border-radius: 4px 4px 0 0!important;
+    width: 100%;
+    height: 47px;
+  }
+}
 .form--submit {
   float: right;
   border: none;
@@ -731,11 +826,25 @@ body *:after {
   font-size: 16px;
   line-height: 48px;
 }
+@media (max-width: 767px) {
+  .form--submit {
+    float: none;
+    -webkit-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+    width: 100%;
+    height: 48px;
+  }
+}
 .form--submit:hover {
   background: #462BD9;
 }
 .map {
   padding: 0 0 89px;
+}
+@media (max-width: 767px) {
+  .map {
+    padding: 0 0 64px;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .map {
@@ -748,6 +857,14 @@ body *:after {
   max-width: 520px;
   max-height: initial;
 }
+@media (max-width: 767px) {
+  .map--in {
+    text-align: left;
+    margin: 0 0 46px;
+    max-width: initial;
+    max-height: initial;
+  }
+}
 @media (min-width: 768px) and (max-width: 999px) {
   .map--in {
     margin: 0 auto 62px;
@@ -758,6 +875,13 @@ body *:after {
   font-size: 28px;
   line-height: 34px;
   font-weight: 500;
+}
+@media (max-width: 767px) {
+  .map--title {
+    margin: 0 0 24px;
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .map--title {
@@ -785,6 +909,15 @@ body *:after {
 .map--tabs {
   float: left;
   padding: 38px 0 0;
+}
+@media (max-width: 767px) {
+  .map--tabs {
+    float: none;
+    padding: 0 36px;
+    white-space: nowrap;
+    overflow-x: auto;
+    margin: 0 -28px 25px;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .map--tabs {
@@ -821,6 +954,13 @@ body *:after {
   left: auto;
   font-size: 0;
   line-height: 0;
+}
+@media (max-width: 767px) {
+  .map--tab {
+    margin: 0 24px 0 0;
+    display: inline-block;
+    vertical-align: top;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .map--tab {
@@ -982,6 +1122,14 @@ body *:after {
   bottom: auto;
   left: auto;
 }
+@media (max-width: 767px) {
+  .map--boxes {
+    margin: 0 -28px;
+    float: none;
+    width: auto;
+    height: 391px;
+  }
+}
 @media (min-width: 768px) and (max-width: 999px) {
   .map--boxes {
     float: none;
@@ -1064,6 +1212,11 @@ body *:after {
   content: " ";
   display: table;
 }
+@media (max-width: 767px) {
+  .more {
+    padding: 0 0 64px;
+  }
+}
 @media (min-width: 768px) and (max-width: 999px) {
   .more {
     padding: 0 0 79px;
@@ -1074,6 +1227,14 @@ body *:after {
   padding: 2px 0 0;
   width: 435px;
   height: auto;
+}
+@media (max-width: 767px) {
+  .more--in {
+    padding: 0;
+    float: none;
+    width: auto;
+    height: auto;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .more--in {
@@ -1094,6 +1255,13 @@ body *:after {
   line-height: 34px;
   font-weight: 500;
 }
+@media (max-width: 767px) {
+  .more--title {
+    margin: 0 0 24px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
 @media (min-width: 768px) and (max-width: 999px) {
   .more--title {
     margin: 0 0 24px;
@@ -1107,15 +1275,35 @@ body *:after {
   font-size: 20px;
   line-height: 32px;
 }
+@media (max-width: 767px) {
+  .more--text {
+    margin: 0 0 33px;
+  }
+}
 .more--form {
   max-width: 386px;
   max-height: initial;
+}
+@media (max-width: 767px) {
+  .more--form {
+    margin: 40px 0 0;
+    max-width: initial;
+    max-height: initial;
+  }
 }
 .more--counters {
   float: right;
   margin: 0 0 0 40px;
   width: 248px;
   height: auto;
+}
+@media (max-width: 767px) {
+  .more--counters {
+    margin: 0;
+    float: none;
+    width: auto;
+    height: auto;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .more--counters {
@@ -1151,6 +1339,11 @@ body *:after {
 .platform {
   padding: 107px 0 39px;
 }
+@media (max-width: 767px) {
+  .platform {
+    padding: 64px 0 8px;
+  }
+}
 @media (min-width: 768px) and (max-width: 999px) {
   .platform {
     padding: 80px 0 15px;
@@ -1162,11 +1355,26 @@ body *:after {
   max-width: 520px;
   max-height: initial;
 }
+@media (max-width: 767px) {
+  .platform--in {
+    text-align: left;
+    margin: 0 0 54px;
+    max-width: initial;
+    max-height: initial;
+  }
+}
 .platform--title {
   margin: 0 0 21px;
   font-size: 28px;
   line-height: 34px;
   font-weight: 500;
+}
+@media (max-width: 767px) {
+  .platform--title {
+    margin: 0 0 24px;
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .platform--title {
@@ -1185,6 +1393,11 @@ body *:after {
   font-size: 0;
   line-height: 0;
 }
+@media (max-width: 767px) {
+  .platform--grid {
+    margin: 0;
+  }
+}
 .platform--item {
   padding: 0 20px 65px;
   width: 33.33333333%;
@@ -1194,9 +1407,22 @@ body *:after {
   font-size: 14px;
   line-height: 20px;
 }
+@media (max-width: 767px) {
+  .platform--item {
+    padding: 0 0 56px;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+}
 .feature--icon {
   margin: 0 0 23px;
   color: #6B50FF;
+}
+@media (max-width: 767px) {
+  .feature--icon {
+    margin: 0 0 24px;
+  }
 }
 .feature--icon i {
   display: block;
@@ -1231,6 +1457,13 @@ body *:after {
   line-height: 28px;
   font-weight: 500;
 }
+@media (max-width: 767px) {
+  .feature--title {
+    margin: 0 0 14px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
 @media (min-width: 768px) and (max-width: 999px) {
   .feature--title {
     margin: 0 0 14px;
@@ -1248,6 +1481,12 @@ body *:after {
   color: #ffffff;
   padding: 92px 0 109px;
 }
+@media (max-width: 767px) {
+  .explore {
+    padding: 56px 0 56px;
+    text-align: center;
+  }
+}
 @media (min-width: 768px) and (max-width: 999px) {
   .explore {
     padding: 101px 0 82px;
@@ -1257,6 +1496,13 @@ body *:after {
   margin: 0 0 36px;
   font-size: 36px;
   line-height: 43px;
+}
+@media (max-width: 767px) {
+  .explore--title {
+    margin: 0 0 48px;
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .explore--title {
@@ -1280,6 +1526,14 @@ body *:after {
   float: left;
   width: 384px;
   height: auto;
+}
+@media (max-width: 767px) {
+  .explore--col {
+    float: none;
+    margin: 0 0 37px;
+    width: auto;
+    height: auto;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .explore--col {
@@ -1343,6 +1597,13 @@ body *:after {
 .explore--btn {
   float: left;
   margin: 4px 0 0 27px;
+}
+@media (max-width: 767px) {
+  .explore--btn {
+    float: none;
+    margin: 0;
+    padding: 8px 0 0;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .explore--btn {
