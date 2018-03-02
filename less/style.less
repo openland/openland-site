@@ -630,22 +630,17 @@ body {
 }
 
 .feature {
+	&--icon {
+		margin: 0 0 23px;
+		color: @purple-1;
 
-
-	&--icon { margin: 0 0 23px;
-		.size (auto, 23px);
-
-		svg { margin: 0;
-			.display (block);
-
-			* {
-				stroke: #6B50FF;
-				stroke-width: 1;
-				fill: none;
-				fill-rule: evenodd;
-				stroke-linecap: round;
-				stroke-linejoin: round;
-			}
+		i { .display (block);
+			&.icon-feature-01 { .font (21px, 23px); }
+			&.icon-feature-02 { .font (19px, 23px); }
+			&.icon-feature-03 { .font (21px, 23px); }
+			&.icon-feature-04 { .font (23px); }
+			&.icon-feature-05 { .font (23px); }
+			&.icon-feature-06 { .font (19px, 23px); }
 		}
 	}
 

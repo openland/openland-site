@@ -1,6 +1,7 @@
 /* Сбрасываем значения по умолчанию для элементов | Let's default this puppy out
 -------------------------------------------------------------------------------*/
 @import "../fonts/apercupro/style.css";
+@import "../fonts/icomoon/style.css";
 html,
 body,
 body div,
@@ -935,20 +936,34 @@ body *:after {
 }
 .feature--icon {
   margin: 0 0 23px;
-  width: auto;
-  height: 23px;
+  color: #6B50FF;
 }
-.feature--icon svg {
-  margin: 0;
+.feature--icon i {
   display: block;
 }
-.feature--icon svg * {
-  stroke: #6B50FF;
-  stroke-width: 1;
-  fill: none;
-  fill-rule: evenodd;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.feature--icon i.icon-feature-01 {
+  font-size: 21px;
+  line-height: 23px;
+}
+.feature--icon i.icon-feature-02 {
+  font-size: 19px;
+  line-height: 23px;
+}
+.feature--icon i.icon-feature-03 {
+  font-size: 21px;
+  line-height: 23px;
+}
+.feature--icon i.icon-feature-04 {
+  font-size: 23px;
+  line-height: 23px;
+}
+.feature--icon i.icon-feature-05 {
+  font-size: 23px;
+  line-height: 23px;
+}
+.feature--icon i.icon-feature-06 {
+  font-size: 19px;
+  line-height: 23px;
 }
 .feature--title {
   margin: 0 0 12px;
