@@ -19,14 +19,14 @@ mixin header
 		a(href="#").header--logo: img(src="img/logotype.svg" alt="")
 		a(href="#").header--open
 
-		nav.header--nav.hidden-xs: ul.header--list
+		nav.header--nav: ul.header--list
 			li.header--item.is-active: a(href="#") Land
 			li.header--item: a(href="#") Housing insights
 			li.header--item: a(href="#") Construction
 			li.header--item: a(href="#") Permits
 			li.header--item: a(href="#") Organizations
 
-		.header--btn.hidden-xs.hidden-sm: a(href="#").btn Request access
+		.header--btn: a(href="#").btn Request access
 
 	+menu
 
@@ -45,7 +45,17 @@ mixin menu
 			button(type="submit").menu--submit Request access
 
 mixin footer
-	footer.footer&attributes(attributes): .container Footer
+	footer.footer&attributes(attributes): .container: .footer--in
+		a(href="#").footer--logo: img(src="img/logotype.svg" alt="")
+
+		nav.footer--nav: ul.footer--list
+			li.footer--item.is-active: a(href="#") Land
+			li.footer--item: a(href="#") Housing insights
+			li.footer--item: a(href="#") Construction
+			li.footer--item: a(href="#") Permits
+			li.footer--item: a(href="#") Organizations
+
+		.footer--btn: a(href="#").btn Request access
 
 mixin google-analytics
 	// Global site tag (gtag.js) - Google Analytics

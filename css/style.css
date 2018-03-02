@@ -313,6 +313,7 @@ body *:after {
   }
 }
 .btn {
+  border: none;
   text-decoration: none;
   background: #6B50FF;
   color: #ffffff;
@@ -333,6 +334,18 @@ body *:after {
   background: #462BD9;
   -webkit-box-shadow: 0 6px 24px rgba(107, 80, 255, 0.2);
   box-shadow: 0 6px 24px rgba(107, 80, 255, 0.2);
+}
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  color: #ffffff;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0 18px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  line-height: 38px;
 }
 .header {
   padding: 24px 0;
@@ -380,6 +393,11 @@ body *:after {
   right: auto;
   bottom: auto;
   left: 50%;
+}
+@media (max-width: 767px) {
+  .header--nav {
+    display: none;
+  }
 }
 .header--list {
   list-style: none;
@@ -436,6 +454,11 @@ body *:after {
 .header--btn {
   float: right;
 }
+@media (max-width: 959px) {
+  .header--btn {
+    display: none;
+  }
+}
 .menu {
   display: none;
 }
@@ -443,6 +466,105 @@ body *:after {
   .menu {
     display: none !important;
   }
+}
+.footer {
+  padding: 24px 0;
+}
+.footer--in {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  *zoom: 1;
+}
+.footer--in:after {
+  clear: both;
+}
+.footer--in:before,
+.footer--in:after {
+  content: " ";
+  display: table;
+}
+.footer--logo {
+  float: left;
+  padding: 7px 0 12px;
+  display: block;
+}
+@media (min-width: 768px) and (max-width: 959px) {
+  .footer--logo {
+    display: none;
+  }
+}
+.footer--logo img {
+  display: block;
+  width: 88px;
+  height: 21px;
+}
+.footer--nav {
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+}
+.footer--list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  font-size: 0;
+  line-height: 0;
+}
+.footer--item {
+  margin: 0 12px;
+  display: inline-block;
+  vertical-align: top;
+}
+.footer--item a {
+  color: #1B1038;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  line-height: 40px;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+.footer--item a:before {
+  content: "";
+  background: #1B1038;
+  -webkit-transition: 200ms width ease;
+  -o-transition: 200ms width ease;
+  transition: 200ms width ease;
+  display: block;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 7px;
+  left: 0;
+  width: 0;
+  height: 1px;
+}
+.footer--item a:hover:before {
+  width: 34px;
+  height: 1px;
+}
+.footer--item.is-active a {
+  color: #6B50FF;
+}
+.footer--item.is-active a:before {
+  background: #6B50FF;
+  width: 34px;
+  height: 1px;
+}
+.footer--btn {
+  float: right;
 }
 .intro {
   padding: 48px 0 107px;
@@ -600,7 +722,7 @@ body *:after {
   margin: 0;
 }
 .platform {
-  padding: 107px 0 0;
+  padding: 107px 0 39px;
 }
 .platform--in {
   text-align: center;
@@ -649,6 +771,77 @@ body *:after {
   opacity: .60;
   font-size: 16px;
   line-height: 28px;
+}
+.explore {
+  background: #6B50FF;
+  color: #ffffff;
+  padding: 92px 0 114px;
+}
+.explore--title {
+  margin: 0 0 36px;
+  font-size: 36px;
+  line-height: 43px;
+}
+.explore--in {
+  *zoom: 1;
+}
+.explore--in:after {
+  clear: both;
+}
+.explore--in:before,
+.explore--in:after {
+  content: " ";
+  display: table;
+}
+.explore--col {
+  float: left;
+  width: 384px;
+  height: auto;
+}
+.explore--subtitle {
+  margin: 0 0 9px;
+  font-size: 20px;
+  line-height: 32px;
+}
+.explore--link {
+  color: rgba(255, 255, 255, 0.7);
+  -webkit-transition: 200ms color ease;
+  -o-transition: 200ms color ease;
+  transition: 200ms color ease;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+.explore--link:before {
+  content: "";
+  background: #ffffff;
+  -webkit-transition: 200ms width ease;
+  -o-transition: 200ms width ease;
+  transition: 200ms width ease;
+  display: block;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+}
+.explore--link:hover {
+  color: #ffffff;
+}
+.explore--link:hover:before {
+  width: 64px;
+  height: 1px;
+}
+.explore--btn {
+  float: left;
+  margin: 4px 0 0 27px;
 }
 .visible-xs,
 .visible-sm,
