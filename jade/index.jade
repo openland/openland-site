@@ -32,47 +32,63 @@ html
 			a(href="#").header--open
 
 			nav.header--nav: ul.header--list
-				li.header--item.is-active: a(href="#") Land
-				li.header--item: a(href="#") Housing insights
-				li.header--item: a(href="#") Construction
-				li.header--item: a(href="#") Permits
-				li.header--item: a(href="#") Organizations
+				li.header--item.is-active: a(href="#") Builders
+				li.header--item: a(href="#") Owners
+				li.header--item: a(href="#") Cities
+				li.header--item: a(href="#") Nonprofits
 
-			.header--btn: a(href="#requestAccess").btn.js-modal Request access
+			.header--btn: a(href="#").btn See demo
+
+			a(href="#").header--auth Sign in
 
 		.menu
 			a(href="#").menu--close
 
 			.menu--in: .container
 				ul.menu--list
-					li.menu--item.is-active: a(href="#") Land
-					li.menu--item: a(href="#") Housing insights
-					li.menu--item: a(href="#") Construction
-					li.menu--item: a(href="#") Permits
-					li.menu--item: a(href="#") Organizations
+					li.menu--item.is-active: a(href="#") Builders
+					li.menu--item: a(href="#") Owners
+					li.menu--item: a(href="#") Cities
+					li.menu--item: a(href="#") Nonprofits
 
-				+form.is-light
+				+form ('Request a demo').is-light
 
 		.page: .container
 			.intro
-				.intro--title San Francisco#[br] Land Inventory
-				.intro--text Explore development capacity of the city
-				.intro--form: +form
-				.intro--illustration
-					.intro--image.is-buildings: img(src="img/buildings.png" srcset="img/buildings@2x.png 2x" alt="")
-					.intro--image.is-clouds: img(src="img/clouds.png" srcset="img/clouds@2x.png 2x" alt="")
+				.intro--title Land acquisition at scale
+				.intro--text Accelerate every step of your process
+				.intro--form: +form ('Request a demo')
+
+			.features
+				.features--text Openland is created for ambitious builders who want to buy more, faster#[br] using one integrated system
+				.features--grid
+					.features--item item
+					.features--item item
+					.features--item item
+					.features--item item
+
+			.available
+				.available--title Available integrations
+				.available--in: .available--box
+					span UI Census
+					span Permit history
+					span Tax assestments
+					span Zoning
+					span Satellite maps
+					span Street view
+					span Transit maps
 
 			.map
-				.map--in
-					.map--title We are good at city researches
-					.map--text Something related to our research and map section that showcases our main feature — getting insights
-
+				.map--title Openland in action#[i »]#[span San Francisco Land Inventory]
+				.map--text Something related to Openland land acquisition
 				.map--wrap
 					.map--tabs
 						+map--tab (1, 'Tower', '15', '468').is-active
 						+map--tab (2, 'Large Multi-Family', '15', '468')
 						+map--tab (3, 'Small Multi-Family', '15', '468')
 						+map--tab (4, 'Auxiliary Dwelling Units', '15', '468')
+
+						.map--form: +form ('Request access')
 
 					.map--boxes
 						.map--box.is-shown
@@ -103,67 +119,35 @@ html
 							.map--dot(style="top: 79%; left: 32%") 3
 							.map--dot.is-large(style="top: 72%; left: 69%") 24
 
-			.more
-				.more--in
-					.more--title But wait, there’s more!
-					.more--text We’ve already collected a bunch of useful and interesting housing insights, and we still are!
-					.more--form.hidden-xs: +form
+			.logotypes
+				.logotypes--grid
+					.logotypes--item: img(src="#" alt="")
+					.logotypes--item: img(src="#" alt="")
+					.logotypes--item: img(src="#" alt="")
+					.logotypes--item: img(src="#" alt="")
+					.logotypes--item: img(src="#" alt="")
 
-				.more--counters.hidden-xs.hidden-sm
-					.more--counter BB empty lots with expired permits
-					.more--counter GG lot merger candidate groups
-					.more--counter YY large private parking lots
-					.more--counter EE empty narrow lots that can fit a micro-unit
-					.more--counter FF single story in medium density zones
-
-				.more--counters
-					.more--counter XX large public parking lots
-					.more--counter AA backyards that can fit an ADU
-					.more--counter CC two-story buildings in high-density zones
-					.more--counter DD public storage in commercial streets
-					.more--counter ZZ corner single story retail buildings
-
-				.more--form.visible-xs: +form
-
-			.platform
-				.platform--in
-					.platform--title Statecraft land acquisition platform
-					.platform--text Something related to Statecraft land acquisition platform — features and the way we deal with housing problems.
-
-				.platform--grid
-					.platform--item: +feature (1, 'Every parcel in the city', 'Something related to Statecraft land acquisition platform — features and the way we deal with housing problems.')
-					.platform--item: +feature (2, 'Filter by size, location, zoning, current use, permit history', 'Something related to Statecraft land acquisition platform — features and the way')
-					.platform--item: +feature (3, 'Filter by special attributes: expired permit, corner, narrow, empty', 'Something related to Statecraft land acquisition platform — features and the way')
-					.platform--item: +feature (4, 'Geometric analysis and unit capacity', 'Something related to Statecraft land acquisition platform — features and the way we deal with housing problems.')
-					.platform--item: +feature (5, 'Owner insights', 'Something related to Statecraft land acquisition platform — features and the way we deal with housing problems.')
-					.platform--item: +feature (6, 'Land acquisition process automation', 'Something related to Statecraft land acquisition platform — features and the way we deal with housing problems.')
+				.logotypes--labels
+					.logotypes--label.is-full Press
+					.logotypes--label.is-full Featured customers
+					.logotypes--label Investors
 
 		.explore: .container
-			.explore--title Explore vacant and under-developed land in San Francisco
-			.explore--in
-				.explore--col
-					.explore--subtitle Public and nonprofit organizations
-
-					a(href='mailto:' + email).explore--link Contact us for free access
-
-				.explore--col
-					.explore--subtitle Builders, brokers, real estate investors
-
-					a(href=call target="_blank").explore--link Schedule a demo
-
-				.explore--btn: a(href='mailto:' + email).btn-outline= email
+			.explore--title Accelerate your land acquisition process
+			.explore--text Accelerate every step of your process (TBD)
+			.explore--form: +form ('Request a demo').is-light
 
 		footer.footer&attributes(attributes): .container: .footer--in
 			a(href="#").footer--logo: img(src="img/logotype.svg" alt="")
 
 			nav.footer--nav: ul.footer--list
-				li.footer--item.is-active: a(href="#") Land
-				li.footer--item: a(href="#") Housing insights
-				li.footer--item: a(href="#") Construction
-				li.footer--item: a(href="#") Permits
-				li.footer--item: a(href="#") Organizations
+				li.footer--item: a(href="#") hello@openland.com
+				li.footer--item: a(href="#") +1 415 636 7663
 
-			.footer--btn: a(href="#requestAccess").btn.js-modal Request access
+			.footer--socials
+				a(href="#").footer--social: i.icon-lin
+				a(href="#").footer--social: i.icon-tw
+				a(href="#").footer--social: i.icon-fb
 
 		// Global site tag (gtag.js) - Google Analytics
 		//script(async src="https://www.googletagmanager.com/gtag/js?id=UA-99506931-2")

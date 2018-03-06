@@ -49,10 +49,10 @@ mixin map--tab (icon, title, sites, units)
 		small #{sites} candidate sites
 		small #{units} units
 
-mixin form
+mixin form (btn)
 	form(method="POST" action="").form&attributes(attributes)
 		input(type="text" placeholder="E-mail").form--input
-		button(type="submit").form--submit Request access
+		button(type="submit").form--submit= btn
 
 mixin feature (icon, title, text)
 	.feature&attributes(attributes)
