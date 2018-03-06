@@ -1,4 +1,6 @@
-- var email = 'hello@statecraft.one'
+- var email = 'hello@openland.com'
+- var phone = '+1 415 636 7663'
+- var phoneTel = '+14156367663'
 - var call = 'https://cal.mixmax.com/yurylifshits/30'
 
 include ./_components.jade
@@ -141,8 +143,8 @@ html
 			a(href="#").footer--logo: img(src="img/logotype.svg" alt="")
 
 			nav.footer--nav: ul.footer--list
-				li.footer--item: a(href="#") hello@openland.com
-				li.footer--item: a(href="#") +1 415 636 7663
+				li.footer--item: a(href='mailto:' + email)= email
+				li.footer--item: a(href='tel:' + phoneTel)= phone
 
 			.footer--socials
 				a(href="#").footer--social: i.icon-lin
