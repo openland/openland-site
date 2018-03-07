@@ -27,7 +27,7 @@
               <li class="header--item"><a href="#">Nonprofits</a></li>
             </ul>
           </nav>
-          <div class="header--btn"><a class="btn" href="#">See demo</a></div><a class="header--auth" href="#">Sign in</a>
+          <div class="header--btn"><a class="btn js-modals-open" href="#demoPopup">See demo</a></div><a class="header--auth" href="#">Sign in</a>
         </div>
       </div>
     </header>
@@ -261,6 +261,19 @@
         </div>
       </div>
     </footer>
+    <div class="modals">
+      <div class="modals--overlay js-modals-close"></div>
+      <div class="modals--item" id="demoPopup"><a class="modals--close js-modals-close" href="#"><i class="icon-close"></i></a>
+        <div class="modals--title"><img src="img/logotype.svg" alt="">for owners</div>
+        <div class="modals--text">Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy</div>
+        <div class="modals--form">
+          <form class="form" method="POST" action="">
+            <input class="form--input" type="text" placeholder="E-mail"/>
+            <button class="form--submit" type="submit">Notify me</button>
+          </form>
+        </div>
+      </div>
+    </div>
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <!--script(async src="https://www.googletagmanager.com/gtag/js?id=UA-99506931-2")-->
     <!--script.-->

@@ -45,7 +45,7 @@ html
 				li.header--item: a(href="#") Cities
 				li.header--item: a(href="#") Nonprofits
 
-			.header--btn: a(href="#").btn See demo
+			.header--btn: a(href="#demoPopup").btn.js-modals-open See demo
 
 			a(href="#").header--auth Sign in
 
@@ -156,6 +156,16 @@ html
 				a(href=linkedin).footer--social: i.icon-lin
 				a(href=twitter).footer--social: i.icon-tw
 				a(href=facebook).footer--social: i.icon-fb
+
+		.modals
+			.modals--overlay.js-modals-close
+
+			#demoPopup.modals--item
+				a(href="#").modals--close.js-modals-close: i.icon-close
+
+				.modals--title #[img(src="img/logotype.svg" alt="")]for owners
+				.modals--text Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy
+				.modals--form: +form ('Notify me')
 
 		// Global site tag (gtag.js) - Google Analytics
 		//script(async src="https://www.googletagmanager.com/gtag/js?id=UA-99506931-2")
