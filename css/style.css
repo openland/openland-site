@@ -1299,6 +1299,12 @@ body *:after {
   bottom: auto;
   left: auto;
 }
+@media (min-width: 768px) and (max-width: 999px) {
+  .available--in {
+    width: auto;
+    height: auto;
+  }
+}
 @media (min-width: 1000px) and (max-width: 1171px) {
   .available--in {
     width: auto;
@@ -1318,6 +1324,20 @@ body *:after {
   font-size: 0;
   line-height: 0;
 }
+@media (min-width: 768px) and (max-width: 999px) {
+  .available--box {
+    text-align: center;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    white-space: initial;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+}
 .available--box span {
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -1330,6 +1350,14 @@ body *:after {
   font-size: 20px;
   line-height: 20px;
   font-weight: 500;
+}
+@media (min-width: 768px) and (max-width: 999px) {
+  .available--box span {
+    padding: 14px 16px;
+    margin: 0 4px 8px;
+    font-size: 18px;
+    line-height: 20px;
+  }
 }
 @media (min-width: 1000px) and (max-width: 1171px) {
   .available--box span {

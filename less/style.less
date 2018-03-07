@@ -827,6 +827,10 @@ body {
 		.size (auto, 60px);
 		.position (relative);
 
+		@media @media-sm-only {
+			.size (auto);
+		}
+
 		@media @media-md-only {
 			.size (auto, 52px);
 		}
@@ -839,6 +843,14 @@ body {
 		.position-tl (absolute, 0, 50%);
 		.font (0);
 
+		@media @media-sm-only {
+			text-align: center;
+			transform: none;
+			white-space: initial;
+
+			.position (relative);
+		}
+
 		span {
 			border-radius: 4px;
 			border: 2px solid fade(@blue-1, 30);
@@ -848,6 +860,13 @@ body {
 
 			.display (inline-block);
 			.font (20px, 20px, 500);
+
+			@media @media-sm-only {
+				padding: 14px 16px;
+				margin: 0 4px 8px;
+
+				.font (18px, 20px);
+			}
 
 			@media @media-md-only {
 				padding: 14px 16px;
