@@ -449,14 +449,7 @@ body *:after {
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .header--nav {
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: auto;
+    padding: 0 50px 0 0;
   }
 }
 .header--list {
@@ -473,8 +466,8 @@ body *:after {
   vertical-align: top;
 }
 @media (min-width: 768px) and (max-width: 999px) {
-  .header--item:last-child {
-    margin-right: 0;
+  .header--item {
+    margin: 0 8px;
   }
 }
 .header--item a {
@@ -518,7 +511,7 @@ body *:after {
 .header--btn {
   float: right;
 }
-@media (max-width: 999px) {
+@media (max-width: 767px) {
   .header--btn {
     display: none;
   }
@@ -536,6 +529,11 @@ body *:after {
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
+}
+@media (min-width: 768px) and (max-width: 999px) {
+  .header--auth {
+    margin: 0 20px 0 0;
+  }
 }
 .header--auth:hover {
   color: #1B1038;
@@ -665,11 +663,6 @@ body *:after {
     padding: 0;
     float: none;
     margin: 0 0 34px;
-  }
-}
-@media (min-width: 768px) and (max-width: 999px) {
-  .footer--logo {
-    display: none;
   }
 }
 .footer--logo:hover {
@@ -942,12 +935,37 @@ body *:after {
 }
 .intro--image {
   margin: 30px 0 19px;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+@media (min-width: 768px) and (max-width: 999px) {
+  .intro--image {
+    width: auto;
+    height: 170px;
+  }
 }
 .intro--image img {
   margin: 0 auto;
   display: block;
   width: auto;
   height: 208px;
+}
+@media (min-width: 768px) and (max-width: 999px) {
+  .intro--image img {
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    width: auto;
+    height: 170px;
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+  }
 }
 @media (min-width: 1000px) and (max-width: 1171px) {
   .intro--image img {
@@ -972,6 +990,15 @@ body *:after {
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
+}
+@media (min-width: 768px) and (max-width: 999px) {
+  .intro--feature {
+    padding: 6px 10px;
+    margin: 0 2px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
 }
 .intro--feature:before,
 .intro--feature:after {
@@ -1016,12 +1043,22 @@ body *:after {
   max-width: 480px;
   max-height: initial;
 }
+@media (min-width: 768px) and (max-width: 999px) {
+  .features--text {
+    margin: 0 auto 50px;
+  }
+}
 .features--lines {
   position: relative;
   top: auto;
   right: auto;
   bottom: auto;
   left: auto;
+}
+@media (min-width: 768px) and (max-width: 999px) {
+  .features--lines {
+    display: none;
+  }
 }
 .features--line {
   position: relative;
@@ -1145,6 +1182,11 @@ body *:after {
   font-size: 0;
   line-height: 0;
 }
+@media (min-width: 768px) and (max-width: 999px) {
+  .features--grid {
+    padding: 0;
+  }
+}
 @media (min-width: 1000px) and (max-width: 1171px) {
   .features--grid {
     padding-left: 60px;
@@ -1158,6 +1200,12 @@ body *:after {
   font-size: 14px;
   line-height: 20px;
 }
+@media (min-width: 768px) and (max-width: 999px) {
+  .features--item {
+    width: 28%;
+    height: auto;
+  }
+}
 @media (min-width: 1000px) and (max-width: 1171px) {
   .features--item {
     width: 255px;
@@ -1168,6 +1216,12 @@ body *:after {
   width: -webkit-calc(100% - 289px - 289px - 289px);
   width: calc(100% - 289px - 289px - 289px);
   height: auto;
+}
+@media (min-width: 768px) and (max-width: 999px) {
+  .features--item:nth-child(4) {
+    width: 16%;
+    height: auto;
+  }
 }
 @media (min-width: 1000px) and (max-width: 1171px) {
   .features--item:nth-child(4) {
@@ -1204,6 +1258,13 @@ body *:after {
   font-size: 20px;
   line-height: 30px;
   font-weight: 700;
+}
+@media (min-width: 768px) and (max-width: 999px) {
+  .features--title {
+    margin: 0 0 14px;
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 .features--list {
   list-style: none;
@@ -1342,8 +1403,10 @@ body *:after {
 @media (min-width: 768px) and (max-width: 999px) {
   .map--tabs {
     float: none;
-    padding: 0 0 18px;
+    padding: 0 0 40px;
     *zoom: 1;
+    width: auto;
+    height: auto;
   }
   .map--tabs:after {
     clear: both;
@@ -1536,6 +1599,13 @@ body *:after {
 .map--form {
   margin: 25px 0 0;
 }
+@media (min-width: 768px) and (max-width: 999px) {
+  .map--form {
+    margin: 35px auto 0;
+    width: 370px;
+    height: auto;
+  }
+}
 .map--boxes {
   float: right;
   z-index: 1;
@@ -1562,7 +1632,7 @@ body *:after {
 @media (min-width: 768px) and (max-width: 999px) {
   .map--boxes {
     float: none;
-    width: 688px;
+    width: 100%;
     height: 370px;
   }
 }
@@ -1647,10 +1717,23 @@ body *:after {
   width: 152px;
   height: 62px;
 }
+@media (min-width: 768px) and (max-width: 999px) {
+  .logotypes--item {
+    margin: 0 10px;
+    width: 120px;
+    height: 49px;
+  }
+}
 @media (min-width: 1000px) and (max-width: 1171px) {
   .logotypes--item {
     margin: 0 10px;
   }
+}
+.logotypes--item:first-child {
+  margin-left: 0;
+}
+.logotypes--item:last-child {
+  margin-right: 0;
 }
 .logotypes--labels {
   text-align: center;
@@ -1670,14 +1753,33 @@ body *:after {
   line-height: 20px;
   font-weight: 500;
 }
+@media (min-width: 768px) and (max-width: 999px) {
+  .logotypes--label {
+    margin: 0 10px;
+    width: 120px;
+    height: auto;
+  }
+}
 @media (min-width: 1000px) and (max-width: 1171px) {
   .logotypes--label {
     margin: 0 10px;
   }
 }
+.logotypes--label:first-child {
+  margin-left: 0;
+}
+.logotypes--label:last-child {
+  margin-right: 0;
+}
 .logotypes--label.is-full {
   width: 344px;
   height: auto;
+}
+@media (min-width: 768px) and (max-width: 999px) {
+  .logotypes--label.is-full {
+    width: 260px;
+    height: auto;
+  }
 }
 @media (min-width: 1000px) and (max-width: 1171px) {
   .logotypes--label.is-full {
@@ -1698,7 +1800,7 @@ body *:after {
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .explore {
-    padding: 101px 0 82px;
+    padding: 70px 0;
   }
 }
 .explore--title {
@@ -1711,13 +1813,6 @@ body *:after {
 @media (max-width: 767px) {
   .explore--title {
     margin: 0 0 48px;
-    font-size: 24px;
-    line-height: 32px;
-  }
-}
-@media (min-width: 768px) and (max-width: 999px) {
-  .explore--title {
-    margin: 0 0 38px;
     font-size: 24px;
     line-height: 32px;
   }

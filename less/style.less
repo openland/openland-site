@@ -166,8 +166,8 @@ body {
 		.position-tl (absolute, 0, 50%);
 
 		@media @media-xs-only { .display (none); }
-		@media @media-sm-only { transform: none;
-			.position (absolute, 0, 0);
+		@media @media-sm-only {
+			padding: 0 50px 0 0;
 		}
 	}
 
@@ -184,7 +184,7 @@ body {
 		.display (inline-block);
 
 		@media @media-sm-only {
-			&:last-child { margin-right: 0; }
+			margin: 0 8px;
 		}
 
 		a {
@@ -215,7 +215,7 @@ body {
 	}
 
 	&--btn { float: right;
-		@media @media-xs-sm { .display (none); }
+		@media @media-xs-only { .display (none); }
 	}
 
 	&--auth {
@@ -228,6 +228,10 @@ body {
 
 		.display (block);
 		.font (16px, 20px, 500);
+
+		@media @media-sm-only {
+			margin: 0 20px 0 0;
+		}
 
 		&:hover {
 			color: @text-1;
@@ -322,8 +326,6 @@ body {
 			float: none;
 			margin: 0 0 34px;
 		}
-
-		@media @media-sm-only { .display (none); }
 
 		&:hover { opacity: .70; }
 		img {
@@ -527,11 +529,24 @@ body {
 	&--image {
 		margin: 30px 0 19px;
 
+		.position (relative);
+
+		@media @media-sm-only {
+			.size (auto, 170px);
+		}
+
 		img {
 			margin: 0 auto;
 
 			.display (block);
 			.size (auto, 208px);
+
+			@media @media-sm-only {
+				transform: translate(-50%, 0);
+
+				.size (auto, 170px);
+				.position-tl (absolute, 0, 50%);
+			}
 
 			@media @media-md-only {
 				.size (auto, 170px);
@@ -549,6 +564,13 @@ body {
 		.display (inline-block);
 		.position (relative);
 		.font (16px, 20px, 500);
+
+		@media @media-sm-only {
+			padding: 6px 10px;
+			margin: 0 2px;
+
+			.font (14px, 20px, 500);
+		}
 
 		&:before,
 		&:after {
@@ -593,10 +615,16 @@ body {
 
 		.font (24px, 32px);
 		.max-size (480px);
+
+		@media @media-sm-only { margin: 0 auto 50px; }
 	}
 
 	&--lines {
 		.position (relative);
+
+		@media @media-sm-only {
+			.display (none);
+		}
 	}
 
 	&--line { .position (relative);
@@ -695,6 +723,10 @@ body {
 
 		.font (0);
 
+		@media @media-sm-only {
+			padding: 0;
+		}
+
 		@media @media-md-only {
 			padding-left: 60px;
 		}
@@ -705,12 +737,20 @@ body {
 		.size (289px);
 		.font (14px, 20px);
 
+		@media @media-sm-only {
+			.size (28%);
+		}
+
 		@media @media-md-only {
 			.size (255px);
 		}
 
 		&:nth-child(4) {
 			.size (~'calc(100% - 289px - 289px - 289px)');
+
+			@media @media-sm-only {
+				.size (16%);
+			}
 
 			@media @media-md-only {
 				.size (~'calc(100% - 255px - 255px - 255px)');
@@ -747,6 +787,12 @@ body {
 		margin: 0 0 8px;
 
 		.font (20px, 30px, 700);
+
+		@media @media-sm-only {
+			margin: 0 0 14px;
+
+			.font (18px, 22px);
+		}
 	}
 
 	&--list {
@@ -859,9 +905,10 @@ body {
 
 		@media @media-sm-only {
 			float: none;
-			padding: 0 0 18px;
+			padding: 0 0 40px;
 
 			.clearfix ();
+			.size (auto);
 		}
 
 		@media @media-md-only {
@@ -971,7 +1018,12 @@ body {
 	}
 
 	&--tab.is-active &--icon svg .fillPurple { fill: @blue-1; }
-	&--form { margin: 25px 0 0; }
+	&--form { margin: 25px 0 0;
+		@media @media-sm-only { margin: 35px auto 0;
+			.size (370px);
+		}
+	}
+
 	&--boxes {
 		float: right;
 		z-index: 1;
@@ -990,7 +1042,7 @@ body {
 		}
 
 		@media @media-sm-only { float: none;
-			.size (688px, 370px);
+			.size (100%, 370px);
 		}
 
 		@media @media-md-only { .size (560px, 391px); }
@@ -1050,9 +1102,18 @@ body {
 		.display (inline-block);
 		.size (152px, 62px);
 
+		@media @media-sm-only {
+			margin: 0 10px;
+
+			.size (120px, 49px);
+		}
+
 		@media @media-md-only {
 			margin: 0 10px;
 		}
+
+		&:first-child { margin-left: 0; }
+		&:last-child { margin-right: 0; }
 	}
 
 	&--labels {
@@ -1071,12 +1132,25 @@ body {
 		.size (152px);
 		.font (14px, 20px, 500);
 
+		@media @media-sm-only {
+			margin: 0 10px;
+
+			.size (120px);
+		}
+
 		@media @media-md-only {
 			margin: 0 10px;
 		}
 
+		&:first-child { margin-left: 0; }
+		&:last-child { margin-right: 0; }
+
 		&.is-full {
 			.size (344px);
+
+			@media @media-sm-only {
+				.size (260px);
+			}
 
 			@media @media-md-only {
 				.size (324px);
@@ -1095,7 +1169,9 @@ body {
 		text-align: center;
 	}
 
-	@media @media-sm-only { padding: 101px 0 82px; }
+	@media @media-sm-only {
+		padding: 70px 0;
+	}
 
 	&--title {
 		margin: 0 0 22px;
@@ -1104,10 +1180,6 @@ body {
 		.font (32px, 32px, 700);
 
 		@media @media-xs-only { margin: 0 0 48px;
-			.font (24px, 32px);
-		}
-
-		@media @media-sm-only { margin: 0 0 38px;
 			.font (24px, 32px);
 		}
 	}
