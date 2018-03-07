@@ -151,6 +151,8 @@ body {
 		text-decoration: none;
 		color: @text-1;
 		float: right;
+		padding: 0 20px;
+		margin: 0 -20px 0 0;
 
 		.display (none);
 
@@ -183,9 +185,7 @@ body {
 	&--item { margin: 0 16px;
 		.display (inline-block);
 
-		@media @media-sm-only {
-			margin: 0 8px;
-		}
+		@media @media-sm-only { margin: 0 8px; }
 
 		a {
 			color: fade(@text-1, 70);
@@ -229,18 +229,15 @@ body {
 		.display (block);
 		.font (16px, 20px, 500);
 
-		@media @media-sm-only {
-			margin: 0 20px 0 0;
-		}
+		@media @media-xs-only { .display (none); }
+		@media @media-sm-only { margin: 0 20px 0 0; }
 
-		&:hover {
-			color: @text-1;
-		}
+		&:hover { color: @text-1; }
 	}
 }
 
 .menu {
-	background: @purple-1;
+	background: @blue-1;
 	color: @white;
 	z-index: 100;
 
@@ -339,7 +336,7 @@ body {
 
 		@media @media-xs-only {
 			float: none;
-			margin: 0 0 24px;
+			margin: 0 0px;
 		}
 	}
 
@@ -374,6 +371,10 @@ body {
 			.font (16px, 20px, 500);
 			.position (relative);
 
+			@media @media-xs-only {
+				padding: 10px 0;
+			}
+
 			&:hover { opacity: 1; }
 		}
 	}
@@ -382,6 +383,11 @@ body {
 		float: right;
 
 		.clearfix ();
+
+		@media @media-xs-only {
+			float: none;
+			margin: 0 0 0 -10px;
+		}
 	}
 
 	&--social {
@@ -393,9 +399,17 @@ body {
 
 		.display (block);
 
+		@media @media-xs-only {
+			padding: 20px 10px;
+		}
+
 		i {
 			.display (block);
 			.font (14px);
+
+			@media @media-xs-only {
+				.font (16px);
+			}
 		}
 
 		&:hover { color: @text-1; }
@@ -461,6 +475,11 @@ body {
 			&::-moz-placeholder { color: @white; }
 			&:-ms-input-placeholder { color: @white; }
 			&:-moz-placeholder { color: @white; }
+
+			@media @media-xs-only {
+				border: 2px solid fade(@white, 60);
+				border-bottom: none;
+			}
 		}
 
 		&--submit {
@@ -509,8 +528,8 @@ body {
 
 		.size (395px);
 
-		@media @media-xs-only { margin: 0 auto 64px;
-			.size (264px);
+		@media @media-xs-only { margin: 0 0 64px;
+			.size (auto);
 		}
 
 		@media @media-sm-only { .size (368px); }
@@ -524,12 +543,22 @@ body {
 		text-align: center;
 
 		.font (0);
+
+		@media @media-xs-only {
+			.display (none);
+		}
 	}
 
 	&--image {
 		margin: 30px 0 19px;
 
 		.position (relative);
+
+		@media @media-xs-only {
+			margin: 0;
+
+			.size (auto, 130px);
+		}
 
 		@media @media-sm-only {
 			.size (auto, 170px);
@@ -540,6 +569,13 @@ body {
 
 			.display (block);
 			.size (auto, 208px);
+
+			@media @media-xs-only {
+				transform: translate(-50%, 0);
+
+				.size (auto, 130px);
+				.position-tl (absolute, 0, 50%);
+			}
 
 			@media @media-sm-only {
 				transform: translate(-50%, 0);
@@ -609,6 +645,10 @@ body {
 .features {
 	padding: 0 0 107px;
 
+	@media @media-xs-only {
+		padding: 0 0 30px;
+	}
+
 	&--text {
 		text-align: center;
 		margin: 0 auto 101px;
@@ -616,13 +656,21 @@ body {
 		.font (24px, 32px);
 		.max-size (480px);
 
+		@media @media-xs-only {
+			text-align: left;
+			margin: 0 auto 40px;
+
+			.font (18px, 26px);
+			.max-size (initial);
+		}
+
 		@media @media-sm-only { margin: 0 auto 50px; }
 	}
 
 	&--lines {
 		.position (relative);
 
-		@media @media-sm-only {
+		@media @media-xs-sm {
 			.display (none);
 		}
 	}
@@ -723,7 +771,7 @@ body {
 
 		.font (0);
 
-		@media @media-sm-only {
+		@media @media-xs-sm {
 			padding: 0;
 		}
 
@@ -736,6 +784,13 @@ body {
 		.display (inline-block);
 		.size (289px);
 		.font (14px, 20px);
+
+		@media @media-xs-only {
+			margin: 0 0 40px;
+
+			.display (block);
+			.size (auto)!important;
+		}
 
 		@media @media-sm-only {
 			.size (28%);
@@ -816,18 +871,28 @@ body {
 .available {
 	padding: 0 0 109px;
 
+	@media @media-xs-only {
+		padding: 0 0 60px;
+	}
+
 	&--title {
 		text-align: center;
 		margin: 0 0 38px;
 
 		.font (28px, 32px, 700);
+
+		@media @media-xs-only {
+			margin: 0 0 20px;
+
+			.font (22px, 30px);
+		}
 	}
 
 	&--in {
 		.size (auto, 60px);
 		.position (relative);
 
-		@media @media-sm-only {
+		@media @media-xs-sm {
 			.size (auto);
 		}
 
@@ -843,7 +908,7 @@ body {
 		.position-tl (absolute, 0, 50%);
 		.font (0);
 
-		@media @media-sm-only {
+		@media @media-xs-sm {
 			text-align: center;
 			transform: none;
 			white-space: initial;
@@ -860,6 +925,13 @@ body {
 
 			.display (inline-block);
 			.font (20px, 20px, 500);
+
+			@media @media-xs-only {
+				padding: 8px 12px;
+				margin: 0 4px 8px;
+
+				.font (14px, 20px);
+			}
 
 			@media @media-sm-only {
 				padding: 14px 16px;
@@ -879,7 +951,7 @@ body {
 }
 
 .map { padding: 0 0 145px;
-	@media @media-xs-only { padding: 0 0 64px; }
+	@media @media-xs-only { padding: 0; }
 	@media @media-sm-only { padding: 0 0 65px; }
 
 	&--title {
@@ -889,13 +961,27 @@ body {
 
 		.font (28px, 34px, 700);
 
+		@media @media-xs-only {
+			margin: 0 0 10px;
+
+			.font (24px, 30px);
+		}
+
 		i {
 			font-style: normal;
 			margin: 0 11px;
+
+			@media @media-xs-only {
+				.display (none);
+			}
 		}
 
 		span {
 			color: @text-1;
+
+			@media @media-xs-only {
+				.display (block);
+			}
 		}
 	}
 
@@ -905,6 +991,12 @@ body {
 		margin: 0 0 62px;
 
 		.font (20px, 32px);
+
+		@media @media-xs-only {
+			margin: 0 0 50px;
+
+			.font (16px, 22px);
+		}
 	}
 
 	&--wrap { .clearfix (); }
@@ -1038,6 +1130,7 @@ body {
 
 	&--tab.is-active &--icon svg .fillPurple { fill: @blue-1; }
 	&--form { margin: 25px 0 0;
+		@media @media-xs-only { .display (none); }
 		@media @media-sm-only { margin: 35px auto 0;
 			.size (370px);
 		}
@@ -1106,11 +1199,19 @@ body {
 .logotypes {
 	padding: 0 0 77px;
 
+	@media @media-xs-only {
+		padding: 50px 0 30px;
+	}
+
 	&--grid {
 		text-align: center;
 		margin: 0 0 21px;
 
 		.font (0);
+
+		@media @media-xs-only {
+			margin: 0 -10px;
+		}
 	}
 
 	&--item {
@@ -1120,6 +1221,12 @@ body {
 
 		.display (inline-block);
 		.size (152px, 62px);
+
+		@media @media-xs-only {
+			margin: 0 10px 20px!important;
+
+			.size (122px, 50px);
+		}
 
 		@media @media-sm-only {
 			margin: 0 10px;
@@ -1139,6 +1246,10 @@ body {
 		text-align: center;
 
 		.font (0);
+
+		@media @media-xs-only {
+			.display (none);
+		}
 	}
 
 	&--label {
@@ -1198,8 +1309,8 @@ body {
 
 		.font (32px, 32px, 700);
 
-		@media @media-xs-only { margin: 0 0 48px;
-			.font (24px, 32px);
+		@media @media-xs-only { margin: 0 0 20px;
+			.font (22px, 30px);
 		}
 	}
 
@@ -1208,12 +1319,20 @@ body {
 		margin: 0 0 42px;
 
 		.font (20px, 20px);
+
+		@media @media-xs-only { margin: 0 0 30px;
+			.font (16px, 22px);
+		}
 	}
 
 	&--form {
 		margin: 0 auto;
 
 		.size (395px);
+
+		@media @media-xs-only {
+			.size (auto);
+		}
 	}
 }
 
