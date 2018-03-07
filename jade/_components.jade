@@ -54,8 +54,11 @@ mixin form (btn)
 		input(type="text" placeholder="E-mail").form--input
 		button(type="submit").form--submit= btn
 
-mixin feature (icon, title, text)
-	.feature&attributes(attributes)
-		.feature--icon: i(class='icon-feature-0' + icon)
-		.feature--title= title
-		.feature--text= text
+mixin features--item (icon, title, items)
+	.features--item&attributes(attributes)
+		.features--icon: i(class='icon-' + icon)
+		.features--title= title
+
+		ul.features--list
+			each item in items
+				li= item
