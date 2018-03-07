@@ -830,13 +830,13 @@ body *:after {
   -webkit-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
   text-align: center;
+  padding: 10px 0;
   -webkit-transition: 200ms background ease,
 					200ms opacity ease;
   -o-transition: 200ms background ease,
 					200ms opacity ease;
   transition: 200ms background ease,
 					200ms opacity ease;
-  padding: 10px 0;
   width: 155px;
   height: 48px;
   display: block;
