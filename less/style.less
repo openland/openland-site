@@ -698,9 +698,10 @@ body {
 	&--text {
 		text-align: center;
 		margin: 0 auto 104px;
+		color: @text-2;
 
-		.font (24px, 32px);
-		.max-size (480px);
+		.font (24px, 32px, 500);
+		.max-size (490px);
 
 		@media @media-xs-only {
 			text-align: left;
@@ -711,6 +712,8 @@ body {
 		}
 
 		@media @media-sm-only { margin: 0 auto 50px; }
+
+		span { color: @text-1; }
 	}
 
 	&--lines { .position (relative);
