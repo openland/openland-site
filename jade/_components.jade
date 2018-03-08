@@ -67,3 +67,11 @@ mixin features--item (icon, title, items)
 		ul.features--list
 			each item in items
 				li= item
+
+mixin modal--item (modalID, title, text, btn)
+	.modals--item(id=modalID)&attributes(attributes)
+		a(href="#").modals--close.js-modals-close: i.icon-close
+
+		.modals--title #[img(src="img/logotype.svg" alt="")]#{title}
+		.modals--text= text
+		.modals--form: +form (btn)

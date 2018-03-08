@@ -21,9 +21,9 @@ html
 		meta(name="format-detection" content="telephone=no")
 
 		meta(property="og:title" content="San Francisco Land Inventory")
-		meta(property="og:url" content="https://statecrafthq.com/land")
+		meta(property="og:url" content="https://openland.com/")
 		meta(property="og:description" content="Explore development capacity of the city, parcel by parcel")
-		meta(property="og:image" content="https://statecrafthq.com/land/img/statecraft-land-og.jpg")
+		meta(property="og:image" content="https://openland.com/img/statecraft-land-og.jpg")
 
 		link(rel="shortcut icon" href="favicon.ico")
 		link(rel="icon" href="favicon.png")
@@ -41,11 +41,11 @@ html
 
 			nav.header--nav: ul.header--list
 				li.header--item.is-active: a(href="#") Builders
-				li.header--item: a(href="#") Owners
-				li.header--item: a(href="#") Cities
-				li.header--item: a(href="#") Nonprofits
+				li.header--item: a(href="#ownersPopup").js-modals-open Owners
+				li.header--item: a(href="#citiesPopup").js-modals-open Cities
+				li.header--item: a(href="#nonporfitsPopup").js-modals-open Nonprofits
 
-			.header--btn: a(href="#demoPopup").btn.js-modals-open See demo
+			.header--btn: a(href="#seeDemoPopup").btn.js-modals-open See demo
 
 			a(href="#").header--auth Sign in
 
@@ -160,12 +160,10 @@ html
 		.modals
 			.modals--overlay.js-modals-close
 
-			#demoPopup.modals--item
-				a(href="#").modals--close.js-modals-close: i.icon-close
-
-				.modals--title #[img(src="img/logotype.svg" alt="")]for owners
-				.modals--text Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy
-				.modals--form: +form ('Notify me')
+			+modal--item ('ownersPopup', 'for owners', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
+			+modal--item ('citiesPopup', 'for owners', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
+			+modal--item ('nonporfitsPopup', 'for owners', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
+			+modal--item ('seeDemoPopup', 'for owners', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
 
 		// Global site tag (gtag.js) - Google Analytics
 		//script(async src="https://www.googletagmanager.com/gtag/js?id=UA-99506931-2")
