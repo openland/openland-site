@@ -643,7 +643,7 @@ body *:after {
 }
 @media (max-width: 767px) {
   .footer {
-    padding: 34px 0;
+    padding: 34px 0 24px;
   }
 }
 .footer--in {
@@ -673,9 +673,7 @@ body *:after {
 }
 @media (max-width: 767px) {
   .footer--logo {
-    padding: 0;
-    float: none;
-    margin: 0 0 34px;
+    display: none;
   }
 }
 .footer--logo:hover {
@@ -703,16 +701,16 @@ body *:after {
   font-size: 0;
   line-height: 0;
 }
+@media (max-width: 767px) {
+  .footer--list {
+    white-space: initial;
+    text-align: center;
+  }
+}
 .footer--item {
   margin: 0 12px;
   display: inline-block;
   vertical-align: top;
-}
-@media (max-width: 767px) {
-  .footer--item {
-    margin: 0;
-    display: block;
-  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .footer--item:first-child {
@@ -760,7 +758,9 @@ body *:after {
 @media (max-width: 767px) {
   .footer--socials {
     float: none;
-    margin: 0 0 0 -10px;
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
   }
 }
 .footer--social {
@@ -776,6 +776,9 @@ body *:after {
 @media (max-width: 767px) {
   .footer--social {
     padding: 20px 10px;
+    float: none;
+    display: inline-block;
+    vertical-align: top;
   }
 }
 .footer--social i {
@@ -1044,9 +1047,11 @@ body *:after {
 }
 @media (max-width: 767px) {
   .intro--form {
-    margin: 0 0 64px;
+    margin: 0 auto 64px;
     width: auto;
     height: auto;
+    max-width: 300px;
+    max-height: initial;
   }
 }
 @media (min-width: 768px) and (max-width: 999px) {
@@ -2124,6 +2129,8 @@ body *:after {
   .explore--form {
     width: auto;
     height: auto;
+    max-width: 300px;
+    max-height: initial;
   }
 }
 .visible-xs,
