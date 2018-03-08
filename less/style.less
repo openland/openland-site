@@ -806,8 +806,13 @@ body {
 		.font (14px, 20px);
 
 		@media @media-xs-only { margin: 0 0 40px;
-			.display (block);
-			.size (auto)!important;
+			.size (60%)!important;
+			.min-size (250px);
+
+			&:nth-child(2n+2) {
+				.size (40%)!important;
+				.min-size (170px);
+			}
 		}
 
 		@media @media-sm-only { .size (28%); }

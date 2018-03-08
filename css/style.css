@@ -1383,9 +1383,16 @@ body *:after {
 @media (max-width: 767px) {
   .features--item {
     margin: 0 0 40px;
-    display: block;
-    width: auto !important;
+    width: 60% !important;
     height: auto !important;
+    min-width: 250px;
+    min-height: initial;
+  }
+  .features--item:nth-child(2n+2) {
+    width: 40% !important;
+    height: auto !important;
+    min-width: 170px;
+    min-height: initial;
   }
 }
 @media (min-width: 768px) and (max-width: 999px) {
