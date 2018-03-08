@@ -1644,6 +1644,8 @@ body *:after {
     overflow-x: auto;
     margin: 0 -28px 25px;
     -webkit-overflow-scrolling: touch;
+    width: auto;
+    height: auto;
   }
 }
 @media (min-width: 768px) and (max-width: 999px) {
