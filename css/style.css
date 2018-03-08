@@ -1714,7 +1714,7 @@ body *:after {
 }
 .map--tab:before {
   content: "";
-  background: #1FB6FF;
+  background: #6B50FF;
   -webkit-border-radius: 48px;
   border-radius: 48px;
   -webkit-transform: translate(-50%, -50%);
@@ -1755,7 +1755,7 @@ body *:after {
 }
 .map--tab span:before {
   content: "";
-  background: #1FB6FF;
+  background: #6B50FF;
   -webkit-transition: 200ms width ease;
   -o-transition: 200ms width ease;
   transition: 200ms width ease;
@@ -1783,7 +1783,7 @@ body *:after {
   opacity: 1;
 }
 .map--tab.is-active {
-  color: #1FB6FF;
+  color: #6B50FF;
   opacity: 1;
   cursor: default;
 }
@@ -1840,7 +1840,7 @@ body *:after {
   left: 0;
 }
 .map--tab.is-active .map--icon svg .fillPurple {
-  fill: #1FB6FF;
+  fill: #6B50FF;
 }
 .map--form {
   margin: 25px 0 0;
