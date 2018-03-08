@@ -40,7 +40,7 @@ html
 			a(href="#").header--open
 
 			nav.header--nav: ul.header--list
-				li.header--item.is-active: a(href="#") Builders
+				li.header--item.is-active: span Builders
 				li.header--item: a(href="#ownersPopup").js-modals-open Owners
 				li.header--item: a(href="#citiesPopup").js-modals-open Cities
 				li.header--item: a(href="#nonporfitsPopup").js-modals-open Nonprofits
@@ -54,10 +54,10 @@ html
 
 			.menu--in: .container
 				ul.menu--list
-					li.menu--item.is-active: a(href="#") Builders
-					li.menu--item: a(href="#") Owners
-					li.menu--item: a(href="#") Cities
-					li.menu--item: a(href="#") Nonprofits
+					li.menu--item.is-active: span Builders
+					li.menu--item: a(href="#ownersPopup").js-modals-open Owners
+					li.menu--item: a(href="#citiesPopup").js-modals-open Cities
+					li.menu--item: a(href="#nonporfitsPopup").js-modals-open Nonprofits
 
 				+form ('Request a demo').is-light
 

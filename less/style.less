@@ -86,7 +86,7 @@ body {
 	background: none;
 	color: @purple-1;
 	border-radius: 4px;
-	padding: 8px 14px;
+	padding: 6px 14px 10px;
 	transition: 200ms border ease,
 				200ms background ease,
 				200ms color ease;
@@ -138,6 +138,10 @@ body {
 
 		.display (block);
 
+		@media @media-xs-only {
+			padding: 5px 0 11px;
+		}
+
 		&:hover { opacity: .70; }
 		img {
 			.display (block);
@@ -185,10 +189,10 @@ body {
 
 		@media @media-sm-only { margin: 0 8px; }
 
-		a {
+		> * {
 			color: fade(@text-1, 70);
 			text-decoration: none;
-			padding: 10px 0;
+			padding: 8px 0 12px;
 			transition: 200ms color ease;
 
 			.display (block);
@@ -207,7 +211,7 @@ body {
 			&:hover { color: @text-1; }
 		}
 
-		&.is-active a { color: @text-1;
+		&.is-active > * { color: @text-1;
 			&:before { .display (block); }
 		}
 	}
@@ -220,7 +224,7 @@ body {
 		float: right;
 		text-decoration: none;
 		color: fade(@text-1, 70);
-		padding: 10px 0;
+		padding: 8px 0 12px;
 		margin: 0 24px 0 0;
 		transition: 200ms color ease;
 
@@ -286,17 +290,17 @@ body {
 	&--item { margin: 0 0 24px;
 		.display (block);
 
-		a {
+		> * {
 			color: fade(@white, 70);
 			text-decoration: none;
 
-			.font (28px, 34px);
+			.font (28px, 34px, 500);
 			.display (block);
 
 			&:hover { color: @white; }
 		}
 
-		&.is-active a { color: @white; }
+		&.is-active > * { color: @white; }
 	}
 }
 
@@ -361,7 +365,7 @@ body {
 			text-decoration: none;
 			opacity: .60;
 			transition: 200ms opacity ease;
-			padding: 28px 0 25px;
+			padding: 27px 0 26px;
 
 			.display (block);
 			.font (16px, 20px, 500);
@@ -408,7 +412,7 @@ body {
 		border: 1px solid fade(@text-1, 25);
 		border-right: none;
 		border-radius: 4px 0 0 4px!important;
-		padding: 10px 15px;
+		padding: 7px 15px 11px;
 
 		.display (block);
 		.size (~'calc(100% - 155px)', 48px);
@@ -431,7 +435,7 @@ body {
 		color: @white;
 		border-radius: 0 4px 4px 0;
 		text-align: center;
-		padding: 10px 0;
+		padding: 8px 0 12px;
 		transition: 200ms background ease,
 					200ms opacity ease;
 
@@ -455,7 +459,7 @@ body {
 			border: 2px solid fade(@white, 60);
 			border-right: none;
 			color: @white;
-			padding: 9px 14px;
+			padding: 6px 14px 10px;
 
 			&::-webkit-input-placeholder { color: @white; }
 			&::-moz-placeholder { color: @white; }
@@ -492,7 +496,7 @@ body {
 		background: @white;
 		border-radius: 4px;
 		transform: translate(-50%, -50%);
-		padding: 49px 32px;
+		padding: 46px 32px 47px;
 		z-index: 2;
 
 		.display (none);
@@ -522,21 +526,29 @@ body {
 
 	&--title {
 		color: fade(@text-1, 80);
-		margin: 0 0 32px;
+		margin: 0 0 33px;
 
 		.font (23px, 30px);
 
-		@media @media-xs-only { margin: 0 0 20px; }
+		@media @media-xs-only { margin: 0 0 16px;
+			.font (16px, 30px);
+		}
 
-		img { margin: -3px 9px 0 0;
+		img { margin: 0 9px 0 0;
 			.display (inline-block);
 			.size (120px, 29px);
+
+			@media @media-xs-only {
+				margin: 1px 9px 0 0;
+
+				.size (100px, 24px);
+			}
 		}
 	}
 
 	&--text {
 		color: fade(@text-1, 80);
-		margin: 0 0 32px;
+		margin: 0 0 34px;
 
 		.font (16px, 26px);
 	}
@@ -545,12 +557,12 @@ body {
 // --------
 
 .page { overflow: hidden; }
-.intro { padding: 70px 0 97px;
+.intro { padding: 66px 0 94px;
 	@media @media-xs-only { padding: 14px 0 65px; }
 	@media @media-sm-only { padding: 61px 0 81px; }
 
 	&--title {
-		margin: 0 0 17px;
+		margin: 0 0 20px;
 		text-align: center;
 
 		.font (50px, 64px, 700);
@@ -565,7 +577,7 @@ body {
 	&--text {
 		text-align: center;
 		opacity: .60;
-		margin: 0 0 38px;
+		margin: 0 0 41px;
 
 		.font (20px, 24px);
 
@@ -622,7 +634,7 @@ body {
 		color: fade(@text-1, 60);
 		border-radius: 4px;
 		border: 2px solid multiply(@white, fade(@text-1, 25));
-		padding: 14px 15px;
+		padding: 12px 15px 16px;
 		margin: 0 3px;
 
 		.display (inline-block);
@@ -630,7 +642,7 @@ body {
 		.font (16px, 20px, 500);
 
 		@media @media-sm-only {
-			padding: 6px 10px;
+			padding: 5px 10px 7px;
 			margin: 0 2px;
 
 			.font (14px, 20px, 500);
@@ -670,12 +682,12 @@ body {
 	}
 }
 
-.features { padding: 0 0 107px;
+.features { padding: 0 0 105px;
 	@media @media-xs-only { padding: 0 0 30px; }
 
 	&--text {
 		text-align: center;
-		margin: 0 auto 101px;
+		margin: 0 auto 104px;
 
 		.font (24px, 32px);
 		.max-size (480px);
@@ -799,7 +811,7 @@ body {
 
 	&--icon {
 		color: @purple-1;
-		margin: 0 0 15px;
+		margin: 0 0 12px;
 
 		i { .display (block);
 			&.icon-land { .font (22px); }
@@ -809,7 +821,7 @@ body {
 		}
 	}
 
-	&--title { margin: 0 0 8px;
+	&--title { margin: 0 0 9px;
 		.font (20px, 30px, 700);
 
 		@media @media-sm-only { margin: 0 0 14px;
@@ -833,12 +845,12 @@ body {
 	}
 }
 
-.available { padding: 0 0 109px;
+.available { padding: 0 0 105px;
 	@media @media-xs-only { padding: 0 0 60px; }
 
 	&--title {
 		text-align: center;
-		margin: 0 0 38px;
+		margin: 0 0 42px;
 
 		.font (28px, 32px, 700);
 
@@ -873,7 +885,7 @@ body {
 		span {
 			border-radius: 4px;
 			border: 2px solid fade(@blue-1, 30);
-			padding: 18px 22px;
+			padding: 16px 22px 20px;
 			margin: 0 8px;
 			color: @blue-1;
 
@@ -881,21 +893,21 @@ body {
 			.font (20px, 20px, 500);
 
 			@media @media-xs-only {
-				padding: 8px 12px;
+				padding: 7px 12px 9px;
 				margin: 0 4px 8px;
 
 				.font (14px, 20px);
 			}
 
 			@media @media-sm-only {
-				padding: 14px 16px;
+				padding: 12px 16px 16px;
 				margin: 0 4px 8px;
 
 				.font (18px, 20px);
 			}
 
 			@media @media-md-only {
-				padding: 14px 16px;
+				padding: 12px 16px 16px;
 				margin: 0 4px;
 
 				.font (18px, 20px);
@@ -904,12 +916,12 @@ body {
 	}
 }
 
-.map { padding: 0 0 145px;
+.map { padding: 0 0 144px;
 	@media @media-xs-only { padding: 0; }
 	@media @media-sm-only { padding: 0 0 65px; }
 
 	&--title {
-		margin: 0 0 11px;
+		margin: 0 0 12px;
 		text-align: center;
 		color: @text-2;
 
@@ -934,7 +946,7 @@ body {
 	&--text {
 		text-align: center;
 		opacity: .60;
-		margin: 0 0 62px;
+		margin: 0 0 65px;
 
 		.font (20px, 32px);
 
@@ -944,7 +956,10 @@ body {
 	}
 
 	&--wrap { .clearfix (); }
-	&--tabs { float: left;
+	&--tabs {
+		float: left;
+		margin: -2px 0 0;
+
 		.size (354px);
 
 		@media @media-xs-only {
@@ -971,7 +986,7 @@ body {
 
 	&--tab {
 		padding: 13px 0 13px 56px;
-		margin: 0 0 9px;
+		margin: 0 0 8px;
 		opacity: .50;
 		color: @text-1;
 		text-decoration: none;
@@ -1006,14 +1021,14 @@ body {
 						200ms height ease;
 
 			.display (block);
-			.position-tl (absolute, 35px, 16px);
+			.position-tl (absolute, 37px, 16px);
 			.size (0, 0);
 		}
 
 		&:last-child { margin: 0; }
 		span {
 			transition: 200ms padding ease;
-			margin: 0 0 2px;
+			margin: 0 0 3px;
 
 			.display (block);
 			.position (relative);
@@ -1025,7 +1040,7 @@ body {
 				transition: 200ms width ease;
 
 				.display (block);
-				.position-tl (absolute, 11px, 0);
+				.position-tl (absolute, 13px, 0);
 				.size (0, 2px);
 			}
 		}
@@ -1064,14 +1079,14 @@ body {
 			}
 		}
 
-		&.is-01 { .position-tl (absolute, 0, 1px); }
-		&.is-02 { .position-tl (absolute, 13px, 0); }
-		&.is-03 { .position-tl (absolute, 19px, 0); }
-		&.is-04 { .position-tl (absolute, 21px, 0); }
+		&.is-01 { .position-tl (absolute, 2px, 1px); }
+		&.is-02 { .position-tl (absolute, 15px, 0); }
+		&.is-03 { .position-tl (absolute, 21px, 0); }
+		&.is-04 { .position-tl (absolute, 23px, 0); }
 	}
 
 	&--tab.is-active &--icon svg .fillPurple { fill: @purple-1; }
-	&--form { margin: 25px 0 0;
+	&--form { margin: 29px 0 0;
 		@media @media-xs-only { .display (none); }
 		@media @media-sm-only { margin: 35px auto 0;
 			.size (370px);
@@ -1116,7 +1131,7 @@ body {
 		color: @white;
 		text-align: center;
 		border-radius: 29px;
-		padding: 7px 0 0;
+		padding: 5px 0 7px;
 		margin: -14px 0 0 -14px;
 		transition: 400ms transform ease;
 		transform: scale(0, 0);
@@ -1127,7 +1142,7 @@ body {
 
 		&.is-large {
 			border-radius: 58px;
-			padding: 16px 0 0;
+			padding: 13px 0 16px;
 			margin: -29px 0 0 -29px;
 
 			.size (58px, 58px);
@@ -1138,12 +1153,12 @@ body {
 	&--box.is-shown &--dot { transform: scale(1, 1); }
 }
 
-.logotypes { padding: 0 0 77px;
+.logotypes { padding: 0 0 79px;
 	@media @media-xs-only { padding: 50px 0 30px; }
 
 	&--grid {
 		text-align: center;
-		margin: 0 0 21px;
+		margin: 0 0 19px;
 
 		.font (0);
 
@@ -1206,7 +1221,7 @@ body {
 .explore {
 	background: @blue-1;
 	color: @white;
-	padding: 99px 0 97px;
+	padding: 95px 0 97px;
 
 	@media @media-xs-only {
 		padding: 56px 0 56px;
@@ -1216,7 +1231,7 @@ body {
 	@media @media-sm-only { padding: 70px 0; }
 
 	&--title {
-		margin: 0 0 22px;
+		margin: 0 0 23px;
 		text-align: center;
 
 		.font (32px, 32px, 700);
@@ -1228,7 +1243,7 @@ body {
 
 	&--text {
 		text-align: center;
-		margin: 0 0 42px;
+		margin: 0 0 45px;
 
 		.font (20px, 20px);
 

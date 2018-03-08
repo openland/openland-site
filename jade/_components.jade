@@ -73,5 +73,5 @@ mixin modal--item (modalID, title, text, btn)
 		a(href="#").modals--close.js-modals-close: i.icon-close
 
 		.modals--title #[img(src="img/logotype.svg" alt="")]#{title}
-		.modals--text= text
+		.modals--text!= text
 		.modals--form: +form (btn)

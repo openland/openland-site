@@ -320,7 +320,7 @@ body *:after {
   color: #6B50FF;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  padding: 8px 14px;
+  padding: 6px 14px 10px;
   -webkit-transition: 200ms border ease,
 				200ms background ease,
 				200ms color ease;
@@ -399,6 +399,11 @@ body *:after {
   transition: 200ms opacity ease;
   display: block;
 }
+@media (max-width: 767px) {
+  .header--logo {
+    padding: 5px 0 11px;
+  }
+}
 .header--logo:hover {
   opacity: .70;
 }
@@ -472,10 +477,10 @@ body *:after {
     margin: 0 8px;
   }
 }
-.header--item a {
+.header--item > * {
   color: rgba(27, 16, 56, 0.7);
   text-decoration: none;
-  padding: 10px 0;
+  padding: 8px 0 12px;
   -webkit-transition: 200ms color ease;
   -o-transition: 200ms color ease;
   transition: 200ms color ease;
@@ -489,7 +494,7 @@ body *:after {
   bottom: auto;
   left: auto;
 }
-.header--item a:before {
+.header--item > *:before {
   content: "";
   background: #1B1038;
   display: none;
@@ -501,13 +506,13 @@ body *:after {
   width: 100%;
   height: 2px;
 }
-.header--item a:hover {
+.header--item > *:hover {
   color: #1B1038;
 }
-.header--item.is-active a {
+.header--item.is-active > * {
   color: #1B1038;
 }
-.header--item.is-active a:before {
+.header--item.is-active > *:before {
   display: block;
 }
 .header--btn {
@@ -522,7 +527,7 @@ body *:after {
   float: right;
   text-decoration: none;
   color: rgba(27, 16, 56, 0.7);
-  padding: 10px 0;
+  padding: 8px 0 12px;
   margin: 0 24px 0 0;
   -webkit-transition: 200ms color ease;
   -o-transition: 200ms color ease;
@@ -622,17 +627,18 @@ body *:after {
   margin: 0 0 24px;
   display: block;
 }
-.menu--item a {
+.menu--item > * {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 28px;
   line-height: 34px;
+  font-weight: 500;
   display: block;
 }
-.menu--item a:hover {
+.menu--item > *:hover {
   color: #ffffff;
 }
-.menu--item.is-active a {
+.menu--item.is-active > * {
   color: #ffffff;
 }
 @media (max-width: 767px) {
@@ -720,7 +726,7 @@ body *:after {
   -webkit-transition: 200ms opacity ease;
   -o-transition: 200ms opacity ease;
   transition: 200ms opacity ease;
-  padding: 28px 0 25px;
+  padding: 27px 0 26px;
   display: block;
   font-size: 16px;
   line-height: 20px;
@@ -797,7 +803,7 @@ body *:after {
   border-right: none;
   -webkit-border-radius: 4px 0 0 4px!important;
   border-radius: 4px 0 0 4px!important;
-  padding: 10px 15px;
+  padding: 7px 15px 11px;
   display: block;
   width: -webkit-calc(100% - 155px);
   width: calc(100% - 155px);
@@ -824,7 +830,7 @@ body *:after {
   -webkit-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
   text-align: center;
-  padding: 10px 0;
+  padding: 8px 0 12px;
   -webkit-transition: 200ms background ease,
 					200ms opacity ease;
   -o-transition: 200ms background ease,
@@ -855,7 +861,7 @@ body *:after {
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-right: none;
   color: #ffffff;
-  padding: 9px 14px;
+  padding: 6px 14px 10px;
 }
 .form.is-light .form--input::-webkit-input-placeholder {
   color: #ffffff;
@@ -907,7 +913,7 @@ body *:after {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  padding: 49px 32px;
+  padding: 46px 32px 47px;
   z-index: 2;
   display: none;
   position: absolute;
@@ -950,25 +956,34 @@ body *:after {
 }
 .modals--title {
   color: rgba(27, 16, 56, 0.8);
-  margin: 0 0 32px;
+  margin: 0 0 33px;
   font-size: 23px;
   line-height: 30px;
 }
 @media (max-width: 767px) {
   .modals--title {
-    margin: 0 0 20px;
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 30px;
   }
 }
 .modals--title img {
-  margin: -3px 9px 0 0;
+  margin: 0 9px 0 0;
   display: inline-block;
   vertical-align: top;
   width: 120px;
   height: 29px;
 }
+@media (max-width: 767px) {
+  .modals--title img {
+    margin: 1px 9px 0 0;
+    width: 100px;
+    height: 24px;
+  }
+}
 .modals--text {
   color: rgba(27, 16, 56, 0.8);
-  margin: 0 0 32px;
+  margin: 0 0 34px;
   font-size: 16px;
   line-height: 26px;
 }
@@ -976,7 +991,7 @@ body *:after {
   overflow: hidden;
 }
 .intro {
-  padding: 70px 0 97px;
+  padding: 66px 0 94px;
 }
 @media (max-width: 767px) {
   .intro {
@@ -989,7 +1004,7 @@ body *:after {
   }
 }
 .intro--title {
-  margin: 0 0 17px;
+  margin: 0 0 20px;
   text-align: center;
   font-size: 50px;
   line-height: 64px;
@@ -1011,7 +1026,7 @@ body *:after {
 .intro--text {
   text-align: center;
   opacity: .60;
-  margin: 0 0 38px;
+  margin: 0 0 41px;
   font-size: 20px;
   line-height: 24px;
 }
@@ -1123,7 +1138,7 @@ body *:after {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   border: 2px solid #c6c3cd;
-  padding: 14px 15px;
+  padding: 12px 15px 16px;
   margin: 0 3px;
   display: inline-block;
   vertical-align: top;
@@ -1138,7 +1153,7 @@ body *:after {
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .intro--feature {
-    padding: 6px 10px;
+    padding: 5px 10px 7px;
     margin: 0 2px;
     font-size: 14px;
     line-height: 20px;
@@ -1178,7 +1193,7 @@ body *:after {
   border-bottom-color: #ffffff;
 }
 .features {
-  padding: 0 0 107px;
+  padding: 0 0 105px;
 }
 @media (max-width: 767px) {
   .features {
@@ -1187,7 +1202,7 @@ body *:after {
 }
 .features--text {
   text-align: center;
-  margin: 0 auto 101px;
+  margin: 0 auto 104px;
   font-size: 24px;
   line-height: 32px;
   max-width: 480px;
@@ -1400,7 +1415,7 @@ body *:after {
 }
 .features--icon {
   color: #6B50FF;
-  margin: 0 0 15px;
+  margin: 0 0 12px;
 }
 .features--icon i {
   display: block;
@@ -1422,7 +1437,7 @@ body *:after {
   line-height: 22px;
 }
 .features--title {
-  margin: 0 0 8px;
+  margin: 0 0 9px;
   font-size: 20px;
   line-height: 30px;
   font-weight: 700;
@@ -1449,7 +1464,7 @@ body *:after {
   margin: 0;
 }
 .available {
-  padding: 0 0 109px;
+  padding: 0 0 105px;
 }
 @media (max-width: 767px) {
   .available {
@@ -1458,7 +1473,7 @@ body *:after {
 }
 .available--title {
   text-align: center;
-  margin: 0 0 38px;
+  margin: 0 0 42px;
   font-size: 28px;
   line-height: 32px;
   font-weight: 700;
@@ -1522,7 +1537,7 @@ body *:after {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   border: 2px solid rgba(31, 182, 255, 0.3);
-  padding: 18px 22px;
+  padding: 16px 22px 20px;
   margin: 0 8px;
   color: #1FB6FF;
   display: inline-block;
@@ -1533,7 +1548,7 @@ body *:after {
 }
 @media (max-width: 767px) {
   .available--box span {
-    padding: 8px 12px;
+    padding: 7px 12px 9px;
     margin: 0 4px 8px;
     font-size: 14px;
     line-height: 20px;
@@ -1541,7 +1556,7 @@ body *:after {
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .available--box span {
-    padding: 14px 16px;
+    padding: 12px 16px 16px;
     margin: 0 4px 8px;
     font-size: 18px;
     line-height: 20px;
@@ -1549,14 +1564,14 @@ body *:after {
 }
 @media (min-width: 1000px) and (max-width: 1171px) {
   .available--box span {
-    padding: 14px 16px;
+    padding: 12px 16px 16px;
     margin: 0 4px;
     font-size: 18px;
     line-height: 20px;
   }
 }
 .map {
-  padding: 0 0 145px;
+  padding: 0 0 144px;
 }
 @media (max-width: 767px) {
   .map {
@@ -1569,7 +1584,7 @@ body *:after {
   }
 }
 .map--title {
-  margin: 0 0 11px;
+  margin: 0 0 12px;
   text-align: center;
   color: #766F89;
   font-size: 28px;
@@ -1603,7 +1618,7 @@ body *:after {
 .map--text {
   text-align: center;
   opacity: .60;
-  margin: 0 0 62px;
+  margin: 0 0 65px;
   font-size: 20px;
   line-height: 32px;
 }
@@ -1627,6 +1642,7 @@ body *:after {
 }
 .map--tabs {
   float: left;
+  margin: -2px 0 0;
   width: 354px;
   height: auto;
 }
@@ -1667,7 +1683,7 @@ body *:after {
 }
 .map--tab {
   padding: 13px 0 13px 56px;
-  margin: 0 0 9px;
+  margin: 0 0 8px;
   opacity: .50;
   color: #1B1038;
   text-decoration: none;
@@ -1724,7 +1740,7 @@ body *:after {
 						200ms height ease;
   display: block;
   position: absolute;
-  top: 35px;
+  top: 37px;
   right: auto;
   bottom: auto;
   left: 16px;
@@ -1738,7 +1754,7 @@ body *:after {
   -webkit-transition: 200ms padding ease;
   -o-transition: 200ms padding ease;
   transition: 200ms padding ease;
-  margin: 0 0 2px;
+  margin: 0 0 3px;
   display: block;
   position: relative;
   top: auto;
@@ -1757,7 +1773,7 @@ body *:after {
   transition: 200ms width ease;
   display: block;
   position: absolute;
-  top: 11px;
+  top: 13px;
   right: auto;
   bottom: auto;
   left: 0;
@@ -1809,28 +1825,28 @@ body *:after {
 }
 .map--icon.is-01 {
   position: absolute;
-  top: 0;
+  top: 2px;
   right: auto;
   bottom: auto;
   left: 1px;
 }
 .map--icon.is-02 {
   position: absolute;
-  top: 13px;
+  top: 15px;
   right: auto;
   bottom: auto;
   left: 0;
 }
 .map--icon.is-03 {
   position: absolute;
-  top: 19px;
+  top: 21px;
   right: auto;
   bottom: auto;
   left: 0;
 }
 .map--icon.is-04 {
   position: absolute;
-  top: 21px;
+  top: 23px;
   right: auto;
   bottom: auto;
   left: 0;
@@ -1839,7 +1855,7 @@ body *:after {
   fill: #6B50FF;
 }
 .map--form {
-  margin: 25px 0 0;
+  margin: 29px 0 0;
 }
 @media (max-width: 767px) {
   .map--form {
@@ -1909,7 +1925,7 @@ body *:after {
   text-align: center;
   -webkit-border-radius: 29px;
   border-radius: 29px;
-  padding: 7px 0 0;
+  padding: 5px 0 7px;
   margin: -14px 0 0 -14px;
   -webkit-transition: 400ms -webkit-transform ease;
   transition: 400ms -webkit-transform ease;
@@ -1933,7 +1949,7 @@ body *:after {
 .map--dot.is-large {
   -webkit-border-radius: 58px;
   border-radius: 58px;
-  padding: 16px 0 0;
+  padding: 13px 0 16px;
   margin: -29px 0 0 -29px;
   width: 58px;
   height: 58px;
@@ -1946,7 +1962,7 @@ body *:after {
   transform: scale(1, 1);
 }
 .logotypes {
-  padding: 0 0 77px;
+  padding: 0 0 79px;
 }
 @media (max-width: 767px) {
   .logotypes {
@@ -1955,7 +1971,7 @@ body *:after {
 }
 .logotypes--grid {
   text-align: center;
-  margin: 0 0 21px;
+  margin: 0 0 19px;
   font-size: 0;
   line-height: 0;
 }
@@ -2059,7 +2075,7 @@ body *:after {
 .explore {
   background: #1FB6FF;
   color: #ffffff;
-  padding: 99px 0 97px;
+  padding: 95px 0 97px;
 }
 @media (max-width: 767px) {
   .explore {
@@ -2073,7 +2089,7 @@ body *:after {
   }
 }
 .explore--title {
-  margin: 0 0 22px;
+  margin: 0 0 23px;
   text-align: center;
   font-size: 32px;
   line-height: 32px;
@@ -2088,7 +2104,7 @@ body *:after {
 }
 .explore--text {
   text-align: center;
-  margin: 0 0 42px;
+  margin: 0 0 45px;
   font-size: 20px;
   line-height: 20px;
 }
