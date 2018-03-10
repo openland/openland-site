@@ -4,6 +4,7 @@
 - var phoneTel = '+14156367663'
 
 - var call = 'https://cal.mixmax.com/yurylifshits/30'
+- var signIn = 'https:/app.openland.com/signin'
 
 - var linkedin = '#linkedin'
 - var twitter = '#twitter'
@@ -45,9 +46,9 @@ html
 				li.header--item: a(href="#citiesPopup").js-modals-open Cities
 				li.header--item: a(href="#nonporfitsPopup").js-modals-open Nonprofits
 
-			.header--btn: a(href="#seeDemoPopup").btn.js-modals-open See demo
+			.header--btn: a(href="#seeDemoPopup").btn.js-modals-open Data access
 
-			a(href="#").header--auth Sign in
+			a(href=signIn).header--auth Sign in
 
 		.menu
 			a(href="#").menu--close
@@ -71,8 +72,6 @@ html
 
 					.intro--image: img(src="img/buildings.png" srcset="img/buildings@2x.png 2x" alt="")
 
-					+intro--row (['Owner-builder joint venture', 'Assembly deal', 'Ground lease', 'Option to buy'])
-
 			.features
 				.features--text Openland is created for #[span ambitious builders] who want to #[span buy more, faster]#[br.hidden-xs] using #[span one integrated system]
 				.features--lines #[.features--line]#[.features--line]#[.features--line]#[.features--line]
@@ -83,7 +82,7 @@ html
 					+features--item ('docs', 'Documents', ['Offers', 'Deal summaries', 'Financing', 'Contracts'])
 
 			.available
-				.available--title Available integrations
+				.available--title Data integrations
 				.available--in: .available--box #[span US Census]#[span Permit history]#[span Tax assestments]#[span Zoning]#[span Satellite maps]#[span Street view]#[span Transit maps]
 
 			.map
@@ -91,10 +90,10 @@ html
 				.map--text Something related to Openland land acquisition
 				.map--wrap
 					.map--tabs
-						+map--tab (1, 'Tower', '15', '468').is-active
-						+map--tab (2, 'Large Multi-Family', '15', '468')
-						+map--tab (3, 'Small Multi-Family', '15', '468')
-						+map--tab (4, 'Auxiliary Dwelling Units', '15', '468')
+						+map--tab (1, 'Tower', '15').is-active
+						+map--tab (2, 'Large Multi-Family', '15')
+						+map--tab (3, 'Small Multi-Family', '15')
+						+map--tab (4, 'Auxiliary Dwelling Units', '15')
 
 						.map--form: +form ('Request access')
 
@@ -146,7 +145,7 @@ html
 			.explore--form: +form ('Request a demo').is-light
 
 		footer.footer: .container: .footer--in
-			a(href="#").footer--logo: img(src="img/logotype.svg" alt="")
+			.footer--logo: img(src="img/logotype.svg" alt="")
 
 			nav.footer--nav: ul.footer--list
 				li.footer--item: a(href='mailto:' + email)= email
@@ -166,10 +165,10 @@ html
 			+modal--item ('seeDemoPopup', 'for owners', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
 
 		// Global site tag (gtag.js) - Google Analytics
-		//script(async src="https://www.googletagmanager.com/gtag/js?id=UA-115370014-1")
-		//script.
-		//	window.dataLayer = window.dataLayer || [];
-		//	function gtag(){dataLayer.push(arguments);}
-		//	gtag('js', new Date());
+		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-115370014-1")
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 
-		//	gtag('config', 'UA-115370014-1');
+			gtag('config', 'UA-115370014-1');

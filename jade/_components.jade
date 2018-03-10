@@ -1,4 +1,4 @@
-mixin map--tab (icon, title, sites, units)
+mixin map--tab (icon, title, sites)
 	a(href="#").map--tab&attributes(attributes)
 		.map--icon(class='is-0' + icon)
 			if (icon == 1)
@@ -47,7 +47,6 @@ mixin map--tab (icon, title, sites, units)
 
 		span= title
 		small #{sites} candidate sites
-		small #{units} units
 
 mixin intro--row (features)
 	.intro--row&attributes(attributes)
