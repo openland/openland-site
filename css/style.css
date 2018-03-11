@@ -780,6 +780,10 @@ body *:after {
   font-size: 16px;
   line-height: 16px;
 }
+.footer--social i.icon-tw {
+  font-size: 14px;
+  line-height: 16px;
+}
 .footer--social:hover {
   color: #1B1038;
 }
