@@ -1,4 +1,4 @@
-mixin map--tab (icon, title, sites)
+mixin map--tab (icon, title, description, descriptionXS)
 	a(href="#").map--tab&attributes(attributes)
 		.map--icon(class='is-0' + icon)
 			if (icon == 1)
@@ -46,7 +46,8 @@ mixin map--tab (icon, title, sites)
 					path(class="fillPurple" d="M25,12h-7v8h7V12z M24,19h-5v-6h5V19z")
 
 		span= title
-		small #{sites} candidate sites
+		small.hidden-xs= description
+		small.hidden-sm.hidden-md.hidden-lg= descriptionXS
 
 mixin intro--row (features)
 	.intro--row&attributes(attributes)
