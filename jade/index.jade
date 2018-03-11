@@ -43,12 +43,9 @@ html
 			nav.header--nav: ul.header--list
 				li.header--item.is-active: span Builders
 				li.header--item: a(href="#ownersPopup").js-modals-open Owners
-				li.header--item: a(href="#citiesPopup").js-modals-open Cities
-				li.header--item: a(href="#nonporfitsPopup").js-modals-open Nonprofits
+				li.header--item: a(href="#policymakersPopup").js-modals-open Policymakers
 
-			.header--btn: a(href="#seeDemoPopup").btn.js-modals-open Data access
-
-			a(href=signIn).header--auth Sign in
+			.header--btn: a(href=signIn).btn Sign in
 
 		.menu
 			a(href="#").menu--close
@@ -57,8 +54,7 @@ html
 				ul.menu--list
 					li.menu--item.is-active: span Builders
 					li.menu--item: a(href="#ownersPopup").js-modals-open Owners
-					li.menu--item: a(href="#citiesPopup").js-modals-open Cities
-					li.menu--item: a(href="#nonporfitsPopup").js-modals-open Nonprofits
+					li.menu--item: a(href="#policymakersPopup").js-modals-open Policymakers
 
 				+form ('Request a demo').is-light
 
@@ -160,9 +156,7 @@ html
 			.modals--overlay.js-modals-close
 
 			+modal--item ('ownersPopup', 'for owners', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
-			+modal--item ('citiesPopup', 'for owners', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
-			+modal--item ('nonporfitsPopup', 'for owners', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
-			+modal--item ('seeDemoPopup', 'for owners', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
+			+modal--item ('policymakersPopup', 'for policymakers', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
 
 		// Global site tag (gtag.js) - Google Analytics
 		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-115370014-1")

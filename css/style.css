@@ -926,6 +926,8 @@ body *:after {
     width: -webkit-calc(100vw - 30px);
     width: calc(100vw - 30px);
     height: auto;
+    max-width: 460px;
+    max-height: initial;
   }
 }
 .modals--close {
