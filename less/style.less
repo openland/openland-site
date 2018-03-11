@@ -990,7 +990,7 @@ body {
 			.font (0);
 		}
 
-		@media @media-md-only { .size (340px); }
+		@media @media-md-only { .size (350px); }
 	}
 
 	&--tab {
@@ -1052,14 +1052,9 @@ body {
 			}
 		}
 
-		small {
-			opacity: .60;
-			margin: 0 13px 0 0;
-
+		small { opacity: .60;
 			.font (14px, 20px);
 			.display (inline-block);
-
-			&:last-child { margin: 0; }
 		}
 
 		&:hover { opacity: 1; }
@@ -1104,16 +1099,23 @@ body {
 		float: right;
 		z-index: 1;
 		background: @grey-3;
+		overflow: hidden;
 
-		.size (696px);
+		.size (696px, 431px);
 		.position (relative);
 
-		@media @media-xs-only { margin: 0 -28px; }
-		@media @media-xs-sm { float: none;
-			.size (auto);
+		@media @media-xs-only {
+			margin: 0 -28px;
+			float: none;
+
+			.size (auto, 301px);
 		}
 
-		@media @media-md-only { .size (560px); }
+		@media @media-sm-only { float: none;
+			.size (auto, 431px);
+		}
+
+		@media @media-md-only { .size (550px, 431px); }
 
 		&:before {
 			content: "";
@@ -1121,19 +1123,27 @@ body {
 			background-image: -webkit-image-set(url(../img/map.png) 1x, url(../img/map@2x.png) 2x);
 			background-size: 100% 100%;
 			margin: 0 auto;
+			transition: 400ms transform ease;
+			transform-origin: right top;
 
 			.display (block);
 			.size (458px, 431px);
 
 			@media @media-xs-only { .size (320px, 301px); }
 		}
+
+		&.is-zoom:before {
+			transform: scale(1.6, 1.6);
+		}
 	}
 
 	&--box {
 		opacity: 0;
-		transition: 400ms opacity ease;
 		margin: 0 0 0 -229px;
 		z-index: 2;
+		transform-origin: right top;
+		transition: 400ms opacity ease,
+					400ms transform ease;
 
 		.position-tl (absolute, 0, 50%);
 		.size (458px, 431px);
@@ -1143,6 +1153,15 @@ body {
 		}
 
 		&.is-shown { opacity: 1; }
+	}
+
+	&--boxes.is-zoom &--box {
+		transform: scale(1.6, 1.6);
+	}
+
+	&--boxes.is-zoom &--box.is-shown &--dot {
+		transform-origin: right top;
+		transform: scale(1 / 1.6, 1 / 1.6);
 	}
 
 	&--dot {

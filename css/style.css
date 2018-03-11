@@ -1692,7 +1692,7 @@ body *:after {
 }
 @media (min-width: 1000px) and (max-width: 1171px) {
   .map--tabs {
-    width: 340px;
+    width: 350px;
     height: auto;
   }
 }
@@ -1798,14 +1798,10 @@ body *:after {
 }
 .map--tab small {
   opacity: .60;
-  margin: 0 13px 0 0;
   font-size: 14px;
   line-height: 20px;
   display: inline-block;
   vertical-align: top;
-}
-.map--tab small:last-child {
-  margin: 0;
 }
 .map--tab:hover {
   opacity: 1;
@@ -1889,8 +1885,9 @@ body *:after {
   float: right;
   z-index: 1;
   background: #cad1d2;
+  overflow: hidden;
   width: 696px;
-  height: auto;
+  height: 431px;
   position: relative;
   top: auto;
   right: auto;
@@ -1900,19 +1897,22 @@ body *:after {
 @media (max-width: 767px) {
   .map--boxes {
     margin: 0 -28px;
+    float: none;
+    width: auto;
+    height: 301px;
   }
 }
-@media (max-width: 999px) {
+@media (min-width: 768px) and (max-width: 999px) {
   .map--boxes {
     float: none;
     width: auto;
-    height: auto;
+    height: 431px;
   }
 }
 @media (min-width: 1000px) and (max-width: 1171px) {
   .map--boxes {
-    width: 560px;
-    height: auto;
+    width: 550px;
+    height: 431px;
   }
 }
 .map--boxes:before {
@@ -1922,6 +1922,14 @@ body *:after {
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
   margin: 0 auto;
+  -webkit-transition: 400ms -webkit-transform ease;
+  transition: 400ms -webkit-transform ease;
+  -o-transition: 400ms transform ease;
+  transition: 400ms transform ease;
+  transition: 400ms transform ease, 400ms -webkit-transform ease;
+  -webkit-transform-origin: right top;
+  -ms-transform-origin: right top;
+  transform-origin: right top;
   display: block;
   width: 458px;
   height: 431px;
@@ -1932,13 +1940,29 @@ body *:after {
     height: 301px;
   }
 }
+.map--boxes.is-zoom:before {
+  -webkit-transform: scale(1.6, 1.6);
+  -ms-transform: scale(1.6, 1.6);
+  transform: scale(1.6, 1.6);
+}
 .map--box {
   opacity: 0;
-  -webkit-transition: 400ms opacity ease;
-  -o-transition: 400ms opacity ease;
-  transition: 400ms opacity ease;
   margin: 0 0 0 -229px;
   z-index: 2;
+  -webkit-transform-origin: right top;
+  -ms-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-transition: 400ms opacity ease,
+					400ms -webkit-transform ease;
+  transition: 400ms opacity ease,
+					400ms -webkit-transform ease;
+  -o-transition: 400ms opacity ease,
+					400ms transform ease;
+  transition: 400ms opacity ease,
+					400ms transform ease;
+  transition: 400ms opacity ease,
+					400ms transform ease,
+					400ms -webkit-transform ease;
   position: absolute;
   top: 0;
   right: auto;
@@ -1956,6 +1980,19 @@ body *:after {
 }
 .map--box.is-shown {
   opacity: 1;
+}
+.map--boxes.is-zoom .map--box {
+  -webkit-transform: scale(1.6, 1.6);
+  -ms-transform: scale(1.6, 1.6);
+  transform: scale(1.6, 1.6);
+}
+.map--boxes.is-zoom .map--box.is-shown .map--dot {
+  -webkit-transform-origin: right top;
+  -ms-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-transform: scale(0.625, 0.625);
+  -ms-transform: scale(0.625, 0.625);
+  transform: scale(0.625, 0.625);
 }
 .map--dot {
   background: #1FB6FF;

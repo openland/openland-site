@@ -87,20 +87,38 @@ html
 				.map--text Something related to Openland land acquisition
 				.map--wrap
 					.map--tabs
-						+map--tab (1, 'Tower', '423 parcels with 0-2 story building in 90+ feet height zone', '423 parcels').is-active
+						+map--tab (1, 'Tower', '479 sites, 0-2 story in 90+ feet height zone', '423 parcels').is-active.is-zoom
 						+map--tab (2, 'Large Multi-Family', '62 parking lots 25,000+ square feet', '62 parking lots')
-						+map--tab (3, 'Small Multi-Family', '301 parcels with single story buildings in NC‑3 zone', '301 parcels')
+						+map--tab (3, 'Small Multi-Family', '301 sites, single story building in NC‑3 zone', '301 parcels')
 						+map--tab (4, 'Auxiliary Dwelling Units', '62,667 parcels in RH-1 zone', '62,667 parcels')
 
 						.map--form: +form ('Request access')
 
-					.map--boxes
+					.map--boxes.is-zoom
 						.map--box.is-shown
-							.map--dot(style="top: 19%; left: 58%") 10
-							.map--dot(style="top: 24%; left: 42%") 17
-							.map--dot(style="top: 50%; left: 47%") 6
-							.map--dot(style="top: 69%; left: 42%") 3
-							.map--dot.is-lg(style="top: 52%; left: 59%") 24
+							.map--dot.is-bg(style="top: 16.473317%; left: 55.458515%")
+							.map--dot.is-bg(style="top: 18.909512%; left: 72.598253%")
+							.map--dot.is-bg(style="top: 21.693735%; left: 65.829694%")
+							.map--dot.is-bg.is-sm(style="top: 24.941995%; left: 43.558951%")
+							.map--dot.is-bg(style="top: 25.870069%; left: 52.5109170%")
+							.map--dot.is-bg(style="top: 23.781902%; left: 59.4978165%")
+							.map--dot.is-bg(style="top: 25.290023%; left: 67.1397379%")
+							.map--dot.is-bg(style="top: 22.737819%; left: 75%")
+							.map--dot.is-bg(style="top: 29.234338%; left: 64.4104803%")
+							.map--dot.is-bg(style="top: 28.422273%; left: 78.2751091%")
+							.map--dot.is-bg(style="top: 34.918793%; left: 60.3711790%")
+
+							.map--dot.no-bg(style="top: 16.473317%; left: 55.458515%") 20
+							.map--dot.no-bg(style="top: 18.909512%; left: 72.598253%") 71
+							.map--dot.no-bg(style="top: 21.693735%; left: 65.829694%") 45
+							.map--dot.no-bg.is-sm(style="top: 24.941995%; left: 43.558951%") 1
+							.map--dot.no-bg(style="top: 25.870069%; left: 52.5109170%") 20
+							.map--dot.no-bg(style="top: 23.781902%; left: 59.4978165%") 99
+							.map--dot.no-bg(style="top: 25.290023%; left: 67.1397379%") 77
+							.map--dot.no-bg(style="top: 22.737819%; left: 75%") 70
+							.map--dot.no-bg(style="top: 29.234338%; left: 64.4104803%") 63
+							.map--dot.no-bg(style="top: 28.422273%; left: 78.2751091%") 8
+							.map--dot.no-bg(style="top: 34.918793%; left: 60.3711790%") 5
 
 						.map--box
 							.map--dot.is-sm(style="top: 7.849462%; left: 51.971688%") 1
