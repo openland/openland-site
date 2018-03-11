@@ -54,8 +54,9 @@ mixin intro--row (features)
 			.intro--feature= feature
 
 mixin form (btn)
-	form(method="POST" action="").form&attributes(attributes)
-		input(type="text" placeholder="E-mail").form--input
+	form(method="POST" action="https://one.us15.list-manage.com/subscribe/post?u=b588cb73ec7bd801c3b609670&amp;id=e7d5780171").form&attributes(attributes)
+		input(type="text" placeholder="E-mail" name="EMAIL").form--input
+		input(type="hidden" name="b_b588cb73ec7bd801c3b609670_e7d5780171" tabindex="-1" value="")
 		button(type="submit").form--submit= btn
 
 mixin features--item (icon, title, items)
