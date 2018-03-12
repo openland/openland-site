@@ -35,8 +35,8 @@ html
 		link(rel="stylesheet" type="text/css" href="css/style.css")
 
 	body
-		.page
-			header.header(data-animate="load"): .container: .header--in
+		.page(data-animate="load")
+			header.header: .container: .header--in
 				a(href="#").header--logo: img(src="img/logotype.svg" alt="")
 				a(href="#").header--open
 
@@ -49,17 +49,15 @@ html
 
 			.container
 				.intro
-					div(data-animate="load" data-animate-delay="200")
-						.intro--title A better way to make land acquisitions
-						.intro--text Openland is an end-to-end service to organize your dealflow and get connected to more opportunities
-						.intro--form: +form ('Request a demo')
-
-					.intro--illustration(data-animate="load" data-animate-delay="500")
+					.intro--title A better way to make land acquisitions
+					.intro--text Openland is an end-to-end service to organize your dealflow and get connected to more opportunities
+					.intro--form: +form ('Request a demo')
+					.intro--illustration
 						+intro--row (['Publicly owned land', 'Single story retail', 'Parking lot', 'Backyard', 'Recently-upzoned area'])
 
 						.intro--image: img(src="img/buildings.png" srcset="img/buildings@2x.png 2x" alt="")
 
-				.features(data-animate="scroll")
+				.features
 					.features--text Openland is created for #[span ambitious builders] who want to #[span buy more, faster]#[br.hidden-xs] using #[span one integrated system]
 					.features--lines #[.features--line]#[.features--line]#[.features--line]#[.features--line]
 					.features--grid
@@ -68,11 +66,11 @@ html
 						+features--item ('docs', 'Documents', ['Deal summary', 'Offers and contracts', 'Government forms', 'Financing'])
 						+features--item ('arrows', 'Dealflow', ['Deals by stage', 'Contact management', 'Tasks and action items', 'Dashboard and reporting'])
 
-				.available(data-animate="scroll")
+				.available
 					.available--title Data integrations
 					.available--in: .available--box #[span US Census]#[span Permit history]#[span Tax assestments]#[span Zoning]#[span Satellite maps]#[span Street view]#[span Transit maps]
 
-				.map(data-animate="scroll")
+				.map
 					.map--title Openland in action: #[span San Francisco Land Inventory]
 					.map--text All 154,449 parcels in the city, organized by size, location, zoning, current use, tax assessment, and permit history.
 					.map--wrap
@@ -195,24 +193,22 @@ html
 								.map--dot.no-bg.is-lg(style="top: 81.505376%; left: 69.362992%") 4.5k
 								.map--dot.no-bg.is-md(style="top: 86.129032%; left: 27.906976%") 411
 
-			div(data-animate="scroll")
-				.explore: .container
-					.explore--title Get started with Openland
-					.explore--text Discover what we can do to accelerate your land acquisition process
-					.explore--form: +form ('Request a demo').is-light
+			.explore: .container
+				.explore--title Get started with Openland
+				.explore--text Discover what we can do to accelerate your land acquisition process
+				.explore--form: +form ('Request a demo').is-light
 
-				footer.footer: .container: .footer--in
-					.footer--logo: img(src="img/logotype.svg" alt="")
+			footer.footer: .container: .footer--in
+				.footer--logo: img(src="img/logotype.svg" alt="")
 
-					nav.footer--nav: ul.footer--list
-						li.footer--item: a(href='mailto:' + email)= email
-						li.footer--item: a(href='tel:' + phoneTel)= phone
+				nav.footer--nav: ul.footer--list
+					li.footer--item: a(href='mailto:' + email)= email
+					li.footer--item: a(href='tel:' + phoneTel)= phone
 
-					.footer--socials
-						a(href=angellist target="_blank").footer--social: i.icon-al
-						-//a(href=linkedin target="_blank").footer--social: i.icon-lin
-						a(href=twitter target="_blank").footer--social: i.icon-tw
-						a(href=facebook target="_blank").footer--social: i.icon-fb
+				.footer--socials
+					a(href=angellist target="_blank").footer--social: i.icon-al
+					a(href=twitter target="_blank").footer--social: i.icon-tw
+					a(href=facebook target="_blank").footer--social: i.icon-fb
 
 		.menu
 			a(href="#").menu--close
