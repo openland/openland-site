@@ -20,7 +20,7 @@ $(document).ready(function () {
 	$('.map--tab').on('click', function (e) {
 		e.preventDefault();
 
-		var id = $(this).index() + 1;
+		var id = $(this).index();
 		var box = $('.map--box:nth-child(' + id + ')');
 
 		$('.map--tab').not(this).removeClass('is-active');

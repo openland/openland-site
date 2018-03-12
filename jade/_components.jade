@@ -75,4 +75,4 @@ mixin modal--item (modalID, title, text, btn)
 
 		.modals--title #[img(src="img/logotype.svg" alt="")]#{title}
 		.modals--text!= text
-		.modals--form: +form (btn)
+		.modals--btn: a(href="#").btn.is-block= btn
