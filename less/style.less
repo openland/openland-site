@@ -87,9 +87,7 @@ body {
 	color: @purple-1;
 	border-radius: 4px;
 	padding: 6px 14px 10px;
-	transition: 200ms border ease,
-				200ms background ease,
-				200ms color ease;
+	transition: 200ms border ease, 200ms background ease, 200ms color ease;
 
 	.display (inline-block);
 	.font (16px, 20px, 500);
@@ -107,9 +105,7 @@ body {
 	color: @white;
 	border-radius: 4px;
 	padding: 0 18px;
-	transition: 200ms border ease,
-				200ms color ease,
-				200ms background ease;
+	transition: 200ms border ease, 200ms color ease, 200ms background ease;
 
 	.display (inline-block);
 	.font (16px, 38px);
@@ -264,9 +260,7 @@ body {
 		padding: 6px 0 0;
 		margin: 20px 0 0;
 		opacity: 0;
-		transition: 400ms opacity ease,
-					400ms margin ease;
-
+		transition: 400ms opacity ease, 400ms margin ease;
 		transition-delay: 200ms;
 
 		.position (absolute, 50%, 0, auto, 0);
@@ -436,8 +430,7 @@ body {
 		border-radius: 0 4px 4px 0;
 		text-align: center;
 		padding: 8px 0 12px;
-		transition: 200ms background ease,
-					200ms opacity ease;
+		transition: 200ms background ease, 200ms opacity ease;
 
 		.size (155px, 48px);
 		.display (block);
@@ -660,7 +653,7 @@ body {
 		}
 
 		&:after {
-			bottom: -7px;
+			bottom: -6px;
 			border-top-color: @white;
 		}
 	}
@@ -999,8 +992,7 @@ body {
 		opacity: .50;
 		color: @text-1;
 		text-decoration: none;
-		transition: 200ms opacity ease,
-					200ms color ease;
+		transition: 200ms opacity ease, 200ms color ease;
 
 		.display (block);
 		.position (relative);
@@ -1024,8 +1016,7 @@ body {
 			background: @purple-1;
 			border-radius: 48px;
 			transform: translate(-50%, -50%);
-			transition: 200ms width ease,
-						200ms height ease;
+			transition: 200ms width ease, 200ms height ease;
 
 			.display (block);
 			.position-tl (absolute, 37px, 16px);
@@ -1131,10 +1122,6 @@ body {
 
 			@media @media-xs-only { .size (320px, 301px); }
 		}
-
-		&.is-zoom:before {
-			transform: scale(1.6, 1.6);
-		}
 	}
 
 	&--box {
@@ -1142,8 +1129,7 @@ body {
 		margin: 0 0 0 -229px;
 		z-index: 2;
 		transform-origin: right top;
-		transition: 400ms opacity ease,
-					400ms transform ease;
+		transition: 400ms opacity ease, 400ms transform ease;
 
 		.position-tl (absolute, 0, 50%);
 		.size (458px, 431px);
@@ -1153,15 +1139,6 @@ body {
 		}
 
 		&.is-shown { opacity: 1; }
-	}
-
-	&--boxes.is-zoom &--box {
-		transform: scale(1.6, 1.6);
-	}
-
-	&--boxes.is-zoom &--box.is-shown &--dot {
-		transform-origin: right top;
-		transform: scale(1 / 1.6, 1 / 1.6);
 	}
 
 	&--dot {

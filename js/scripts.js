@@ -12,11 +12,6 @@ $(document).ready(function () {
 		var id = $(this).index() + 1;
 		var box = $('.map--box:nth-child(' + id + ')');
 
-		$('.map--boxes').removeClass('is-zoom');
-
-		if ($(this).hasClass('is-zoom'))
-			$('.map--boxes').addClass('is-zoom');
-
 		$('.map--tab').not(this).removeClass('is-active');
 		$(this).addClass('is-active');
 

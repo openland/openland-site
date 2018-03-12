@@ -32,10 +32,6 @@ html
 
 		link(rel="stylesheet" type="text/css" href="css/style.css")
 
-		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
-
-		script(type="text/javascript" src="js/scripts.js")
-
 	body
 		header.header&attributes(attributes): .container: .header--in
 			a(href="#").header--logo: img(src="img/logotype.svg" alt="")
@@ -87,14 +83,14 @@ html
 				.map--text Something related to Openland land acquisition
 				.map--wrap
 					.map--tabs
-						+map--tab (1, 'Tower', '479 sites, 0-2 story in 90+ feet height zone', '423 parcels').is-active.is-zoom
+						+map--tab (1, 'Tower', '479 sites, 0-2 story in 90+ feet height zone', '423 parcels').is-active
 						+map--tab (2, 'Large Multi-Family', '62 parking lots 25,000+ square feet', '62 parking lots')
 						+map--tab (3, 'Small Multi-Family', '301 sites, single story building in NC‑3 zone', '301 parcels')
 						+map--tab (4, 'Auxiliary Dwelling Units', '62,667 parcels in RH-1 zone', '62,667 parcels')
 
 						.map--form: +form ('Request access')
 
-					.map--boxes.is-zoom
+					.map--boxes
 						.map--box.is-shown
 							.map--dot.is-bg(style="top: 16.473317%; left: 55.458515%")
 							.map--dot.is-bg(style="top: 18.909512%; left: 72.598253%")
@@ -228,6 +224,10 @@ html
 
 			+modal--item ('ownersPopup', 'for owners', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
 			+modal--item ('policymakersPopup', 'for policymakers', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
+
+		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
+
+		script(type="text/javascript" src="js/scripts.js")
 
 		// Global site tag (gtag.js) - Google Analytics
 		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-115370014-1")
