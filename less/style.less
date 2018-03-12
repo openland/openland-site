@@ -545,6 +545,19 @@ body {
 	}
 }
 
+[data-animate] {
+	opacity: 0;
+	transform: translate(0, -30px);
+	transition: 400ms opacity ease, 400ms transform ease;
+
+	&[data-animate-delay="200"] { transition-delay: 200ms; }
+	&[data-animate-delay="500"] { transition-delay: 500ms; }
+	&.is-animated {
+		opacity: 1;
+		transform: none;
+	}
+}
+
 // --------
 
 .page { overflow: hidden; }
@@ -988,7 +1001,7 @@ body {
 
 	&--tab {
 		padding: 13px 0 13px 56px;
-		margin: 0 0 8px;
+		margin: 0 0 16px;
 		opacity: .50;
 		color: @text-1;
 		text-decoration: none;
@@ -1079,7 +1092,7 @@ body {
 	}
 
 	&--tab.is-active &--icon svg .fillPurple { fill: @purple-1; }
-	&--form { margin: 29px 0 0;
+	&--form { margin: 45px 0 0;
 		@media @media-xs-only { .display (none); }
 		@media @media-sm-only { margin: 35px auto 0;
 			.size (370px);

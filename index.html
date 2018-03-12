@@ -14,49 +14,35 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <div class="header--in"><a class="header--logo" href="#"><img src="img/logotype.svg" alt=""></a><a class="header--open" href="#"></a>
-          <nav class="header--nav">
-            <ul class="header--list">
-              <li class="header--item is-active"><span>Builders</span></li>
-              <li class="header--item"><a class="js-modals-open" href="#ownersPopup">Owners</a></li>
-              <li class="header--item"><a class="js-modals-open" href="#policymakersPopup">Policymakers</a></li>
-            </ul>
-          </nav>
-          <div class="header--btn"><a class="btn" href="https:/app.openland.com/signin">Sign in</a></div>
-        </div>
-      </div>
-    </header>
-    <div class="menu"><a class="menu--close" href="#"></a>
-      <div class="menu--in">
-        <div class="container">
-          <ul class="menu--list">
-            <li class="menu--item is-active"><span>Builders</span></li>
-            <li class="menu--item"><a class="js-modals-open" href="#ownersPopup">Owners</a></li>
-            <li class="menu--item"><a class="js-modals-open" href="#policymakersPopup">Policymakers</a></li>
-          </ul>
-          <form class="form is-light" method="POST" action="https://one.us15.list-manage.com/subscribe/post?u=b588cb73ec7bd801c3b609670&amp;amp;id=e7d5780171">
-            <input class="form--input" type="text" placeholder="E-mail" name="EMAIL"/>
-            <input type="hidden" name="b_b588cb73ec7bd801c3b609670_e7d5780171" tabindex="-1" value=""/>
-            <button class="form--submit" type="submit">Request a demo</button>
-          </form>
-        </div>
-      </div>
-    </div>
     <div class="page">
+      <header class="header" data-animate="load">
+        <div class="container">
+          <div class="header--in"><a class="header--logo" href="#"><img src="img/logotype.svg" alt=""></a><a class="header--open" href="#"></a>
+            <nav class="header--nav">
+              <ul class="header--list">
+                <li class="header--item is-active"><span>Builders</span></li>
+                <li class="header--item"><a class="js-modals-open" href="#ownersPopup">Owners</a></li>
+                <li class="header--item"><a class="js-modals-open" href="#policymakersPopup">Policymakers</a></li>
+              </ul>
+            </nav>
+            <div class="header--btn"><a class="btn" href="https:/app.openland.com/signin">Sign in</a></div>
+          </div>
+        </div>
+      </header>
       <div class="container">
         <div class="intro">
-          <div class="intro--title">Land acquisition at scale</div>
-          <div class="intro--text">Accelerate every step of your process</div>
-          <div class="intro--form">
-            <form class="form" method="POST" action="https://one.us15.list-manage.com/subscribe/post?u=b588cb73ec7bd801c3b609670&amp;amp;id=e7d5780171">
-              <input class="form--input" type="text" placeholder="E-mail" name="EMAIL"/>
-              <input type="hidden" name="b_b588cb73ec7bd801c3b609670_e7d5780171" tabindex="-1" value=""/>
-              <button class="form--submit" type="submit">Request a demo</button>
-            </form>
+          <div data-animate="load" data-animate-delay="200">
+            <div class="intro--title">Land acquisition at scale</div>
+            <div class="intro--text">Accelerate every step of your process</div>
+            <div class="intro--form">
+              <form class="form" method="POST" action="https://one.us15.list-manage.com/subscribe/post?u=b588cb73ec7bd801c3b609670&amp;amp;id=e7d5780171">
+                <input class="form--input" type="text" placeholder="E-mail" name="EMAIL"/>
+                <input type="hidden" name="b_b588cb73ec7bd801c3b609670_e7d5780171" tabindex="-1" value=""/>
+                <button class="form--submit" type="submit">Request a demo</button>
+              </form>
+            </div>
           </div>
-          <div class="intro--illustration">
+          <div class="intro--illustration" data-animate="load" data-animate-delay="500">
             <div class="intro--row">
               <div class="intro--feature">Publicly owned land</div>
               <div class="intro--feature">Single story retail</div>
@@ -67,7 +53,7 @@
             <div class="intro--image"><img src="img/buildings.png" srcset="img/buildings@2x.png 2x" alt=""></div>
           </div>
         </div>
-        <div class="features">
+        <div class="features" data-animate="scroll">
           <div class="features--text">Openland is created for <span>ambitious builders</span> who want to <span>buy more, faster</span><br class="hidden-xs"> using <span>one integrated system</span></div>
           <div class="features--lines">
             <div class="features--line"></div>
@@ -118,13 +104,13 @@
             </div>
           </div>
         </div>
-        <div class="available">
+        <div class="available" data-animate="scroll">
           <div class="available--title">Data integrations</div>
           <div class="available--in">
             <div class="available--box"><span>US Census</span><span>Permit history</span><span>Tax assestments</span><span>Zoning</span><span>Satellite maps</span><span>Street view</span><span>Transit maps</span></div>
           </div>
         </div>
-        <div class="map">
+        <div class="map" data-animate="scroll">
           <div class="map--title">Openland in action<i>»</i><span>San Francisco Land Inventory</span></div>
           <div class="map--text">Something related to Openland land acquisition</div>
           <div class="map--wrap">
@@ -290,27 +276,45 @@
             </div>
           </div>
         </div>
-        <div class="logotypes">
-          <div class="logotypes--grid">
-            <div class="logotypes--item"><img src="#" alt=""></div>
-            <div class="logotypes--item"><img src="#" alt=""></div>
-            <div class="logotypes--item"><img src="#" alt=""></div>
-            <div class="logotypes--item"><img src="#" alt=""></div>
-            <div class="logotypes--item"><img src="#" alt=""></div>
-          </div>
-          <div class="logotypes--labels">
-            <div class="logotypes--label is-full">Press</div>
-            <div class="logotypes--label is-full">Featured customers</div>
-            <div class="logotypes--label">Investors</div>
+      </div>
+      <div data-animate="scroll">
+        <div class="explore">
+          <div class="container">
+            <div class="explore--title">Accelerate your land acquisition process</div>
+            <div class="explore--text">Accelerate every step of your process (TBD)</div>
+            <div class="explore--form">
+              <form class="form is-light" method="POST" action="https://one.us15.list-manage.com/subscribe/post?u=b588cb73ec7bd801c3b609670&amp;amp;id=e7d5780171">
+                <input class="form--input" type="text" placeholder="E-mail" name="EMAIL"/>
+                <input type="hidden" name="b_b588cb73ec7bd801c3b609670_e7d5780171" tabindex="-1" value=""/>
+                <button class="form--submit" type="submit">Request a demo</button>
+              </form>
+            </div>
           </div>
         </div>
+        <footer class="footer">
+          <div class="container">
+            <div class="footer--in">
+              <div class="footer--logo"><img src="img/logotype.svg" alt=""></div>
+              <nav class="footer--nav">
+                <ul class="footer--list">
+                  <li class="footer--item"><a href="mailto:hello@openland.com">hello@openland.com</a></li>
+                  <li class="footer--item"><a href="tel:+14156367663">+1 415 636 7663</a></li>
+                </ul>
+              </nav>
+              <div class="footer--socials"><a class="footer--social" href="https://angel.co/openland" target="_blank"><i class="icon-al"></i></a><a class="footer--social" href="#linkedin" target="_blank"><i class="icon-lin"></i></a><a class="footer--social" href="https://twitter.com/OpenlandHQ" target="_blank"><i class="icon-tw"></i></a><a class="footer--social" href="https://facebook.com/openlandhq/" target="_blank"><i class="icon-fb"></i></a></div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
-    <div class="explore">
-      <div class="container">
-        <div class="explore--title">Accelerate your land acquisition process</div>
-        <div class="explore--text">Accelerate every step of your process (TBD)</div>
-        <div class="explore--form">
+    <div class="menu"><a class="menu--close" href="#"></a>
+      <div class="menu--in">
+        <div class="container">
+          <ul class="menu--list">
+            <li class="menu--item is-active"><span>Builders</span></li>
+            <li class="menu--item"><a class="js-modals-open" href="#ownersPopup">Owners</a></li>
+            <li class="menu--item"><a class="js-modals-open" href="#policymakersPopup">Policymakers</a></li>
+          </ul>
           <form class="form is-light" method="POST" action="https://one.us15.list-manage.com/subscribe/post?u=b588cb73ec7bd801c3b609670&amp;amp;id=e7d5780171">
             <input class="form--input" type="text" placeholder="E-mail" name="EMAIL"/>
             <input type="hidden" name="b_b588cb73ec7bd801c3b609670_e7d5780171" tabindex="-1" value=""/>
@@ -319,20 +323,6 @@
         </div>
       </div>
     </div>
-    <footer class="footer">
-      <div class="container">
-        <div class="footer--in">
-          <div class="footer--logo"><img src="img/logotype.svg" alt=""></div>
-          <nav class="footer--nav">
-            <ul class="footer--list">
-              <li class="footer--item"><a href="mailto:hello@openland.com">hello@openland.com</a></li>
-              <li class="footer--item"><a href="tel:+14156367663">+1 415 636 7663</a></li>
-            </ul>
-          </nav>
-          <div class="footer--socials"><a class="footer--social" href="https://angel.co/openland" target="_blank"><i class="icon-al"></i></a><a class="footer--social" href="#linkedin" target="_blank"><i class="icon-lin"></i></a><a class="footer--social" href="https://twitter.com/OpenlandHQ" target="_blank"><i class="icon-tw"></i></a><a class="footer--social" href="https://facebook.com/openlandhq/" target="_blank"><i class="icon-fb"></i></a></div>
-        </div>
-      </div>
-    </footer>
     <div class="modals">
       <div class="modals--overlay js-modals-close"></div>
       <div class="modals--item" id="ownersPopup"><a class="modals--close js-modals-close" href="#"><i class="icon-close"></i></a>

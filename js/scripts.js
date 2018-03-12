@@ -6,6 +6,17 @@ $(document).ready(function () {
 		console.log('Click on a[href=#]');
 	});
 
+	$(window).on('load', function () {
+		$('[data-animate="load"]').addClass('is-animated');
+	});
+
+	$(window).on('load resize scroll', function () {
+		$('[data-animate="scroll"]:not(.is-animated)').each(function () {
+			if ($(window).scrollTop() + $(window).height() - ($(window).height() * 0.15) >= $(this).offset().top)
+				$(this).addClass('is-animated');
+		});
+	});
+
 	$('.map--tab').on('click', function (e) {
 		e.preventDefault();
 
@@ -18,19 +29,6 @@ $(document).ready(function () {
 		$('.map--box').not(box).removeClass('is-shown');
 		$(box).addClass('is-shown');
 	});
-
-	/*$('body').on('mousemove', function (e) {
-		//parallax (e, $('.intro--image.is-buildings')[0], 1);
-		parallax (e, $('.intro--image.is-clouds')[0], 1);
-	});
-
-	function parallax (e, target, layer) {
-		var layer_coeff = 75 / layer;
-		var x = -1 * ((e.pageX - ($(window).width() / 2)) / layer_coeff);
-		var y = -1 * ((e.pageY - ($(window).height() / 2)) / layer_coeff);
-
-		$(target).css('transform', 'translate(' + x + 'px, ' + y + 'px)');
-	};*/
 
 	$('.header--open').on('click', function (e) {
 		e.preventDefault();

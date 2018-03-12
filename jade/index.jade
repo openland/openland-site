@@ -33,16 +33,181 @@ html
 		link(rel="stylesheet" type="text/css" href="css/style.css")
 
 	body
-		header.header&attributes(attributes): .container: .header--in
-			a(href="#").header--logo: img(src="img/logotype.svg" alt="")
-			a(href="#").header--open
+		.page
+			header.header(data-animate="load"): .container: .header--in
+				a(href="#").header--logo: img(src="img/logotype.svg" alt="")
+				a(href="#").header--open
 
-			nav.header--nav: ul.header--list
-				li.header--item.is-active: span Builders
-				li.header--item: a(href="#ownersPopup").js-modals-open Owners
-				li.header--item: a(href="#policymakersPopup").js-modals-open Policymakers
+				nav.header--nav: ul.header--list
+					li.header--item.is-active: span Builders
+					li.header--item: a(href="#ownersPopup").js-modals-open Owners
+					li.header--item: a(href="#policymakersPopup").js-modals-open Policymakers
 
-			.header--btn: a(href=signIn).btn Sign in
+				.header--btn: a(href=signIn).btn Sign in
+
+			.container
+				.intro
+					div(data-animate="load" data-animate-delay="200")
+						.intro--title Land acquisition at scale
+						.intro--text Accelerate every step of your process
+						.intro--form: +form ('Request a demo')
+
+					.intro--illustration(data-animate="load" data-animate-delay="500")
+						+intro--row (['Publicly owned land', 'Single story retail', 'Parking lot', 'Backyard', 'Recently-upzoned area'])
+
+						.intro--image: img(src="img/buildings.png" srcset="img/buildings@2x.png 2x" alt="")
+
+				.features(data-animate="scroll")
+					.features--text Openland is created for #[span ambitious builders] who want to #[span buy more, faster]#[br.hidden-xs] using #[span one integrated system]
+					.features--lines #[.features--line]#[.features--line]#[.features--line]#[.features--line]
+					.features--grid
+						+features--item ('land', 'Land prospecting', ['Parcel search', 'Integrated data sources', 'Target lists', 'Intake forms for brokers'])
+						+features--item ('calc', 'Evaluations', ['Capacity analysis', 'Zoning check', 'Neighbourhood review', 'Financial feasibility'])
+						+features--item ('arrows', 'Dealflow management', ['Deals by stage', 'Notes', 'Contacts', 'Dashboard and reporting'])
+						+features--item ('docs', 'Documents', ['Offers', 'Deal summaries', 'Financing', 'Contracts'])
+
+				.available(data-animate="scroll")
+					.available--title Data integrations
+					.available--in: .available--box #[span US Census]#[span Permit history]#[span Tax assestments]#[span Zoning]#[span Satellite maps]#[span Street view]#[span Transit maps]
+
+				.map(data-animate="scroll")
+					.map--title Openland in action#[i »]#[span San Francisco Land Inventory]
+					.map--text Something related to Openland land acquisition
+					.map--wrap
+						.map--tabs
+							+map--tab (1, 'Tower', '642 sites, 0-2 stories in 90+ ft height zone', '642 sites').is-active
+							+map--tab (2, 'Large Multi-Family', '62 parking lots 25,000+ square feet', '62 parking lots')
+							+map--tab (3, 'Small Multi-Family', '301 sites, single story building in NC‑3 zone', '301 parcels')
+							+map--tab (4, 'Auxiliary Dwelling Units', '62,667 parcels in RH-1 zone', '62,667 parcels')
+
+							.map--form: +form ('Request access')
+
+						.map--boxes
+							.map--box.is-shown
+								.map--dot.is-bg(style="top: 16.473317%; left: 55.458515%")
+								.map--dot.is-bg(style="top: 18.909512%; left: 72.598253%")
+								.map--dot.is-bg(style="top: 21.693735%; left: 65.829694%")
+								.map--dot.is-bg.is-sm(style="top: 24.941995%; left: 43.558951%")
+								.map--dot.is-bg(style="top: 25.870069%; left: 52.5109170%")
+								.map--dot.is-bg(style="top: 23.781902%; left: 59.4978165%")
+								.map--dot.is-bg(style="top: 25.290023%; left: 67.1397379%")
+								.map--dot.is-bg(style="top: 22.737819%; left: 75%")
+								.map--dot.is-bg(style="top: 29.234338%; left: 64.4104803%")
+								.map--dot.is-bg(style="top: 28.422273%; left: 78.2751091%")
+								.map--dot.is-bg(style="top: 34.918793%; left: 60.3711790%")
+								.map--dot.is-bg(style="top: 40.835266%; left: 23.689956%")
+								.map--dot.is-bg.is-sm(style="top: 40.371229%; left: 37.336244%")
+								.map--dot.is-bg(style="top: 63.225058%; left: 7.860262%")
+								.map--dot.is-bg.is-md(style="top: 64.385150%; left: 81.659388%")
+								.map--dot.is-bg(style="top: 82.598607%; left: 75.873362%")
+
+								.map--dot.no-bg(style="top: 16.473317%; left: 55.458515%") 20
+								.map--dot.no-bg(style="top: 18.909512%; left: 72.598253%") 71
+								.map--dot.no-bg(style="top: 21.693735%; left: 65.829694%") 45
+								.map--dot.no-bg.is-sm(style="top: 24.941995%; left: 43.558951%") 1
+								.map--dot.no-bg(style="top: 25.870069%; left: 52.5109170%") 20
+								.map--dot.no-bg(style="top: 23.781902%; left: 59.4978165%") 99
+								.map--dot.no-bg(style="top: 25.290023%; left: 67.1397379%") 77
+								.map--dot.no-bg(style="top: 22.737819%; left: 75%") 70
+								.map--dot.no-bg(style="top: 29.234338%; left: 64.4104803%") 63
+								.map--dot.no-bg(style="top: 28.422273%; left: 78.2751091%") 8
+								.map--dot.no-bg(style="top: 34.918793%; left: 60.3711790%") 5
+								.map--dot.no-bg(style="top: 40.835266%; left: 23.689956%") 26
+								.map--dot.no-bg.is-sm(style="top: 40.371229%; left: 37.336244%") 1
+								.map--dot.no-bg(style="top: 63.225058%; left: 7.860262%") 26
+								.map--dot.no-bg.is-md(style="top: 64.385150%; left: 81.659388%") 101
+								.map--dot.no-bg(style="top: 82.598607%; left: 75.873362%") 9
+
+							.map--box
+								.map--dot.is-sm(style="top: 7.849462%; left: 51.971688%") 1
+								.map--dot(style="top: 6.236559%; left: 66.734074%") 3
+								.map--dot.is-sm(style="top: 34.516129%; left: 4.752275%") 1
+								.map--dot(style="top: 30.860215%; left: 46.511627%") 4
+								.map--dot(style="top: 29.569892%; left: 77.755308%") 6
+								.map--dot(style="top: 42.365591%; left: 31.648129%") 2
+								.map--dot(style="top: 39.032258%; left: 65.015166%") 13
+								.map--dot.is-sm(style="top: 45.053763%; left: 74.924165%") 1
+								.map--dot(style="top: 58.064516%; left: 47.522750%") 2
+								.map--dot.is-sm(style="top: 58.817204%; left: 58.746208%") 1
+								.map--dot(style="top: 55.376344%; left: 76.541961%") 14
+								.map--dot(style="top: 69.247311%; left: 21.941354%") 3
+								.map--dot(style="top: 83.333333%; left: 23.458038%") 2
+								.map--dot.is-sm(style="top: 78.279569%; left: 48.129423%") 1
+								.map--dot(style="top: 73.548387%; left: 72.194135%") 2
+								.map--dot(style="top: 83.440860%; left: 79.575328%") 6
+
+							.map--box
+								.map--dot(style="top: 11.612903%; left: 50.758341%") 37
+								.map--dot(style="top: 27.956989%; left: 23.963599%") 62
+								.map--dot(style="top: 26.559139%; left: 37.815975%") 48
+								.map--dot(style="top: 24.516129%; left: 59.656218%") 10
+								.map--dot(style="top: 56.989247%; left: 59.858442%") 56
+								.map--dot(style="top: 67.204301%; left: 77.654196%") 52
+								.map--dot(style="top: 79.784946%; left: 73.003033%") 36
+
+							.map--box
+								.map--dot.is-bg.is-sm(style="top: 13.010752%; left: 31.243680%")
+								.map--dot.is-bg.is-lg(style="top: 16.129032%; left: 43.781597%")
+								.map--dot.is-bg(style="top: 9.354838%; left: 59.959555%")
+								.map--dot.is-bg.is-md(style="top: 30%; left: 6.572295%")
+								.map--dot.is-bg.is-md(style="top: 24.301075%; left: 17.997977%")
+								.map--dot.is-bg.is-md(style="top: 30.215053%; left: 36.299292%")
+								.map--dot.is-bg.is-lg(style="top: 49.784946%; left: 12.841253%")
+								.map--dot.is-bg.is-lg(style="top: 50.107526%; left: 25.783619%")
+								.map--dot.is-bg.is-md(style="top: 46.666666%; left: 53.690596%")
+								.map--dot.is-bg.is-md(style="top: 62.473118%; left: 10.515672%")
+								.map--dot.is-bg.is-lg(style="top: 61.290322%; left: 21.233569%")
+								.map--dot.is-bg.is-lg(style="top: 55.698924%; left: 42.062689%")
+								.map--dot.is-bg.is-md(style="top: 59.032258%; left: 65.621840%")
+								.map--dot.is-bg.is-md(style="top: 51.720430%; left: 72.699696%")
+								.map--dot.is-bg.is-lg(style="top: 65.59139785%; left: 46.006066%")
+								.map--dot.is-bg.is-md(style="top: 70.537634%; left: 57.633973%")
+								.map--dot.is-bg.is-lg(style="top: 68.064516%; left: 73.508594%")
+								.map--dot.is-bg.is-lg(style="top: 80.430107%; left: 31.648129%")
+								.map--dot.is-bg.is-lg(style="top: 80.430107%; left: 46.309403%")
+								.map--dot.is-bg.is-lg(style="top: 81.505376%; left: 69.362992%")
+								.map--dot.is-bg.is-md(style="top: 86.129032%; left: 27.906976%")
+
+								.map--dot.no-bg.is-sm(style="top: 13.010752%; left: 31.243680%") 1
+								.map--dot.no-bg.is-lg(style="top: 16.129032%; left: 43.781597%") 1.7k
+								.map--dot.no-bg(style="top: 9.354838%; left: 59.959555%") 53
+								.map--dot.no-bg.is-md(style="top: 30%; left: 6.572295%") 561
+								.map--dot.no-bg.is-md(style="top: 24.301075%; left: 17.997977%") 441
+								.map--dot.no-bg.is-md(style="top: 30.215053%; left: 36.299292%") 490
+								.map--dot.no-bg.is-lg(style="top: 49.784946%; left: 12.841253%") 3.7k
+								.map--dot.no-bg.is-lg(style="top: 50.107526%; left: 25.783619%") 2.1k
+								.map--dot.no-bg.is-md(style="top: 46.666666%; left: 53.690596%") 122
+								.map--dot.no-bg.is-md(style="top: 62.473118%; left: 10.515672%") 702
+								.map--dot.no-bg.is-lg(style="top: 61.290322%; left: 21.233569%") 1.6k
+								.map--dot.no-bg.is-lg(style="top: 55.698924%; left: 42.062689%") 1.2k
+								.map--dot.no-bg.is-md(style="top: 59.032258%; left: 65.621840%") 534
+								.map--dot.no-bg.is-md(style="top: 51.720430%; left: 72.699696%") 132
+								.map--dot.no-bg.is-lg(style="top: 65.59139785%; left: 46.006066%") 1.6k
+								.map--dot.no-bg.is-md(style="top: 70.537634%; left: 57.633973%") 469
+								.map--dot.no-bg.is-lg(style="top: 68.064516%; left: 73.508594%") 4.6k
+								.map--dot.no-bg.is-lg(style="top: 80.430107%; left: 31.648129%") 1.6k
+								.map--dot.no-bg.is-lg(style="top: 80.430107%; left: 46.309403%") 7.5k
+								.map--dot.no-bg.is-lg(style="top: 81.505376%; left: 69.362992%") 4.5k
+								.map--dot.no-bg.is-md(style="top: 86.129032%; left: 27.906976%") 411
+
+			div(data-animate="scroll")
+				.explore: .container
+					.explore--title Accelerate your land acquisition process
+					.explore--text Accelerate every step of your process (TBD)
+					.explore--form: +form ('Request a demo').is-light
+
+				footer.footer: .container: .footer--in
+					.footer--logo: img(src="img/logotype.svg" alt="")
+
+					nav.footer--nav: ul.footer--list
+						li.footer--item: a(href='mailto:' + email)= email
+						li.footer--item: a(href='tel:' + phoneTel)= phone
+
+					.footer--socials
+						a(href=angellist target="_blank").footer--social: i.icon-al
+						a(href=linkedin target="_blank").footer--social: i.icon-lin
+						a(href=twitter target="_blank").footer--social: i.icon-tw
+						a(href=facebook target="_blank").footer--social: i.icon-fb
 
 		.menu
 			a(href="#").menu--close
@@ -54,182 +219,6 @@ html
 					li.menu--item: a(href="#policymakersPopup").js-modals-open Policymakers
 
 				+form ('Request a demo').is-light
-
-		.page: .container
-			.intro
-				.intro--title Land acquisition at scale
-				.intro--text Accelerate every step of your process
-				.intro--form: +form ('Request a demo')
-				.intro--illustration
-					+intro--row (['Publicly owned land', 'Single story retail', 'Parking lot', 'Backyard', 'Recently-upzoned area'])
-
-					.intro--image: img(src="img/buildings.png" srcset="img/buildings@2x.png 2x" alt="")
-
-			.features
-				.features--text Openland is created for #[span ambitious builders] who want to #[span buy more, faster]#[br.hidden-xs] using #[span one integrated system]
-				.features--lines #[.features--line]#[.features--line]#[.features--line]#[.features--line]
-				.features--grid
-					+features--item ('land', 'Land prospecting', ['Parcel search', 'Integrated data sources', 'Target lists', 'Intake forms for brokers'])
-					+features--item ('calc', 'Evaluations', ['Capacity analysis', 'Zoning check', 'Neighbourhood review', 'Financial feasibility'])
-					+features--item ('arrows', 'Dealflow management', ['Deals by stage', 'Notes', 'Contacts', 'Dashboard and reporting'])
-					+features--item ('docs', 'Documents', ['Offers', 'Deal summaries', 'Financing', 'Contracts'])
-
-			.available
-				.available--title Data integrations
-				.available--in: .available--box #[span US Census]#[span Permit history]#[span Tax assestments]#[span Zoning]#[span Satellite maps]#[span Street view]#[span Transit maps]
-
-			.map
-				.map--title Openland in action#[i »]#[span San Francisco Land Inventory]
-				.map--text Something related to Openland land acquisition
-				.map--wrap
-					.map--tabs
-						+map--tab (1, 'Tower', '642 sites, 0-2 stories in 90+ ft height zone', '642 sites').is-active
-						+map--tab (2, 'Large Multi-Family', '62 parking lots 25,000+ square feet', '62 parking lots')
-						+map--tab (3, 'Small Multi-Family', '301 sites, single story building in NC‑3 zone', '301 parcels')
-						+map--tab (4, 'Auxiliary Dwelling Units', '62,667 parcels in RH-1 zone', '62,667 parcels')
-
-						.map--form: +form ('Request access')
-
-					.map--boxes
-						.map--box.is-shown
-							.map--dot.is-bg(style="top: 16.473317%; left: 55.458515%")
-							.map--dot.is-bg(style="top: 18.909512%; left: 72.598253%")
-							.map--dot.is-bg(style="top: 21.693735%; left: 65.829694%")
-							.map--dot.is-bg.is-sm(style="top: 24.941995%; left: 43.558951%")
-							.map--dot.is-bg(style="top: 25.870069%; left: 52.5109170%")
-							.map--dot.is-bg(style="top: 23.781902%; left: 59.4978165%")
-							.map--dot.is-bg(style="top: 25.290023%; left: 67.1397379%")
-							.map--dot.is-bg(style="top: 22.737819%; left: 75%")
-							.map--dot.is-bg(style="top: 29.234338%; left: 64.4104803%")
-							.map--dot.is-bg(style="top: 28.422273%; left: 78.2751091%")
-							.map--dot.is-bg(style="top: 34.918793%; left: 60.3711790%")
-
-							.map--dot.is-bg(style="top: 40.835266%; left: 23.689956%")
-							.map--dot.is-bg.is-sm(style="top: 40.371229%; left: 37.336244%")
-							.map--dot.is-bg(style="top: 63.225058%; left: 7.860262%")
-							.map--dot.is-bg.is-md(style="top: 64.385150%; left: 81.659388%")
-							.map--dot.is-bg(style="top: 82.598607%; left: 75.873362%")
-
-							.map--dot.no-bg(style="top: 16.473317%; left: 55.458515%") 20
-							.map--dot.no-bg(style="top: 18.909512%; left: 72.598253%") 71
-							.map--dot.no-bg(style="top: 21.693735%; left: 65.829694%") 45
-							.map--dot.no-bg.is-sm(style="top: 24.941995%; left: 43.558951%") 1
-							.map--dot.no-bg(style="top: 25.870069%; left: 52.5109170%") 20
-							.map--dot.no-bg(style="top: 23.781902%; left: 59.4978165%") 99
-							.map--dot.no-bg(style="top: 25.290023%; left: 67.1397379%") 77
-							.map--dot.no-bg(style="top: 22.737819%; left: 75%") 70
-							.map--dot.no-bg(style="top: 29.234338%; left: 64.4104803%") 63
-							.map--dot.no-bg(style="top: 28.422273%; left: 78.2751091%") 8
-							.map--dot.no-bg(style="top: 34.918793%; left: 60.3711790%") 5
-
-							.map--dot.no-bg(style="top: 40.835266%; left: 23.689956%") 26
-							.map--dot.no-bg.is-sm(style="top: 40.371229%; left: 37.336244%") 1
-							.map--dot.no-bg(style="top: 63.225058%; left: 7.860262%") 26
-							.map--dot.no-bg.is-md(style="top: 64.385150%; left: 81.659388%") 101
-							.map--dot.no-bg(style="top: 82.598607%; left: 75.873362%") 9
-
-						.map--box
-							.map--dot.is-sm(style="top: 7.849462%; left: 51.971688%") 1
-							.map--dot(style="top: 6.236559%; left: 66.734074%") 3
-							.map--dot.is-sm(style="top: 34.516129%; left: 4.752275%") 1
-							.map--dot(style="top: 30.860215%; left: 46.511627%") 4
-							.map--dot(style="top: 29.569892%; left: 77.755308%") 6
-							.map--dot(style="top: 42.365591%; left: 31.648129%") 2
-							.map--dot(style="top: 39.032258%; left: 65.015166%") 13
-							.map--dot.is-sm(style="top: 45.053763%; left: 74.924165%") 1
-							.map--dot(style="top: 58.064516%; left: 47.522750%") 2
-							.map--dot.is-sm(style="top: 58.817204%; left: 58.746208%") 1
-							.map--dot(style="top: 55.376344%; left: 76.541961%") 14
-							.map--dot(style="top: 69.247311%; left: 21.941354%") 3
-							.map--dot(style="top: 83.333333%; left: 23.458038%") 2
-							.map--dot.is-sm(style="top: 78.279569%; left: 48.129423%") 1
-							.map--dot(style="top: 73.548387%; left: 72.194135%") 2
-							.map--dot(style="top: 83.440860%; left: 79.575328%") 6
-
-						.map--box
-							.map--dot(style="top: 11.612903%; left: 50.758341%") 37
-							.map--dot(style="top: 27.956989%; left: 23.963599%") 62
-							.map--dot(style="top: 26.559139%; left: 37.815975%") 48
-							.map--dot(style="top: 24.516129%; left: 59.656218%") 10
-							.map--dot(style="top: 56.989247%; left: 59.858442%") 56
-							.map--dot(style="top: 67.204301%; left: 77.654196%") 52
-							.map--dot(style="top: 79.784946%; left: 73.003033%") 36
-
-						.map--box
-							.map--dot.is-bg.is-sm(style="top: 13.010752%; left: 31.243680%")
-							.map--dot.is-bg.is-lg(style="top: 16.129032%; left: 43.781597%")
-							.map--dot.is-bg(style="top: 9.354838%; left: 59.959555%")
-							.map--dot.is-bg.is-md(style="top: 30%; left: 6.572295%")
-							.map--dot.is-bg.is-md(style="top: 24.301075%; left: 17.997977%")
-							.map--dot.is-bg.is-md(style="top: 30.215053%; left: 36.299292%")
-							.map--dot.is-bg.is-lg(style="top: 49.784946%; left: 12.841253%")
-							.map--dot.is-bg.is-lg(style="top: 50.107526%; left: 25.783619%")
-							.map--dot.is-bg.is-md(style="top: 46.666666%; left: 53.690596%")
-							.map--dot.is-bg.is-md(style="top: 62.473118%; left: 10.515672%")
-							.map--dot.is-bg.is-lg(style="top: 61.290322%; left: 21.233569%")
-							.map--dot.is-bg.is-lg(style="top: 55.698924%; left: 42.062689%")
-							.map--dot.is-bg.is-md(style="top: 59.032258%; left: 65.621840%")
-							.map--dot.is-bg.is-md(style="top: 51.720430%; left: 72.699696%")
-							.map--dot.is-bg.is-lg(style="top: 65.59139785%; left: 46.006066%")
-							.map--dot.is-bg.is-md(style="top: 70.537634%; left: 57.633973%")
-							.map--dot.is-bg.is-lg(style="top: 68.064516%; left: 73.508594%")
-							.map--dot.is-bg.is-lg(style="top: 80.430107%; left: 31.648129%")
-							.map--dot.is-bg.is-lg(style="top: 80.430107%; left: 46.309403%")
-							.map--dot.is-bg.is-lg(style="top: 81.505376%; left: 69.362992%")
-							.map--dot.is-bg.is-md(style="top: 86.129032%; left: 27.906976%")
-
-							.map--dot.no-bg.is-sm(style="top: 13.010752%; left: 31.243680%") 1
-							.map--dot.no-bg.is-lg(style="top: 16.129032%; left: 43.781597%") 1.7k
-							.map--dot.no-bg(style="top: 9.354838%; left: 59.959555%") 53
-							.map--dot.no-bg.is-md(style="top: 30%; left: 6.572295%") 561
-							.map--dot.no-bg.is-md(style="top: 24.301075%; left: 17.997977%") 441
-							.map--dot.no-bg.is-md(style="top: 30.215053%; left: 36.299292%") 490
-							.map--dot.no-bg.is-lg(style="top: 49.784946%; left: 12.841253%") 3.7k
-							.map--dot.no-bg.is-lg(style="top: 50.107526%; left: 25.783619%") 2.1k
-							.map--dot.no-bg.is-md(style="top: 46.666666%; left: 53.690596%") 122
-							.map--dot.no-bg.is-md(style="top: 62.473118%; left: 10.515672%") 702
-							.map--dot.no-bg.is-lg(style="top: 61.290322%; left: 21.233569%") 1.6k
-							.map--dot.no-bg.is-lg(style="top: 55.698924%; left: 42.062689%") 1.2k
-							.map--dot.no-bg.is-md(style="top: 59.032258%; left: 65.621840%") 534
-							.map--dot.no-bg.is-md(style="top: 51.720430%; left: 72.699696%") 132
-							.map--dot.no-bg.is-lg(style="top: 65.59139785%; left: 46.006066%") 1.6k
-							.map--dot.no-bg.is-md(style="top: 70.537634%; left: 57.633973%") 469
-							.map--dot.no-bg.is-lg(style="top: 68.064516%; left: 73.508594%") 4.6k
-							.map--dot.no-bg.is-lg(style="top: 80.430107%; left: 31.648129%") 1.6k
-							.map--dot.no-bg.is-lg(style="top: 80.430107%; left: 46.309403%") 7.5k
-							.map--dot.no-bg.is-lg(style="top: 81.505376%; left: 69.362992%") 4.5k
-							.map--dot.no-bg.is-md(style="top: 86.129032%; left: 27.906976%") 411
-
-			.logotypes
-				.logotypes--grid
-					.logotypes--item: img(src="#" alt="")
-					.logotypes--item: img(src="#" alt="")
-					.logotypes--item: img(src="#" alt="")
-					.logotypes--item: img(src="#" alt="")
-					.logotypes--item: img(src="#" alt="")
-
-				.logotypes--labels
-					.logotypes--label.is-full Press
-					.logotypes--label.is-full Featured customers
-					.logotypes--label Investors
-
-		.explore: .container
-			.explore--title Accelerate your land acquisition process
-			.explore--text Accelerate every step of your process (TBD)
-			.explore--form: +form ('Request a demo').is-light
-
-		footer.footer: .container: .footer--in
-			.footer--logo: img(src="img/logotype.svg" alt="")
-
-			nav.footer--nav: ul.footer--list
-				li.footer--item: a(href='mailto:' + email)= email
-				li.footer--item: a(href='tel:' + phoneTel)= phone
-
-			.footer--socials
-				a(href=angellist target="_blank").footer--social: i.icon-al
-				a(href=linkedin target="_blank").footer--social: i.icon-lin
-				a(href=twitter target="_blank").footer--social: i.icon-tw
-				a(href=facebook target="_blank").footer--social: i.icon-fb
 
 		.modals
 			.modals--overlay.js-modals-close
