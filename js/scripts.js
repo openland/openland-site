@@ -10,13 +10,6 @@ $(document).ready(function () {
 		$('[data-animate="load"]').addClass('is-animated');
 	});
 
-	$(window).on('load resize scroll', function () {
-		$('[data-animate="scroll"]:not(.is-animated)').each(function () {
-			if ($(window).scrollTop() + $(window).height() - ($(window).height() * 0.15) >= $(this).offset().top)
-				$(this).addClass('is-animated');
-		});
-	});
-
 	$('.map--tab').on('click', function (e) {
 		e.preventDefault();
 
