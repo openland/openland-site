@@ -17,15 +17,17 @@ doctype html
 html
 	head
 		meta(charset="utf-8")
-		title San Francisco Land Inventory
+
+		title Openland — A better way to make land acquisitions
+		meta(name="description" content="End-to-end service to accelerate your land acquisition process")
 
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no")
 		meta(name="format-detection" content="telephone=no")
 
-		meta(property="og:title" content="San Francisco Land Inventory")
+		meta(property="og:title" content="Openland — A better way to make land acquisitions")
 		meta(property="og:url" content="https://openland.com/")
-		meta(property="og:description" content="Explore development capacity of the city, parcel by parcel")
-		meta(property="og:image" content="https://openland.com/img/statecraft-land-og.jpg")
+		meta(property="og:description" content="End-to-end service to accelerate your land acquisition process")
+		meta(property="og:image" content="https://openland.com/img/og.jpg")
 
 		link(rel="shortcut icon" href="favicon.ico")
 		link(rel="icon" href="favicon.png")
@@ -48,8 +50,8 @@ html
 			.container
 				.intro
 					div(data-animate="load" data-animate-delay="200")
-						.intro--title Land acquisition at scale
-						.intro--text Accelerate every step of your process
+						.intro--title A better way to make land acquisitions
+						.intro--text Openland is an end-to-end service to organize your dealflow and get connected to more opportunities
 						.intro--form: +form ('Request a demo')
 
 					.intro--illustration(data-animate="load" data-animate-delay="500")
@@ -61,20 +63,23 @@ html
 					.features--text Openland is created for #[span ambitious builders] who want to #[span buy more, faster]#[br.hidden-xs] using #[span one integrated system]
 					.features--lines #[.features--line]#[.features--line]#[.features--line]#[.features--line]
 					.features--grid
-						+features--item ('land', 'Land prospecting', ['Parcel search', 'Integrated data sources', 'Target lists', 'Intake forms for brokers'])
-						+features--item ('calc', 'Evaluations', ['Capacity analysis', 'Zoning check', 'Neighbourhood review', 'Financial feasibility'])
-						+features--item ('arrows', 'Dealflow management', ['Deals by stage', 'Notes', 'Contacts', 'Dashboard and reporting'])
-						+features--item ('docs', 'Documents', ['Offers', 'Deal summaries', 'Financing', 'Contracts'])
+						+features--item ('land', 'Land prospecting', ['Filter-based search', 'Integrated data sources', 'Intake forms for owners', 'Notifications'])
+						+features--item ('calc', 'Evaluations', ['Zoning requirements', 'Capacity analysis', 'Financial feasibility', 'Deal checklist'])
+						+features--item ('arrows', 'Dealflow', ['Deals by stage', 'Contact management', 'Tasks and action items', 'Dashboard and reporting'])
+						+features--item ('docs', 'Documents', ['Deal summary', 'Offers and contracts', 'Government forms', 'Financing'])
 
 				.available(data-animate="scroll")
 					.available--title Data integrations
 					.available--in: .available--box #[span US Census]#[span Permit history]#[span Tax assestments]#[span Zoning]#[span Satellite maps]#[span Street view]#[span Transit maps]
 
 				.map(data-animate="scroll")
-					.map--title Openland in action#[i »]#[span San Francisco Land Inventory]
-					.map--text Something related to Openland land acquisition
+					.map--title Openland in action: #[span San Francisco Land Inventory]
+					.map--text All 154,449 parcels in the city, organized by size, location, zoning, current use, tax assessment, and permit history.
 					.map--wrap
+						.map--label.visible-xs Opportunity lists
 						.map--tabs
+							.map--label.hidden-xs Opportunity lists
+
 							+map--tab (1, 'Tower', '642 sites, 0-2 stories in 90+ ft height zone', '642 sites').is-active
 							+map--tab (2, 'Large Multi-Family', '62 parking lots 25,000+ square feet', '62 parking lots')
 							+map--tab (3, 'Small Multi-Family', '301 sites, single story building in NC‑3 zone', '301 parcels')
@@ -192,8 +197,8 @@ html
 
 			div(data-animate="scroll")
 				.explore: .container
-					.explore--title Accelerate your land acquisition process
-					.explore--text Accelerate every step of your process (TBD)
+					.explore--title Get started with Openland
+					.explore--text Discover what we can do to accelerate your land acquisition process
 					.explore--form: +form ('Request a demo').is-light
 
 				footer.footer: .container: .footer--in
@@ -223,8 +228,8 @@ html
 		.modals
 			.modals--overlay.js-modals-close
 
-			+modal--item ('ownersPopup', 'for owners', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
-			+modal--item ('policymakersPopup', 'for policymakers', 'Openland is created for ambitious builders who want to buy more &amp; build faster. Openland is created&nbsp;for ambitious builders who want to buy', 'Notify me')
+			+modal--item ('ownersPopup', 'for owners', 'Openland is working on online tools for institutional and individual landowners to help them better understand the value of their property, compare alternative development options, and to connect with best-fit builders.<br /><br />Get in touch to join our private beta program.', 'Notify me')
+			+modal--item ('policymakersPopup', 'for policymakers', 'Openland helps cities and nonprofits to model and evaluate impact of policy decisions. We bring data to discussions on land use, zoning, and housing affordability.<br /><br />Get in touch to explore what we can do together.', 'Notify me')
 
 		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
 

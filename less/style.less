@@ -581,9 +581,10 @@ body {
 	&--text {
 		text-align: center;
 		opacity: .60;
-		margin: 0 0 41px;
+		margin: 0 auto 41px;
 
-		.font (20px, 24px);
+		.font (20px, 28px);
+		.max-size (600px);
 
 		@media @media-xs-only { margin: 0 0 40px;
 			.font (20px, 28px);
@@ -961,9 +962,10 @@ body {
 	&--text {
 		text-align: center;
 		opacity: .60;
-		margin: 0 0 65px;
+		margin: 0 auto 65px;
 
 		.font (20px, 32px);
+		.max-size (600px);
 
 		@media @media-xs-only { margin: 0 0 50px;
 			.font (16px, 22px);
@@ -971,6 +973,18 @@ body {
 	}
 
 	&--wrap { .clearfix (); }
+	&--label {
+		opacity: .60;
+		margin: -2px 0 30px;
+
+		.font (16px, 20px);
+
+		@media @media-xs-sm {
+			margin-top: 0;
+			text-align: center;
+		}
+	}
+
 	&--tabs {
 		float: left;
 		margin: -2px 0 0;
@@ -1001,7 +1015,7 @@ body {
 
 	&--tab {
 		padding: 13px 0 13px 56px;
-		margin: 0 0 16px;
+		margin: 0 0 8px;
 		opacity: .50;
 		color: @text-1;
 		text-decoration: none;
@@ -1092,7 +1106,7 @@ body {
 	}
 
 	&--tab.is-active &--icon svg .fillPurple { fill: @purple-1; }
-	&--form { margin: 45px 0 0;
+	&--form { margin: 21px 0 0;
 		@media @media-xs-only { .display (none); }
 		@media @media-sm-only { margin: 35px auto 0;
 			.size (370px);
@@ -1105,7 +1119,7 @@ body {
 		background: @grey-3;
 		overflow: hidden;
 
-		.size (696px, 431px);
+		.size (660px, 431px);
 		.position (relative);
 
 		@media @media-xs-only {
