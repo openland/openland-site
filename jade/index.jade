@@ -11,6 +11,12 @@
 - var twitter = 'https://twitter.com/OpenlandHQ'
 - var facebook = 'https://facebook.com/openlandhq/'
 
+- var ownersText = '<p>Openland is working on online tools for institutional and individual landowners to help them better understand the value of their property, compare alternative development options, and to connect with best-fit builders.</p><p>Get in touch to join our private beta program.</p>'
+- var ownersMail = 'owners@openland.com'
+
+- var policyText = '<p>Openland helps cities and nonprofits to model and evaluate impact of policy decisions. We bring data to discussions on land use, zoning, and housing affordability.</p><p>Get in touch to explore what we can do together.</p>'
+- var policyMail = 'policy@openland.com'
+
 include ./_components.jade
 
 doctype html
@@ -42,8 +48,15 @@ html
 
 				nav.header--nav: ul.header--list
 					li.header--item.is-active: span Builders
-					li.header--item: a(href="#ownersPopup").js-modals-open Owners
-					li.header--item: a(href="#policymakersPopup").js-modals-open Policymakers
+					li.header--item
+						a(href="#") Owners
+
+						+header--sub ('for owners', ownersText, ownersMail)
+
+					li.header--item
+						a(href="#") Policymakers
+
+						+header--sub ('for policymakers', policyText, policyMail)
 
 				.header--btn: a(href=signIn).btn Sign in
 
@@ -225,8 +238,8 @@ html
 		.modals
 			.modals--overlay.js-modals-close
 
-			+modal--item ('ownersPopup', 'for owners', 'Openland is working on online tools for institutional and individual landowners to help them better understand the value of their property, compare alternative development options, and to connect with best-fit builders.<br /><br />Get in touch to join our private beta program.', 'owners@openland.com')
-			+modal--item ('policymakersPopup', 'for policymakers', 'Openland helps cities and nonprofits to model and evaluate impact of policy decisions. We bring data to discussions on land use, zoning, and housing affordability.<br /><br />Get in touch to explore what we can do together.', 'policy@openland.com')
+			+modal--item ('ownersPopup', 'for owners', ownersText, ownersMail)
+			+modal--item ('policymakersPopup', 'for policymakers', policyText, policyMail)
 
 		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
 

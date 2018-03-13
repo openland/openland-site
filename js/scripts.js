@@ -53,4 +53,16 @@ $(document).ready(function () {
 		$('.modals, .modals--item').fadeOut(200);
 	});
 
+	$('.header--item').on({
+		mouseenter: function () {
+				if ($(this).find('.header--sub').length > 0)
+					$(this).find('.header--sub').stop().fadeIn(200);
+			},
+
+		mouseleave: function () {
+				if ($(this).find('.header--sub').length > 0)
+					$(this).find('.header--sub').stop().fadeOut(200);
+			}
+	});
+
 });

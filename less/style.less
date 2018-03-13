@@ -101,7 +101,12 @@ body {
 
 // --------
 
-.header { padding: 24px 0;
+.header {
+	padding: 24px 0;
+	z-index: 2;
+
+	.position (relative);
+
 	@media @media-xs-only { padding: 31px 0; }
 
 	&--in {
@@ -158,12 +163,14 @@ body {
 		.font (0);
 	}
 
-	&--item { margin: 0 16px;
+	&--item { padding: 0 16px;
 		.display (inline-block);
+		.position (relative);
 
-		@media @media-sm-only { margin: 0 8px; }
+		@media @media-sm-only { padding: 0 8px; }
 
-		> * {
+		> a,
+		> span {
 			color: fade(@text-1, 70);
 			text-decoration: none;
 			padding: 8px 0 12px;
@@ -185,8 +192,66 @@ body {
 			&:hover { color: @text-1; }
 		}
 
-		&.is-active > * { color: @text-1;
-			&:before { .display (block); }
+		&.is-active {
+			& > a,
+			& > span { color: @text-1;
+				&:before { .display (block); }
+			}
+		}
+	}
+
+	&--sub {
+		transform: translate(-50%, 0);
+		white-space: initial;
+		z-index: 1000;
+		padding: 7px 0 0;
+
+		.position-tl (absolute, 100%, 50%);
+		.size (300px);
+		.display (none);
+
+		&-i {
+			padding: 24px 16px;
+			box-shadow: 0 4px 24px 0 fade(@text-1, 10);
+			border-radius: 4px;
+			background: @white;
+
+			.position (relative);
+
+			&:before {
+				content: "";
+				border-bottom: 10px solid @white;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				margin: 0 0 0 -10px;
+
+				.display (block);
+				.size (0);
+				.position-tl (absolute, -10px, 50%);
+			}
+		}
+
+		&-t {
+			color: fade(@text-1, 80);
+			margin: 0 0 18px;
+
+			.font (16px, 20px);
+
+			img { margin: -1px 9px 0 0;
+				.display (inline-block);
+				.size (84px, 21px);
+			}
+		}
+
+		&-d {
+			color: fade(@text-1, 70);
+			margin: 0 0 26px;
+
+			.font (13px, 21px);
+
+			p { margin: 0 0 10px;
+				&:last-child { margin: 0; }
+			}
 		}
 	}
 
@@ -477,7 +542,7 @@ body {
 		.position-tl (absolute, 50%, 50%);
 		.size (460px);
 
-		@media @media-xs-only { padding: 40px 20px 31px;
+		@media @media-xs-only { padding: 40px 20px 30px;
 			.size (~'calc(100vw - 30px)');
 			.max-size (460px);
 		}
@@ -524,6 +589,10 @@ body {
 		margin: 0 0 34px;
 
 		.font (16px, 26px);
+
+		p { margin: 0 0 10px;
+			&:last-child { margin: 0; }
+		}
 	}
 }
 
@@ -534,7 +603,12 @@ body {
 // --------
 
 .page { overflow: hidden; }
-.intro { padding: 66px 0 120px;
+.intro {
+	padding: 66px 0 120px;
+	z-index: 1;
+
+	.position (relative);
+
 	@media @media-xs-only { padding: 14px 0 65px; }
 	@media @media-sm-only { padding: 61px 0 81px; }
 

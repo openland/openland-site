@@ -76,3 +76,10 @@ mixin modal--item (modalID, title, text, btn)
 		.modals--title #[img(src="img/logotype.svg" alt="")]#{title}
 		.modals--text!= text
 		.modals--btn: a(href='mailto:' + btn).btn= btn
+
+mixin header--sub (title, text, btn)
+	.header--sub&attributes(attributes): .header--sub-i
+		.header--sub-t #[img(src="img/logotype.svg" alt="")]#{title}
+		.header--sub-d!= text
+
+		a(href='mailto:' + btn).btn= btn
