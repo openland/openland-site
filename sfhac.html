@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>SFHAC Dashboard | San Francisco Housing in Numbers</title>
+    <meta name="description" content="Statistics on housing production, building permits, and growth capacity in San Francisco"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta property="og:title" content="SFHAC Dashboard | San Francisco Housing in Numbers"/>
+    <meta property="og:url" content="https://openland.com/sfhac/"/>
+    <meta property="og:description" content="Statistics on housing production, building permits, and growth capacity in San Francisco"/>
+    <meta property="og:image" content="https://openland.com/img/sfhac/og.png"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="icon" href="/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/css/sfhac.css"/>
+  </head>
+  <body>
+    <div class="page">
+      <div class="container">
+        <header class="header">
+          <div class="header--logo"></div>
+          <div class="header--box">
+            <div class="header--title">SFHAC Dashboard</div>
+            <div class="header--text">San Francisco Housing in Numbers</div>
+            <div class="header--sfhac"></div>
+          </div>
+        </header>
+        <div class="page--in js-sticky-p">
+          <div class="page--side">
+            <div class="js-sticky">
+              <div class="box">
+                <nav class="nav">
+                  <ul class="nav--list">
+                    <li class="is-active"><a href="#" data-box="1">Housing forecast</a></li>
+                    <li><a href="#" data-box="2">Growth capacity</a></li>
+                    <li><a href="#" data-box="3">Building permits</a></li>
+                    <li><a href="#" data-box="4">Voter guide</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="box">
+                <div class="share"><span class="share--label">Share</span><a class="share--item is-fb" href="#">
+                    <svg viewBox="0 0 20 20" width="20" height="20">
+                      <path d="M18.9,0H1.1C0.5,0,0,0.5,0,1.1v17.8C0,19.5,0.5,20,1.1,20h17.8l0,0c0.6,0,1.1-0.5,1.1-1.1V1.1 C20,0.5,19.5,0,18.9,0z M16.9,5.8h-1.6c-1.3,0-1.5,0.6-1.5,1.5v1.9h3l-0.4,3h-2.6V20h-3.1v-7.7H8.1v-3h2.6V7c0-2.6,1.6-4,3.9-4 c0.8,0,1.6,0,2.3,0.1V5.8z"></path>
+                    </svg></a><a class="share--item is-tw" href="#">
+                    <svg viewBox="0 0 21 18" width="21" height="18">
+                      <path d="M21,2.1L21,2.1L21,2.1L21,2.1L21,2.1l-0.1,0l0,0l-0.1,0l-0.5,0.2c-0.3,0.1-0.7,0.2-1,0.3l-0.5,0.1h-0.1l0,0l0,0 l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0.1-0.1c0.1,0,0.1-0.1,0.2-0.1c0-0.1,0.1-0.1,0.3-0.3 c0.2-0.2,0.3-0.3,0.5-0.5C19.9,1.5,20,1.2,20.2,1c0.1-0.1,0.1-0.3,0.2-0.4c0,0,0-0.1,0-0.1l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0 l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l-0.1,0.1c-0.2,0.1-0.3,0.2-0.5,0.3c-0.3,0.1-0.6,0.3-0.8,0.4c-0.3,0.1-0.5,0.2-0.8,0.2 c-0.2,0.1-0.4,0-0.5-0.1c-0.1-0.1-0.2-0.2-0.4-0.3c-0.1-0.1-0.3-0.2-0.5-0.3c-0.2-0.1-0.4-0.2-0.6-0.3c-0.2-0.1-0.4-0.1-0.7-0.2 L15,0h-1v0c0,0-0.1,0-0.2,0c-0.2,0-0.4,0.1-0.6,0.2c-0.3,0.1-0.5,0.2-0.8,0.4c-0.5,0.3-1,0.7-1.3,1.2C11,2,10.8,2.2,10.8,2.3 c-0.1,0.2-0.2,0.4-0.3,0.6c-0.1,0.3-0.2,0.5-0.2,0.8c0,0.3-0.1,0.5-0.1,0.8c0,0.2,0,0.5,0,0.7l0,0.2l0,0l0,0l-0.1,0 c-0.1,0-0.3,0-0.5,0c-0.2,0-0.6-0.1-1.1-0.2c-0.5-0.1-0.8-0.2-1-0.2C7.4,5,7.1,4.9,6.6,4.7C6.1,4.5,5.7,4.3,5.2,4.1 C4.8,3.8,4.4,3.6,4.1,3.3C3.7,3.1,3.5,2.9,3.2,2.7C3,2.5,2.9,2.4,2.9,2.3c0,0-0.1-0.1-0.1-0.1c0,0-0.2-0.1-0.4-0.4 C2.1,1.6,1.9,1.4,1.8,1.2L1.5,0.9l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0L1.2,1.3 C1.1,1.5,1.1,1.8,1,2C0.9,2.2,0.9,2.4,0.9,2.6c0,0.2,0,0.4,0,0.6c0,0.5,0.1,1,0.3,1.5C1.3,5,1.4,5.2,1.5,5.4 c0.1,0.2,0.2,0.3,0.3,0.5C1.9,6,2,6.2,2.1,6.3c0.1,0.2,0.3,0.3,0.5,0.5l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0 l0,0l0,0l0,0H2.6l-0.1,0c-0.1,0-0.2,0-0.5-0.1C1.7,6.7,1.4,6.6,1.2,6.5L0.9,6.4l0,0l0,0l0,0l0,0l0,0l0,0l0,0.4C0.9,7,0.9,7.3,1,7.6 c0.1,0.3,0.2,0.6,0.3,0.9C1.4,8.7,1.6,9,1.8,9.2c0.2,0.2,0.3,0.4,0.5,0.6c0.1,0.1,0.3,0.3,0.5,0.4c0.2,0.1,0.4,0.3,0.7,0.4 c0.2,0.1,0.3,0.2,0.5,0.2c0,0,0.1,0,0.1,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0c0,0-0.1,0-0.2,0c-0.2,0-0.4,0-0.6,0 c-0.3,0-0.5,0-0.7,0l-0.2,0l0,0l0,0l0,0l0,0l0,0l0,0l0.2,0.4c0.1,0.2,0.2,0.4,0.3,0.6c0.1,0.2,0.3,0.4,0.4,0.5 c0.1,0.1,0.2,0.3,0.4,0.4c0.1,0.1,0.3,0.3,0.5,0.4c0.2,0.1,0.4,0.3,0.7,0.4C5,13.8,5.2,13.9,5.4,14C5.6,14,5.7,14,5.9,14 c0.1,0,0.2,0,0.3,0l0.2,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l-0.4,0.3c-0.3,0.2-0.5,0.3-0.6,0.4 C5,15,4.8,15.1,4.4,15.3c-0.4,0.2-0.7,0.3-1.1,0.4C2.4,15.9,1.5,16,0.6,16c-0.3,0-0.4,0-0.5,0L0,16l0,0l0,0v0h0l0,0l0,0l0,0l0,0l0,0 l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0.2,0.1c0.1,0.1,0.2,0.1,0.3,0.2c0.1,0,0.3,0.2,0.7,0.4c0.4,0.2,0.9,0.4,1.3,0.6 c0.4,0.1,0.8,0.3,1.2,0.4c0.3,0.1,0.6,0.1,1.1,0.2c0.3,0,0.5,0.1,0.8,0.1c0.1,0,0.2,0,0.3,0L6,18v0h1.2v0l0.7-0.1 c0.4,0,0.8-0.1,1.2-0.2c0.4-0.1,0.7-0.2,1.1-0.3c0.4-0.1,0.7-0.3,1.1-0.4c0.3-0.1,0.7-0.3,1-0.5c0.3-0.2,0.5-0.3,0.8-0.4 c0.2-0.1,0.5-0.3,0.7-0.5c0.2-0.2,0.5-0.4,0.7-0.6c0.2-0.2,0.3-0.3,0.4-0.3l0.5-0.5c0.3-0.3,0.5-0.6,0.7-0.9 c1.1-1.4,1.9-3.1,2.4-4.9c0.1-0.5,0.3-1,0.3-1.5c0.1-0.4,0.1-0.8,0.1-1.2c0-0.4,0-0.7,0-1c0-0.3,0.1-0.6,0.4-0.8 c0.3-0.2,0.5-0.4,0.7-0.7c0.2-0.3,0.4-0.4,0.4-0.4c0,0,0-0.1,0.1-0.1c0,0,0.1-0.1,0.3-0.3l0.2-0.3l0,0l0,0L21,2.1L21,2.1L21,2.1 L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1z"></path>
+                    </svg></a><a class="share--item is-em" href="#">
+                    <svg viewBox="0 0 19 19" width="19" height="19">
+                      <path d="M9.8,0C4,0,0,3.9,0,9.5C0,15.3,4.1,19,10,19c1.1,0,2.2-0.1,3-0.3v-2c-0.6,0.2-1.7,0.3-2.7,0.3 c-4.8,0-7.8-2.8-7.8-7.4c0-4.5,3-7.6,7.4-7.6c4.2,0,6.9,2.6,6.9,6.8c0,2.2-0.7,3.5-1.6,3.5c-0.6,0-1-0.5-1-1.3V5.2h-2.6v1.3h-0.2 c-0.5-1-1.4-1.6-2.7-1.6c-2.2,0-3.8,1.9-3.8,4.6c0,2.9,1.6,4.8,3.9,4.8c1.3,0,2.2-0.6,2.7-1.7h0.2c0.3,1.1,1.4,1.7,2.8,1.7 c2.8,0,4.6-2.2,4.6-5.8C19,3.4,15.2,0,9.8,0z M9.4,12c-1,0-1.7-0.9-1.7-2.4c0-1.5,0.6-2.4,1.7-2.4s1.7,0.9,1.7,2.4 C11.1,11.1,10.5,12,9.4,12z"></path>
+                    </svg></a></div>
+              </div>
+              <footer class="footer"><a class="footer--link" href="#">SFHAC.org</a>
+                <div class="footer--label">Data from <a href="#">SF Data</a></div>
+                <div class="footer--label">Powered by <a href="#">Openland</a></div>
+              </footer>
+            </div>
+          </div>
+          <div class="page--box">
+            <div class="box">
+              <div class="box--intro">
+                <div class="box--title">Housing forecast</div>
+                <div class="box--subtitle">Projected completions are below target</div>
+                <div class="box--text">Based on&nbsp;the current data, San Francisco housing production in&nbsp;2017-2018 will represent a&nbsp;nearly&nbsp;50% drop from record-high 2016 level of&nbsp;5000+&nbsp;units.</div>
+              </div>
+              <div class="counters">
+                <div class="counter">2017 net new units<span>3123</span></div>
+                <div class="counter">2018 net new units<span>2812</span></div>
+                <div class="counter">Mayor’s annual target<span>5000</span></div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="box--intro">
+                <div class="box--title">Growth capacity</div>
+                <div class="box--subtitle">Underdeveloped sites in&nbsp;San Francisco</div>
+              </div>
+              <div class="map">
+                <div class="map--legend">
+                  <label class="map--item is-blue">
+                    <input type="checkbox" checked>
+                    <div class="map--item-l">Tower opportunities<span>0-2 stories in 90+ feet height limit</span></div>
+                  </label>
+                  <label class="map--item is-red">
+                    <input type="checkbox" checked>
+                    <div class="map--item-l">Large parking lots<span>25,000+ ft<sup>2</sup></span></div>
+                  </label>
+                  <label class="map--item is-yellow">
+                    <input type="checkbox" checked>
+                    <div class="map--item-l">Commercial corridors<span>Single story buildings in NC-3 zoning</span></div>
+                  </label>
+                </div>
+                <div class="map--box"></div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="box--intro">
+                <div class="box--title">Building permits</div>
+                <div class="box--subtitle">Issued permits</div>
+                <div class="box--text">The last four years demonstrate a&nbsp;stable level of ~4000 housing units permitted per year. That gives little hope for meeting mayor&rsquo;s annual target of&nbsp;5000 units in&nbsp;near future.</div>
+              </div>
+              <div class="graph">graph</div>
+              <div class="box--intro">
+                <div class="box--subtitle">Permit applications</div>
+                <div class="box--text">New permit applications set record in&nbsp;2016. Year-to-year variation is&nbsp;high and the 2017 year saw significantly reduced volume of&nbsp;applications. To&nbsp;meet mayor&rsquo;s goal in&nbsp;housing production, permit filings volume needs to&nbsp;stay high consistently for several years.</div>
+              </div>
+              <div class="graph">graph</div>
+              <div class="box--intro">
+                <div class="box--subtitle">Recent permits</div>
+                <div class="box--text">The latest issued permits for new construction projects with 10+&nbsp;units</div>
+              </div>
+              <div class="table">
+                <div class="table--export"><a class="btn" href="#">Export list</a></div>
+                <div class="table--head">
+                  <div class="table--th">Address</div>
+                  <div class="table--th">Permit ID</div>
+                  <div class="table--th">Parcel ID</div>
+                  <div class="table--th">Units</div>
+                  <div class="table--th">Issued</div>
+                  <div class="table--th">Data source</div>
+                </div>
+                <div class="table--pages">
+                  <div class="table--page is-shown">
+                    <div class="table--body">
+                      <div class="table--row">
+                        <div class="table--td">Value</div>
+                        <div class="table--td">Value</div>
+                        <div class="table--td">Value</div>
+                        <div class="table--td">Value</div>
+                        <div class="table--td">Value</div>
+                        <div class="table--td">Value</div>
+                      </div>
+                      <div class="table--row">
+                        <div class="table--td">Value</div>
+                        <div class="table--td">Value</div>
+                        <div class="table--td">Value</div>
+                        <div class="table--td">Value</div>
+                        <div class="table--td">Value</div>
+                        <div class="table--td">Value</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table--page">page 2</div>
+                </div>
+                <div class="table--tools">
+                  <div class="table--counter">687 items</div>
+                  <div class="table--arrows"><a class="table--arrow is-disabled" href="#">Previous</a><a class="table--arrow" href="#">Next</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="box--intro">
+                <div class="box--title">Voter guide</div>
+                <div class="box--subtitle">SFHAC recommendations for upcoming ballot measures.</div>
+              </div>
+              <div class="cards">
+                <div class="cards--item">
+                  <div class="card is-yes">
+                    <div class="card--title">State Prop 69</div>
+                    <div class="card--text">This measure would require that revenue from the diesel sales tax and Transportation Improvement Fee, as&nbsp;enacted by&nbsp;Senate Bill&nbsp;1 (SB&nbsp;1), be&nbsp;used for transportation-related purposes; and exempt revenue generated by&nbsp;SB&nbsp;1&rsquo;s tax increases and fee schedules from the state appropriations limit. Investing in&nbsp;our transit infrastructure is&nbsp;critical and was the original intent of&nbsp;Senate Bill&nbsp;1.</div>
+                    <div class="card--link">...<a href="#">show more</a></div>
+                  </div>
+                </div>
+                <div class="cards--item">
+                  <div class="card is-yes">
+                    <div class="card--title">Regional Measure 3</div>
+                    <div class="card--text">Increases tolls on&nbsp;the Bay Area&rsquo;s seven state-owned bridges, excluding the Golden Gate Bridge, by&nbsp;$1&nbsp;in&nbsp;2019, $1&nbsp;in&nbsp;2022 and $1&nbsp;in&nbsp;2025 to&nbsp;fund regional transportation capital investments. The investments made with the increased revenue would include: $500 million to&nbsp;expand BART&rsquo;s fleet; $375 million to&nbsp;expand BART to&nbsp;Silicon Valley; $325 million to&nbsp;bring high-speed rail to&nbsp;the Transbay Transit Center in&nbsp;San Francisco; $300 million to&nbsp;expand ferry service; and $50 million to&nbsp;implement a&nbsp;new Clipper-based fare system. In&nbsp;addition, the expenditure plan includes up&nbsp;to&nbsp;$60 million annually to&nbsp;support transit operations, including $35 million for ferry service; $20 million for regional express bus service; and $5&nbsp;million for Transbay Transit Center operations.</div>
+                    <div class="card--link">...<a href="#">show more</a></div>
+                  </div>
+                </div>
+                <div class="cards--item">
+                  <div class="card is-yes">
+                    <div class="card--title">Local Proposition D</div>
+                    <div class="card--text">Commercial Rent Tax for Housing and Homelessness. This measure would impose a&nbsp;tax on&nbsp;individuals and businesses that receive income from the lease or&nbsp;sublease of&nbsp;commercial space, primarily offices. The measure exempts certain spaces, including non-profits used for production, distribution and repair (including industrial, warehouse and similar uses), retail sales and services (including chain stores) and entertainment, arts and recreation.</div>
+                    <div class="card--link">...<a href="#">show more</a></div>
+                  </div>
+                </div>
+                <div class="cards--item">
+                  <div class="card is-yes">
+                    <div class="card--title">Prop F</div>
+                    <div class="card--text">Legal Representation for Tenants. This measure would require the City of&nbsp;San Francisco to&nbsp;create a&nbsp;program to&nbsp;provide free legal representation for all San Francisco residential tenants facing eviction. Through this new program, tenants would be&nbsp;entitled to&nbsp;full scope legal representation&nbsp;&mdash; including appearing on&nbsp;behalf of&nbsp;the tenant in&nbsp;court proceedings and representing the tenant throughout the case&nbsp;&mdash; within 30&nbsp;days of&nbsp;receiving an&nbsp;eviction notice or&nbsp;being served with an&nbsp;eviction lawsuit. Providing an&nbsp;attorney for all tenants, and making sure tenants are aware of&nbsp;their rights, is&nbsp;critical.</div>
+                    <div class="card--link">...<a href="#">show more</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="feedback">
+                <div class="feedback--title">Stay in&nbsp;touch for new stats from SFHAC</div>
+                <form class="feedback--form" method="POST" action="">
+                  <input class="feedback--input" type="text" placeholder="Email">
+                  <button class="feedback--btn" type="submit">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.sticky-kit.js"></script>
+    <script type="text/javascript" src="js/sfhac.js"></script>
+  </body>
+</html>

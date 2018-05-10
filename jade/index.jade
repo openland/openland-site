@@ -17,28 +17,25 @@
 - var policyText = '<p>Openland helps cities and nonprofits to model and evaluate impact of policy decisions. We bring data to discussions on land use, zoning, and housing affordability.</p><p>Get in touch to explore what we can do together.</p>'
 - var policyMail = 'policy@openland.com'
 
+-
+	meta = {
+		page: 'landing',
+		title: 'Openland — A better way to do land acquisition',
+		description: 'End-to-end service to organize your dealflow and get connected to more opportunities',
+
+		og: {
+			title: 'Openland — A better way to do land acquisition',
+			url: 'https://openland.com/',
+			description: 'End-to-end service to organize your dealflow and get connected to more opportunities',
+			image: 'https://openland.com/img/og-2.png'
+		}
+	}
+
 include ./_components.jade
 
 doctype html
 html
-	head
-		meta(charset="utf-8")
-
-		title Openland — A better way to do land acquisition
-		meta(name="description" content="End-to-end service to organize your dealflow and get connected to more opportunities")
-
-		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no")
-		meta(name="format-detection" content="telephone=no")
-
-		meta(property="og:title" content="Openland — A better way to do land acquisition")
-		meta(property="og:url" content="https://openland.com/")
-		meta(property="og:description" content="End-to-end service to organize your dealflow and get connected to more opportunities")
-		meta(property="og:image" content="https://openland.com/img/og-2.png")
-
-		link(rel="shortcut icon" href="favicon.ico")
-		link(rel="icon" href="favicon.png")
-
-		link(rel="stylesheet" type="text/css" href="css/style.css")
+	+head (meta)
 
 	body
 		.page(data-animate="load")
@@ -243,20 +240,7 @@ html
 
 		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
 
-		script(type="text/javascript" src="js/scripts.js")
+		script(type="text/javascript" src="js/landing.js")
 
-		// Yandex.Metrika counter
-		script(type="text/javascript").
-			(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47431468 = new Ya.Metrika2({ id:47431468, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2");
-
-		noscript: div: img(src="https://mc.yandex.ru/watch/47431468" style="position:absolute; left:-9999px;" alt="")
-		// /Yandex.Metrika counter
-
-		// Global site tag (gtag.js) - Google Analytics
-		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-115370014-1")
-		script.
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'UA-115370014-1');
+		+yandex-metrika
+		+google-analytics

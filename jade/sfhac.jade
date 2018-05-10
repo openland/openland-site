@@ -1,0 +1,163 @@
+-
+	meta = {
+		page: 'sfhac',
+		title: 'SFHAC Dashboard | San Francisco Housing in Numbers',
+		description: 'Statistics on housing production, building permits, and growth capacity in San Francisco',
+
+		og: {
+			title: 'SFHAC Dashboard | San Francisco Housing in Numbers',
+			url: 'https://openland.com/sfhac/',
+			description: 'Statistics on housing production, building permits, and growth capacity in San Francisco',
+			image: 'https://openland.com/img/sfhac/og.png'
+		}
+	}
+
+include ./_components.jade
+
+mixin card (title, text, link)
+	.card&attributes(attributes)
+		.card--title!= title
+		.card--text!= text
+		.card--link ...#[a(href=link) show more]
+
+mixin table--row (c1, c2, c3, c4, c5, c6)
+	.table--row&attributes(attributes)
+		.table--td!= c1
+		.table--td!= c2
+		.table--td!= c3
+		.table--td!= c4
+		.table--td!= c5
+		.table--td!= c6
+
+doctype html
+html
+	+head (meta)
+
+	body
+		.page: .container
+			header.header
+				.header--logo
+				.header--box
+					.header--title SFHAC Dashboard
+					.header--text San Francisco Housing in Numbers
+					.header--sfhac
+
+			.page--in.js-sticky-p
+				.page--side: .js-sticky
+					.box: nav.nav: ul.nav--list
+						li.is-active: a(href="#" data-box="1") Housing forecast
+						li: a(href="#" data-box="2") Growth capacity
+						li: a(href="#" data-box="3") Building permits
+						li: a(href="#" data-box="4") Voter guide
+
+					.box: .share
+						span.share--label Share
+						a(href="#").share--item.is-fb: svg(viewBox="0 0 20 20" width="20" height="20"): path(d="M18.9,0H1.1C0.5,0,0,0.5,0,1.1v17.8C0,19.5,0.5,20,1.1,20h17.8l0,0c0.6,0,1.1-0.5,1.1-1.1V1.1 C20,0.5,19.5,0,18.9,0z M16.9,5.8h-1.6c-1.3,0-1.5,0.6-1.5,1.5v1.9h3l-0.4,3h-2.6V20h-3.1v-7.7H8.1v-3h2.6V7c0-2.6,1.6-4,3.9-4 c0.8,0,1.6,0,2.3,0.1V5.8z")
+						a(href="#").share--item.is-tw: svg(viewBox="0 0 21 18" width="21" height="18"): path(d="M21,2.1L21,2.1L21,2.1L21,2.1L21,2.1l-0.1,0l0,0l-0.1,0l-0.5,0.2c-0.3,0.1-0.7,0.2-1,0.3l-0.5,0.1h-0.1l0,0l0,0 l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0.1-0.1c0.1,0,0.1-0.1,0.2-0.1c0-0.1,0.1-0.1,0.3-0.3 c0.2-0.2,0.3-0.3,0.5-0.5C19.9,1.5,20,1.2,20.2,1c0.1-0.1,0.1-0.3,0.2-0.4c0,0,0-0.1,0-0.1l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0 l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l-0.1,0.1c-0.2,0.1-0.3,0.2-0.5,0.3c-0.3,0.1-0.6,0.3-0.8,0.4c-0.3,0.1-0.5,0.2-0.8,0.2 c-0.2,0.1-0.4,0-0.5-0.1c-0.1-0.1-0.2-0.2-0.4-0.3c-0.1-0.1-0.3-0.2-0.5-0.3c-0.2-0.1-0.4-0.2-0.6-0.3c-0.2-0.1-0.4-0.1-0.7-0.2 L15,0h-1v0c0,0-0.1,0-0.2,0c-0.2,0-0.4,0.1-0.6,0.2c-0.3,0.1-0.5,0.2-0.8,0.4c-0.5,0.3-1,0.7-1.3,1.2C11,2,10.8,2.2,10.8,2.3 c-0.1,0.2-0.2,0.4-0.3,0.6c-0.1,0.3-0.2,0.5-0.2,0.8c0,0.3-0.1,0.5-0.1,0.8c0,0.2,0,0.5,0,0.7l0,0.2l0,0l0,0l-0.1,0 c-0.1,0-0.3,0-0.5,0c-0.2,0-0.6-0.1-1.1-0.2c-0.5-0.1-0.8-0.2-1-0.2C7.4,5,7.1,4.9,6.6,4.7C6.1,4.5,5.7,4.3,5.2,4.1 C4.8,3.8,4.4,3.6,4.1,3.3C3.7,3.1,3.5,2.9,3.2,2.7C3,2.5,2.9,2.4,2.9,2.3c0,0-0.1-0.1-0.1-0.1c0,0-0.2-0.1-0.4-0.4 C2.1,1.6,1.9,1.4,1.8,1.2L1.5,0.9l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0L1.2,1.3 C1.1,1.5,1.1,1.8,1,2C0.9,2.2,0.9,2.4,0.9,2.6c0,0.2,0,0.4,0,0.6c0,0.5,0.1,1,0.3,1.5C1.3,5,1.4,5.2,1.5,5.4 c0.1,0.2,0.2,0.3,0.3,0.5C1.9,6,2,6.2,2.1,6.3c0.1,0.2,0.3,0.3,0.5,0.5l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0 l0,0l0,0l0,0H2.6l-0.1,0c-0.1,0-0.2,0-0.5-0.1C1.7,6.7,1.4,6.6,1.2,6.5L0.9,6.4l0,0l0,0l0,0l0,0l0,0l0,0l0,0.4C0.9,7,0.9,7.3,1,7.6 c0.1,0.3,0.2,0.6,0.3,0.9C1.4,8.7,1.6,9,1.8,9.2c0.2,0.2,0.3,0.4,0.5,0.6c0.1,0.1,0.3,0.3,0.5,0.4c0.2,0.1,0.4,0.3,0.7,0.4 c0.2,0.1,0.3,0.2,0.5,0.2c0,0,0.1,0,0.1,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0c0,0-0.1,0-0.2,0c-0.2,0-0.4,0-0.6,0 c-0.3,0-0.5,0-0.7,0l-0.2,0l0,0l0,0l0,0l0,0l0,0l0,0l0.2,0.4c0.1,0.2,0.2,0.4,0.3,0.6c0.1,0.2,0.3,0.4,0.4,0.5 c0.1,0.1,0.2,0.3,0.4,0.4c0.1,0.1,0.3,0.3,0.5,0.4c0.2,0.1,0.4,0.3,0.7,0.4C5,13.8,5.2,13.9,5.4,14C5.6,14,5.7,14,5.9,14 c0.1,0,0.2,0,0.3,0l0.2,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l-0.4,0.3c-0.3,0.2-0.5,0.3-0.6,0.4 C5,15,4.8,15.1,4.4,15.3c-0.4,0.2-0.7,0.3-1.1,0.4C2.4,15.9,1.5,16,0.6,16c-0.3,0-0.4,0-0.5,0L0,16l0,0l0,0v0h0l0,0l0,0l0,0l0,0l0,0 l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0.2,0.1c0.1,0.1,0.2,0.1,0.3,0.2c0.1,0,0.3,0.2,0.7,0.4c0.4,0.2,0.9,0.4,1.3,0.6 c0.4,0.1,0.8,0.3,1.2,0.4c0.3,0.1,0.6,0.1,1.1,0.2c0.3,0,0.5,0.1,0.8,0.1c0.1,0,0.2,0,0.3,0L6,18v0h1.2v0l0.7-0.1 c0.4,0,0.8-0.1,1.2-0.2c0.4-0.1,0.7-0.2,1.1-0.3c0.4-0.1,0.7-0.3,1.1-0.4c0.3-0.1,0.7-0.3,1-0.5c0.3-0.2,0.5-0.3,0.8-0.4 c0.2-0.1,0.5-0.3,0.7-0.5c0.2-0.2,0.5-0.4,0.7-0.6c0.2-0.2,0.3-0.3,0.4-0.3l0.5-0.5c0.3-0.3,0.5-0.6,0.7-0.9 c1.1-1.4,1.9-3.1,2.4-4.9c0.1-0.5,0.3-1,0.3-1.5c0.1-0.4,0.1-0.8,0.1-1.2c0-0.4,0-0.7,0-1c0-0.3,0.1-0.6,0.4-0.8 c0.3-0.2,0.5-0.4,0.7-0.7c0.2-0.3,0.4-0.4,0.4-0.4c0,0,0-0.1,0.1-0.1c0,0,0.1-0.1,0.3-0.3l0.2-0.3l0,0l0,0L21,2.1L21,2.1L21,2.1 L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1z")
+						a(href="#").share--item.is-em: svg(viewBox="0 0 19 19" width="19" height="19"): path(d="M9.8,0C4,0,0,3.9,0,9.5C0,15.3,4.1,19,10,19c1.1,0,2.2-0.1,3-0.3v-2c-0.6,0.2-1.7,0.3-2.7,0.3 c-4.8,0-7.8-2.8-7.8-7.4c0-4.5,3-7.6,7.4-7.6c4.2,0,6.9,2.6,6.9,6.8c0,2.2-0.7,3.5-1.6,3.5c-0.6,0-1-0.5-1-1.3V5.2h-2.6v1.3h-0.2 c-0.5-1-1.4-1.6-2.7-1.6c-2.2,0-3.8,1.9-3.8,4.6c0,2.9,1.6,4.8,3.9,4.8c1.3,0,2.2-0.6,2.7-1.7h0.2c0.3,1.1,1.4,1.7,2.8,1.7 c2.8,0,4.6-2.2,4.6-5.8C19,3.4,15.2,0,9.8,0z M9.4,12c-1,0-1.7-0.9-1.7-2.4c0-1.5,0.6-2.4,1.7-2.4s1.7,0.9,1.7,2.4 C11.1,11.1,10.5,12,9.4,12z")
+
+					footer.footer
+						a(href="#").footer--link SFHAC.org
+
+						.footer--label Data from #[a(href="#") SF Data]
+						.footer--label Powered by #[a(href="#") Openland]
+
+				.page--box
+					.box
+						.box--intro
+							.box--title Housing forecast
+							.box--subtitle Projected completions are below target
+							.box--text Based on&nbsp;the current data, San Francisco housing production in&nbsp;2017-2018 will represent a&nbsp;nearly&nbsp;50% drop from record-high 2016 level of&nbsp;5000+&nbsp;units.
+
+						.counters
+							.counter 2017 net new units#[span 3123]
+							.counter 2018 net new units#[span 2812]
+							.counter Mayor’s annual target#[span 5000]
+
+					.box
+						.box--intro
+							.box--title Growth capacity
+							.box--subtitle Underdeveloped sites in&nbsp;San Francisco
+
+						.map
+							.map--legend
+								label.map--item.is-blue
+									input(type="checkbox" checked)
+
+									.map--item-l Tower opportunities#[span 0-2 stories in 90+ feet height limit]
+
+								label.map--item.is-red
+									input(type="checkbox" checked)
+
+									.map--item-l Large parking lots#[span 25,000+ ft#[sup 2]]
+
+								label.map--item.is-yellow
+									input(type="checkbox" checked)
+
+									.map--item-l Commercial corridors#[span Single story buildings in NC-3 zoning]
+
+							.map--box
+
+					.box
+						.box--intro
+							.box--title Building permits
+							.box--subtitle Issued permits
+							.box--text The last four years demonstrate a&nbsp;stable level of ~4000 housing units permitted per year. That gives little hope for meeting mayor&rsquo;s annual target of&nbsp;5000 units in&nbsp;near future.
+
+						.graph graph
+						.box--intro
+							.box--subtitle Permit applications
+							.box--text New permit applications set record in&nbsp;2016. Year-to-year variation is&nbsp;high and the 2017 year saw significantly reduced volume of&nbsp;applications. To&nbsp;meet mayor&rsquo;s goal in&nbsp;housing production, permit filings volume needs to&nbsp;stay high consistently for several years.
+
+						.graph graph
+
+						.box--intro
+							.box--subtitle Recent permits
+							.box--text The latest issued permits for new construction projects with 10+&nbsp;units
+
+						.table
+							.table--export: a(href="#").btn Export list
+							.table--head
+								.table--th Address
+								.table--th Permit ID
+								.table--th Parcel ID
+								.table--th Units
+								.table--th Issued
+								.table--th Data source
+
+							.table--pages
+								.table--page.is-shown: .table--body
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+
+								.table--page page 2
+
+							.table--tools
+								.table--counter 687 items
+								.table--arrows
+									a(href="#").table--arrow.is-disabled Previous
+									a(href="#").table--arrow Next
+
+					.box
+						.box--intro
+							.box--title Voter guide
+							.box--subtitle SFHAC recommendations for upcoming ballot measures.
+
+						.cards
+							.cards--item: +card ('State Prop 69', 'This measure would require that revenue from the diesel sales tax and Transportation Improvement Fee, as&nbsp;enacted by&nbsp;Senate Bill&nbsp;1 (SB&nbsp;1), be&nbsp;used for transportation-related purposes; and exempt revenue generated by&nbsp;SB&nbsp;1&rsquo;s tax increases and fee schedules from the state appropriations limit. Investing in&nbsp;our transit infrastructure is&nbsp;critical and was the original intent of&nbsp;Senate Bill&nbsp;1.', '#').is-yes
+							.cards--item: +card ('Regional Measure 3', 'Increases tolls on&nbsp;the Bay Area&rsquo;s seven state-owned bridges, excluding the Golden Gate Bridge, by&nbsp;$1&nbsp;in&nbsp;2019, $1&nbsp;in&nbsp;2022 and $1&nbsp;in&nbsp;2025 to&nbsp;fund regional transportation capital investments. The investments made with the increased revenue would include: $500 million to&nbsp;expand BART&rsquo;s fleet; $375 million to&nbsp;expand BART to&nbsp;Silicon Valley; $325 million to&nbsp;bring high-speed rail to&nbsp;the Transbay Transit Center in&nbsp;San Francisco; $300 million to&nbsp;expand ferry service; and $50 million to&nbsp;implement a&nbsp;new Clipper-based fare system. In&nbsp;addition, the expenditure plan includes up&nbsp;to&nbsp;$60 million annually to&nbsp;support transit operations, including $35 million for ferry service; $20 million for regional express bus service; and $5&nbsp;million for Transbay Transit Center operations.', '#').is-yes
+							.cards--item: +card ('Local Proposition D', 'Commercial Rent Tax for Housing and Homelessness. This measure would impose a&nbsp;tax on&nbsp;individuals and businesses that receive income from the lease or&nbsp;sublease of&nbsp;commercial space, primarily offices. The measure exempts certain spaces, including non-profits used for production, distribution and repair (including industrial, warehouse and similar uses), retail sales and services (including chain stores) and entertainment, arts and recreation.', '#').is-yes
+							.cards--item: +card ('Prop F', 'Legal Representation for Tenants. This measure would require the City of&nbsp;San Francisco to&nbsp;create a&nbsp;program to&nbsp;provide free legal representation for all San Francisco residential tenants facing eviction. Through this new program, tenants would be&nbsp;entitled to&nbsp;full scope legal representation&nbsp;&mdash; including appearing on&nbsp;behalf of&nbsp;the tenant in&nbsp;court proceedings and representing the tenant throughout the case&nbsp;&mdash; within 30&nbsp;days of&nbsp;receiving an&nbsp;eviction notice or&nbsp;being served with an&nbsp;eviction lawsuit. Providing an&nbsp;attorney for all tenants, and making sure tenants are aware of&nbsp;their rights, is&nbsp;critical.', '#').is-yes
+
+					.box: .feedback
+						.feedback--title Stay in&nbsp;touch for new stats from SFHAC
+
+						form(method="POST" action="").feedback--form
+							input(type="text" placeholder="Email").feedback--input
+							button(type="submit").feedback--btn Subscribe
+
+		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
+
+		script(type="text/javascript" src="js/jquery.sticky-kit.js")
+
+		script(type="text/javascript" src="js/sfhac.js")
