@@ -195,7 +195,9 @@ $(document).ready(function () {
 					lat: marker.center.latitude
 				}
 
-				var markerObj = new mapboxgl.Marker(markerDiv[0]);
+				var markerObj = new mapboxgl.Marker(markerDiv[0], {
+					//offset: [-5, -30]
+				});
 
 				markers[kind].push(markerObj);
 

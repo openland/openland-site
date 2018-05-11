@@ -505,22 +505,28 @@ body {
 		.position (relative);
 
 		.marker {
-			background: center center no-repeat;
-			background-size: 100%;
-			//margin: -30px 0 0;
-
 			.display (block);
-			.size (14px, 30px);
+			.size (1px, 1px);
 
-			&.is-towers {
+			&:before {
+				content: "";
+				background: center center no-repeat;
+				background-size: 100%;
+
+				.display (block);
+				.size (14px, 30px);
+				.position (absolute, auto, auto, 0, -7px);
+			}
+
+			&.is-towers:before {
 				background-image: url(../img/sfhac/marker-towers.svg);
 			}
 
-			&.is-parking {
+			&.is-parking:before {
 				background-image: url(../img/sfhac/marker-parking.svg);
 			}
 
-			&.is-commercial {
+			&.is-commercial:before {
 				background-image: url(../img/sfhac/marker-commercial.svg);
 			}
 		}
