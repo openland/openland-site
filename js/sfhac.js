@@ -35,24 +35,33 @@ $(document).ready(function () {
 	// Charts
 
 	var chartDatas = [{
-			labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017'],
-			datasets: [
-				{ label: 'Total completed', data: [90, 70, 105, 60, 75, 90, 105, 60], backgroundColor: '#34b5ff', borderColor: '#34b5ff', fill: false, lineTension: 0 },
-				{ label: 'Affordable completed', data: [70, 63, 77, 35, 85, 70, 77, 35], backgroundColor: '#535de8', borderColor: '#535de8', fill: false, lineTension: 0 },
-				{ label: 'Total in-construction', data: [90, 70, 105, 60, 75, 90, 105, 60], backgroundColor: '#ff5c54', borderColor: '#ff5c54', fill: false, lineTension: 0 },
-				{ label: 'Affordable in-construction', data: [70, 63, 77, 35, 85, 70, 77, 35], backgroundColor: '#ffc334', borderColor: '#ffc334', fill: false, lineTension: 0 }
-			]
+			labels: ['2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017'],
+			datasets: [{
+				label: 'Permits Issued — Net New Units',
+				data: [2597, 2876, 516, 677, 2265, 3030, 4656, 3817, 4088, 5168, 4972],
+				backgroundColor: '#8fa8f3',
+				borderColor: '#8fa8f3',
+				fill: false,
+				lineTension: 0
+			}]
 		}, {
-			labels: ['Q1 2015', 'Q2 2015', 'Q3 2015', 'Q4 2015', 'Q1 2016', 'Q2 2016', 'Q3 2016', 'Q4 2016'],
-			datasets: [
-				{ label: 'Completed', data: [90, 70, 105, 60, 75, 90, 105, 60], backgroundColor: '#34b5ff', borderColor: '#34b5ff', fill: false, lineTension: 0 },
-				{ label: 'In construction', data: [70, 63, 77, 35, 85, 70, 77, 35], backgroundColor: '#535de8', borderColor: '#535de8', fill: false, lineTension: 0 }
-			]
+			labels: ['2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017'],
+			datasets: [{
+				label: 'Permits Filed — Net New Units',
+				data: [1507, 1170, 928, 2139, 2378, 3853, 5351, 5948, 5703, 8753, 5593],
+				backgroundColor: '#ecbf6e',
+				borderColor: '#ecbf6e',
+				fill: false,
+				lineTension: 0
+			}]
 		}];
 
 	var chartOptions = {
 			scales: {
-				yAxes: [{ ticks: { beginAtZero: true } }],
+				yAxes: [{ ticks: {
+					beginAtZero: true,
+					max: 10000
+				} }],
 				xAxes: [{
 					categoryPercentage: 0.85,
 					barPercentage: 0.75,
@@ -62,10 +71,10 @@ $(document).ready(function () {
 
 			responsive: true,
 			legend: { display: false },
-		//	tooltips: { enabled: false },
+			//tooltips: { enabled: true },
 			events: [],
 
-			/*animation: {
+			animation: {
 				onComplete: function () {
 					var ctx = this.chart.ctx;
 
@@ -84,7 +93,7 @@ $(document).ready(function () {
 						}
 					});
 				}
-			},*/
+			},
 		};
 
 	$('.graph--in').each(function (i) {
