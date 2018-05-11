@@ -774,7 +774,7 @@ body *:after {
 .map--box {
   z-index: 1;
   width: auto;
-  height: 547px;
+  height: 910px;
   position: relative;
   top: auto;
   right: auto;
@@ -785,7 +785,6 @@ body *:after {
   background: center center no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100%;
-  margin: -30px 0 0;
   display: block;
   width: 14px;
   height: 30px;
@@ -803,8 +802,14 @@ body *:after {
   border-bottom: 1px solid #e9ebed;
   padding: 0 33px;
   margin: 0 0 7px;
-  width: auto;
-  height: 414px;
+}
+.graph--in {
+  padding: 0 0 30px;
+}
+.graph--in canvas {
+  display: block;
+  width: 100%;
+  height: 375px;
 }
 .table {
   position: relative;
@@ -854,6 +859,13 @@ body *:after {
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
+}
+.table--td a {
+  color: #654bfa;
+  text-decoration: underline;
+}
+.table--td a:hover {
+  text-decoration: none;
 }
 .table--tools {
   border-top: 1px solid #e9ebed;
@@ -908,7 +920,7 @@ body *:after {
 }
 .table--th:nth-child(1),
 .table--td:nth-child(1) {
-  width: 25%;
+  width: 20%;
   height: auto;
 }
 .table--th:nth-child(2),
@@ -918,7 +930,7 @@ body *:after {
 }
 .table--th:nth-child(3),
 .table--td:nth-child(3) {
-  width: 15%;
+  width: 10%;
   height: auto;
 }
 .table--th:nth-child(4),
@@ -929,6 +941,11 @@ body *:after {
 .table--th:nth-child(5),
 .table--td:nth-child(5) {
   width: 20%;
+  height: auto;
+}
+.table--th:nth-child(6),
+.table--td:nth-child(6) {
+  width: 10%;
   height: auto;
 }
 .cards {

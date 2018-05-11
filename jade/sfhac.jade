@@ -29,13 +29,14 @@ mixin card (title, text, link)
 		.card--text!= text
 		.card--link ...#[a(href=link) show more]
 
-mixin table--row (pageID, c1, c2, c3, c4, c5)
+mixin table--row (pageID, address, permitID, units, issued, approvalTime)
 	.table--row(data-page=pageID)&attributes(attributes)
-		.table--td!= c1
-		.table--td!= c2
-		.table--td!= c3
-		.table--td!= c4
-		.table--td!= c5
+		.table--td!= address
+		.table--td!= permitID
+		.table--td!= units
+		.table--td!= issued
+		.table--td!= approvalTime
+		.table--td: a(href='https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&PermitNumber=' + permitID) Link
 
 doctype html
 html
@@ -114,13 +115,12 @@ html
 							.box--subtitle Issued permits
 							.box--text The last four years demonstrate a&nbsp;stable level of ~4000 housing units permitted per year. That gives little hope for meeting mayor&rsquo;s annual target of&nbsp;5000 units in&nbsp;near future.
 
-						.graph graph
+						.graph: .graph--in: canvas
 						.box--intro
 							.box--subtitle Permit applications
 							.box--text New permit applications set record in&nbsp;2016. Year-to-year variation is&nbsp;high and the 2017 year saw significantly reduced volume of&nbsp;applications. To&nbsp;meet mayor&rsquo;s goal in&nbsp;housing production, permit filings volume needs to&nbsp;stay high consistently for several years.
 
-						.graph graph
-
+						.graph: .graph--in: canvas
 						.box--intro
 							.box--subtitle Recent permits
 							.box--text The latest issued permits for new construction projects with 10+&nbsp;units
@@ -133,6 +133,7 @@ html
 								.table--th Units
 								.table--th Issued
 								.table--th Permit approval time
+								.table--th SF DBI
 
 							.table--body
 								each p, i in permits.data.permits.edges
@@ -182,5 +183,6 @@ html
 		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
 
 		script(type="text/javascript" src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js")
+		script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js")
 
 		script(type="text/javascript" src="js/sfhac.js")
