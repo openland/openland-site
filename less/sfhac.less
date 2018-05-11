@@ -121,9 +121,7 @@ body {
 
 .page { padding: 24px 0 48px;
 	&--in { .display (flex); }
-	&--side {
-		padding: 0 10px 0 0;
-
+	&--side { padding: 0 10px 0 0;
 		.size (280px);
 	}
 
@@ -132,9 +130,7 @@ body {
 		top: 24px;
 	}
 
-	&--box {
-		padding: 0 0 0 10px;
-
+	&--box { padding: 0 0 0 10px;
 		.size (920px);
 	}
 }
@@ -298,9 +294,7 @@ body {
 			.display (block);
 			.font (16px, 20px);
 
-			&:hover {
-				background: fade(@grey-1, 70);
-			}
+			&:hover { background: fade(@grey-1, 70); }
 		}
 
 		li.is-active a {
@@ -359,9 +353,7 @@ body {
 		color: @purple-2;
 		font-weight: 500;
 
-		&:hover {
-			text-decoration: none;
-		}
+		&:hover { text-decoration: none; }
 	}
 
 	&--label { opacity: .40;
@@ -503,33 +495,6 @@ body {
 	&--box { z-index: 1;
 		.size (auto, 770px);
 		.position (relative);
-
-		.marker {
-			.display (block);
-			.size (1px, 1px);
-
-			&:before {
-				content: "";
-				background: center center no-repeat;
-				background-size: 100%;
-
-				.display (block);
-				.size (14px, 30px);
-				.position (absolute, auto, auto, 0, -7px);
-			}
-
-			&.is-towers:before {
-				background-image: url(../img/sfhac/marker-towers.svg);
-			}
-
-			&.is-parking:before {
-				background-image: url(../img/sfhac/marker-parking.svg);
-			}
-
-			&.is-commercial:before {
-				background-image: url(../img/sfhac/marker-commercial.svg);
-			}
-		}
 	}
 }
 

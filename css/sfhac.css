@@ -875,34 +875,6 @@ body *:after {
   bottom: auto;
   left: auto;
 }
-.map--box .marker {
-  display: block;
-  width: 1px;
-  height: 1px;
-}
-.map--box .marker:before {
-  content: "";
-  background: center center no-repeat;
-  -webkit-background-size: 100% 100%;
-  background-size: 100%;
-  display: block;
-  width: 14px;
-  height: 30px;
-  position: absolute;
-  top: auto;
-  right: auto;
-  bottom: 0;
-  left: -7px;
-}
-.map--box .marker.is-towers:before {
-  background-image: url(../img/sfhac/marker-towers.svg);
-}
-.map--box .marker.is-parking:before {
-  background-image: url(../img/sfhac/marker-parking.svg);
-}
-.map--box .marker.is-commercial:before {
-  background-image: url(../img/sfhac/marker-commercial.svg);
-}
 .graph {
   border-bottom: 1px solid #e9ebed;
   padding: 0 33px;
