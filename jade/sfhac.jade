@@ -153,12 +153,34 @@ html
 											return months[monthID];
 										}
 
+										function returnApproval (days) {
+											if (days < 29) {
+												return (days == 1) ? days + ' day' : days + ' days';
+											}
+
+											if (days >= 29 && days < 335) {
+												var months = parseInt(days / 30);
+
+												months = (months <= 0) ? 1 : months;
+
+												return (months == 1) ? months + ' month' : months + ' months';	
+											}
+
+											if (days >= 335) {
+												var years = parseInt(days / 365);
+
+												years = (years <= 0) ? 1 : years;
+
+												return (years == 1) ? years + ' year' : years + ' years';	
+											}
+										}
+
 										pageID = parseInt(i / 10) + 1
 										address = (a.streetNumber || '') + ' ' + (a.streetNumberSuffix || '') + ' ' + (a.streetName || '') + ' ' + (a.streetNameSuffix || '')
 										permitID = o.id
 										units = o.proposedUnits
 										issued = d.getDate() + ' ' + returnMonth(d.getMonth()) + ' ' + d.getFullYear()
-										approvalTime = o.approvalTime
+										approvalTime = returnApproval(o.approvalTime)
 
 									+table--row (pageID, address, permitID, units, issued, approvalTime)
 
