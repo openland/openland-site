@@ -644,7 +644,7 @@ body *:after {
   line-height: 24px;
 }
 .counters {
-  border-top: 1px solid rgba(31, 52, 73, 0.1);
+  border-top: 1px solid #e9ebed;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -652,7 +652,7 @@ body *:after {
 }
 .counter {
   text-align: center;
-  border-right: 1px solid rgba(31, 52, 73, 0.1);
+  border-right: 1px solid #e9ebed;
   letter-spacing: 0.5px;
   padding: 27px 0 36px;
   width: 33.33333333%;
@@ -800,7 +800,7 @@ body *:after {
   background-image: url(../img/sfhac/marker-commercial.svg);
 }
 .graph {
-  border-bottom: 1px solid rgba(31, 52, 73, 0.1);
+  border-bottom: 1px solid #e9ebed;
   padding: 0 33px;
   margin: 0 0 7px;
   width: auto;
@@ -822,8 +822,8 @@ body *:after {
 }
 .table--head {
   padding: 0 32px;
-  border-top: 1px solid rgba(31, 52, 73, 0.1);
-  border-bottom: 1px solid rgba(31, 52, 73, 0.1);
+  border-top: 1px solid #e9ebed;
+  border-bottom: 1px solid #e9ebed;
   font-size: 0;
   line-height: 0;
 }
@@ -837,22 +837,13 @@ body *:after {
   line-height: 24px;
   font-weight: 500;
 }
-.table--page {
-  display: none;
-}
-.table--page.is-shown {
-  display: block;
-}
 .table--body {
   padding: 0 32px;
 }
 .table--row {
-  border-bottom: 1px solid rgba(31, 52, 73, 0.1);
+  border-bottom: 1px solid #e9ebed;
   font-size: 0;
   line-height: 0;
-}
-.table--row:last-child {
-  border: none;
 }
 .table--td {
   letter-spacing: 0.5px;
@@ -864,8 +855,9 @@ body *:after {
   font-weight: 500;
 }
 .table--tools {
-  border-top: 1px solid rgba(31, 52, 73, 0.1);
+  border-top: 1px solid #e9ebed;
   padding: 0 32px;
+  margin: -1px 0 0;
   *zoom: 1;
 }
 .table--tools:after {
@@ -887,6 +879,10 @@ body *:after {
 }
 .table--arrows {
   float: right;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-size: 0;
   line-height: 0;
 }
@@ -909,9 +905,29 @@ body *:after {
   opacity: 0;
   pointer-events: none;
 }
-.table--th,
-.table--td {
-  width: 16.66666667%;
+.table--th:nth-child(1),
+.table--td:nth-child(1) {
+  width: 25%;
+  height: auto;
+}
+.table--th:nth-child(2),
+.table--td:nth-child(2) {
+  width: 20%;
+  height: auto;
+}
+.table--th:nth-child(3),
+.table--td:nth-child(3) {
+  width: 15%;
+  height: auto;
+}
+.table--th:nth-child(4),
+.table--td:nth-child(4) {
+  width: 20%;
+  height: auto;
+}
+.table--th:nth-child(5),
+.table--td:nth-child(5) {
+  width: 20%;
   height: auto;
 }
 .cards {

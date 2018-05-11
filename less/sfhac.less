@@ -22,6 +22,8 @@
 
 	@green-1: #43a632;
 
+	@stroke: multiply(@white, fade(@text-1, 10));
+
 // --------
 
 	@screen-xs-max: 767px;
@@ -342,13 +344,13 @@ body {
 	}
 }
 
-.counters { border-top: 1px solid fade(@text-1, 10);
+.counters { border-top: 1px solid @stroke;
 	.display (flex);
 }
 
 .counter {
 	text-align: center;
-	border-right: 1px solid fade(@text-1, 10);
+	border-right: 1px solid @stroke;
 	letter-spacing: 0.5px;
 	padding: 27px 0 36px;
 
@@ -460,7 +462,7 @@ body {
 }
 
 .graph {
-	border-bottom: 1px solid fade(@text-1, 10);
+	border-bottom: 1px solid @stroke;
 	padding: 0 33px;
 	margin: 0 0 7px;
 
@@ -471,8 +473,8 @@ body {
 	&--export { .position (absolute, -58px, 32px); }
 	&--head {
 		padding: 0 32px;
-		border-top: 1px solid fade(@text-1, 10);
-		border-bottom: 1px solid fade(@text-1, 10);
+		border-top: 1px solid @stroke;
+		border-bottom: 1px solid @stroke;
 
 		.font (0);
 	}
@@ -486,15 +488,9 @@ body {
 		.font (14px, 24px, 500);
 	}
 
-	&--page { .display (none);
-		&.is-shown { .display (block); }
-	}
-
 	&--body { padding: 0 32px; }
-	&--row { border-bottom: 1px solid fade(@text-1, 10);
+	&--row { border-bottom: 1px solid @stroke;
 		.font (0);
-
-		&:last-child { border: none; }
 	}
 
 	&--td {
@@ -506,8 +502,9 @@ body {
 	}
 
 	&--tools {
-		border-top: 1px solid fade(@text-1, 10);
+		border-top: 1px solid @stroke;
 		padding: 0 32px;
+		margin: -1px 0 0;
 
 		.clearfix ();
 	}
@@ -521,7 +518,10 @@ body {
 		.font (14px, 24px, 500);
 	}
 
-	&--arrows { float: right;
+	&--arrows {
+		float: right;
+		user-select: none;
+
 		.font (0);
 	}
 
@@ -543,7 +543,13 @@ body {
 	}
 
 	&--th,
-	&--td { .size (100% / 6); }
+	&--td {
+		&:nth-child(1) { .size (25%); }
+		&:nth-child(2) { .size (20%); }
+		&:nth-child(3) { .size (15%); }
+		&:nth-child(4) { .size (20%); }
+		&:nth-child(5) { .size (20%); }
+	}
 }
 
 .cards { padding: 0 19px 20px;
