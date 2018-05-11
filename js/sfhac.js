@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 	$(window).on('load resize scroll', function () {
 		var st = $(window).scrollTop();
-		var lastActive = 0;
+		var lastActive = 1;
 
 		$('[data-box]').each(function () {
 			if ($(this).offset().top <= st + 200)
