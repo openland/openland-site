@@ -27,6 +27,13 @@ $(document).ready(function () {
 
 		$('[data-box-nav]').parent().removeClass('is-active');
 		$('[data-box-nav=' + lastActive + ']').parent().addClass('is-active');
+
+
+		if (st >= 332) {
+			$('.intro').slideDown(300);
+		} else {
+			$('.intro').slideUp(300);
+		}
 	});
 
 

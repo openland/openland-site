@@ -215,6 +215,72 @@ body {
 	}
 }
 
+.intro {
+	border-radius: 5px;
+	background-image: linear-gradient(105deg, #6855d5, #3c27b2);
+	color: @white;
+	box-shadow: 0 0 0 1px fade(@black, 6);
+	margin: 0 0 18px;
+	overflow: hidden;
+
+	.display (none);
+	.position (relative);
+
+	&:before {
+		content: "";
+		background: url(../img/sfhac/blocks.png) no-repeat;
+		background-size: 100% 100%;
+		z-index: 1;
+		transform: scale(0.6, 0.6);
+
+		.display (block);
+		.position (absolute, -100px, -136px);
+		.size (546px, 308px);
+	}
+
+	&:after {
+		content: "";
+		background-image: linear-gradient(105deg, fade(#6855d5, 100), fade(#3c27b2, 30));
+		z-index: 2;
+
+		.display (block);
+		.position (absolute, 0, 0, 0, 0);
+	}
+
+	&--logo {
+		background: url(../img/sfhac/openland-light.png) no-repeat;
+		background-size: 100% 100%;
+		z-index: 3;
+		transform: scale(0.6, 0.6);
+
+		.position (absolute, -3px, -14px);
+		.size (153px, 101px);
+	}
+
+	&--box {
+		padding: 86px 20px 31px 27px;
+		z-index: 4;
+
+		.position (relative);
+	}
+
+	&--title {
+		background: @white;
+		color: @purple-1;
+		letter-spacing: 0.4px;
+		padding: 5px 8px 3px;
+		border-radius: 3px;
+		margin: 0 0 15px;
+
+		.display (inline-block);
+		.font (14px, 20px, 700);
+	}
+
+	&--text { letter-spacing: 0.7px;
+		.font (22px, 26px, 700);
+	}
+}
+
 .nav { padding: 10px 0;
 	&--list {
 		list-style: none;
