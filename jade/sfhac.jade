@@ -42,13 +42,13 @@ html
 					.header--text San Francisco Housing in Numbers
 					.header--sfhac
 
-			.page--in.js-sticky-p
-				.page--side: .js-sticky
+			.page--in
+				.page--side: .page--sticky
 					.box: nav.nav: ul.nav--list
-						li.is-active: a(href="#" data-box="1") Housing forecast
-						li: a(href="#" data-box="2") Growth capacity
-						li: a(href="#" data-box="3") Building permits
-						li: a(href="#" data-box="4") Voter guide
+						li.is-active: a(href="#" data-box-nav="1") Housing forecast
+						li: a(href="#" data-box-nav="2") Growth capacity
+						li: a(href="#" data-box-nav="3") Building permits
+						li: a(href="#" data-box-nav="4") Voter guide
 
 					.box: .share
 						span.share--label Share
@@ -63,7 +63,7 @@ html
 						.footer--label Powered by #[a(href="#") Openland]
 
 				.page--box
-					.box
+					.box(data-box="1")
 						.box--intro
 							.box--title Housing forecast
 							.box--subtitle Projected completions are below target
@@ -74,7 +74,7 @@ html
 							.counter 2018 net new units#[span 2812]
 							.counter Mayor’s annual target#[span 5000]
 
-					.box
+					.box(data-box="2")
 						.box--intro
 							.box--title Growth capacity
 							.box--subtitle Underdeveloped sites in&nbsp;San Francisco
@@ -98,7 +98,7 @@ html
 
 							.map--box
 
-					.box
+					.box(data-box="3")
 						.box--intro
 							.box--title Building permits
 							.box--subtitle Issued permits
@@ -130,15 +130,31 @@ html
 									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
 									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
 
-								.table--page page 2
+								.table--page: .table--body
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+
+								.table--page: .table--body
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+
+								.table--page: .table--body
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
+									+table--row ('Value', 'Value', 'Value', 'Value', 'Value', 'Value')
 
 							.table--tools
 								.table--counter 687 items
 								.table--arrows
-									a(href="#").table--arrow.is-disabled Previous
-									a(href="#").table--arrow Next
+									a(href="#").table--arrow.is-prev.is-disabled Previous
+									a(href="#").table--arrow.is-next Next
 
-					.box
+					.box(data-box="4")
 						.box--intro
 							.box--title Voter guide
 							.box--subtitle SFHAC recommendations for upcoming ballot measures.
@@ -157,7 +173,5 @@ html
 							button(type="submit").feedback--btn Subscribe
 
 		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
-
-		script(type="text/javascript" src="js/jquery.sticky-kit.js")
 
 		script(type="text/javascript" src="js/sfhac.js")

@@ -12,6 +12,7 @@
 
 	@grey-1: #f4f5f7;
 	@grey-2: #adb5c0;
+	@grey-3: #dcdee4;
 
 	@text-1: #1f3449;
 	@text-2: #334562;
@@ -88,16 +89,51 @@ body {
 	.position (relative);
 }
 
+.btn {
+	border-radius: 4px;
+	background: @white;
+	border: 1px solid @grey-3;
+	text-decoration: none;
+	text-align: center;
+	color: @text-2;
+	letter-spacing: 0.4px;
+	transition: 300ms all ease;
+	padding: 4px 14px 6px;
+
+	.display (inline-block);
+	.font (14px, 20px, 500);
+
+	&:hover {
+		background: #f3f3f5;
+		border-color: #f3f3f5;
+	}
+
+	&:active {
+		background: #eeecfa;
+		border-color: #eeecfa;
+		color: #5640d6;
+	}
+}
+
 // --------
 
 .page { padding: 24px 0 48px;
-	&--in { .clearfix (); }
-	&--side { float: left;
-		.size (270px);
+	&--in { .display (flex); }
+	&--side {
+		padding: 0 10px 0 0;
+
+		.size (280px);
 	}
 
-	&--box { float: right;
-		.size (910px);
+	&--sticky {
+		position: sticky;
+		top: 24px;
+	}
+
+	&--box {
+		padding: 0 0 0 10px;
+
+		.size (920px);
 	}
 }
 
@@ -406,7 +442,7 @@ body {
 }
 
 .table { .position (relative);
-	&--export { .position (absolute, -30px, 0); }
+	&--export { .position (absolute, -58px, 32px); }
 	&--head {
 		padding: 0 32px;
 		border-top: 1px solid fade(@text-1, 10);
@@ -550,17 +586,58 @@ body {
 	}
 }
 
-.feedback {
-
-
+.feedback { padding: 39px 0 40px;
 	&--title {
 		text-align: center;
+		letter-spacing: 0.5px;
+		margin: 0 0 30px;
+
+		.font (16px, 20px, 700);
 	}
 
 	&--form {
 		margin: 0 auto;
+		padding: 0 140px 0 0;
 
-		.size (300px);
+		.size (390px);
+		.position (relative);
+	}
+
+	&--input {
+		border: 1px solid @grey-3;
+		border-right: none;
+		border-radius: 5px 0 0 5px!important;
+		letter-spacing: 0.5px;
+		padding: 11px 21px 15px;
+
+		.display (block);
+		.size (100%, 48px);
+		.font (16px, 20px);
+	}
+
+	&--btn {
+		border: none;
+		border-radius: 0 6px 6px 0;
+		letter-spacing: 0.5px;
+		background: @purple-2;
+		color: @white;
+		padding: 13px 0 13px;
+		transition: 300ms all ease;
+
+		.position (absolute, 0, 0);
+		.display (block);
+		.size (140px, 48px);
+		.font (16px, 20px, 500);
+
+		&:hover {
+			background: #7159f9;
+			box-shadow: 0 1px 2px 0 #a39ebe;
+		}
+
+		&:active {
+			background: #5640d6;
+			box-shadow: none;
+		}
 	}
 }
 
