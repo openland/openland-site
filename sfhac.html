@@ -13,6 +13,7 @@
     <link rel="shortcut icon" href="/favicon.ico"/>
     <link rel="icon" href="/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="/css/sfhac.css"/>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css" rel="stylesheet">
   </head>
   <body>
     <div class="page">
@@ -75,20 +76,20 @@
               </div>
               <div class="map">
                 <div class="map--legend">
-                  <label class="map--item is-blue">
+                  <label class="map--item is-towers">
                     <input type="checkbox" checked>
                     <div class="map--item-l">Tower opportunities<span>0-2 stories in 90+ feet height limit</span></div>
                   </label>
-                  <label class="map--item is-red">
+                  <label class="map--item is-parking">
                     <input type="checkbox" checked>
                     <div class="map--item-l">Large parking lots<span>25,000+ ft<sup>2</sup></span></div>
                   </label>
-                  <label class="map--item is-yellow">
+                  <label class="map--item is-commercial">
                     <input type="checkbox" checked>
                     <div class="map--item-l">Commercial corridors<span>Single story buildings in NC-3 zoning</span></div>
                   </label>
                 </div>
-                <div class="map--box"></div>
+                <div class="map--box" id="map"></div>
               </div>
             </div>
             <div class="box" data-box="3">
@@ -303,6 +304,7 @@
       </div>
     </div>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js"></script>
     <script type="text/javascript" src="js/sfhac.js"></script>
   </body>
 </html>

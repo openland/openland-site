@@ -377,6 +377,7 @@ body {
 		background: @white;
 		box-shadow: 0 0 0 1px fade(@black, 6);
 		border-radius: 4px;
+		z-index: 2;
 
 		.position-tl (absolute, 24px, 24px);
 		.size (295px);
@@ -423,15 +424,39 @@ body {
 		}
 
 		input { .display (none); }
-		&.is-blue &-l:before { border-color: #6a8df6; }
-		&.is-red &-l:before { border-color: #d357a6; }
-		&.is-yellow &-l:before { border-color: #eeb044; }
-		&.is-blue input:checked + &-l:before { background: #6a8df6; }
-		&.is-red input:checked + &-l:before { background: #d357a6; }
-		&.is-yellow input:checked + &-l:before { background: #eeb044; }
+		&.is-towers &-l:before { border-color: #6a8df6; }
+		&.is-parking &-l:before { border-color: #d357a6; }
+		&.is-commercial &-l:before { border-color: #eeb044; }
+		&.is-towers input:checked + &-l:before { background: #6a8df6; }
+		&.is-parking input:checked + &-l:before { background: #d357a6; }
+		&.is-commercial input:checked + &-l:before { background: #eeb044; }
 	}
 
-	&--box { .size (auto, 547px); }
+	&--box { z-index: 1;
+		.size (auto, 547px);
+		.position (relative);
+
+		.marker {
+			background: center center no-repeat;
+			background-size: 100%;
+			margin: -30px 0 0;
+
+			.display (block);
+			.size (14px, 30px);
+
+			&.is-towers {
+				background-image: url(../img/sfhac/marker-towers.svg);
+			}
+
+			&.is-parking {
+				background-image: url(../img/sfhac/marker-parking.svg);
+			}
+
+			&.is-commercial {
+				background-image: url(../img/sfhac/marker-commercial.svg);
+			}
+		}
+	}
 }
 
 .graph {

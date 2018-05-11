@@ -39,6 +39,7 @@ mixin table--row (c1, c2, c3, c4, c5, c6)
 doctype html
 html
 	+head (meta)
+		link(href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css" rel="stylesheet")
 
 	body
 		.page: .container
@@ -89,22 +90,22 @@ html
 
 						.map
 							.map--legend
-								label.map--item.is-blue
+								label.map--item.is-towers
 									input(type="checkbox" checked)
 
 									.map--item-l Tower opportunities#[span 0-2 stories in 90+ feet height limit]
 
-								label.map--item.is-red
+								label.map--item.is-parking
 									input(type="checkbox" checked)
 
 									.map--item-l Large parking lots#[span 25,000+ ft#[sup 2]]
 
-								label.map--item.is-yellow
+								label.map--item.is-commercial
 									input(type="checkbox" checked)
 
 									.map--item-l Commercial corridors#[span Single story buildings in NC-3 zoning]
 
-							.map--box
+							.map--box#map
 
 					.box(data-box="3")
 						.box--intro
@@ -181,5 +182,7 @@ html
 							button(type="submit").feedback--btn Subscribe
 
 		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
+
+		script(type="text/javascript" src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js")
 
 		script(type="text/javascript" src="js/sfhac.js")

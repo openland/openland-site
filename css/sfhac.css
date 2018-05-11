@@ -690,6 +690,7 @@ body *:after {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
   -webkit-border-radius: 4px;
   border-radius: 4px;
+  z-index: 2;
   position: absolute;
   top: 24px;
   right: auto;
@@ -752,27 +753,51 @@ body *:after {
 .map--item input {
   display: none;
 }
-.map--item.is-blue .map--item-l:before {
+.map--item.is-towers .map--item-l:before {
   border-color: #6a8df6;
 }
-.map--item.is-red .map--item-l:before {
+.map--item.is-parking .map--item-l:before {
   border-color: #d357a6;
 }
-.map--item.is-yellow .map--item-l:before {
+.map--item.is-commercial .map--item-l:before {
   border-color: #eeb044;
 }
-.map--item.is-blue input:checked + .map--item-l:before {
+.map--item.is-towers input:checked + .map--item-l:before {
   background: #6a8df6;
 }
-.map--item.is-red input:checked + .map--item-l:before {
+.map--item.is-parking input:checked + .map--item-l:before {
   background: #d357a6;
 }
-.map--item.is-yellow input:checked + .map--item-l:before {
+.map--item.is-commercial input:checked + .map--item-l:before {
   background: #eeb044;
 }
 .map--box {
+  z-index: 1;
   width: auto;
   height: 547px;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+.map--box .marker {
+  background: center center no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100%;
+  margin: -30px 0 0;
+  display: block;
+  width: 14px;
+  height: 30px;
+}
+.map--box .marker.is-towers {
+  background-image: url(../img/sfhac/marker-towers.svg);
+}
+.map--box .marker.is-parking {
+  background-image: url(../img/sfhac/marker-parking.svg);
+}
+.map--box .marker.is-commercial {
+  background-image: url(../img/sfhac/marker-commercial.svg);
 }
 .graph {
   border-bottom: 1px solid rgba(31, 52, 73, 0.1);
