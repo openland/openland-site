@@ -844,6 +844,7 @@ body *:after {
   border-bottom: 1px solid #e9ebed;
   font-size: 0;
   line-height: 0;
+  display: none;
 }
 .table--td {
   letter-spacing: 0.5px;

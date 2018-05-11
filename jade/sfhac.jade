@@ -138,12 +138,19 @@ html
 								each p, i in permits.data.permits.edges
 									- o = p.node
 									- a = o.streetNumbers[0]
+									- d = new Date(o.issuedAt)
 									-
+										function returnMonth (monthID) {
+											months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+											return months[monthID];
+										}
+
 										pageID = parseInt(i / 10) + 1
 										address = (a.streetNumber || '') + ' ' + (a.streetNumberSuffix || '') + ' ' + (a.streetName || '') + ' ' + (a.streetNameSuffix || '')
 										permitID = o.id
 										units = o.proposedUnits
-										issued = o.issuedAt
+										issued = d.getDate() + ' ' + returnMonth(d.getMonth()) + ' ' + d.getFullYear()
 										approvalTime = o.approvalTime
 
 									+table--row (pageID, address, permitID, units, issued, approvalTime)
