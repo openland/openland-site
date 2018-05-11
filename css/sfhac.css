@@ -486,6 +486,7 @@ body *:after {
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
   margin: 0 0 0 -3px;
+  display: block;
   width: 108px;
   height: 44px;
 }
