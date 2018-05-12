@@ -1093,11 +1093,6 @@ body *:after {
 .card--text p:last-child {
   margin: 0;
 }
-.card--text.is-shown {
-  overflow: initial;
-  max-width: initial;
-  max-height: initial;
-}
 .card--link {
   letter-spacing: 0.5px;
   background: #ffffff;
@@ -1116,9 +1111,30 @@ body *:after {
   margin: 0 0 0 4px;
   display: inline-block;
   vertical-align: top;
+  font-size: 16px;
+  line-height: 24px;
 }
 .card--link a:hover {
   text-decoration: underline;
+}
+.card.is-shown .card--text {
+  overflow: initial;
+  padding: 0 0 20px;
+  max-width: initial;
+  max-height: initial;
+}
+.card.is-shown .card--link {
+  padding: 0;
+  position: absolute;
+  top: auto;
+  right: 32px;
+  bottom: 20px;
+  left: auto;
+  font-size: 0;
+  line-height: 0;
+}
+.card.is-shown .card--link a {
+  margin: 0;
 }
 .feedback {
   padding: 39px 0 40px;

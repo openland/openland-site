@@ -653,10 +653,6 @@ body {
 		p { margin: 0 0 14px;
 			&:last-child { margin: 0; }
 		}
-
-		&.is-shown { overflow: initial;
-			.max-size (initial);
-		}
 	}
 
 	&--link {
@@ -673,8 +669,25 @@ body {
 			margin: 0 0 0 4px;
 
 			.display (inline-block);
+			.font (16px, 24px);
 
 			&:hover { text-decoration: underline; }
+		}
+	}
+
+	&.is-shown & {
+		&--text {
+			overflow: initial;
+			padding: 0 0 20px;
+
+			.max-size (initial);
+		}
+
+		&--link { padding: 0;
+			.position (absolute, auto, 32px, 20px);
+			.font (0);
+
+			a { margin: 0; }
 		}
 	}
 }

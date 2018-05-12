@@ -41,8 +41,15 @@ $(document).ready(function () {
 
 		var card = $(this).closest('.card');
 
-		card.find('.card--text').addClass('is-shown');
-		card.find('.card--link').hide();
+		if (card.hasClass('is-shown')) {
+			card.removeClass('is-shown');
+
+			$(this).html('show more');
+		} else {
+			card.addClass('is-shown');
+
+			$(this).html('minimize');
+		}
 	});
 
 
