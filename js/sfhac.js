@@ -36,6 +36,15 @@ $(document).ready(function () {
 		}
 	});
 
+	$('.card--link a').on('click', function (e) {
+		e.preventDefault();
+
+		var card = $(this).closest('.card');
+
+		card.find('.card--text').addClass('is-shown');
+		card.find('.card--link').hide();
+	});
+
 
 
 

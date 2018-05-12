@@ -1030,14 +1030,17 @@ body *:after {
   font-size: 0;
   line-height: 0;
 }
-.cards--item {
-  padding: 0 12px 23px;
+.cards--col {
+  padding: 0 12px;
   display: inline-block;
   vertical-align: top;
   font-size: 14px;
   line-height: 20px;
   width: 50%;
   height: auto;
+}
+.cards--col .card {
+  margin-bottom: 23px;
 }
 .card {
   -webkit-border-radius: 5px;
@@ -1083,6 +1086,17 @@ body *:after {
   line-height: 24px;
   max-width: initial;
   max-height: 168px;
+}
+.card--text p {
+  margin: 0 0 14px;
+}
+.card--text p:last-child {
+  margin: 0;
+}
+.card--text.is-shown {
+  overflow: initial;
+  max-width: initial;
+  max-height: initial;
 }
 .card--link {
   letter-spacing: 0.5px;

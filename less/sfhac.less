@@ -606,10 +606,12 @@ body {
 .cards { padding: 0 19px 20px;
 	.font (0);
 
-	&--item { padding: 0 12px 23px;
+	&--col { padding: 0 12px;
 		.display (inline-block);
 		.font (14px, 20px);
 		.size (50%);
+
+		.card { margin-bottom: 23px; }
 	}
 }
 
@@ -647,6 +649,14 @@ body {
 
 		.font (16px, 24px);
 		.max-size (initial, 168px);
+
+		p { margin: 0 0 14px;
+			&:last-child { margin: 0; }
+		}
+
+		&.is-shown { overflow: initial;
+			.max-size (initial);
+		}
 	}
 
 	&--link {
