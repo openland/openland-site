@@ -42,6 +42,9 @@ mixin table--row (pageID, address, permitID, units, issued, approvalTime)
 		.table--td!= approvalTime
 		.table--td: a(href='https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&PermitNumber=' + permitID) Link
 
+mixin box--foot
+	.box--foot #[i.icon-source]Source — Statecraft’s Housing Completions Report 2017
+
 doctype html
 html
 	+head (meta)
@@ -95,6 +98,8 @@ html
 							.counter 2018 net new units#[span 2812]
 							.counter Mayor’s annual target#[span 5000]
 
+						+box--foot
+
 					.box(data-box="2")
 						.box--intro
 							.box--title Growth capacity
@@ -118,6 +123,8 @@ html
 									.map--item-l Commercial corridors#[span Single story buildings in NC-3 zoning]
 
 							.map--box#map
+
+						+box--foot
 
 					.box(data-box="3")
 						.box--intro
@@ -190,6 +197,8 @@ html
 									a(href="#").table--arrow.is-prev.is-disabled Previous
 									a(href="#").table--arrow.is-next Next
 
+						+box--foot
+
 					.box(data-box="4")
 						.box--intro
 							.box--title Voter guide
@@ -203,6 +212,8 @@ html
 							.cards--col
 								+card ('Regional Measure 3', ['Increases tolls on&nbsp;the Bay Area&rsquo;s seven state-owned bridges, excluding the Golden Gate Bridge, by&nbsp;$1&nbsp;in&nbsp;2019, $1&nbsp;in&nbsp;2022 and $1&nbsp;in&nbsp;2025 to&nbsp;fund regional transportation capital investments. The investments made with the increased revenue would include: $500 million to&nbsp;expand BART&rsquo;s fleet; $375 million to&nbsp;expand BART to&nbsp;Silicon Valley; $325 million to&nbsp;bring high-speed rail to&nbsp;the Transbay Transit Center in&nbsp;San Francisco; $300 million to&nbsp;expand ferry service; and $50 million to&nbsp;implement a&nbsp;new Clipper-based fare system. In&nbsp;addition, the expenditure plan includes up&nbsp;to&nbsp;$60 million annually to&nbsp;support transit operations, including $35 million for ferry service; $20 million for regional express bus service; and $5&nbsp;million for Transbay Transit Center operations.'], '#').is-yes
 								+card ('Prop F', ['Legal Representation for Tenants. This measure would require the City of&nbsp;San Francisco to&nbsp;create a&nbsp;program to&nbsp;provide free legal representation for all San Francisco residential tenants facing eviction. Through this new program, tenants would be&nbsp;entitled to&nbsp;full scope legal representation&nbsp;&mdash; including appearing on&nbsp;behalf of&nbsp;the tenant in&nbsp;court proceedings and representing the tenant throughout the case&nbsp;&mdash; within 30&nbsp;days of&nbsp;receiving an&nbsp;eviction notice or&nbsp;being served with an&nbsp;eviction lawsuit. Providing an&nbsp;attorney for all tenants, and making sure tenants are aware of&nbsp;their rights, is&nbsp;critical.'], '#').is-yes
+
+						+box--foot
 
 					.box: .feedback
 						.feedback--title Stay in&nbsp;touch for new stats from SFHAC
