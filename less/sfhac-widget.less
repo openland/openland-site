@@ -46,7 +46,7 @@
 
 .ol-sfhac {
 	font: normal normal 14px/20px 'SFProDisplay', arial, sans-serif;
-	background: url(../img/sfhac-widget/widget-bg.png) no-repeat;
+	background: url(../img/sfhac-widget/widget-bg.png) left top no-repeat;
 	margin: 0 auto;
 	border-radius: 5px;
 	overflow: hidden;
@@ -63,6 +63,8 @@
 	&--title { letter-spacing: 0.69px;
 		.position-tl (absolute, 25px, 26px);
 		.font (22px, 26px, 700);
+
+		@media @sm-md { top: 24px; }
 	}
 
 	&--text {
@@ -71,11 +73,17 @@
 
 		.position-tl (absolute, 54px, 26px);
 		.font (16px, 20px, 600);
+
+		@media @sm-md { .display (none); }
 	}
 
 	&--features {
 		.position-tl (absolute, 39px, 462px);
 		.font (0);
+
+		@media @sm-md { opacity: 0.6;
+			.position-tl (absolute, 53px, 26px);
+		}
 
 		&:before {
 			content: "";
@@ -84,6 +92,8 @@
 			.display (block);
 			.position-tl (absolute, -39px, -33px);
 			.size (1px, 94px);
+
+			@media @sm-md { .display (none); }
 		}
 	}
 
@@ -94,6 +104,10 @@
 		.position (relative);
 		.display (inline-block);
 		.font (15px, 20px, 600);
+
+		@media @sm-md {
+
+		}
 
 		&:before {
 			content: "";
@@ -111,6 +125,8 @@
 		.size (156px);
 		.position (absolute, 28px, 26px);
 
+		@media @sm-md { top: 27px; }
+
 		a {
 			background: @white;
 			letter-spacing: 0.5px;
@@ -118,7 +134,7 @@
 			color: #6052BB!important;
 			transition: 300ms opacity ease;
 			border-radius: 6px;
-			padding: 12px 0 10px;
+			padding: 11px 0;
 
 			.display (block);
 			.font (16px, 20px, 600, 'SFProDisplay');
@@ -130,11 +146,16 @@
 	}
 
 	&--map {
-		background: @white;
+		background: @white url(../img/sfhac-widget/widget-map.png) left top no-repeat;
 		border-radius: 6px;
 		overflow: hidden;
 
 		.position-tl (absolute, 94px, 26px);
 		.size (1108px, 191px);
+
+		@media @sm-md {
+			.position (absolute, 94px, 26px, auto, 26px);
+			.size (auto, 191px);
+		}
 	}
 }
