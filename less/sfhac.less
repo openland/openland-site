@@ -397,6 +397,13 @@ body {
 		.font (16px, 24px, 700);
 
 		&:last-child { margin: 0; }
+		span {
+			opacity: 0.6;
+			margin: 0 0 0 15px;
+			font-weight: 500;
+
+			.display (inline-block);
+		}
 	}
 
 	&--text { letter-spacing: 0.5px;
@@ -406,11 +413,24 @@ body {
 	&--foot {
 		background: fade(@grey-4, 80);
 		text-align: center;
-		color: fade(@text-3, 50);
+		color: multiply(@white, fade(@text-3, 50));
 		letter-spacing: 0.4px;
 		padding: 12px 0;
 
 		.font (12px, 20px, 500);
+
+		svg { margin: 4px 6px 0 2px;
+			.display (inline-block);
+
+			* { fill: multiply(@white, fade(@text-3, 50)); }
+		}
+
+		a {
+			color: inherit;
+			text-decoration: underline;
+
+			&:hover { text-decoration: none; }
+		}
 	}
 }
 

@@ -249,6 +249,12 @@ pre {
 }
 @font-face {
   font-family: 'SFProDisplay';
+  src: url('../fonts/sfprodisplay/fonts/SFProDisplay-Semibold.woff2') format('woff2'), url('../fonts/sfprodisplay/fonts/SFProDisplay-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SFProDisplay';
   src: url('../fonts/sfprodisplay/fonts/SFProDisplay-Bold.woff2') format('woff2'), url('../fonts/sfprodisplay/fonts/SFProDisplay-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
@@ -732,6 +738,13 @@ body *:after {
 .box--subtitle:last-child {
   margin: 0;
 }
+.box--subtitle span {
+  opacity: 0.6;
+  margin: 0 0 0 15px;
+  font-weight: 500;
+  display: inline-block;
+  vertical-align: top;
+}
 .box--text {
   letter-spacing: 0.5px;
   font-size: 16px;
@@ -740,12 +753,27 @@ body *:after {
 .box--foot {
   background: rgba(228, 229, 231, 0.8);
   text-align: center;
-  color: rgba(26, 27, 58, 0.5);
+  color: #8d8d9d;
   letter-spacing: 0.4px;
   padding: 12px 0;
   font-size: 12px;
   line-height: 20px;
   font-weight: 500;
+}
+.box--foot svg {
+  margin: 4px 6px 0 2px;
+  display: inline-block;
+  vertical-align: top;
+}
+.box--foot svg * {
+  fill: #8d8d9d;
+}
+.box--foot a {
+  color: inherit;
+  text-decoration: underline;
+}
+.box--foot a:hover {
+  text-decoration: none;
 }
 .counters {
   border-top: 1px solid #e9ebed;
