@@ -77,13 +77,16 @@
   bottom: auto;
   left: auto;
 }
-@media (max-width: 767px) {
+@media (max-width: 853px) {
   .ol-sfhac {
+    margin: 0 -5vw;
+    -webkit-border-radius: 0;
+    border-radius: 0;
     width: auto;
     height: 440px;
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 854px) and (max-width: 1023px) {
   .ol-sfhac {
     width: auto;
     height: 310px;
@@ -106,7 +109,7 @@
   line-height: 26px;
   font-weight: 700;
 }
-@media (min-width: 768px) and (max-width: 1439px) {
+@media (min-width: 854px) and (max-width: 1439px) {
   .ol-sfhac--title {
     top: 24px;
   }
@@ -123,7 +126,7 @@
   line-height: 20px;
   font-weight: 600;
 }
-@media (min-width: 768px) and (max-width: 1439px) {
+@media (min-width: 854px) and (max-width: 1439px) {
   .ol-sfhac--text {
     display: none;
   }
@@ -137,7 +140,7 @@
   font-size: 0;
   line-height: 0;
 }
-@media (min-width: 768px) and (max-width: 1439px) {
+@media (min-width: 854px) and (max-width: 1439px) {
   .ol-sfhac--features {
     opacity: 0.6;
     position: absolute;
@@ -159,7 +162,7 @@
   width: 1px;
   height: 94px;
 }
-@media (min-width: 768px) and (max-width: 1439px) {
+@media (min-width: 854px) and (max-width: 1439px) {
   .ol-sfhac--features:before {
     display: none;
   }
@@ -202,7 +205,7 @@
   bottom: auto;
   left: auto;
 }
-@media (min-width: 768px) and (max-width: 1439px) {
+@media (min-width: 854px) and (max-width: 1439px) {
   .ol-sfhac--btn {
     top: 27px;
   }
@@ -226,6 +229,7 @@
 }
 .ol-sfhac--map {
   background: #ffffff url(../img/sfhac-widget/widget-map.png) left top no-repeat;
+  background-image: -webkit-image-set(url(../img/sfhac-widget/widget-map.png) 1x, url(../img/sfhac-widget/widget-map@2x.png) 2x);
   -webkit-border-radius: 6px;
   border-radius: 6px;
   overflow: hidden;
@@ -237,7 +241,7 @@
   width: 1108px;
   height: 191px;
 }
-@media (min-width: 768px) and (max-width: 1439px) {
+@media (min-width: 854px) and (max-width: 1439px) {
   .ol-sfhac--map {
     position: absolute;
     top: 94px;
