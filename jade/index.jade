@@ -6,6 +6,7 @@
 - var call = 'https://cal.mixmax.com/yurylifshits/30'
 - var signIn = 'https://app.openland.com/signin'
 
+- var careers = 'https://angel.co/openland/jobs'
 - var angellist = 'https://angel.co/openland'
 - var linkedin = 'https://linkedin.com/company/openlandhq/'
 - var twitter = 'https://twitter.com/OpenlandHQ'
@@ -214,8 +215,10 @@ html
 				nav.footer--nav: ul.footer--list
 					li.footer--item: a(href='mailto:' + email)= email
 					li.footer--item: a(href='tel:' + phoneTel)= phone
+					li.footer--item.visible-xs: a(href=careers target="_blank") Careers
 
 				.footer--socials
+					a(href=careers target="_blank").footer--link.hidden-xs Careers
 					a(href=angellist target="_blank").footer--social: i.icon-al
 					a(href=linkedin target="_blank").footer--social: i.icon-lin
 					a(href=twitter target="_blank").footer--social: i.icon-tw

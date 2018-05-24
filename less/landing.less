@@ -442,7 +442,7 @@ body {
 	&--social {
 		float: left;
 		text-decoration: none;
-		padding: 29px 0 28px 18px;
+		padding: 30px 0 27px 18px;
 		color: fade(@text-2, 80);
 		transition: 200ms color ease;
 
@@ -463,6 +463,23 @@ body {
 		}
 
 		&:hover { color: @text-1; }
+	}
+
+	&--link {
+		float: left;
+		color: @text-1;
+		text-decoration: none;
+		opacity: .60;
+		transition: 200ms opacity ease;
+		padding: 27px 5px 26px 0;
+
+		.display (block);
+		.font (16px, 20px, 500);
+		.position (relative);
+
+		@media @media-xs-only { padding: 10px 0; }
+
+		&:hover { opacity: 1; }
 	}
 }
 
