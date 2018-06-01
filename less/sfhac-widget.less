@@ -48,8 +48,9 @@
 	overflow: hidden;
 	color: @white;
 	-webkit-font-smoothing: antialiased;
+	padding: 94px 26px 26px;
 
-	.size (1160px, 310px);
+	.size (1160px);
 	.position (relative);
 
 	@media @xs-only {
@@ -57,13 +58,15 @@
 		border-radius: 0;
 		background: none;
 		background-image: linear-gradient(-141deg, #6855D5 0%, #4B37BF 47%, #3C27B2 100%);
+		padding: 156px 22px 91px;
 
-		.size (auto, 439px);
+		.size (auto);
 	}
 
-	@media @sm-only { .size (auto, 310px); }
-	@media @md-only { .size (960px, 310px); }
+	@media @sm-only { .size (auto); }
+	@media @md-only { .size (960px); }
 
+	&, & * { box-sizing: border-box; }
 	&--title { letter-spacing: 0.69px;
 		.position-tl (absolute, 25px, 26px);
 		.font (22px, 26px, 700);
@@ -201,17 +204,89 @@
 		border-radius: 6px;
 		overflow: hidden;
 
-		.position-tl (absolute, 94px, 26px);
-		.size (1108px, 191px);
+		.size (auto, 191px);
+	}
+
+	&--counters {
+		border-radius: 6px;
+		background: @white;
+		color: #1F3449;
+		overflow: hidden;
+	}
+
+	&--cols { .display (flex);
+		@media @xs-only { .display (block); }
+	}
+
+	&--counter {
+		flex: 1;
+		text-align: center;
+		border-right: 1px solid multiply(@white, fade(#5947A0, 10));
+		letter-spacing: 0.7px;
+		padding: 30px 0 39px;
+
+		.font (22px, 28px);
 
 		@media @xs-only {
-			.position (absolute, 156px, 22px, auto, 22px);
-			.size (auto, 191px);
+			border: none;
+			border-bottom: 1px solid multiply(@white, fade(#5947A0, 10));
+			padding: 30px 0;
+			letter-spacing: 0.56px;
+
+			.font (18px, 30px);
 		}
 
-		@media @sm-md {
-			.position (absolute, 94px, 26px, auto, 26px);
-			.size (auto, 191px);
+		@media @sm-only {
+			padding: 28px 0 31px;
+			letter-spacing: 0.56px;
+
+			.font (18px, 30px);
+		}
+
+		@media @md-only {
+			padding: 34px 0 35px;
+			letter-spacing: 0.63px;
+
+			.font (20px, 34px);
+		}
+
+		&:last-child { border: none; }
+		span {
+			letter-spacing: 1.63px;
+			color: #CD3B98;
+			margin: 23px 0 0;
+
+			.font (52px, 28px, 700);
+			.display (block);
+
+			@media @xs-sm {
+				margin: 10px 0 0;
+				letter-spacing: 1.29px;
+
+				.font (41px, 30px);
+			}
+
+			@media @md-only {
+				margin: 11px 0 0;
+				letter-spacing: 1.47px;
+
+				.font (46px, 34px);
+			}
+		}
+	}
+
+	&--label {
+		background: multiply(@white, fade(#5947A0, 8));
+		border-top: 1px solid multiply(@white, fade(#5947A0, 15));
+		text-align: center;
+		letter-spacing: 0.5px;
+		color: #534C7F;
+		padding: 10px 0;
+
+		.font (18px, 22px, 500);
+
+		@media @xs-md { letter-spacing: 0.44px;
+			.font (16px, 22px);
 		}
 	}
 }
