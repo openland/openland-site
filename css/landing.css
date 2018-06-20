@@ -434,7 +434,8 @@ body *:after {
 }
 .header--logo {
   float: left;
-  padding: 4px 0 12px;
+  padding: 0px 0 12px;
+  margin-top: -4px;
   -webkit-transition: 200ms opacity ease;
   -o-transition: 200ms opacity ease;
   transition: 200ms opacity ease;
