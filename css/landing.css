@@ -450,8 +450,8 @@ body *:after {
 }
 .header--logo img {
   display: block;
-  width: 100px;
-  height: 24px;
+  width: 200px;
+  height: 48px;
 }
 .header--open {
   text-decoration: none;
