@@ -750,6 +750,9 @@ body *:after {
   font-size: 16px;
   line-height: 24px;
 }
+.box--text + .box--subtitle {
+  margin-top: 20px;
+}
 .box--foot {
   background: rgba(228, 229, 231, 0.8);
   text-align: center;
