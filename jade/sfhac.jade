@@ -40,7 +40,7 @@ mixin table--row (pageID, address, permitID, units, issued, approvalTime)
 		.table--td!= units
 		.table--td!= issued
 		.table--td!= approvalTime
-		.table--td: a(href='https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&PermitNumber=' + permitID) Link
+		.table--td: a(href='https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&PermitNumber=' + permitID)= permitID
 
 mixin box--foot
 	.box--foot
