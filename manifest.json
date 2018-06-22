@@ -2,7 +2,7 @@
   "name": "Openland",
   "icons": [
     {
-      "src": "/android-icon-192.png",
+      "src": "/favicons/android-icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     }
