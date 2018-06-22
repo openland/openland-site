@@ -127,7 +127,7 @@ html
 
 									.map--item-l Commercial corridors#[span Single story buildings in NC-3 zoning]
 
-							.map--box#map
+							.map--box(data-maptype="default")
 
 						+box--foot Sources — #[a(href="https://data.sfgov.org/Housing-and-Buildings/-Known-Issue-Assessor-Historical-Secured-Property-/wv5m-vpq2") San Francisco Tax Records (SF Data)], #[a(href="https://data.sfgov.org/City-Infrastructure/Parcels-With-Planning-Department-Zoning/6b2n-v87s") Parcel Database (SF Data)], and #[a(href="http://sf-planning.org/zoning-map-heightbulk-districts") Height Limits (SF Planning)]
 
@@ -202,6 +202,8 @@ html
 								.table--arrows
 									a(href="#").table--arrow.is-prev.is-disabled Previous
 									a(href="#").table--arrow.is-next Next
+
+						.map: .map--box(data-maptype="recent")
 
 						+box--foot Source — #[a(href="https://data.sfgov.org/Housing-and-Buildings/Building-Permits/i98e-djp9/data") SF DBI Permit Database]
 
