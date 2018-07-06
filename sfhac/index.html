@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>SFHAC Dashboard | San Francisco Housing in Numbers</title>
+    <meta name="description" content="Statistics on housing production, building permits, and growth capacity in San Francisco"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta property="og:title" content="SFHAC Dashboard | San Francisco Housing in Numbers"/>
+    <meta property="og:url" content="https://openland.com/sfhac"/>
+    <meta property="og:description" content="Statistics on housing production, building permits, and growth capacity in San Francisco"/>
+    <meta property="og:image" content="https://openland.com/sfhac/img/og.png"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="mask-icon" href="/favicons/favicon-safari.svg" color="#522BFF"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96.png"/>
+    <link rel="icon" type="image/png" sizes="128x128" href="/favicons/favicon-128.png"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/favicon-192.png"/>
+    <link rel="icon" type="image/png" sizes="196x196" href="/favicons/favicon-196.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57.png"/>
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152.png"/>
+    <link rel="apple-touch-icon" sizes="180" href="/favicons/pple-icon-180.png"/>
+    <link rel="manifest" href="/manifest.json"/>
+    <meta name="msapplication-TileColor" content="#6400FF"/>
+    <meta name="msapplication-TileImage" content="/favicons/ms-icon-144.png"/>
+    <meta name="msapplication-square70x70logo" content="/favicons/ms-icon-square-70.png"/>
+    <meta name="msapplication-square150x150logo" content="/favicons/ms-icon-square-150.png"/>
+    <meta name="msapplication-square310x310logo" content="/favicons/ms-icon-square-310.png"/>
+    <meta name="msapplication-wide310x150logo" content="/favicons/ms-icon-wide-310.png"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="page">
+      <div class="container">
+        <header class="header">
+          <div class="header--logo"></div>
+          <div class="header--box">
+            <div class="header--title">SFHAC Dashboard</div>
+            <div class="header--text">San Francisco Housing in Numbers</div><a class="header--sfhac"></a>
+          </div>
+        </header>
+        <div class="page--in">
+          <div class="page--side">
+            <div class="page--sticky">
+              <div class="intro">
+                <div class="intro--logo"></div>
+                <div class="intro--box">
+                  <div class="intro--title">SFHAC Dashboard</div>
+                  <div class="intro--text">San Francisco Housing in Numbers</div>
+                </div>
+              </div>
+              <div class="box">
+                <nav class="nav">
+                  <ul class="nav--list">
+                    <li class="is-active"><a href="#" data-box-nav="1">Housing forecast</a></li>
+                    <li><a href="#" data-box-nav="2">Growth capacity</a></li>
+                    <li><a href="#" data-box-nav="3">Building permits</a></li>
+                    <li><a href="#" data-box-nav="4">Voter guide</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="box">
+                <div class="share"><span class="share--label">Share</span><a class="share--item is-fb" href="https://www.facebook.com/sharer/sharer.php?u=undefined" target="_blank">
+                    <svg viewBox="0 0 20 20" width="20" height="20">
+                      <path d="M18.9,0H1.1C0.5,0,0,0.5,0,1.1v17.8C0,19.5,0.5,20,1.1,20h17.8l0,0c0.6,0,1.1-0.5,1.1-1.1V1.1 C20,0.5,19.5,0,18.9,0z M16.9,5.8h-1.6c-1.3,0-1.5,0.6-1.5,1.5v1.9h3l-0.4,3h-2.6V20h-3.1v-7.7H8.1v-3h2.6V7c0-2.6,1.6-4,3.9-4 c0.8,0,1.6,0,2.3,0.1V5.8z"></path>
+                    </svg></a><a class="share--item is-tw" href="https://twitter.com/intent/tweet?via=OpenlandHQ&amp;text=SFHAC%20Dashboard%20%7C%20San%20Francisco%20Housing%20in%20Numbers%0D%0Aundefined" target="_blank">
+                    <svg viewBox="0 0 21 18" width="21" height="18">
+                      <path d="M21,2.1L21,2.1L21,2.1L21,2.1L21,2.1l-0.1,0l0,0l-0.1,0l-0.5,0.2c-0.3,0.1-0.7,0.2-1,0.3l-0.5,0.1h-0.1l0,0l0,0 l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0.1-0.1c0.1,0,0.1-0.1,0.2-0.1c0-0.1,0.1-0.1,0.3-0.3 c0.2-0.2,0.3-0.3,0.5-0.5C19.9,1.5,20,1.2,20.2,1c0.1-0.1,0.1-0.3,0.2-0.4c0,0,0-0.1,0-0.1l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0 l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l-0.1,0.1c-0.2,0.1-0.3,0.2-0.5,0.3c-0.3,0.1-0.6,0.3-0.8,0.4c-0.3,0.1-0.5,0.2-0.8,0.2 c-0.2,0.1-0.4,0-0.5-0.1c-0.1-0.1-0.2-0.2-0.4-0.3c-0.1-0.1-0.3-0.2-0.5-0.3c-0.2-0.1-0.4-0.2-0.6-0.3c-0.2-0.1-0.4-0.1-0.7-0.2 L15,0h-1v0c0,0-0.1,0-0.2,0c-0.2,0-0.4,0.1-0.6,0.2c-0.3,0.1-0.5,0.2-0.8,0.4c-0.5,0.3-1,0.7-1.3,1.2C11,2,10.8,2.2,10.8,2.3 c-0.1,0.2-0.2,0.4-0.3,0.6c-0.1,0.3-0.2,0.5-0.2,0.8c0,0.3-0.1,0.5-0.1,0.8c0,0.2,0,0.5,0,0.7l0,0.2l0,0l0,0l-0.1,0 c-0.1,0-0.3,0-0.5,0c-0.2,0-0.6-0.1-1.1-0.2c-0.5-0.1-0.8-0.2-1-0.2C7.4,5,7.1,4.9,6.6,4.7C6.1,4.5,5.7,4.3,5.2,4.1 C4.8,3.8,4.4,3.6,4.1,3.3C3.7,3.1,3.5,2.9,3.2,2.7C3,2.5,2.9,2.4,2.9,2.3c0,0-0.1-0.1-0.1-0.1c0,0-0.2-0.1-0.4-0.4 C2.1,1.6,1.9,1.4,1.8,1.2L1.5,0.9l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0L1.2,1.3 C1.1,1.5,1.1,1.8,1,2C0.9,2.2,0.9,2.4,0.9,2.6c0,0.2,0,0.4,0,0.6c0,0.5,0.1,1,0.3,1.5C1.3,5,1.4,5.2,1.5,5.4 c0.1,0.2,0.2,0.3,0.3,0.5C1.9,6,2,6.2,2.1,6.3c0.1,0.2,0.3,0.3,0.5,0.5l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0 l0,0l0,0l0,0H2.6l-0.1,0c-0.1,0-0.2,0-0.5-0.1C1.7,6.7,1.4,6.6,1.2,6.5L0.9,6.4l0,0l0,0l0,0l0,0l0,0l0,0l0,0.4C0.9,7,0.9,7.3,1,7.6 c0.1,0.3,0.2,0.6,0.3,0.9C1.4,8.7,1.6,9,1.8,9.2c0.2,0.2,0.3,0.4,0.5,0.6c0.1,0.1,0.3,0.3,0.5,0.4c0.2,0.1,0.4,0.3,0.7,0.4 c0.2,0.1,0.3,0.2,0.5,0.2c0,0,0.1,0,0.1,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0c0,0-0.1,0-0.2,0c-0.2,0-0.4,0-0.6,0 c-0.3,0-0.5,0-0.7,0l-0.2,0l0,0l0,0l0,0l0,0l0,0l0,0l0.2,0.4c0.1,0.2,0.2,0.4,0.3,0.6c0.1,0.2,0.3,0.4,0.4,0.5 c0.1,0.1,0.2,0.3,0.4,0.4c0.1,0.1,0.3,0.3,0.5,0.4c0.2,0.1,0.4,0.3,0.7,0.4C5,13.8,5.2,13.9,5.4,14C5.6,14,5.7,14,5.9,14 c0.1,0,0.2,0,0.3,0l0.2,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0l-0.4,0.3c-0.3,0.2-0.5,0.3-0.6,0.4 C5,15,4.8,15.1,4.4,15.3c-0.4,0.2-0.7,0.3-1.1,0.4C2.4,15.9,1.5,16,0.6,16c-0.3,0-0.4,0-0.5,0L0,16l0,0l0,0v0h0l0,0l0,0l0,0l0,0l0,0 l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0.2,0.1c0.1,0.1,0.2,0.1,0.3,0.2c0.1,0,0.3,0.2,0.7,0.4c0.4,0.2,0.9,0.4,1.3,0.6 c0.4,0.1,0.8,0.3,1.2,0.4c0.3,0.1,0.6,0.1,1.1,0.2c0.3,0,0.5,0.1,0.8,0.1c0.1,0,0.2,0,0.3,0L6,18v0h1.2v0l0.7-0.1 c0.4,0,0.8-0.1,1.2-0.2c0.4-0.1,0.7-0.2,1.1-0.3c0.4-0.1,0.7-0.3,1.1-0.4c0.3-0.1,0.7-0.3,1-0.5c0.3-0.2,0.5-0.3,0.8-0.4 c0.2-0.1,0.5-0.3,0.7-0.5c0.2-0.2,0.5-0.4,0.7-0.6c0.2-0.2,0.3-0.3,0.4-0.3l0.5-0.5c0.3-0.3,0.5-0.6,0.7-0.9 c1.1-1.4,1.9-3.1,2.4-4.9c0.1-0.5,0.3-1,0.3-1.5c0.1-0.4,0.1-0.8,0.1-1.2c0-0.4,0-0.7,0-1c0-0.3,0.1-0.6,0.4-0.8 c0.3-0.2,0.5-0.4,0.7-0.7c0.2-0.3,0.4-0.4,0.4-0.4c0,0,0-0.1,0.1-0.1c0,0,0.1-0.1,0.3-0.3l0.2-0.3l0,0l0,0L21,2.1L21,2.1L21,2.1 L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1L21,2.1z"></path>
+                    </svg></a><a class="share--item is-em" href="mailto:?&amp;subject=SFHAC%20Dashboard&amp;body=SFHAC%20Dashboard%20%7C%20San%20Francisco%20Housing%20in%20Numbers%0D%0Aundefined">
+                    <svg viewBox="0 0 19 19" width="19" height="19">
+                      <path d="M9.8,0C4,0,0,3.9,0,9.5C0,15.3,4.1,19,10,19c1.1,0,2.2-0.1,3-0.3v-2c-0.6,0.2-1.7,0.3-2.7,0.3 c-4.8,0-7.8-2.8-7.8-7.4c0-4.5,3-7.6,7.4-7.6c4.2,0,6.9,2.6,6.9,6.8c0,2.2-0.7,3.5-1.6,3.5c-0.6,0-1-0.5-1-1.3V5.2h-2.6v1.3h-0.2 c-0.5-1-1.4-1.6-2.7-1.6c-2.2,0-3.8,1.9-3.8,4.6c0,2.9,1.6,4.8,3.9,4.8c1.3,0,2.2-0.6,2.7-1.7h0.2c0.3,1.1,1.4,1.7,2.8,1.7 c2.8,0,4.6-2.2,4.6-5.8C19,3.4,15.2,0,9.8,0z M9.4,12c-1,0-1.7-0.9-1.7-2.4c0-1.5,0.6-2.4,1.7-2.4s1.7,0.9,1.7,2.4 C11.1,11.1,10.5,12,9.4,12z"></path>
+                    </svg></a></div>
+              </div>
+              <footer class="footer"><a class="footer--link">SFHAC.org</a>
+                <div class="footer--label">Data from <a>SF Data</a></div>
+                <div class="footer--label">Powered by <a>Openland</a></div>
+              </footer>
+            </div>
+          </div>
+          <div class="page--box">
+            <div class="box" data-box="1">
+              <div class="box--intro">
+                <div class="box--title">Housing forecast</div>
+                <div class="box--subtitle">Projected completions are below target</div>
+                <div class="box--text">Based on&nbsp;the current data, San Francisco housing production in&nbsp;2017-2018 will represent a&nbsp;nearly&nbsp;50% drop from record-high 2016 level of&nbsp;5000+&nbsp;units.</div>
+              </div>
+              <div class="counters">
+                <div class="counter">2017 net new units<span>3123</span></div>
+                <div class="counter">2018 net new units<span>2812</span></div>
+                <div class="counter">Mayor’s annual target<span>5000</span></div>
+              </div>
+              <div class="box--foot">
+                <svg viewBox="0 0 10 13" width="10" height="13">
+                  <path d="M7.4,3.4H10L6.8,0v2.9C6.8,3.2,7.1,3.4,7.4,3.4z"></path>
+                  <path d="M7.4,3.9c-0.6,0-1.1-0.4-1.1-1V0H1.1C0.5,0,0,0.4,0,1V12c0,0.5,0.5,1,1.1,1h4.2h2.6h1.1c0.6,0,1.1-0.4,1.1-1 V3.9H7.4z"></path>
+                </svg>Source — <a href="https://statecraft.one/sf">Housing Completions Report by Statecraft, Fall 2017</a>
+              </div>
+            </div>
+            <div class="box" data-box="2">
+              <div class="box--intro">
+                <div class="box--title">Growth capacity</div>
+                <div class="box--subtitle">Underdeveloped sites in&nbsp;San Francisco</div>
+              </div>
+              <div class="map">
+                <div class="map--legend">
+                  <label class="map--item is-towers">
+                    <input type="checkbox" name="towers" checked>
+                    <div class="map--item-l">Tower opportunities<span>0-2 stories in 90+ feet height limit</span></div>
+                  </label>
+                  <label class="map--item is-parking">
+                    <input type="checkbox" name="parking" checked>
+                    <div class="map--item-l">Large parking lots<span>25,000+ ft<sup>2</sup></span></div>
+                  </label>
+                  <label class="map--item is-commercial">
+                    <input type="checkbox" name="commercial" checked>
+                    <div class="map--item-l">Commercial corridors<span>Single story buildings in NC-3 zoning</span></div>
+                  </label>
+                </div>
+                <div class="map--box" data-maptype="default"></div>
+              </div>
+              <div class="box--foot">
+                <svg viewBox="0 0 10 13" width="10" height="13">
+                  <path d="M7.4,3.4H10L6.8,0v2.9C6.8,3.2,7.1,3.4,7.4,3.4z"></path>
+                  <path d="M7.4,3.9c-0.6,0-1.1-0.4-1.1-1V0H1.1C0.5,0,0,0.4,0,1V12c0,0.5,0.5,1,1.1,1h4.2h2.6h1.1c0.6,0,1.1-0.4,1.1-1 V3.9H7.4z"></path>
+                </svg>Sources — <a href="https://data.sfgov.org/Housing-and-Buildings/-Known-Issue-Assessor-Historical-Secured-Property-/wv5m-vpq2">San Francisco Tax Records (SF Data)</a>, <a href="https://data.sfgov.org/City-Infrastructure/Parcels-With-Planning-Department-Zoning/6b2n-v87s">Parcel Database (SF Data)</a>, and <a href="http://sf-planning.org/zoning-map-heightbulk-districts">Height Limits (SF Planning)</a>
+              </div>
+            </div>
+            <div class="box" data-box="3">
+              <div class="box--intro">
+                <div class="box--title">Building permits</div>
+                <div class="box--text">Building permits are administered by SF DBI and represent the permission to build from this department. It covers the engineering side of things (stormwater management, earthquake readiness, etc.) Every project needs to secure both a permission from SF Planning (entitlement) and from SF DBI (building permit). Unfortunately, there is no robust up-to-date public source on entitlement applications and issuances. Sometimes, construction project is pursuing approvals from SF Planning and SF DBI in parallel, sometimes sequentially. Generally, entitlements are secured earlier than permits.</div>
+                <div class="box--subtitle">Issued permits<span>total number of units approved by SF DBI</span></div>
+                <div class="box--text">The last four years demonstrate a&nbsp;stable level of ~4000 housing units permitted per year. That gives little hope for meeting mayor&rsquo;s annual target of&nbsp;5000 units in&nbsp;near future.</div>
+              </div>
+              <div class="graph">
+                <div class="graph--in">
+                  <canvas></canvas>
+                </div>
+              </div>
+              <div class="box--intro">
+                <div class="box--subtitle">Permit applications<span>total number of units applied for</span></div>
+                <div class="box--text">New permit applications set record in&nbsp;2016. Year-to-year variation is&nbsp;high and the 2017 year saw significantly reduced volume of&nbsp;applications. To&nbsp;meet mayor&rsquo;s goal in&nbsp;housing production, permit filings volume needs to&nbsp;stay high consistently for several years.</div>
+              </div>
+              <div class="graph">
+                <div class="graph--in">
+                  <canvas></canvas>
+                </div>
+              </div>
+              <div class="box--intro">
+                <div class="box--subtitle">Recent permits</div>
+                <div class="box--text">The latest issued permits for new construction projects with 10+&nbsp;units</div>
+              </div>
+              <div class="table">
+                <div class="table--export"><a class="btn">Export list</a></div>
+                <div class="table--head">
+                  <div class="table--th">Address</div>
+                  <div class="table--th">Permit ID</div>
+                  <div class="table--th">Units</div>
+                  <div class="table--th">Issued</div>
+                  <div class="table--th">Permit approval time</div>
+                  <div class="table--th">SF DBI</div>
+                </div>
+                <div class="table--body">
+                  <div class="table--row" data-page="1">
+                    <div class="table--td">333  12th St</div>
+                    <div class="table--td">201705025458</div>
+                    <div class="table--td">200</div>
+                    <div class="table--td">21 Feb 2018</div>
+                    <div class="table--td">10 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201705025458">201705025458</a></div>
+                  </div>
+                  <div class="table--row" data-page="1">
+                    <div class="table--td">1950  Mission St</div>
+                    <div class="table--td">201609218371</div>
+                    <div class="table--td">157</div>
+                    <div class="table--td">16 Feb 2018</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201609218371">201609218371</a></div>
+                  </div>
+                  <div class="table--row" data-page="1">
+                    <div class="table--td">2224  Clement St</div>
+                    <div class="table--td">201611213210</div>
+                    <div class="table--td">12</div>
+                    <div class="table--td">23 Jan 2018</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201611213210">201611213210</a></div>
+                  </div>
+                  <div class="table--row" data-page="1">
+                    <div class="table--td">770  Powell St</div>
+                    <div class="table--td">201603091627</div>
+                    <div class="table--td">44</div>
+                    <div class="table--td">29 Dec 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201603091627">201603091627</a></div>
+                  </div>
+                  <div class="table--row" data-page="1">
+                    <div class="table--td">2600  Harrison St</div>
+                    <div class="table--td">201501236483</div>
+                    <div class="table--td">20</div>
+                    <div class="table--td">29 Dec 2017</div>
+                    <div class="table--td">3 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201501236483">201501236483</a></div>
+                  </div>
+                  <div class="table--row" data-page="1">
+                    <div class="table--td">540  De Haro St</div>
+                    <div class="table--td">201502107867</div>
+                    <div class="table--td">17</div>
+                    <div class="table--td">27 Dec 2017</div>
+                    <div class="table--td">3 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201502107867">201502107867</a></div>
+                  </div>
+                  <div class="table--row" data-page="1">
+                    <div class="table--td">719  Larkin St</div>
+                    <div class="table--td">201612225735</div>
+                    <div class="table--td">42</div>
+                    <div class="table--td">20 Dec 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201612225735">201612225735</a></div>
+                  </div>
+                  <div class="table--row" data-page="1">
+                    <div class="table--td">1433  Bush St</div>
+                    <div class="table--td">201605318777</div>
+                    <div class="table--td">40</div>
+                    <div class="table--td">20 Dec 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201605318777">201605318777</a></div>
+                  </div>
+                  <div class="table--row" data-page="1">
+                    <div class="table--td">950  Market St</div>
+                    <div class="table--td">201602089004</div>
+                    <div class="table--td">470</div>
+                    <div class="table--td">14 Dec 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201602089004">201602089004</a></div>
+                  </div>
+                  <div class="table--row" data-page="1">
+                    <div class="table--td">1066  Market St</div>
+                    <div class="table--td">201406128212</div>
+                    <div class="table--td">303</div>
+                    <div class="table--td">29 Nov 2017</div>
+                    <div class="table--td">4 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201406128212">201406128212</a></div>
+                  </div>
+                  <div class="table--row" data-page="2">
+                    <div class="table--td">1491  Sunnydale Av</div>
+                    <div class="table--td">201612225710</div>
+                    <div class="table--td">55</div>
+                    <div class="table--td">20 Nov 2017</div>
+                    <div class="table--td">12 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201612225710">201612225710</a></div>
+                  </div>
+                  <div class="table--row" data-page="2">
+                    <div class="table--td">2070  Folsom St</div>
+                    <div class="table--td">201608054294</div>
+                    <div class="table--td">127</div>
+                    <div class="table--td">8 Nov 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201608054294">201608054294</a></div>
+                  </div>
+                  <div class="table--row" data-page="2">
+                    <div class="table--td">915  Minna St</div>
+                    <div class="table--td">201602190104</div>
+                    <div class="table--td">49</div>
+                    <div class="table--td">8 Nov 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201602190104">201602190104</a></div>
+                  </div>
+                  <div class="table--row" data-page="2">
+                    <div class="table--td">3620  Cesar Chavez St</div>
+                    <div class="table--td">201607142327</div>
+                    <div class="table--td">24</div>
+                    <div class="table--td">2 Nov 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201607142327">201607142327</a></div>
+                  </div>
+                  <div class="table--row" data-page="2">
+                    <div class="table--td">75  Howard St</div>
+                    <div class="table--td">201604013681</div>
+                    <div class="table--td">120</div>
+                    <div class="table--td">25 Oct 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201604013681">201604013681</a></div>
+                  </div>
+                  <div class="table--row" data-page="2">
+                    <div class="table--td">363  06th St</div>
+                    <div class="table--td">201702280331</div>
+                    <div class="table--td">104</div>
+                    <div class="table--td">11 Oct 2017</div>
+                    <div class="table--td">8 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201702280331">201702280331</a></div>
+                  </div>
+                  <div class="table--row" data-page="2">
+                    <div class="table--td">1500  Mission St</div>
+                    <div class="table--td">201606200387</div>
+                    <div class="table--td">550</div>
+                    <div class="table--td">3 Oct 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201606200387">201606200387</a></div>
+                  </div>
+                  <div class="table--row" data-page="2">
+                    <div class="table--td">1  Earl St</div>
+                    <div class="table--td">201603141951</div>
+                    <div class="table--td">16</div>
+                    <div class="table--td">12 Sep 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201603141951">201603141951</a></div>
+                  </div>
+                  <div class="table--row" data-page="2">
+                    <div class="table--td">1  Earl St</div>
+                    <div class="table--td">201603141960</div>
+                    <div class="table--td">34</div>
+                    <div class="table--td">12 Sep 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201603141960">201603141960</a></div>
+                  </div>
+                  <div class="table--row" data-page="2">
+                    <div class="table--td">1301  16th St</div>
+                    <div class="table--td">201705025455</div>
+                    <div class="table--td">172</div>
+                    <div class="table--td">30 Aug 2017</div>
+                    <div class="table--td">4 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201705025455">201705025455</a></div>
+                  </div>
+                  <div class="table--row" data-page="3">
+                    <div class="table--td">1801  Mission St</div>
+                    <div class="table--td">201310038419</div>
+                    <div class="table--td">17</div>
+                    <div class="table--td">1 Aug 2017</div>
+                    <div class="table--td">4 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201310038419">201310038419</a></div>
+                  </div>
+                  <div class="table--row" data-page="3">
+                    <div class="table--td">901  Tennessee St</div>
+                    <div class="table--td">201604285990</div>
+                    <div class="table--td">40</div>
+                    <div class="table--td">1 Aug 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201604285990">201604285990</a></div>
+                  </div>
+                  <div class="table--row" data-page="3">
+                    <div class="table--td">1532  Harrison St</div>
+                    <div class="table--td">201607253262</div>
+                    <div class="table--td">136</div>
+                    <div class="table--td">28 Jul 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201607253262">201607253262</a></div>
+                  </div>
+                  <div class="table--row" data-page="3">
+                    <div class="table--td">2028  Bryant St</div>
+                    <div class="table--td">201406239109</div>
+                    <div class="table--td">194</div>
+                    <div class="table--td">27 Jul 2017</div>
+                    <div class="table--td">4 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201406239109">201406239109</a></div>
+                  </div>
+                  <div class="table--row" data-page="3">
+                    <div class="table--td">502  07th St</div>
+                    <div class="table--td">201505297549</div>
+                    <div class="table--td">16</div>
+                    <div class="table--td">19 Jul 2017</div>
+                    <div class="table--td">3 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201505297549">201505297549</a></div>
+                  </div>
+                  <div class="table--row" data-page="3">
+                    <div class="table--td">50  01st St</div>
+                    <div class="table--td">201510301303</div>
+                    <div class="table--td">109</div>
+                    <div class="table--td">5 Jul 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201510301303">201510301303</a></div>
+                  </div>
+                  <div class="table--row" data-page="3">
+                    <div class="table--td">1150  03rd St</div>
+                    <div class="table--td">201612215523</div>
+                    <div class="table--td">119</div>
+                    <div class="table--td">14 Jun 2017</div>
+                    <div class="table--td">6 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201612215523">201612215523</a></div>
+                  </div>
+                  <div class="table--row" data-page="3">
+                    <div class="table--td">2171  03rd St</div>
+                    <div class="table--td">201306210213</div>
+                    <div class="table--td">109</div>
+                    <div class="table--td">8 Jun 2017</div>
+                    <div class="table--td">5 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201306210213">201306210213</a></div>
+                  </div>
+                  <div class="table--row" data-page="3">
+                    <div class="table--td">1294  Shotwell St</div>
+                    <div class="table--td">201608195545</div>
+                    <div class="table--td">94</div>
+                    <div class="table--td">31 May 2017</div>
+                    <div class="table--td">10 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201608195545">201608195545</a></div>
+                  </div>
+                  <div class="table--row" data-page="3">
+                    <div class="table--td">800  Pennsylvania Av</div>
+                    <div class="table--td">201512145054</div>
+                    <div class="table--td">256</div>
+                    <div class="table--td">18 May 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201512145054">201512145054</a></div>
+                  </div>
+                  <div class="table--row" data-page="4">
+                    <div class="table--td">899  La Salle Av</div>
+                    <div class="table--td">201602129567</div>
+                    <div class="table--td">44</div>
+                    <div class="table--td">2 May 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201602129567">201602129567</a></div>
+                  </div>
+                  <div class="table--row" data-page="4">
+                    <div class="table--td">777  Tennessee St</div>
+                    <div class="table--td">201507141485</div>
+                    <div class="table--td">59</div>
+                    <div class="table--td">27 Apr 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201507141485">201507141485</a></div>
+                  </div>
+                  <div class="table--row" data-page="4">
+                    <div class="table--td">869  La Salle Av</div>
+                    <div class="table--td">201602179819</div>
+                    <div class="table--td">40</div>
+                    <div class="table--td">27 Apr 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201602179819">201602179819</a></div>
+                  </div>
+                  <div class="table--row" data-page="4">
+                    <div class="table--td">889  La Salle Av</div>
+                    <div class="table--td">201602179815</div>
+                    <div class="table--td">40</div>
+                    <div class="table--td">27 Apr 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201602179815">201602179815</a></div>
+                  </div>
+                  <div class="table--row" data-page="4">
+                    <div class="table--td">879  La Salle Av</div>
+                    <div class="table--td">201602179818</div>
+                    <div class="table--td">40</div>
+                    <div class="table--td">27 Apr 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201602179818">201602179818</a></div>
+                  </div>
+                  <div class="table--row" data-page="4">
+                    <div class="table--td">345  06th St</div>
+                    <div class="table--td">201602179763</div>
+                    <div class="table--td">102</div>
+                    <div class="table--td">5 Apr 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201602179763">201602179763</a></div>
+                  </div>
+                  <div class="table--row" data-page="4">
+                    <div class="table--td">1335  Folsom St</div>
+                    <div class="table--td">201406269542</div>
+                    <div class="table--td">53</div>
+                    <div class="table--td">24 Mar 2017</div>
+                    <div class="table--td">3 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201406269542">201406269542</a></div>
+                  </div>
+                  <div class="table--row" data-page="4">
+                    <div class="table--td">325  Fremont St</div>
+                    <div class="table--td">201605046495</div>
+                    <div class="table--td">118</div>
+                    <div class="table--td">21 Mar 2017</div>
+                    <div class="table--td">11 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201605046495">201605046495</a></div>
+                  </div>
+                  <div class="table--row" data-page="4">
+                    <div class="table--td">2800  Arelious Walker Dr</div>
+                    <div class="table--td">201608296272</div>
+                    <div class="table--td">31</div>
+                    <div class="table--td">13 Mar 2017</div>
+                    <div class="table--td">7 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201608296272">201608296272</a></div>
+                  </div>
+                  <div class="table--row" data-page="4">
+                    <div class="table--td">238  Taylor St</div>
+                    <div class="table--td">201602179822</div>
+                    <div class="table--td">113</div>
+                    <div class="table--td">7 Feb 2017</div>
+                    <div class="table--td">12 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201602179822">201602179822</a></div>
+                  </div>
+                  <div class="table--row" data-page="5">
+                    <div class="table--td">526  Mission St</div>
+                    <div class="table--td">201510301302</div>
+                    <div class="table--td">156</div>
+                    <div class="table--td">1 Feb 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201510301302">201510301302</a></div>
+                  </div>
+                  <div class="table--row" data-page="5">
+                    <div class="table--td">595  Mariposa St</div>
+                    <div class="table--td">201508063607</div>
+                    <div class="table--td">20</div>
+                    <div class="table--td">26 Jan 2017</div>
+                    <div class="table--td">2 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201508063607">201508063607</a></div>
+                  </div>
+                  <div class="table--row" data-page="5">
+                    <div class="table--td">75  Arkansas St</div>
+                    <div class="table--td">201606281077</div>
+                    <div class="table--td">30</div>
+                    <div class="table--td">13 Jan 2017</div>
+                    <div class="table--td">7 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201606281077">201606281077</a></div>
+                  </div>
+                  <div class="table--row" data-page="5">
+                    <div class="table--td">400  Bay St</div>
+                    <div class="table--td">201602129550</div>
+                    <div class="table--td">13</div>
+                    <div class="table--td">30 Dec 2016</div>
+                    <div class="table--td">11 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201602129550">201602129550</a></div>
+                  </div>
+                  <div class="table--row" data-page="5">
+                    <div class="table--td">160  Folsom St</div>
+                    <div class="table--td">201406259481</div>
+                    <div class="table--td">390</div>
+                    <div class="table--td">30 Dec 2016</div>
+                    <div class="table--td">3 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201406259481">201406259481</a></div>
+                  </div>
+                  <div class="table--row" data-page="5">
+                    <div class="table--td">2100  Market St</div>
+                    <div class="table--td">201607192730</div>
+                    <div class="table--td">60</div>
+                    <div class="table--td">29 Dec 2016</div>
+                    <div class="table--td">6 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201607192730">201607192730</a></div>
+                  </div>
+                  <div class="table--row" data-page="5">
+                    <div class="table--td">1532  Howard St</div>
+                    <div class="table--td">201405307085</div>
+                    <div class="table--td">15</div>
+                    <div class="table--td">22 Dec 2016</div>
+                    <div class="table--td">3 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201405307085">201405307085</a></div>
+                  </div>
+                  <div class="table--row" data-page="5">
+                    <div class="table--td">1699  Market St</div>
+                    <div class="table--td">201406108024</div>
+                    <div class="table--td">160</div>
+                    <div class="table--td">16 Dec 2016</div>
+                    <div class="table--td">3 years</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201406108024">201406108024</a></div>
+                  </div>
+                  <div class="table--row" data-page="5">
+                    <div class="table--td">701  03rd St</div>
+                    <div class="table--td">201605127267</div>
+                    <div class="table--td">230</div>
+                    <div class="table--td">29 Nov 2016</div>
+                    <div class="table--td">7 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201605127267">201605127267</a></div>
+                  </div>
+                  <div class="table--row" data-page="5">
+                    <div class="table--td">302  Silver Av</div>
+                    <div class="table--td">201603152080</div>
+                    <div class="table--td">198</div>
+                    <div class="table--td">21 Nov 2016</div>
+                    <div class="table--td">9 months</div>
+                    <div class="table--td"><a href="https://dbiweb.sfgov.org/dbipts/default.aspx?page=Permit&amp;PermitNumber=201603152080">201603152080</a></div>
+                  </div>
+                </div>
+                <div class="table--tools">
+                  <div class="table--counter">50 items</div>
+                  <div class="table--arrows"><a class="table--arrow is-prev is-disabled" href="#">Previous</a><a class="table--arrow is-next" href="#">Next</a></div>
+                </div>
+              </div>
+              <div class="map">
+                <div class="map--box" data-maptype="recent"></div>
+              </div>
+              <div class="box--foot">
+                <svg viewBox="0 0 10 13" width="10" height="13">
+                  <path d="M7.4,3.4H10L6.8,0v2.9C6.8,3.2,7.1,3.4,7.4,3.4z"></path>
+                  <path d="M7.4,3.9c-0.6,0-1.1-0.4-1.1-1V0H1.1C0.5,0,0,0.4,0,1V12c0,0.5,0.5,1,1.1,1h4.2h2.6h1.1c0.6,0,1.1-0.4,1.1-1 V3.9H7.4z"></path>
+                </svg>Source — <a href="https://data.sfgov.org/Housing-and-Buildings/Building-Permits/i98e-djp9/data">SF DBI Permit Database</a>
+              </div>
+            </div>
+            <div class="box" data-box="4">
+              <div class="box--intro">
+                <div class="box--title">Voter guide</div>
+                <div class="box--subtitle">SFHAC recommendations for upcoming ballot measures.</div>
+              </div>
+              <div class="cards">
+                <div class="cards--col">
+                  <div class="card is-yes">
+                    <div class="card--title">State Prop 69</div>
+                    <div class="card--text">
+                      <p>This measure would require that revenue from the diesel sales tax and Transportation Improvement Fee, as&nbsp;enacted by&nbsp;Senate Bill&nbsp;1 (SB&nbsp;1), be&nbsp;used for transportation-related purposes; and exempt revenue generated by&nbsp;SB&nbsp;1&rsquo;s tax increases and fee schedules from the state appropriations limit. Investing in&nbsp;our transit infrastructure is&nbsp;critical and was the original intent of&nbsp;Senate Bill&nbsp;1.</p>
+                    </div>
+                    <div class="card--link">...<a href="#">show more</a></div>
+                  </div>
+                  <div class="card is-yes">
+                    <div class="card--title">Local Proposition D</div>
+                    <div class="card--text">
+                      <p>Commercial Rent Tax for Housing and Homelessness. This measure would impose a&nbsp;tax on&nbsp;individuals and businesses that receive income from the lease or&nbsp;sublease of&nbsp;commercial space, primarily offices. The measure exempts certain spaces, including non-profits used for production, distribution and repair (including industrial, warehouse and similar uses), retail sales and services (including chain stores) and entertainment, arts and recreation.</p>
+                      <p>There are two commercial rent taxes on&nbsp;the ballot this election, Proposition C&nbsp;and D.&nbsp;Only one of&nbsp;them will take effect, the one with more votes. However, Proposition C&nbsp;requires a&nbsp;simple majority to&nbsp;pass and Proposition D&nbsp;requires two-thirds of&nbsp;the vote to&nbsp;pass. Therefore, Proposition C&nbsp;could win with fewer votes than Proposition D. Because our mission is&nbsp;to&nbsp;support more housing, we&rsquo;re only taking a&nbsp;position on&nbsp;Proposition&nbsp;D.</p>
+                      <p>Please note that HAC is&nbsp;bothered that City Hall has pitted child care vs&nbsp;affordable housing. San Francisco needs both. It&nbsp;is&nbsp;shameful that the progressives and moderates chose to&nbsp;use the need for child care and affordable housing as&nbsp;a&nbsp;political football instead of&nbsp;working together to&nbsp;figure out a&nbsp;reasonable funding solutions for both.</p>
+                    </div>
+                    <div class="card--link">...<a href="#">show more</a></div>
+                  </div>
+                </div>
+                <div class="cards--col">
+                  <div class="card is-yes">
+                    <div class="card--title">Regional Measure 3</div>
+                    <div class="card--text">
+                      <p>Increases tolls on&nbsp;the Bay Area&rsquo;s seven state-owned bridges, excluding the Golden Gate Bridge, by&nbsp;$1&nbsp;in&nbsp;2019, $1&nbsp;in&nbsp;2022 and $1&nbsp;in&nbsp;2025 to&nbsp;fund regional transportation capital investments. The investments made with the increased revenue would include: $500 million to&nbsp;expand BART&rsquo;s fleet; $375 million to&nbsp;expand BART to&nbsp;Silicon Valley; $325 million to&nbsp;bring high-speed rail to&nbsp;the Transbay Transit Center in&nbsp;San Francisco; $300 million to&nbsp;expand ferry service; and $50 million to&nbsp;implement a&nbsp;new Clipper-based fare system. In&nbsp;addition, the expenditure plan includes up&nbsp;to&nbsp;$60 million annually to&nbsp;support transit operations, including $35 million for ferry service; $20 million for regional express bus service; and $5&nbsp;million for Transbay Transit Center operations.</p>
+                    </div>
+                    <div class="card--link">...<a href="#">show more</a></div>
+                  </div>
+                  <div class="card is-yes">
+                    <div class="card--title">Prop F</div>
+                    <div class="card--text">
+                      <p>Legal Representation for Tenants. This measure would require the City of&nbsp;San Francisco to&nbsp;create a&nbsp;program to&nbsp;provide free legal representation for all San Francisco residential tenants facing eviction. Through this new program, tenants would be&nbsp;entitled to&nbsp;full scope legal representation&nbsp;&mdash; including appearing on&nbsp;behalf of&nbsp;the tenant in&nbsp;court proceedings and representing the tenant throughout the case&nbsp;&mdash; within 30&nbsp;days of&nbsp;receiving an&nbsp;eviction notice or&nbsp;being served with an&nbsp;eviction lawsuit. Providing an&nbsp;attorney for all tenants, and making sure tenants are aware of&nbsp;their rights, is&nbsp;critical.</p>
+                    </div>
+                    <div class="card--link">...<a href="#">show more</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="box--foot">
+                <svg viewBox="0 0 10 13" width="10" height="13">
+                  <path d="M7.4,3.4H10L6.8,0v2.9C6.8,3.2,7.1,3.4,7.4,3.4z"></path>
+                  <path d="M7.4,3.9c-0.6,0-1.1-0.4-1.1-1V0H1.1C0.5,0,0,0.4,0,1V12c0,0.5,0.5,1,1.1,1h4.2h2.6h1.1c0.6,0,1.1-0.4,1.1-1 V3.9H7.4z"></path>
+                </svg>Source — <a href="https://www.sfhac.org/june-2018-ballot-guide/">SFHAC June 2018 Ballot Proposition Guide</a>
+              </div>
+            </div>
+            <div class="box">
+              <div class="feedback">
+                <div class="feedback--title">Stay in&nbsp;touch for new stats from SFHAC</div>
+                <form class="feedback--form" method="POST" action="">
+                  <input class="feedback--input" type="text" placeholder="Email">
+                  <button class="feedback--btn" type="submit">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+  </body>
+</html>
