@@ -786,7 +786,26 @@ body {
 	}
 
 	&--icon { margin: 0 0 10px;
-		img { margin: 0 auto;
+		.position (relative);
+
+		&:before {
+			content: "";
+			background: #F6F4FE;
+			transform: translate(-50%, -50%);
+			z-index: 1;
+			border-radius: 138px;
+			transition: 300ms all ease;
+
+			.display (block);
+			.position-tl (absolute, 50%, 50%);
+			.size (138px, 138px);
+		}
+
+		img {
+			margin: 0 auto;
+			z-index: 2;
+
+			.position (relative);
 			.display (block);
 			.size (180px, 180px);
 
@@ -810,6 +829,10 @@ body {
 		.font (18px, 24px);
 
 		@media @xs-sm { .font (15px, 22px); }
+	}
+
+	&--item:hover &--icon:before { border-radius: 170px;
+		.size (170px, 170px);
 	}
 
 	@media @lg {

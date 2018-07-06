@@ -1445,9 +1445,41 @@ body *:after {
 }
 .features--icon {
   margin: 0 0 10px;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+.features--icon:before {
+  content: "";
+  background: #F6F4FE;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  -webkit-border-radius: 138px;
+  border-radius: 138px;
+  -webkit-transition: 300ms all ease;
+  -o-transition: 300ms all ease;
+  transition: 300ms all ease;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  width: 138px;
+  height: 138px;
 }
 .features--icon img {
   margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
   display: block;
   width: 180px;
   height: 180px;
@@ -1482,6 +1514,12 @@ body *:after {
     font-size: 15px;
     line-height: 22px;
   }
+}
+.features--item:hover .features--icon:before {
+  -webkit-border-radius: 170px;
+  border-radius: 170px;
+  width: 170px;
+  height: 170px;
 }
 @media (min-width: 1172px) {
   .features--item.is-big .features--text {
