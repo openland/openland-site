@@ -16,6 +16,7 @@
 
 		signin: 'https://app.openland.com/signin',
 		signup: 'https://app.openland.com/signup',
+		app: 'https://app.openland.com/',
 
 		careers: 'https://angel.co/openland/jobs',
 	};
@@ -92,7 +93,7 @@ mixin header (active)
 			else
 				li.header--item: a(href=links.about) About
 
-		.header--btn: a(href=links.signin).btn Sign in
+		.header--btn: a(href=links.signin data-app="true" data-app-label="Go to the app" data-app-url=links.app).btn Sign in
 		.header--btn: a(href=phoneTel).btn.is-grey #[i.icon-phone]#{phone}
 
 mixin footer
@@ -174,6 +175,7 @@ mixin page (meta, active)
 			+menu (active)
 
 			script(type="text/javascript" src="js/jquery-1.11.1.min.js")
+			script(type="text/javascript" src="js/js.cookie.min.js")
 			script(type="text/javascript" src="js/scripts.js")
 
 			+yandex-metrika

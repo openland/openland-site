@@ -7,6 +7,25 @@ $(document).ready(function () {
 	});
 
 	$(window).on('load', function () {
+		var photo = Cookies.get('x-openland-user-photo');
+
+		if (photo) {
+			$('[data-app]').each(function () {
+				var btn = $(this);
+				var image = $('<img />');
+				var label = $('<span />');
+
+				image.attr('src', photo);
+				label.html(btn.attr('data-app-label'));
+
+				btn.attr('href', btn.attr('data-app-url'));
+				btn.addClass('is-app');
+				btn.html('');
+				btn.append(image);
+				btn.append(label);
+			});
+		}
+
 		$('[data-animate="load"]').addClass('is-animated');
 	});
 

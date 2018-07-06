@@ -148,6 +148,34 @@ body {
 		&:hover { color: @purple-1; }
 	}
 
+	&.is-app {
+		border-color: #dcdee4;
+		color: @text-5;
+		padding: 7px 17px 5px 10px;
+
+		.font (0);
+
+		&:hover {
+			border-color: darken(#dcdee4, 15%);
+			background: none;
+		}
+
+		img {
+			overflow: hidden;
+			border-radius: 24px;
+			margin: -1px 8px 1px 0px;
+			box-shadow: 0 0 0 2px @white;
+
+			.display (inline-block);
+			.size (24px, 24px);
+		}
+
+		span {
+			.display (inline-block);
+			.font (15px, 20px, 500);
+		}
+	}
+
 	&.is-blue {
 		border: none;
 		background: @purple-3;
