@@ -161,7 +161,7 @@ mixin menu (active)
 
 mixin page (meta, active)
 	doctype html
-	html
+	html(lang="en")
 		+head (meta)
 
 		body
@@ -243,7 +243,7 @@ mixin content--head (title, date)
 	.content--head
 		.content--icon&attributes(attributes)
 
-		h1.content--title !{title} @ Openland
+		h1.content--title !{title} @&nbsp;Openland
 		p.content--text Effective Date — !{date}
 
 mixin content--wrap (links)
