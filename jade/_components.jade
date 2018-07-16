@@ -175,7 +175,10 @@ mixin page (meta, active)
 			+menu (active)
 
 			script(type="text/javascript" src="js/jquery-1.11.1.min.js")
+
 			script(type="text/javascript" src="js/js.cookie.min.js")
+			script(type="text/javascript" src="js/jquery.sticky-kit.min.js")
+
 			script(type="text/javascript" src="js/scripts.js")
 
 			+yandex-metrika
@@ -235,3 +238,19 @@ mixin position (title, info, link)
 		.position--title!= title
 		.position--info!= info
 		.position--btn: a(href=link target="_blank").btn.is-smallblue.is-block Apply
+
+mixin content--head (title, date)
+	.content--head
+		.content--icon&attributes(attributes)
+
+		h1.content--title !{title} @ Openland
+		p.content--text Effective Date — !{date}
+
+mixin content--wrap (links)
+	.content--wrap&attributes(attributes)
+		.content--side: .content--menu: ul
+			each link, i in links
+				li(class=(i == 0) ? 'is-active' : ''): a(href='#block' + (i + 1)).js-scrollto!= link
+
+		.content--box
+			block
