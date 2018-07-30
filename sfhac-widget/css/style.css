@@ -11,12 +11,12 @@
   font: normal normal 14px/20px 'SFProDisplay', arial, sans-serif;
   background: url(../img/widget-bg.png) left top no-repeat;
   margin: 0 auto;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
   overflow: hidden;
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
-  padding: 94px 26px 26px;
+  padding: 94px 26px 46px;
   width: 1160px;
   height: auto;
   position: relative;
