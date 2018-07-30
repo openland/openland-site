@@ -294,13 +294,13 @@ body *:after {
     height: auto;
   }
 }
-@media (min-width: 854px) and (max-width: 1023px) {
+@media (min-width: 854px) and (max-width: 959px) {
   .ol-sfhac {
     width: auto;
     height: auto;
   }
 }
-@media (min-width: 1024px) and (max-width: 1439px) {
+@media (min-width: 960px) and (max-width: 1159px) {
   .ol-sfhac {
     width: 960px;
     height: auto;
@@ -337,7 +337,7 @@ body *:after {
     line-height: 24px;
   }
 }
-@media (min-width: 854px) and (max-width: 1439px) {
+@media (min-width: 854px) and (max-width: 1159px) {
   .ol-sfhac--title {
     top: 24px;
   }
@@ -354,7 +354,7 @@ body *:after {
   line-height: 20px;
   font-weight: 600;
 }
-@media (max-width: 1439px) {
+@media (max-width: 1159px) {
   .ol-sfhac--text {
     display: none;
   }
@@ -380,7 +380,7 @@ body *:after {
     height: auto;
   }
 }
-@media (min-width: 854px) and (max-width: 1439px) {
+@media (min-width: 854px) and (max-width: 1159px) {
   .ol-sfhac--features {
     opacity: 0.6;
     position: absolute;
@@ -415,7 +415,7 @@ body *:after {
     height: 1px;
   }
 }
-@media (min-width: 854px) and (max-width: 1439px) {
+@media (min-width: 854px) and (max-width: 1159px) {
   .ol-sfhac--features:before {
     display: none;
   }
@@ -501,7 +501,7 @@ body *:after {
     left: 50%;
   }
 }
-@media (min-width: 854px) and (max-width: 1439px) {
+@media (min-width: 854px) and (max-width: 1159px) {
   .ol-sfhac--btn {
     top: 27px;
   }
@@ -573,7 +573,7 @@ body *:after {
     line-height: 30px;
   }
 }
-@media (min-width: 854px) and (max-width: 1023px) {
+@media (min-width: 854px) and (max-width: 959px) {
   .ol-sfhac--counter {
     padding: 28px 0 31px;
     letter-spacing: 0.56px;
@@ -581,7 +581,7 @@ body *:after {
     line-height: 30px;
   }
 }
-@media (min-width: 1024px) and (max-width: 1439px) {
+@media (min-width: 960px) and (max-width: 1159px) {
   .ol-sfhac--counter {
     padding: 34px 0 35px;
     letter-spacing: 0.63px;
@@ -601,7 +601,7 @@ body *:after {
   font-weight: 700;
   display: block;
 }
-@media (max-width: 1023px) {
+@media (max-width: 959px) {
   .ol-sfhac--counter span {
     margin: 10px 0 0;
     letter-spacing: 1.29px;
@@ -609,7 +609,7 @@ body *:after {
     line-height: 30px;
   }
 }
-@media (min-width: 1024px) and (max-width: 1439px) {
+@media (min-width: 960px) and (max-width: 1159px) {
   .ol-sfhac--counter span {
     margin: 11px 0 0;
     letter-spacing: 1.47px;
@@ -628,7 +628,7 @@ body *:after {
   line-height: 22px;
   font-weight: 500;
 }
-@media (max-width: 1439px) {
+@media (max-width: 1159px) {
   .ol-sfhac--label {
     letter-spacing: 0.44px;
     font-size: 16px;
