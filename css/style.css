@@ -872,6 +872,9 @@ body *:after {
 @media (max-width: 767px) {
   .footer--box {
     padding: 30px 0 10px;
+    margin: 0 auto;
+    width: 340px;
+    height: auto;
   }
 }
 .footer--col {
