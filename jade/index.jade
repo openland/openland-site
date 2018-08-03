@@ -1,13 +1,13 @@
 -
 	meta = {
-		title: 'Openland – Discover qualified development opportunities',
-		description: 'Openland helps real estate developers identify and acquire sites for new construction. Join Openland to get a stream of new leads for your land acquisition process.',
+		title: 'Openland — Professional messenger for real estate',
+		description: 'An instant messaging service for market research, deal sourcing, and transaction management in real estate.',
 
 		og: {
-			title: 'Openland – Discover qualified development opportunities',
+			title: 'Openland — Professional messenger for real estate',
 			url: 'https://openland.com/',
-			description: 'Openland helps real estate developers identify and acquire sites for new construction. Join Openland to get a stream of new leads for your land acquisition process.',
-			image: 'https://openland.com/img/og.png'
+			description: 'An instant messaging service for market research, deal sourcing, and transaction management in real estate.',
+			image: 'https://openland.com/img/og-messenger.png'
 		}
 	}
 
@@ -15,16 +15,33 @@ include ./_components.jade
 
 +page (meta, 1)
 	.container
-		.intro
-			.intro--title Discover qualified development opportunities
-			.intro--text Join Openland for free to&nbsp;get a&nbsp;stream of&nbsp;new leads for your land acquisition process
+		.intro.is-messenger
+			.intro--title Professional Messenger for Real Estate
+			.intro--text A&nbsp;fast and easy way to&nbsp;do&nbsp;market research, source deals, and work on&nbsp;transactions
 			.intro--form: +signup
-			.intro--illustration
-				+intro--row (['Publicly owned land', 'Single story retail', 'Parking lot', 'Backyard', 'Recently-upzoned area'])
 
-				.intro--image: img(src="/img/buildings-b.png" srcset="/img/buildings-b@2x.png 2x" alt="")
+		.messenger
+			+messenger--item (1, 'Channels', 'Invite-only communities to&nbsp;share insider knowledge and market data')
+			+messenger--item (2, 'Listings', 'The easiest way to&nbsp;publish, distribute, and discover opportunities')
+			+messenger--item (3, 'Chats', 'Cross-organization chats to&nbsp;qualify opportunities and work on&nbsp;deals')
 
-		.features
-			+features--item ('feature-01.svg', 'Create Profile', 'Create a&nbsp;free Openland profile and enter your acquisition criteria')
-			+features--item ('feature-02.svg', 'Follow', 'Discover and follow owners looking to&nbsp;sell their development sites')
-			+features--item ('feature-03.svg', 'Get Notified', 'Get an&nbsp;alert for every opportunity that matches your criteria')
+		.channels
+			.channels--title Featured channels
+			.channels--items
+				a(href="#").channels--item Retail conversion
+				a(href="#").channels--item Government incentives
+				a(href="#").channels--item Portfolio deals
+				a(href="#").channels--item Data and analytics
+				a(href="#").channels--item Foreign investment
+				a(href="#").channels--item Build-to-suit development
+				a(href="#").channels--item Joint ventures
+				a(href="#").channels--item Master-planned communities
+				a(href="#").channels--item Non-traditional financing
+				a(href="#").channels--item Instant acquisitions
+				a(href="#").channels--item Prefab construction
+				a(href="#").channels--item New infrastructure
+
+	.try: .container: .try--box
+		.try--title Ready to try Openland?
+		.try--features #[span Share data]#[span Source opportunities]#[span Close deals]
+		.try--btn: a(href=links.signup).btn.is-block.is-blue Sign up for free

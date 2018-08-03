@@ -8,7 +8,8 @@
 	links = {
 		home: '/',
 
-		builders: '/',
+		messenger: '/',
+		builders: '/builders',
 		owners: '/owners',
 		about: '/about',
 		privacy: '/privacy',
@@ -79,22 +80,24 @@ mixin header (active)
 
 		nav.header--nav: ul.header--list
 			if (active == 1)
-				li.header--item.is-active: span Builders
+				li.header--item.is-active: span Messenger
 			else
-				li.header--item: a(href=links.builders) Builders
+				li.header--item: a(href=links.messenger) Messenger
 
-			if (active == 2)
-				li.header--item.is-active: span Owners
-			else
-				li.header--item: a(href=links.owners) Owners
+			li.header--item.is-sub(class=(active == 2 || active == 3) ? 'is-active' : '')
+				span Solutions
+				ul
+					li(class=(active == 2) ? 'is-active' : ''): a(href=links.builders) Builders
+					li(class=(active == 3) ? 'is-active' : ''): a(href=links.owners) Owners
 
-			if (active == 3)
+			if (active == 4)
 				li.header--item.is-active: span About
 			else
 				li.header--item: a(href=links.about) About
 
 		.header--btn: a(href=links.signin data-app="true" data-app-label="Go to the app" data-app-url=links.app).btn Sign in
-		.header--btn: a(href=phoneTel).btn.is-grey #[i.icon-phone]#{phone}
+
+		-//.header--btn: a(href=phoneTel).btn.is-grey #[i.icon-phone]#{phone}
 
 mixin footer
 	footer.footer&attributes(attributes)
@@ -106,7 +109,17 @@ mixin footer
 
 				.visible-sm: +footer--socials
 
-			+footer--col ('Solutions', [[links.builders, 'Builders'], [links.owners, 'Owners']])
+			.footer--col
+				.footer--title Solutions
+
+				ul.footer--links
+					li: a(href=links.messenger) Messenger
+					li.is-sub
+						span Solutions
+						ul
+							li: a(href=links.builders) Builders
+							li: a(href=links.owners) Owners
+
 			+footer--col ('Company', [[links.about, 'About'], [links.careers, 'Careers', true]])
 			+footer--col ('Legal', [[links.privacy, 'Privacy Policy'], [links.terms, 'Terms of Service']])
 			+footer--col ('Contacts', [[phoneTel, '<i class="icon-phone"></i>' + phone], [mailTo, '<i class="icon-mail"></i>' + mail]])
@@ -124,9 +137,9 @@ mixin footer--socials
 
 mixin signup
 	.signup(data-signup="box")&attributes(attributes)
-		.signup--variant.is-shown(data-signup="google")
-			a(href=links.signup + '?google=true').btn.is-block.is-blue #[i.icon-google]Sign up with Google
-			a(href="#" data-signup="toggle" data-variant="mail").signup--link Sign up with Email
+		.signup--variant.is-shown(data-signup="google"): .signup--btns
+			.signup--btn: a(href=links.signup + '?google=true').btn.is-block.is-blue #[i.icon-google]Sign up with Google
+			.signup--btn: a(href="#" data-signup="toggle" data-variant="mail").btn.is-block.is-outline #[i.icon-mail]Sign up with Email
 
 		.signup--variant(data-signup="mail")
 			form(method="GET" action=links.signup).signup--form
@@ -142,16 +155,21 @@ mixin menu (active)
 		.menu--in: .container
 			ul.menu--list
 				if (active == 1)
+					li.menu--item.is-active: span Messenger
+				else
+					li.menu--item: a(href=links.messenger) Messenger
+
+				if (active == 2)
 					li.menu--item.is-active: span Builders
 				else
 					li.menu--item: a(href=links.builders) Builders
 
-				if (active == 2)
+				if (active == 3)
 					li.menu--item.is-active: span Owners
 				else
 					li.menu--item: a(href=links.owners) Owners
 
-				if (active == 3)
+				if (active == 4)
 					li.menu--item.is-active: span About
 				else
 					li.menu--item: a(href=links.about) About
@@ -254,3 +272,9 @@ mixin content--wrap (links)
 
 		.content--box
 			block
+
+mixin messenger--item (icon, title, text)
+	.messenger--item&attributes(attributes)
+		.messenger--title!= title
+		.messenger--text!= text
+		.messenger--icon(class='is-i0' + icon)
