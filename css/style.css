@@ -872,6 +872,10 @@ body *:after {
 @media (max-width: 767px) {
   .footer--box {
     padding: 30px 0 10px;
+  }
+}
+@media (max-width: 767px) and (max-width: 449px) {
+  .footer--box {
     margin: 0 auto;
     width: 340px;
     height: auto;

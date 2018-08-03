@@ -500,11 +500,10 @@ body {
 	&--box { padding: 40px 0 33px;
 		.clearfix ();
 
-		@media @xs-only {
-			padding: 30px 0 10px;
-			margin: 0 auto;
-
-			.size (340px);
+		@media @xs-only { padding: 30px 0 10px;
+			@media (max-width: 449px) { margin: 0 auto;
+				.size (340px);
+			}
 		}
 	}
 
