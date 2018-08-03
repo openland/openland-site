@@ -877,8 +877,8 @@ body *:after {
 @media (max-width: 767px) and (max-width: 449px) {
   .footer--box {
     margin: 0 auto;
-    width: 340px;
-    height: auto;
+    max-width: 340px;
+    max-height: initial;
   }
 }
 .footer--col {
@@ -915,6 +915,16 @@ body *:after {
   }
   .footer--col:nth-child(6) {
     width: 100% !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 767px) and (min-width: 370px) and (max-width: 449px) {
+  .footer--col {
+    width: 50% !important;
+    height: auto !important;
+  }
+  .footer--col:nth-child(2n+2) {
+    width: 50% !important;
     height: auto !important;
   }
 }

@@ -502,7 +502,7 @@ body {
 
 		@media @xs-only { padding: 30px 0 10px;
 			@media (max-width: 449px) { margin: 0 auto;
-				.size (340px);
+				.max-size (340px);
 			}
 		}
 	}
@@ -520,6 +520,10 @@ body {
 
 			&:nth-child(2n+2) { .size (43%)!important; }
 			&:nth-child(6) { .size (100%)!important; }
+
+			@media (min-width: 370px) and (max-width: 449px) { .size (50%)!important;
+				&:nth-child(2n+2) { .size (50%)!important; }
+			}
 
 			@media (min-width: 450px) {
 				&:nth-child(2) { .size (100% / 3)!important; }
