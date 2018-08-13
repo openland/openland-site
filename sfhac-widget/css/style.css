@@ -271,7 +271,7 @@ body *:after {
   overflow: hidden;
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
-  padding: 94px 26px 46px;
+  padding: 104px 26px 75px;
   width: 1160px;
   height: auto;
   position: relative;
@@ -400,7 +400,7 @@ body *:after {
   bottom: auto;
   left: -33px;
   width: 1px;
-  height: 94px;
+  height: 104px;
 }
 @media (max-width: 853px) {
   .ol-sfhac--features:before {
@@ -559,7 +559,7 @@ body *:after {
   text-align: center;
   border-right: 1px solid #eeedf6;
   letter-spacing: 0.7px;
-  padding: 30px 0 39px;
+  padding: 43px 0 46px;
   font-size: 22px;
   line-height: 28px;
 }
@@ -625,7 +625,7 @@ body *:after {
   color: #534C7F;
   padding: 10px 0;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 32px;
   font-weight: 500;
 }
 @media (max-width: 1159px) {
