@@ -748,7 +748,14 @@ body {
 
 // --------
 
-.page { overflow: hidden;
+.page {
+	overflow: hidden;
+	flex-direction: column;
+
+	.display (flex);
+	.min-size (initial, 100vh);
+
+	&--box { flex: 1; }
 	&--in { border-top: 1px solid fade(@grey-8, 16);
 		@media @xs-only { border: none; }
 	}
