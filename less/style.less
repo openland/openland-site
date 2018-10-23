@@ -32,6 +32,7 @@
 	@blue-1: #1790ff;
 	@blue-2: #e3edfe;
 	@blue-3: rgba(66, 133, 244, 0.15);
+	@blue-4: #4285f4;
 
 // --------
 
@@ -265,6 +266,12 @@ body {
 		img {
 			.display (block);
 			.size (145px, 42px);
+
+			&.is-hover { .display (none); }
+		}
+
+		&:hover img { .display (none);
+			&.is-hover { .display (block); }
 		}
 	}
 
@@ -747,7 +754,7 @@ body {
 
 	&--btns { .clearfix (); }
 	&--btn { float: left;
-		.size (219px);
+		.size (234px);
 
 		@media @xs-only {
 			float: none;
@@ -757,6 +764,8 @@ body {
 		}
 
 		&:nth-child(2) { float: right;
+			.size (219px);
+
 			@media @xs-only {
 				float: none;
 				margin-bottom: 0;
@@ -812,6 +821,80 @@ body {
 		&--form + &--link { margin: 0;
 			.position (absolute, ~'calc(100% + 3px)', 0, auto, 0);
 		}
+	}
+}
+
+.tasks {
+	padding: 77px 0 0;
+
+	&--title {
+		text-align: center;
+		margin: 0 0 45px;
+
+		.font (32px, 38px, 600);
+	}
+
+	&--items {
+		text-align: center;
+		margin: 0 auto;
+
+		.font (0);
+		.max-size (800px);
+	}
+
+	&--item {
+		margin: 0 10px 20px;
+		padding: 17px 44px;
+		color: @blue-4;
+		background: @blue-3;
+		border-radius: 7px;
+
+		.display (inline-block);
+		.font (16px, 20px)
+	}
+}
+
+.tools {
+	padding: 110px 0 0;
+
+	&--title {
+		text-align: center;
+		margin: 0 0 50px;
+
+		.font (32px, 38px, 600);
+	}
+
+	&--wrapper {
+
+	}
+
+	&--items {
+
+	}
+
+	&--item {
+		color: fade(@text-1, 70);
+		padding: 0 0 0 82px;
+		margin: 0 0 47px;
+
+		.position (relative);
+		.font (18px, 21px);
+
+		&:last-child {
+			margin: 0;
+		}
+
+		span {
+			color: @text-1;
+			margin: 0 0 9px;
+
+			.display (block);
+			.font (20px, 24px, 600);
+		}
+	}
+
+	&--photo {
+
 	}
 }
 
@@ -1102,7 +1185,6 @@ body {
 	}
 
 	&--name {
-		letter-spacing: 0.7px;
 		color: @text-3;
 		margin: 0 0 5px;
 
@@ -1112,7 +1194,6 @@ body {
 	}
 
 	&--position {
-		letter-spacing: 0.5px;
 		color: fade(@text-3, 50);
 
 		.font (16px, 22px, 500);
@@ -1132,7 +1213,6 @@ body {
 
 	&--link {
 		margin: 0 20px 0 0;
-		letter-spacing: 0.5px;
 		color: fade(@text-3, 50);
 		transition: 200ms all ease;
 		text-decoration: none;
@@ -1163,7 +1243,6 @@ body {
 	@media @xs-sm { padding-bottom: 20px; }
 
 	&--title {
-		letter-spacing: 0.6px;
 		color: @text-3;
 		margin: 0 0 8px;
 
@@ -1171,7 +1250,6 @@ body {
 	}
 
 	&--info {
-		letter-spacing: 0.5px;
 		color: @text-7;
 
 		.font (16px, 24px);

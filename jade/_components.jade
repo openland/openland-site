@@ -76,7 +76,10 @@ mixin head (d)
 
 mixin header (active)
 	header.header&attributes(attributes): .container: .header--in
-		a(href=links.home).header--logo: img(src="img/logotype.svg" alt="")
+		a(href=links.home).header--logo
+			img(src="img/logotype.svg" alt="").is-default
+			img(src="img/logotype-hover.svg" alt="").is-hover
+
 		a(href="#").header--open
 
 		nav.header--nav: ul.header--list

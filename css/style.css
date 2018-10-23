@@ -542,6 +542,15 @@ body *:after {
   width: 145px;
   height: 42px;
 }
+.header--logo img.is-hover {
+  display: none;
+}
+.header--logo:hover img {
+  display: none;
+}
+.header--logo:hover img.is-hover {
+  display: block;
+}
 .header--open {
   text-decoration: none;
   color: #1f3449;
@@ -1309,7 +1318,7 @@ body *:after {
 }
 .signup--btn {
   float: left;
-  width: 219px;
+  width: 234px;
   height: auto;
 }
 @media (max-width: 767px) {
@@ -1322,6 +1331,8 @@ body *:after {
 }
 .signup--btn:nth-child(2) {
   float: right;
+  width: 219px;
+  height: auto;
 }
 @media (max-width: 767px) {
   .signup--btn:nth-child(2) {
@@ -1403,6 +1414,69 @@ body *:after {
     bottom: auto;
     left: 0;
   }
+}
+.tasks {
+  padding: 77px 0 0;
+}
+.tasks--title {
+  text-align: center;
+  margin: 0 0 45px;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 600;
+}
+.tasks--items {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0;
+  line-height: 0;
+  max-width: 800px;
+  max-height: initial;
+}
+.tasks--item {
+  margin: 0 10px 20px;
+  padding: 17px 44px;
+  color: #4285f4;
+  background: rgba(66, 133, 244, 0.15);
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  line-height: 20px;
+}
+.tools {
+  padding: 110px 0 0;
+}
+.tools--title {
+  text-align: center;
+  margin: 0 0 50px;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 600;
+}
+.tools--item {
+  color: rgba(31, 52, 73, 0.7);
+  padding: 0 0 0 82px;
+  margin: 0 0 47px;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  font-size: 18px;
+  line-height: 21px;
+}
+.tools--item:last-child {
+  margin: 0;
+}
+.tools--item span {
+  color: #1f3449;
+  margin: 0 0 9px;
+  display: block;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
 }
 .about {
   padding: 42px 0 13px;
@@ -1842,7 +1916,6 @@ body *:after {
   height: auto;
 }
 .member--name {
-  letter-spacing: 0.7px;
   color: #000000;
   margin: 0 0 5px;
   font-size: 22px;
@@ -1856,7 +1929,6 @@ body *:after {
   }
 }
 .member--position {
-  letter-spacing: 0.5px;
   color: rgba(0, 0, 0, 0.5);
   font-size: 16px;
   line-height: 22px;
@@ -1886,7 +1958,6 @@ body *:after {
 }
 .member--link {
   margin: 0 20px 0 0;
-  letter-spacing: 0.5px;
   color: rgba(0, 0, 0, 0.5);
   -webkit-transition: 200ms all ease;
   -o-transition: 200ms all ease;
@@ -1945,7 +2016,6 @@ body *:after {
   }
 }
 .position--title {
-  letter-spacing: 0.6px;
   color: #000000;
   margin: 0 0 8px;
   font-size: 18px;
@@ -1953,7 +2023,6 @@ body *:after {
   font-weight: 600;
 }
 .position--info {
-  letter-spacing: 0.5px;
   color: #000000;
   font-size: 16px;
   line-height: 24px;
