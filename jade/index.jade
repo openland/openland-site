@@ -15,33 +15,36 @@ include ./_components.jade
 
 +page (meta, 1)
 	.container
-		.intro.is-messenger
-			.intro--title Professional Messenger for&nbsp;Real&nbsp;Estate
-			.intro--text A&nbsp;fast and easy way to&nbsp;do&nbsp;market research, source&nbsp;deals, and work on&nbsp;transactions
+		.intro
+			.intro--title Silicon Valley&rsquo;s Next Messenger
+			.intro--text A&nbsp;better way to&nbsp;work with people outside of&nbsp;your organization
 			.intro--form: +signup
+			.intro--label Openland is&nbsp;in&nbsp;limited preview release. Sign up&nbsp;to&nbsp;get your invitation.
 
-		.messenger
-			+messenger--item (1, 'Channels', 'Invite-only communities to&nbsp;share insider knowledge and market data')
-			+messenger--item (2, 'Listings', 'The easiest way to&nbsp;publish, distribute, and discover opportunities')
-			+messenger--item (3, 'Chats', 'Cross-organization chats to&nbsp;qualify opportunities and work on&nbsp;deals')
+		.tasks
+			.tasks--title Perfect for most frequent communication tasks
+			.tasks--items
+				.tasks--item Advice
+				.tasks--item User research
+				.tasks--item Fundraising
+				.tasks--item Recruiting
+				.tasks--item Sales
+				.tasks--item Marketing
+				.tasks--item Customer success
+				.tasks--item Vendor relations
 
-		.channels
-			.channels--title Featured channels
-			.channels--items
-				.channels--item Retail conversion
-				.channels--item Government incentives
-				.channels--item Portfolio deals
-				.channels--item Data and analytics
-				.channels--item Foreign investment
-				.channels--item Build-to-suit development
-				.channels--item Joint ventures
-				.channels--item Master-planned communities
-				.channels--item Non-traditional financing
-				.channels--item Instant acquisitions
-				.channels--item Prefab construction
-				.channels--item New infrastructure
+		.tools
+			.tools--title A&nbsp;simple and elegant system of&nbsp;tools
+			.tools--wrapper
+				.tools--items
+					.tools--item.is-i01 #[span Professional identity]One account everywhere
+					.tools--item.is-i02 #[span Connections you need]Intros and invitations to&nbsp;expand your network
+					.tools--item.is-i03 #[span Fast, expressive writing]Keyboard shortcuts and stickers
+					.tools--item.is-i04 #[span Chat rooms for every purpose]Instant workspaces without team borders
 
-	.try: .container: .try--box
-		.try--title Ready to try Openland?
-		.try--features #[span Share data]#[span Source opportunities]#[span Close deals]
-		.try--btn: a(href=links.signup).btn.is-block.is-blue Sign up for free
+				.tools--photo
+
+	.access: .container: .access--box
+		.access--title Get early access to&nbsp;Openland Messenger
+		.access--text Join founders, investors, and experts from 1000+ organizations
+		.access--btn: a(href=links.signup).btn.is-block.is-blue Sign up for free

@@ -9,8 +9,6 @@
 		home: '/',
 
 		messenger: '/',
-		builders: '/builders',
-		owners: '/owners',
 		about: '/about',
 		privacy: '/privacy',
 		terms: '/terms',
@@ -20,6 +18,9 @@
 		app: 'https://app.openland.com/',
 
 		careers: 'https://angel.co/openland/jobs',
+
+		apple: '#appstore',
+		google: '#googleplay',
 	};
 
 	socials = {
@@ -84,47 +85,29 @@ mixin header (active)
 			else
 				li.header--item: a(href=links.messenger) Messenger
 
-			li.header--item.is-sub(class=(active == 2 || active == 3) ? 'is-active' : '')
-				span Solutions
-				ul
-					li(class=(active == 2) ? 'is-active' : ''): a(href=links.builders) Builders
-					li(class=(active == 3) ? 'is-active' : ''): a(href=links.owners) Owners
-
-			if (active == 4)
+			if (active == 2)
 				li.header--item.is-active: span About
 			else
 				li.header--item: a(href=links.about) About
 
 		.header--btn: a(href=links.signin data-app="true" data-app-label="Go to the app" data-app-url=links.app).btn Sign in
 
-		-//.header--btn: a(href=phoneTel).btn.is-grey #[i.icon-phone]#{phone}
-
 mixin footer
 	footer.footer&attributes(attributes)
 		.container: .footer--box
 			.footer--col.hidden-xs
 				.footer--logo: img(src="img/logotype.svg" alt="")
-
-				a(href=links.careers).footer--hire We are hiring!
-
-				.visible-sm: +footer--socials
-
-			.footer--col
-				.footer--title Solutions
-
-				ul.footer--links
-					li: a(href=links.messenger) Messenger
-					li.is-sub
-						span Solutions
-						ul
-							li: a(href=links.builders) Builders
-							li: a(href=links.owners) Owners
+				+footer--socials
 
 			+footer--col ('Company', [[links.about, 'About'], [links.careers, 'Careers', true]])
 			+footer--col ('Legal', [[links.privacy, 'Privacy Policy'], [links.terms, 'Terms of Service']])
 			+footer--col ('Contacts', [[phoneTel, '<i class="icon-phone"></i>' + phone], [mailTo, '<i class="icon-mail"></i>' + mail]])
 
-			.footer--col.hidden-sm: +footer--socials
+			.footer--col
+				.footer--title Mobile apps
+				.footer--apps
+					a(href=links.apple).footer--app.is-apple
+					a(href=links.google).footer--app.is-google
 
 		.footer--info.hidden-xs &copy; 2018 Data Makes Perfect Inc.#[span Built in San Francisco]
 
@@ -160,16 +143,6 @@ mixin menu (active)
 					li.menu--item: a(href=links.messenger) Messenger
 
 				if (active == 2)
-					li.menu--item.is-active: span Builders
-				else
-					li.menu--item: a(href=links.builders) Builders
-
-				if (active == 3)
-					li.menu--item.is-active: span Owners
-				else
-					li.menu--item: a(href=links.owners) Owners
-
-				if (active == 4)
 					li.menu--item.is-active: span About
 				else
 					li.menu--item: a(href=links.about) About
@@ -220,17 +193,6 @@ mixin google-analytics
 
 		gtag('config', 'UA-115370014-1');
 
-mixin intro--row (features)
-	.intro--row&attributes(attributes)
-		each feature in features
-			.intro--feature= feature
-
-mixin features--item (icon, title, text)
-	.features--item&attributes(attributes)
-		.features--icon: img(src='/img/' + icon alt="")
-		.features--title!= title
-		.features--text!= text
-
 mixin footer--col (title, links)
 	.footer--col&attributes(attributes)
 		.footer--title= title
@@ -272,9 +234,3 @@ mixin content--wrap (links)
 
 		.content--box
 			block
-
-mixin messenger--item (icon, title, text)
-	.messenger--item&attributes(attributes)
-		.messenger--title!= title
-		.messenger--text!= text
-		.messenger--icon(class='is-i0' + icon)
