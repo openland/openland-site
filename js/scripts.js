@@ -1,11 +1,5 @@
 $(document).ready(function () {
 
-	$('a[href="#"]').on('click', function (e) {
-		e.preventDefault();
-
-		console.log('Click on a[href=#]');
-	});
-
 	$(window).on('load', function () {
 		var photo = Cookies.get('x-openland-user-photo');
 
@@ -19,7 +13,7 @@ $(document).ready(function () {
 				label.html(btn.attr('data-app-label'));
 
 				btn.attr('href', btn.attr('data-app-url'));
-				btn.addClass('is-app');
+				btn.attr('data-style', 'app');
 				btn.html('');
 				btn.append(image);
 				btn.append(label);

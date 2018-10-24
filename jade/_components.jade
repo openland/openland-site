@@ -93,13 +93,21 @@ mixin header (active)
 			else
 				li.header--item: a(href=links.about) About
 
-		.header--btn: a(href=links.signin data-app="true" data-app-label="Go to the app" data-app-url=links.app).btn Sign in
+		.header--apps
+			.header--app #[i.icon-android]#[.tooltip Coming soon]
+			-// a(href=links.google).header--app: i.icon-android
+			a(href=links.apple).header--app: i.icon-ios
+
+		.header--btn: a(href=links.signin data-app="true" data-app-label="Go to the app" data-app-url=links.app data-style="electric").btn Sign in
 
 mixin footer
 	footer.footer&attributes(attributes)
 		.container: .footer--box
 			.footer--col.hidden-xs
-				.footer--logo: img(src="img/logotype.svg" alt="")
+				.footer--logo
+					img(src="img/logotype.svg" alt="").is-default
+					img(src="img/logotype-hover.svg" alt="").is-hover
+
 				+footer--socials
 
 			+footer--col ('Company', [[links.about, 'About'], [links.careers, 'Careers', true]])
@@ -110,7 +118,8 @@ mixin footer
 				.footer--title Mobile apps
 				.footer--apps
 					a(href=links.apple).footer--app.is-apple
-					a(href=links.google).footer--app.is-google
+					-// a(href=links.google).footer--app.is-google
+					span.footer--app.is-google
 
 		.footer--info.hidden-xs &copy; 2018 Data Makes Perfect Inc.#[span Built in San Francisco]
 
@@ -124,8 +133,8 @@ mixin footer--socials
 mixin signup
 	.signup(data-signup="box")&attributes(attributes)
 		.signup--variant.is-shown(data-signup="google"): .signup--btns
-			.signup--btn: a(href=links.signup + '?google=true').btn.is-block.is-blue #[i.icon-google]Sign up with Google
-			.signup--btn: a(href="#" data-signup="toggle" data-variant="mail").btn.is-block.is-outline #[i.icon-mail]Sign up with Email
+			.signup--btn: a(href=links.signup + '?google=true' data-style="primary").btn.is-block #[i.icon-google]Sign up with Google
+			.signup--btn: a(href="#" data-signup="toggle" data-variant="mail" data-style="ghost").btn.is-block #[i.icon-mail]Sign up with Email
 
 		.signup--variant(data-signup="mail")
 			form(method="GET" action=links.signup).signup--form
@@ -210,17 +219,12 @@ mixin footer--col (title, links)
 mixin member (photo, name, position, linkedin, mail)
 	.member&attributes(attributes)
 		.member--photo: img(src=photo alt="")
-		.member--name!= name
-		.member--position!= position
-		.member--links
-			a(href=linkedin).member--link: i.icon-lin
-			a(href='mailto:' + mail).member--link #[i.icon-mail]#{mail}
-
-mixin position (title, info, link)
-	.position&attributes(attributes)
-		.position--title!= title
-		.position--info!= info
-		.position--btn: a(href=link target="_blank").btn.is-smallblue.is-block Apply
+		.member--info
+			.member--name!= name
+			.member--position!= position
+			.member--links
+				a(href=linkedin).member--link: i.icon-lin
+				a(href='mailto:' + mail).member--link #[i.icon-mail]#{mail}
 
 mixin content--head (title, date)
 	.content--head

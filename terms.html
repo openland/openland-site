@@ -47,7 +47,12 @@
                 <li class="header--item"><a href="/about">About</a></li>
               </ul>
             </nav>
-            <div class="header--btn"><a class="btn" href="https://app.openland.com/signin" data-app="true" data-app-label="Go to the app" data-app-url="https://app.openland.com/">Sign in</a></div>
+            <div class="header--apps">
+              <div class="header--app"><i class="icon-android"></i>
+                <div class="tooltip">Coming soon</div>
+              </div><a class="header--app" href="#appstore"><i class="icon-ios"></i></a>
+            </div>
+            <div class="header--btn"><a class="btn" href="https://app.openland.com/signin" data-app="true" data-app-label="Go to the app" data-app-url="https://app.openland.com/" data-style="electric">Sign in</a></div>
           </div>
         </div>
       </header>
@@ -176,7 +181,7 @@
         <div class="container">
           <div class="footer--box">
             <div class="footer--col hidden-xs">
-              <div class="footer--logo"><img src="img/logotype.svg" alt=""/></div>
+              <div class="footer--logo"><img class="is-default" src="img/logotype.svg" alt=""/><img class="is-hover" src="img/logotype-hover.svg" alt=""/></div>
               <div class="footer--socials"><a class="footer--social" href="https://linkedin.com/company/openlandhq/" target="_blank"><i class="icon-lin"></i></a><a class="footer--social" href="https://facebook.com/openlandhq/" target="_blank"><i class="icon-fb"></i></a><a class="footer--social" href="https://twitter.com/OpenlandHQ" target="_blank"><i class="icon-tw"></i></a><a class="footer--social" href="https://angel.co/openland" target="_blank"><i class="icon-al"></i></a></div>
             </div>
             <div class="footer--col">
@@ -202,7 +207,8 @@
             </div>
             <div class="footer--col">
               <div class="footer--title">Mobile apps</div>
-              <div class="footer--apps"><a class="footer--app is-apple" href="#appstore"></a><a class="footer--app is-google" href="#googleplay"></a></div>
+              <div class="footer--apps"><a class="footer--app is-apple" href="#appstore"></a><span class="footer--app is-google"></span>
+              </div>
             </div>
           </div>
         </div>

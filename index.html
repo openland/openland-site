@@ -47,7 +47,12 @@
                 <li class="header--item"><a href="/about">About</a></li>
               </ul>
             </nav>
-            <div class="header--btn"><a class="btn" href="https://app.openland.com/signin" data-app="true" data-app-label="Go to the app" data-app-url="https://app.openland.com/">Sign in</a></div>
+            <div class="header--apps">
+              <div class="header--app"><i class="icon-android"></i>
+                <div class="tooltip">Coming soon</div>
+              </div><a class="header--app" href="#appstore"><i class="icon-ios"></i></a>
+            </div>
+            <div class="header--btn"><a class="btn" href="https://app.openland.com/signin" data-app="true" data-app-label="Go to the app" data-app-url="https://app.openland.com/" data-style="electric">Sign in</a></div>
           </div>
         </div>
       </header>
@@ -60,8 +65,8 @@
               <div class="signup" data-signup="box">
                 <div class="signup--variant is-shown" data-signup="google">
                   <div class="signup--btns">
-                    <div class="signup--btn"><a class="btn is-block is-blue" href="https://app.openland.com/signup?google=true"><i class="icon-google"></i>Sign up with Google</a></div>
-                    <div class="signup--btn"><a class="btn is-block is-outline" href="#" data-signup="toggle" data-variant="mail"><i class="icon-mail"></i>Sign up with Email</a></div>
+                    <div class="signup--btn"><a class="btn is-block" href="https://app.openland.com/signup?google=true" data-style="primary"><i class="icon-google"></i>Sign up with Google</a></div>
+                    <div class="signup--btn"><a class="btn is-block" href="#" data-signup="toggle" data-variant="mail" data-style="ghost"><i class="icon-mail"></i>Sign up with Email</a></div>
                   </div>
                 </div>
                 <div class="signup--variant" data-signup="mail">
@@ -75,8 +80,8 @@
             <div class="intro--label">Openland is&nbsp;in&nbsp;limited preview release. Sign up&nbsp;to&nbsp;get your invitation.</div>
           </div>
         </div>
-        <div class="container">
-          <div class="tasks">
+        <div class="tasks">
+          <div class="container">
             <div class="tasks--title">Perfect for most frequent communication tasks</div>
             <div class="tasks--items">
               <div class="tasks--item">Advice</div>
@@ -89,16 +94,15 @@
               <div class="tasks--item">Vendor relations</div>
             </div>
           </div>
-          <div class="tools">
+        </div>
+        <div class="tools">
+          <div class="container">
             <div class="tools--title">A&nbsp;simple and elegant system of&nbsp;tools</div>
-            <div class="tools--wrapper">
-              <div class="tools--items">
-                <div class="tools--item is-i01"><span>Professional identity</span>One account everywhere</div>
-                <div class="tools--item is-i02"><span>Connections you need</span>Intros and invitations to&nbsp;expand your network</div>
-                <div class="tools--item is-i03"><span>Fast, expressive writing</span>Keyboard shortcuts and stickers</div>
-                <div class="tools--item is-i04"><span>Chat rooms for every purpose</span>Instant workspaces without team borders</div>
-              </div>
-              <div class="tools--photo"></div>
+            <div class="tools--items">
+              <div class="tools--item"><i class="icon-account"></i><span>Professional identity</span>One account everywhere</div>
+              <div class="tools--item"><i class="icon-intro"></i><span>Connections you need</span>Intros and invitations to&nbsp;expand your network</div>
+              <div class="tools--item"><i class="icon-shortcuts"></i><span>Fast, expressive writing</span>Keyboard shortcuts and stickers</div>
+              <div class="tools--item"><i class="icon-chats"></i><span>Chat rooms for every purpose</span>Instant workspaces without team borders</div>
             </div>
           </div>
         </div>
@@ -107,7 +111,7 @@
             <div class="access--box">
               <div class="access--title">Get early access to&nbsp;Openland Messenger</div>
               <div class="access--text">Join founders, investors, and experts from 1000+ organizations</div>
-              <div class="access--btn"><a class="btn is-block is-blue" href="https://app.openland.com/signup">Sign up for free</a></div>
+              <div class="access--btn"><a class="btn is-block" href="https://app.openland.com/signup" data-style="primary">Sign up for free</a></div>
             </div>
           </div>
         </div>
@@ -116,7 +120,7 @@
         <div class="container">
           <div class="footer--box">
             <div class="footer--col hidden-xs">
-              <div class="footer--logo"><img src="img/logotype.svg" alt=""/></div>
+              <div class="footer--logo"><img class="is-default" src="img/logotype.svg" alt=""/><img class="is-hover" src="img/logotype-hover.svg" alt=""/></div>
               <div class="footer--socials"><a class="footer--social" href="https://linkedin.com/company/openlandhq/" target="_blank"><i class="icon-lin"></i></a><a class="footer--social" href="https://facebook.com/openlandhq/" target="_blank"><i class="icon-fb"></i></a><a class="footer--social" href="https://twitter.com/OpenlandHQ" target="_blank"><i class="icon-tw"></i></a><a class="footer--social" href="https://angel.co/openland" target="_blank"><i class="icon-al"></i></a></div>
             </div>
             <div class="footer--col">
@@ -142,7 +146,8 @@
             </div>
             <div class="footer--col">
               <div class="footer--title">Mobile apps</div>
-              <div class="footer--apps"><a class="footer--app is-apple" href="#appstore"></a><a class="footer--app is-google" href="#googleplay"></a></div>
+              <div class="footer--apps"><a class="footer--app is-apple" href="#appstore"></a><span class="footer--app is-google"></span>
+              </div>
             </div>
           </div>
         </div>

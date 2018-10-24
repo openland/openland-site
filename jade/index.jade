@@ -20,31 +20,27 @@ include ./_components.jade
 		.intro--form: +signup
 		.intro--label Openland is&nbsp;in&nbsp;limited preview release. Sign up&nbsp;to&nbsp;get your invitation.
 
-	.container
-		.tasks
-			.tasks--title Perfect for most frequent communication tasks
-			.tasks--items
-				.tasks--item Advice
-				.tasks--item User research
-				.tasks--item Fundraising
-				.tasks--item Recruiting
-				.tasks--item Sales
-				.tasks--item Marketing
-				.tasks--item Customer success
-				.tasks--item Vendor relations
+	.tasks: .container
+		.tasks--title Perfect for most frequent communication tasks
+		.tasks--items
+			.tasks--item Advice
+			.tasks--item User research
+			.tasks--item Fundraising
+			.tasks--item Recruiting
+			.tasks--item Sales
+			.tasks--item Marketing
+			.tasks--item Customer success
+			.tasks--item Vendor relations
 
-		.tools
-			.tools--title A&nbsp;simple and elegant system of&nbsp;tools
-			.tools--wrapper
-				.tools--items
-					.tools--item.is-i01 #[span Professional identity]One account everywhere
-					.tools--item.is-i02 #[span Connections you need]Intros and invitations to&nbsp;expand your network
-					.tools--item.is-i03 #[span Fast, expressive writing]Keyboard shortcuts and stickers
-					.tools--item.is-i04 #[span Chat rooms for every purpose]Instant workspaces without team borders
-
-				.tools--photo
+	.tools: .container
+		.tools--title A&nbsp;simple and elegant system of&nbsp;tools
+		.tools--items
+			.tools--item #[i.icon-account]#[span Professional identity]One account everywhere
+			.tools--item #[i.icon-intro]#[span Connections you need]Intros and invitations to&nbsp;expand your network
+			.tools--item #[i.icon-shortcuts]#[span Fast, expressive writing]Keyboard shortcuts and stickers
+			.tools--item #[i.icon-chats]#[span Chat rooms for every purpose]Instant workspaces without team borders
 
 	.access: .container: .access--box
 		.access--title Get early access to&nbsp;Openland Messenger
 		.access--text Join founders, investors, and experts from 1000+ organizations
-		.access--btn: a(href=links.signup).btn.is-block.is-blue Sign up for free
+		.access--btn: a(href=links.signup data-style="primary").btn.is-block Sign up for free
