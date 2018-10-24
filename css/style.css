@@ -842,6 +842,30 @@ a.header--app:hover {
   width: 236px;
   height: auto;
 }
+.footer--col:nth-child(5) {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+@media (min-width: 1000px) and (max-width: 1179px) {
+  .footer--col:nth-child(1) {
+    width: 215px;
+    height: auto;
+  }
+  .footer--col:nth-child(2) {
+    width: 130px;
+    height: auto;
+  }
+  .footer--col:nth-child(3) {
+    width: 160px;
+    height: auto;
+  }
+  .footer--col:nth-child(4) {
+    width: 200px;
+    height: auto;
+  }
+}
 .footer--logo {
   margin: -18px 0 8px;
 }
@@ -1070,12 +1094,6 @@ a.footer--app:hover {
     line-height: 40px;
   }
 }
-@media (min-width: 1000px) and (max-width: 1179px) {
-  .intro--title {
-    font-size: 36px;
-    line-height: 42px;
-  }
-}
 .intro--text {
   opacity: .80;
   color: #536086;
@@ -1098,12 +1116,6 @@ a.footer--app:hover {
     line-height: 24px;
   }
 }
-@media (min-width: 1000px) and (max-width: 1179px) {
-  .intro--text {
-    font-size: 18px;
-    line-height: 26px;
-  }
-}
 .intro--form {
   margin: 0 0 30px;
   width: 465px;
@@ -1117,8 +1129,7 @@ a.footer--app:hover {
   }
 }
 .intro--label {
-  color: #536086;
-  opacity: .50;
+  color: rgba(83, 96, 134, 0.5);
   font-size: 14px;
   line-height: 16px;
 }
@@ -1158,8 +1169,8 @@ a.footer--app:hover {
   text-align: center;
   text-decoration: none;
   color: rgba(83, 96, 134, 0.6);
-  padding: 20px 0 0;
-  margin: 3px 0 0;
+  padding: 15px 0;
+  margin: 8px 0 -15px;
   -webkit-transition: 200ms all ease;
   -o-transition: 200ms all ease;
   transition: 200ms all ease;
@@ -1277,6 +1288,11 @@ a.footer--app:hover {
   width: 745px;
   height: 469px;
 }
+@media (min-width: 1000px) and (max-width: 1179px) {
+  .tools:before {
+    left: 50%;
+  }
+}
 .tools--title {
   text-align: center;
   margin: 0 0 112px;
@@ -1350,6 +1366,11 @@ a.footer--app:hover {
   bottom: auto;
   left: auto;
 }
+@media (min-width: 1000px) and (max-width: 1179px) {
+  .access--box {
+    padding-left: 50px;
+  }
+}
 .access--title {
   margin: 0 0 11px;
   font-size: 32px;
@@ -1369,6 +1390,11 @@ a.footer--app:hover {
   right: 140px;
   bottom: auto;
   left: auto;
+}
+@media (min-width: 1000px) and (max-width: 1179px) {
+  .access--btn {
+    right: 50px;
+  }
 }
 .about {
   padding: 42px 0 13px;
@@ -1409,7 +1435,7 @@ a.footer--app:hover {
 }
 @media (min-width: 1000px) and (max-width: 1179px) {
   .about--label {
-    width: 220px;
+    width: 215px;
     height: auto;
   }
 }
