@@ -1290,7 +1290,7 @@ a.footer--app:hover {
 }
 @media (min-width: 1000px) and (max-width: 1179px) {
   .tools:before {
-    left: 50%;
+    left: 55%;
   }
 }
 .tools--title {
