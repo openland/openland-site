@@ -526,7 +526,7 @@ body *:after {
 }
 @media (max-width: 767px) {
   .header {
-    padding: 31px 0;
+    padding: 19px 0;
   }
 }
 .header--in {
@@ -543,6 +543,15 @@ body *:after {
 .header--logo {
   margin: -3px 0 0;
   display: block;
+}
+@media (max-width: 767px) {
+  .header--logo {
+    margin: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
 }
 .header--logo img {
   display: block;
@@ -667,6 +676,11 @@ body *:after {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+@media (max-width: 767px) {
+  .header--apps {
+    display: none;
+  }
 }
 .header--app {
   -webkit-box-align: center;
@@ -1097,7 +1111,12 @@ a.footer--app:hover {
 }
 @media (max-width: 767px) {
   .intro {
-    padding: 14px 0 65px;
+    padding: 25px 0 0;
+    margin: 0;
+    background: none;
+    text-align: center;
+    width: auto;
+    height: auto;
   }
 }
 @media (min-width: 768px) and (max-width: 999px) {
@@ -1118,25 +1137,22 @@ a.footer--app:hover {
 }
 @media (max-width: 767px) {
   .intro--title {
-    margin: 0 0 24px;
-    font-size: 30px;
+    margin: 0 0 15px;
+    font-size: 32px;
     line-height: 38px;
   }
 }
 .intro--text {
-  opacity: .80;
-  color: #536086;
+  color: rgba(83, 96, 134, 0.8);
   margin: 0 0 50px;
   font-size: 24px;
   line-height: 36px;
 }
 @media (max-width: 767px) {
   .intro--text {
-    margin: 0 auto 40px;
-    font-size: 18px;
-    line-height: 26px;
-    max-width: 360px;
-    max-height: initial;
+    margin: 0 0 30px;
+    font-size: 19px;
+    line-height: 27px;
   }
 }
 .intro--form {
@@ -1146,7 +1162,7 @@ a.footer--app:hover {
 }
 @media (max-width: 767px) {
   .intro--form {
-    margin: 0 auto 58px;
+    margin: 0 0 20px;
     width: auto;
     height: auto;
   }
@@ -1161,6 +1177,12 @@ a.footer--app:hover {
   color: rgba(83, 96, 134, 0.5);
   font-size: 14px;
   line-height: 16px;
+}
+@media (max-width: 767px) {
+  .intro--label {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 .signup--variant {
   display: none;
@@ -1179,20 +1201,31 @@ a.footer--app:hover {
   display: -ms-flexbox;
   display: flex;
 }
+@media (max-width: 767px) {
+  .signup--btns {
+    display: block;
+  }
+}
 .signup--btn {
   width: 234px;
   height: auto;
 }
 @media (max-width: 767px) {
   .signup--btn {
-    width: 240px;
-    height: auto;
+    margin: 0 auto;
+    width: 234px !important;
+    height: auto !important;
   }
 }
 .signup--btn:nth-child(2) {
   margin-left: 12px;
   width: 219px;
   height: auto;
+}
+@media (max-width: 767px) {
+  .signup--btn:nth-child(2) {
+    margin: 12px auto 0;
+  }
 }
 .signup--link {
   text-align: center;
@@ -1210,6 +1243,11 @@ a.footer--app:hover {
 }
 .signup--link:hover {
   color: #1790ff;
+}
+@media (max-width: 767px) {
+  .signup--link {
+    margin-bottom: -10px;
+  }
 }
 .signup--form {
   *zoom: 1;
@@ -1266,6 +1304,11 @@ a.footer--app:hover {
 .tasks {
   padding: 77px 0 0;
 }
+@media (max-width: 767px) {
+  .tasks {
+    padding: 70px 0 0;
+  }
+}
 @media (min-width: 768px) and (max-width: 999px) {
   .tasks {
     padding: 140px 0 0;
@@ -1277,6 +1320,13 @@ a.footer--app:hover {
   font-size: 32px;
   line-height: 38px;
   font-weight: 600;
+}
+@media (max-width: 767px) {
+  .tasks--title {
+    margin: 0 0 24px;
+    font-size: 22px;
+    line-height: 30px;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .tasks--title {
@@ -1313,6 +1363,14 @@ a.footer--app:hover {
   font-size: 18px;
   line-height: 20px;
 }
+@media (max-width: 767px) {
+  .tasks--item {
+    padding: 12px 25px;
+    margin: 0 5px 10px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
 .tools {
   padding: 110px 0 51px;
   margin: 0 0 80px;
@@ -1322,6 +1380,12 @@ a.footer--app:hover {
   right: auto;
   bottom: auto;
   left: auto;
+}
+@media (max-width: 767px) {
+  .tools {
+    padding: 60px 0 70px;
+    margin: 0;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .tools {
@@ -1343,7 +1407,7 @@ a.footer--app:hover {
   width: 745px;
   height: 469px;
 }
-@media (min-width: 768px) and (max-width: 999px) {
+@media (max-width: 999px) {
   .tools:before {
     display: none;
   }
@@ -1360,6 +1424,13 @@ a.footer--app:hover {
   line-height: 38px;
   font-weight: 600;
 }
+@media (max-width: 767px) {
+  .tools--title {
+    margin: 0 0 20px;
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
 @media (min-width: 768px) and (max-width: 999px) {
   .tools--title {
     margin: 0 0 40px;
@@ -1368,9 +1439,24 @@ a.footer--app:hover {
 .tools--photo {
   background: url(../img/tools-bg.png) left top no-repeat;
   background-image: -webkit-image-set(url(../img/tools-bg.png) 1x, url(../img/tools-bg@2x.png) 2x);
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
   margin: 0 0 53px;
   width: 718px;
   height: 469px;
+  display: none;
+}
+@media (max-width: 767px) {
+  .tools--photo {
+    margin: 0 auto 53px;
+    width: 305px;
+    height: 201px;
+  }
+}
+@media (max-width: 999px) {
+  .tools--photo {
+    display: block;
+  }
 }
 .tools--item {
   color: rgba(31, 52, 73, 0.7);
@@ -1383,6 +1469,15 @@ a.footer--app:hover {
   left: auto;
   font-size: 18px;
   line-height: 21px;
+}
+@media (max-width: 767px) {
+  .tools--item {
+    padding: 0;
+    margin: 0 0 34px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 .tools--item:last-child {
   margin: 0;
@@ -1401,6 +1496,16 @@ a.footer--app:hover {
   right: auto;
   bottom: auto;
   left: 0;
+}
+@media (max-width: 767px) {
+  .tools--item i {
+    margin: 0 auto 18px;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
 }
 .tools--item i.icon-account {
   font-size: 28px;
@@ -1426,9 +1531,21 @@ a.footer--app:hover {
   line-height: 24px;
   font-weight: 600;
 }
+@media (max-width: 767px) {
+  .tools--item span {
+    margin: 0 0 10px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
 .access {
   border-top: 1px solid rgba(237, 239, 243, 0.6);
   padding: 100px 0 110px;
+}
+@media (max-width: 767px) {
+  .access {
+    padding: 70px 0;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .access {
@@ -1443,7 +1560,7 @@ a.footer--app:hover {
   bottom: auto;
   left: auto;
 }
-@media (min-width: 768px) and (max-width: 999px) {
+@media (max-width: 999px) {
   .access--box {
     padding: 0;
     text-align: center;
@@ -1460,10 +1577,23 @@ a.footer--app:hover {
   line-height: 38px;
   font-weight: 600;
 }
+@media (max-width: 767px) {
+  .access--title {
+    margin: 0 0 10px;
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
 .access--text {
   color: rgba(83, 96, 134, 0.8);
   font-size: 20px;
   line-height: 24px;
+}
+@media (max-width: 767px) {
+  .access--text {
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 .access--btn {
   width: 182px;
@@ -1473,6 +1603,16 @@ a.footer--app:hover {
   right: 140px;
   bottom: auto;
   left: auto;
+}
+@media (max-width: 767px) {
+  .access--btn {
+    margin: 30px auto 0;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .access--btn {
