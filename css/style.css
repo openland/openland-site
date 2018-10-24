@@ -407,12 +407,12 @@ body *:after {
   background: #ffffff;
 }
 .btn[data-style=electric]:hover {
-  background: rgba(23, 144, 255, 0.08);
+  background: #1790ff;
   border-color: #1790ff;
-  color: #1790ff;
+  color: #ffffff;
 }
 .btn[data-style=electric]:active {
-  background: #1790ff;
+  background: #1585ed;
   border-color: #1790ff;
   color: #ffffff;
 }
