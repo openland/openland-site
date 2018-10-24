@@ -717,11 +717,7 @@ a.header--app:hover {
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
   white-space: nowrap;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: 150ms opacity ease;
-  -o-transition: 150ms opacity ease;
-  transition: 150ms opacity ease;
+  display: none;
   position: absolute;
   top: 100%;
   right: auto;
@@ -729,8 +725,7 @@ a.header--app:hover {
   left: 50%;
 }
 *:hover > .tooltip {
-  visibility: visible;
-  opacity: 1;
+  display: block;
 }
 .menu {
   background: #1790ff;

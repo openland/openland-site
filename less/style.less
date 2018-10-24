@@ -398,16 +398,11 @@ body {
 .tooltip {
 	transform: translate(-50%, 0);
 	white-space: nowrap;
-	visibility: hidden;
-	opacity: 0;
-	transition: 150ms opacity ease;
 
+	.display (none);
 	.position-tl (absolute, 100%, 50%);
 
-	*:hover > & {
-		visibility: visible;
-		opacity: 1;
-	}
+	*:hover > & { .display (block); }
 }
 
 .menu {
