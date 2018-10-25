@@ -1295,9 +1295,11 @@ a.footer--app:hover {
 }
 @media (max-width: 767px) {
   .intro--title {
-    margin: 0 0 15px;
+    margin: 0 auto 15px;
     font-size: 32px;
     line-height: 38px;
+    width: 290px;
+    height: auto;
   }
 }
 .intro--text {
