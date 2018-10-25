@@ -294,15 +294,16 @@ body {
 
 	&--open {
 		text-decoration: none;
-		color: @text-1;
+		color: @blue-1;
 		text-align: center;
+		padding: 17px 0 0;
 
 		.display (none);
-		.size (66px);
+		.size (52px, 42px);
 
 		&:before {
 			.icon (@icon-burger);
-			.font (18px, 42px);
+			.font (17px);
 		}
 
 		@media @xs-only { .display (block); }
@@ -394,9 +395,41 @@ body {
 .tooltip {
 	transform: translate(-50%, 0);
 	white-space: nowrap;
+	background: #6E7588;
+	color: #ffffff;
+	border-radius: 15px;
+	padding: 0 15px;
+	box-shadow: 0 2px 4px 0 fade(@black, 20);
+	margin: 6px 0 0;
 
 	.display (none);
 	.position-tl (absolute, 100%, 50%);
+	.font (14px, 30px);
+
+	&:before {
+		content: "";
+		background: #6E7588;
+		transform: rotate(45deg);
+		border-radius: 2px;
+		margin: 0 0 0 -5px;
+
+		.display (block);
+		.size (10px, 10px);
+		.position-tl (absolute, -3px, 50%);
+	}
+
+	@media @xs-only {
+		transform: none;
+		margin: 0 0 6px;
+		background: @white;
+		color: @text-2;
+
+		.position (absolute, auto, auto, 100%, 0);
+
+		&:before { background: @white;
+			.position (absolute, auto, auto, -3px, 25px);
+		}
+	}
 
 	*:hover > & { .display (block); }
 }
@@ -415,26 +448,26 @@ body {
 		color: @white;
 		text-decoration: none;
 		text-align: center;
+		padding: 17px 0 0;
 
 		.display (block);
-		.position (absolute, 31px, 15px);
-		.size (66px);
+		.position (absolute, 19px, 15px);
+		.size (52px, 42px);
 
 		&:before {
 			.icon (@icon-close);
-			.font (18px, 42px);
+			.font (17px);
 		}
 	}
 
 	&--in {
-		transform: translate(0, -50%);
 		padding: 6px 0 0;
 		margin: 20px 0 0;
 		opacity: 0;
 		transition: 400ms opacity ease, 400ms margin ease;
 		transition-delay: 200ms;
 
-		.position (absolute, 50%, 0, auto, 0);
+		.position (absolute, 16.5%, 0, auto, 0);
 
 		&.is-shown {
 			opacity: 1;
@@ -445,23 +478,41 @@ body {
 	&--list {
 		list-style: none;
 		margin: 0;
-		padding: 0 0 29px;
+		padding: 0;
 	}
 
-	&--item { margin: 0 0 24px;
-		.display (block);
-
+	&--item { .display (block);
 		> * {
 			color: fade(@white, 70);
 			text-decoration: none;
 
-			.font (28px, 34px, 500);
+			.font (21px, 45px, 500);
 			.display (block);
 
 			&:hover { color: @white; }
 		}
 
 		&.is-active > * { color: @white; }
+	}
+
+	&--apps {
+		.position (absolute, auto, auto, 14px, 10px);
+		.display (flex);
+	}
+
+	&--app {
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		color: @white;
+		transition: 200ms all ease;
+
+		.display (flex);
+		.position (relative);
+		.size (51px, 40px);
+
+		i.icon-android { .font (25px); }
+		i.icon-ios { .font (24px); }
 	}
 }
 

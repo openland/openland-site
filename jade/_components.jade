@@ -116,7 +116,7 @@ mixin footer
 					-// a(href=links.google).footer--app.is-google
 					span.footer--app.is-google
 
-		.footer--info.hidden-xs &copy; 2018 Data Makes Perfect Inc.#[span Built in San Francisco]
+		.footer--info &copy; 2018 Data Makes Perfect Inc.#[span Built in San Francisco]
 
 mixin footer--socials
 	.footer--socials&attributes(attributes)
@@ -156,6 +156,11 @@ mixin menu (active)
 
 				br
 				li.menu--item: a(href=links.signin) Sign in
+
+		.menu--apps
+			-// a(href=links.google).menu--app: i.icon-android
+			.menu--app #[i.icon-android]#[.tooltip Coming soon]
+			a(href=links.apple).menu--app: i.icon-ios
 
 mixin page (meta, active)
 	doctype html
