@@ -710,7 +710,7 @@ body *:after {
   height: 40px;
 }
 a.header--app:hover {
-  opacity: 0.7;
+  color: rgba(23, 144, 255, 0.7);
 }
 .header--app i.icon-android {
   font-size: 25px;

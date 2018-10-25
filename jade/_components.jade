@@ -19,7 +19,7 @@
 
 		careers: 'https://angel.co/openland/jobs',
 
-		apple: '#appstore',
+		apple: 'https://testflight.apple.com/join/wWryhe08',
 		google: '#googleplay',
 	};
 
@@ -89,7 +89,7 @@ mixin header (active)
 		.header--apps
 			-// a(href=links.google).header--app: i.icon-android
 			.header--app #[i.icon-android]#[.tooltip Coming soon]
-			a(href=links.apple).header--app: i.icon-ios
+			a(href=links.apple).header--app #[i.icon-ios]#[.tooltip Beta]
 
 		.header--btn: a(href=links.signin data-app="true" data-app-label="Go to the app" data-app-url=links.app data-style="electric").btn Sign in
 
