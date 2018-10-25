@@ -71,9 +71,7 @@ mixin head (d)
 
 mixin header (active)
 	header.header&attributes(attributes): .container: .header--in
-		a(href=links.home).header--logo
-			img(src="img/logotype.svg" alt="").is-default
-			img(src="img/logotype-hover.svg" alt="").is-hover
+		+logo ('header', links.home)
 
 		a(href="#").header--open
 
@@ -97,26 +95,51 @@ mixin header (active)
 
 mixin footer
 	footer.footer&attributes(attributes)
-		.container: .footer--box
-			.footer--col
-				.footer--logo
-					img(src="img/logotype.svg" alt="").is-default
-					img(src="img/logotype-hover.svg" alt="").is-hover
+		.container
+			.footer--box.hidden-xs
+				.footer--col
+					+logo ('footer')
+					+footer--socials
+
+				+footer--col ('Company', [[links.about, 'About'], [links.careers, 'Careers', true]])
+				+footer--col ('Legal', [[links.privacy, 'Privacy Policy'], [links.terms, 'Terms of Service']])
+				+footer--col ('Contacts', [[phoneTel, '<i class="icon-phone"></i>' + phone], [mailTo, '<i class="icon-mail"></i>' + mail]])
+
+				.footer--col
+					.footer--title Mobile apps
+					.footer--apps
+						a(href=links.apple).footer--app.is-apple
+						-// a(href=links.google).footer--app.is-google
+						span.footer--app.is-google
+
+			.footer--wrapper.visible-xs
+				+logo ('footer')
+
+				.footer--box
+					+footer--col ('Company', [[links.about, 'About'], [links.careers, 'Careers', true]])
+					+footer--col ('Contacts', [[phoneTel, '<i class="icon-phone"></i>' + phone], [mailTo, '<i class="icon-mail"></i>' + mail]])
+					+footer--col ('Legal', [[links.privacy, 'Privacy Policy'], [links.terms, 'Terms of Service']])
+
+					.footer--col
+						.footer--title Mobile apps
+						.footer--apps
+							a(href=links.apple).footer--app.is-apple
+							-// a(href=links.google).footer--app.is-google
+							span.footer--app.is-google
 
 				+footer--socials
 
-			+footer--col ('Company', [[links.about, 'About'], [links.careers, 'Careers', true]])
-			+footer--col ('Legal', [[links.privacy, 'Privacy Policy'], [links.terms, 'Terms of Service']])
-			+footer--col ('Contacts', [[phoneTel, '<i class="icon-phone"></i>' + phone], [mailTo, '<i class="icon-mail"></i>' + mail]])
-
-			.footer--col
-				.footer--title Mobile apps
-				.footer--apps
-					a(href=links.apple).footer--app.is-apple
-					-// a(href=links.google).footer--app.is-google
-					span.footer--app.is-google
-
 		.footer--info &copy; 2018 Data Makes Perfect Inc.#[span Built in San Francisco]
+
+mixin logo (box, href)
+	if (href)
+		a(href=href class=box + '--logo')
+			img(src="img/logotype.svg" alt="").is-default
+			img(src="img/logotype-hover.svg" alt="").is-hover
+	else
+		div(class=box + '--logo')
+			img(src="img/logotype.svg" alt="").is-default
+			img(src="img/logotype-hover.svg" alt="").is-hover
 
 mixin footer--socials
 	.footer--socials&attributes(attributes)
