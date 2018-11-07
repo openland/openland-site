@@ -231,8 +231,8 @@ pre {
 }
 @font-face {
   font-family: 'icomoon';
-  src: url('../fonts/icomoon/fonts/icomoon.eot?kzmkxi');
-  src: url('../fonts/icomoon/fonts/icomoon.eot?kzmkxi#iefix') format('embedded-opentype'), url('../fonts/icomoon/fonts/icomoon.ttf?kzmkxi') format('truetype'), url('../fonts/icomoon/fonts/icomoon.woff?kzmkxi') format('woff'), url('../fonts/icomoon/fonts/icomoon.svg?kzmkxi#icomoon') format('svg');
+  src: url('../fonts/icomoon/fonts/icomoon.eot?t44pjk');
+  src: url('../fonts/icomoon/fonts/icomoon.eot?t44pjk#iefix') format('embedded-opentype'), url('../fonts/icomoon/fonts/icomoon.ttf?t44pjk') format('truetype'), url('../fonts/icomoon/fonts/icomoon.woff?t44pjk') format('woff'), url('../fonts/icomoon/fonts/icomoon.svg?t44pjk#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -255,18 +255,6 @@ pre {
 }
 .icon-burger:before {
   content: "\e908";
-}
-.icon-shortcuts:before {
-  content: "\e909";
-}
-.icon-intro:before {
-  content: "\e90a";
-}
-.icon-account:before {
-  content: "\e90b";
-}
-.icon-chats:before {
-  content: "\e90c";
 }
 .icon-android:before {
   content: "\e90d";
@@ -881,6 +869,14 @@ a.header--app:hover {
   color: #ffffff;
 }
 .menu--apps {
+  margin: 0 0 -20px;
+  opacity: 0;
+  -webkit-transition: 400ms opacity ease, 400ms margin ease;
+  -o-transition: 400ms opacity ease, 400ms margin ease;
+  transition: 400ms opacity ease, 400ms margin ease;
+  -webkit-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
   position: absolute;
   top: auto;
   right: auto;
@@ -890,6 +886,10 @@ a.header--app:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+.menu--apps.is-shown {
+  opacity: 1;
+  margin: 0;
 }
 .menu--app {
   -webkit-box-align: center;
@@ -1476,7 +1476,7 @@ a.footer--app:hover {
 }
 .tasks--title {
   text-align: center;
-  margin: 0 0 45px;
+  margin: 0 0 51px;
   font-size: 32px;
   line-height: 38px;
   font-weight: 600;
@@ -1490,7 +1490,7 @@ a.footer--app:hover {
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .tasks--title {
-    margin: 0 auto 42px;
+    margin: 0 auto 40px;
     font-size: 32px;
     line-height: 42px;
     width: 510px;
@@ -1498,41 +1498,85 @@ a.footer--app:hover {
   }
 }
 .tasks--items {
-  text-align: center;
-  margin: 0 auto;
-  font-size: 0;
-  line-height: 0;
-  max-width: 800px;
-  max-height: initial;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
-@media (min-width: 768px) and (max-width: 999px) {
+@media (max-width: 999px) {
   .tasks--items {
-    max-width: 550px;
-    max-height: initial;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 .tasks--item {
-  margin: 0 10px 20px;
-  padding: 17px 36px;
-  color: #4285f4;
-  background: rgba(66, 133, 244, 0.15);
-  -webkit-border-radius: 7px;
-  border-radius: 7px;
-  display: inline-block;
-  vertical-align: top;
-  font-size: 18px;
-  line-height: 20px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 183px;
+  height: auto;
 }
 @media (max-width: 767px) {
   .tasks--item {
-    padding: 12px 25px;
-    margin: 0 5px 10px;
-    font-size: 14px;
-    line-height: 16px;
+    width: 145px;
+    height: auto;
   }
 }
+@media (max-width: 999px) {
+  .tasks--item {
+    margin: 0 0 50px;
+  }
+}
+.tasks--item i {
+  background: center center no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  margin: 0 0 25px;
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+.tasks--item i.tasks-01 {
+  background-image: url(../img/gradient-icons/ic-tasks-01.svg);
+}
+.tasks--item i.tasks-02 {
+  background-image: url(../img/gradient-icons/ic-tasks-02.svg);
+}
+.tasks--item i.tasks-03 {
+  background-image: url(../img/gradient-icons/ic-tasks-03.svg);
+}
+.tasks--item i.tasks-04 {
+  background-image: url(../img/gradient-icons/ic-tasks-04.svg);
+}
+.tasks--item i.tasks-05 {
+  background-image: url(../img/gradient-icons/ic-tasks-05.svg);
+}
+.tasks--item i.tasks-06 {
+  background-image: url(../img/gradient-icons/ic-tasks-06.svg);
+}
+.tasks--item span {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 600;
+}
 .tools {
-  padding: 110px 0 51px;
+  padding: 149px 0 51px;
   margin: 0 0 80px;
   overflow: hidden;
   position: relative;
@@ -1543,7 +1587,7 @@ a.footer--app:hover {
 }
 @media (max-width: 767px) {
   .tools {
-    padding: 60px 0 70px;
+    padding: 30px 0 70px;
     margin: 0;
   }
 }
@@ -1555,8 +1599,8 @@ a.footer--app:hover {
 }
 .tools:before {
   content: "";
-  background: url(../img/tools-bg.png) no-repeat;
-  background-image: -webkit-image-set(url(../img/tools-bg.png) 1x, url(../img/tools-bg@2x.png) 2x);
+  background: url(../img/tools-bg.jpg) no-repeat;
+  background-image: -webkit-image-set(url(../img/tools-bg.jpg) 1x, url(../img/tools-bg@2x.jpg) 2x);
   position: absolute;
   top: auto;
   right: auto;
@@ -1597,8 +1641,8 @@ a.footer--app:hover {
   }
 }
 .tools--photo {
-  background: url(../img/tools-bg.png) left top no-repeat;
-  background-image: -webkit-image-set(url(../img/tools-bg.png) 1x, url(../img/tools-bg@2x.png) 2x);
+  background: url(../img/tools-bg.jpg) left top no-repeat;
+  background-image: -webkit-image-set(url(../img/tools-bg.jpg) 1x, url(../img/tools-bg@2x.jpg) 2x);
   -webkit-background-size: auto 100%;
   background-size: auto 100%;
   margin: 0 0 53px;
@@ -1643,11 +1687,11 @@ a.footer--app:hover {
   margin: 0;
 }
 .tools--item i {
-  background: #e3edfe;
   -webkit-border-radius: 58px;
   border-radius: 58px;
-  text-align: center;
-  color: #1790ff;
+  background: #f5f5f5 center center no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
   display: block;
   width: 58px;
   height: 58px;
@@ -1667,21 +1711,17 @@ a.footer--app:hover {
     left: auto;
   }
 }
-.tools--item i.icon-account {
-  font-size: 28px;
-  line-height: 58px;
+.tools--item i.tools-01 {
+  background-image: url(../img/gradient-icons/ic-tools-01.svg);
 }
-.tools--item i.icon-intro {
-  font-size: 26px;
-  line-height: 58px;
+.tools--item i.tools-02 {
+  background-image: url(../img/gradient-icons/ic-tools-02.svg);
 }
-.tools--item i.icon-shortcuts {
-  font-size: 20px;
-  line-height: 58px;
+.tools--item i.tools-03 {
+  background-image: url(../img/gradient-icons/ic-tools-03.svg);
 }
-.tools--item i.icon-chats {
-  font-size: 25px;
-  line-height: 58px;
+.tools--item i.tools-04 {
+  background-image: url(../img/gradient-icons/ic-tools-04.svg);
 }
 .tools--item span {
   color: #1f3449;
@@ -2222,7 +2262,7 @@ a.footer--app:hover {
   height: auto;
 }
 .member--name {
-  color: #000000;
+  color: #1f3449;
   margin: 0 0 5px;
   font-size: 22px;
   line-height: 30px;
@@ -2235,7 +2275,7 @@ a.footer--app:hover {
   }
 }
 .member--position {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(31, 52, 73, 0.5);
   font-size: 16px;
   line-height: 22px;
   font-weight: 500;
@@ -2264,7 +2304,7 @@ a.footer--app:hover {
 }
 .member--link {
   margin: 0 20px 0 0;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(31, 52, 73, 0.5);
   -webkit-transition: 200ms all ease;
   -o-transition: 200ms all ease;
   transition: 200ms all ease;

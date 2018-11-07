@@ -27,14 +27,14 @@ $(document).ready(function () {
 		e.preventDefault();
 
 		$('.menu').fadeIn(300);
-		$('.menu--in').addClass('is-shown');
+		$('.menu--in, .menu--apps').addClass('is-shown');
 	});
 
 	$('.menu--close').on('click', function (e) {
 		e.preventDefault();
 
 		$('.menu').fadeOut(300);
-		$('.menu--in').removeClass('is-shown');
+		$('.menu--in, .menu--apps').removeClass('is-shown');
 	});
 
 	$('[data-signup="box"]').each(function (e) {

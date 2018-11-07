@@ -16,14 +16,10 @@
 	@grey-6: #a6acbf;
 	@grey-7: #EDEFF3;
 	@grey-8: #979797;
+	@grey-9: #f5f5f5;
 
 	@text-1: #1f3449;
 	@text-2: #536086;
-	@text-3: #000000;
-	@text-4: #000000;
-	@text-5: #000000;
-	@text-6: #000000;
-	@text-7: #000000;
 
 	@stroke-1: rgba(237, 239, 243, 0.6);
 
@@ -496,8 +492,18 @@ body {
 	}
 
 	&--apps {
+		margin: 0 0 -20px;
+		opacity: 0;
+		transition: 400ms opacity ease, 400ms margin ease;
+		transition-delay: 200ms;
+
 		.position (absolute, auto, auto, 14px, 10px);
 		.display (flex);
+
+		&.is-shown {
+			opacity: 1;
+			margin: 0;
+		}
 	}
 
 	&--app {
@@ -878,7 +884,7 @@ body {
 
 	&--title {
 		text-align: center;
-		margin: 0 0 45px;
+		margin: 0 0 51px;
 
 		.font (32px, 38px, 600);
 
@@ -886,50 +892,69 @@ body {
 			.font (22px, 30px);
 		}
 
-		@media @sm-only { margin: 0 auto 42px;
+		@media @sm-only { margin: 0 auto 40px;
 			.font (32px, 42px);
 			.size (510px);
 		}
 	}
 
 	&--items {
-		text-align: center;
-		margin: 0 auto;
+		justify-content: center;
 
-		.font (0);
-		.max-size (800px);
+		.display (flex);
 
-		@media @sm-only { .max-size (550px); }
+		@media @xs-sm {
+			flex-wrap: wrap;
+		}
 	}
 
 	&--item {
-		margin: 0 10px 20px;
-		padding: 17px 36px;
-		color: @blue-4;
-		background: @blue-3;
-		border-radius: 7px;
+		align-items: center;
+		flex-direction: column;
+		text-align: center;
 
-		.display (inline-block);
-		.font (18px, 20px);
+		.display (flex);
+		.size (183px);
 
 		@media @xs-only {
-			padding: 12px 25px;
-			margin: 0 5px 10px;
+			.size (145px);
+		}
 
-			.font (14px, 16px);
+		@media @xs-sm {
+			margin: 0 0 50px;
+		}
+
+		i {
+			background: center center no-repeat;
+			background-size: 100% 100%;
+			margin: 0 0 25px;
+
+			.display (block);
+			.size (80px, 80px);
+
+			&.tasks-01 { background-image: url(../img/gradient-icons/ic-tasks-01.svg); }
+			&.tasks-02 { background-image: url(../img/gradient-icons/ic-tasks-02.svg); }
+			&.tasks-03 { background-image: url(../img/gradient-icons/ic-tasks-03.svg); }
+			&.tasks-04 { background-image: url(../img/gradient-icons/ic-tasks-04.svg); }
+			&.tasks-05 { background-image: url(../img/gradient-icons/ic-tasks-05.svg); }
+			&.tasks-06 { background-image: url(../img/gradient-icons/ic-tasks-06.svg); }
+		}
+
+		span {
+			.font (16px, 19px, 600);
 		}
 	}
 }
 
 .tools {
-	padding: 110px 0 51px;
+	padding: 149px 0 51px;
 	margin: 0 0 80px;
 	overflow: hidden;
 
 	.position (relative);
 
 	@media @xs-only {
-		padding: 60px 0 70px;
+		padding: 30px 0 70px;
 		margin: 0;
 	}
 
@@ -940,8 +965,8 @@ body {
 
 	&:before {
 		content: "";
-		background: url(../img/tools-bg.png) no-repeat;
-		background-image: -webkit-image-set( url(../img/tools-bg.png) 1x, url(../img/tools-bg@2x.png) 2x );
+		background: url(../img/tools-bg.jpg) no-repeat;
+		background-image: -webkit-image-set( url(../img/tools-bg.jpg) 1x, url(../img/tools-bg@2x.jpg) 2x );
 
 		.position (absolute, auto, auto, 0, ~'calc(50% - 49px)');
 		.display (block);
@@ -965,8 +990,8 @@ body {
 	}
 
 	&--photo {
-		background: url(../img/tools-bg.png) left top no-repeat;
-		background-image: -webkit-image-set( url(../img/tools-bg.png) 1x, url(../img/tools-bg@2x.png) 2x );
+		background: url(../img/tools-bg.jpg) left top no-repeat;
+		background-image: -webkit-image-set( url(../img/tools-bg.jpg) 1x, url(../img/tools-bg@2x.jpg) 2x );
 		background-size: auto 100%;
 		margin: 0 0 53px;
 
@@ -998,10 +1023,9 @@ body {
 
 		&:last-child { margin: 0; }
 		i {
-			background: @blue-2;
 			border-radius: 58px;
-			text-align: center;
-			color: @blue-1;
+			background: @grey-9 center center no-repeat;
+			background-size: 100% 100%;
 
 			.display (block);
 			.size (58px, 58px);
@@ -1011,10 +1035,10 @@ body {
 				.position (relative);
 			}
 
-			&.icon-account { .font (28px, 58px); }
-			&.icon-intro { .font (26px, 58px); }
-			&.icon-shortcuts { .font (20px, 58px); }
-			&.icon-chats { .font (25px, 58px); }
+			&.tools-01 { background-image: url(../img/gradient-icons/ic-tools-01.svg); }
+			&.tools-02 { background-image: url(../img/gradient-icons/ic-tools-02.svg); }
+			&.tools-03 { background-image: url(../img/gradient-icons/ic-tools-03.svg); }
+			&.tools-04 { background-image: url(../img/gradient-icons/ic-tools-04.svg); }
 		}
 
 		span {
@@ -1349,7 +1373,7 @@ body {
 	}
 
 	&--name {
-		color: @text-3;
+		color: @text-1;
 		margin: 0 0 5px;
 
 		.font (22px, 30px, 500);
@@ -1358,7 +1382,7 @@ body {
 	}
 
 	&--position {
-		color: fade(@text-3, 50);
+		color: fade(@text-1, 50);
 
 		.font (16px, 22px, 500);
 
@@ -1377,7 +1401,7 @@ body {
 
 	&--link {
 		margin: 0 20px 0 0;
-		color: fade(@text-3, 50);
+		color: fade(@text-1, 50);
 		transition: 200ms all ease;
 		text-decoration: none;
 
