@@ -1553,22 +1553,22 @@ a.footer--app:hover {
   height: 80px;
 }
 .tasks--item i.tasks-01 {
-  background-image: url(../img/gradient-icons/ic-tasks-01.svg);
+  background-image: url(../img/gradient-icons/ic-tasks-01@2x.png);
 }
 .tasks--item i.tasks-02 {
-  background-image: url(../img/gradient-icons/ic-tasks-02.svg);
+  background-image: url(../img/gradient-icons/ic-tasks-02@2x.png);
 }
 .tasks--item i.tasks-03 {
-  background-image: url(../img/gradient-icons/ic-tasks-03.svg);
+  background-image: url(../img/gradient-icons/ic-tasks-03@2x.png);
 }
 .tasks--item i.tasks-04 {
-  background-image: url(../img/gradient-icons/ic-tasks-04.svg);
+  background-image: url(../img/gradient-icons/ic-tasks-04@2x.png);
 }
 .tasks--item i.tasks-05 {
-  background-image: url(../img/gradient-icons/ic-tasks-05.svg);
+  background-image: url(../img/gradient-icons/ic-tasks-05@2x.png);
 }
 .tasks--item i.tasks-06 {
-  background-image: url(../img/gradient-icons/ic-tasks-06.svg);
+  background-image: url(../img/gradient-icons/ic-tasks-06@2x.png);
 }
 .tasks--item span {
   font-size: 16px;
