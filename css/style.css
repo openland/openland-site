@@ -1712,16 +1712,16 @@ a.footer--app:hover {
   }
 }
 .tools--item i.tools-01 {
-  background-image: url(../img/gradient-icons/ic-tools-01.svg);
+  background-image: url(../img/gradient-icons/ic-tools-01@2x.png);
 }
 .tools--item i.tools-02 {
-  background-image: url(../img/gradient-icons/ic-tools-02.svg);
+  background-image: url(../img/gradient-icons/ic-tools-02@2x.png);
 }
 .tools--item i.tools-03 {
-  background-image: url(../img/gradient-icons/ic-tools-03.svg);
+  background-image: url(../img/gradient-icons/ic-tools-03@2x.png);
 }
 .tools--item i.tools-04 {
-  background-image: url(../img/gradient-icons/ic-tools-04.svg);
+  background-image: url(../img/gradient-icons/ic-tools-04@2x.png);
 }
 .tools--item span {
   color: #1f3449;
