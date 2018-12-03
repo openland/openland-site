@@ -1292,6 +1292,8 @@ a.footer--app:hover {
   font-size: 40px;
   line-height: 48px;
   font-weight: 700;
+  max-width: 650px;
+  max-height: initial;
 }
 @media (max-width: 767px) {
   .intro--title {
@@ -1302,17 +1304,31 @@ a.footer--app:hover {
     height: auto;
   }
 }
+@media (max-width: 999px) {
+  .intro--title {
+    max-width: initial;
+    max-height: initial;
+  }
+}
 .intro--text {
   color: rgba(83, 96, 134, 0.8);
   margin: 0 0 50px;
   font-size: 24px;
   line-height: 36px;
+  max-width: 600px;
+  max-height: initial;
 }
 @media (max-width: 767px) {
   .intro--text {
     margin: 0 0 30px;
     font-size: 19px;
     line-height: 27px;
+  }
+}
+@media (max-width: 999px) {
+  .intro--text {
+    max-width: initial;
+    max-height: initial;
   }
 }
 .intro--form {

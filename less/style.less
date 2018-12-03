@@ -759,11 +759,14 @@ body {
 
 	&--title { margin: 0 0 12px;
 		.font (40px, 48px, 700);
+		.max-size (650px);
 
 		@media @xs-only { margin: 0 auto 15px;
 			.font (32px, 38px);
 			.size (290px);
 		}
+
+		@media @xs-sm { .max-size (initial); }
 	}
 
 	&--text {
@@ -771,10 +774,13 @@ body {
 		margin: 0 0 50px;
 
 		.font (24px, 36px);
+		.max-size (600px);
 
 		@media @xs-only { margin: 0 0 30px;
 			.font (19px, 27px);
 		}
+
+		@media @xs-sm { .max-size (initial); }
 	}
 
 	&--form { margin: 0 0 30px;
