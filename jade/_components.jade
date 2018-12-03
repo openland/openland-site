@@ -9,8 +9,6 @@
 		home: '/',
 
 		messenger: '/',
-		builders: '/builders',
-		owners: '/owners',
 		about: '/about',
 		privacy: '/privacy',
 		terms: '/terms',
@@ -20,6 +18,9 @@
 		app: 'https://app.openland.com/',
 
 		careers: 'https://angel.co/openland/jobs',
+
+		apple: 'https://itunes.apple.com/us/app/openland-messenger/id1435537685',
+		google: '#googleplay',
 	};
 
 	socials = {
@@ -45,37 +46,33 @@ mixin head (d)
 		meta(property="og:image" content=d.og.image)
 
 		link(rel="shortcut icon" href="/favicon.ico")
-		link(rel="mask-icon" href="/favicons/favicon-safari.svg" color="#522BFF")
-		link(rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16.png")
-		link(rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32.png")
-		link(rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96.png")
-		link(rel="icon" type="image/png" sizes="128x128" href="/favicons/favicon-128.png")
-		link(rel="icon" type="image/png" sizes="192x192" href="/favicons/favicon-192.png")
-		link(rel="icon" type="image/png" sizes="196x196" href="/favicons/favicon-196.png")
-		link(rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57.png")
-		link(rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60.png")
-		link(rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72.png")
-		link(rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76.png")
-		link(rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114.png")
-		link(rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120.png")
-		link(rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144.png")
-		link(rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152.png")
-		link(rel="apple-touch-icon" sizes="180" href="/favicons/pple-icon-180.png")
+		link(rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png")
+		link(rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png")
+		link(rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png")
+		link(rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png")
+		link(rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png")
+		link(rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png")
+		link(rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png")
+		link(rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114x114.png")
+		link(rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120x120.png")
+		link(rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144x144.png")
+		link(rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152x152.png")
+		link(rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png")
 		link(rel="manifest" href="/manifest.json")
-		meta(name="msapplication-TileColor" content="#6400FF")
-		meta(name="msapplication-TileImage" content="/favicons/ms-icon-144.png")
-		meta(name="msapplication-square70x70logo" content="/favicons/ms-icon-square-70.png")
-		meta(name="msapplication-square150x150logo" content="/favicons/ms-icon-square-150.png")
-		meta(name="msapplication-square310x310logo" content="/favicons/ms-icon-square-310.png")
-		meta(name="msapplication-wide310x150logo" content="/favicons/ms-icon-wide-310.png")
+		meta(name="msapplication-TileColor" content="#1790ff")
+		meta(name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png")
+		meta(name="msapplication-square70x70logo" content="/favicons/ms-icon-70x70.png")
+		meta(name="msapplication-square150x150logo" content="/favicons/ms-icon-150x150.png")
+		meta(name="msapplication-square310x310logo" content="/favicons/ms-icon-310x310.png")
 
-		link(rel="stylesheet" type="text/css" href="css/style.css?v=5")
+		link(rel="stylesheet" type="text/css" href="css/style.css?v=10")
 
 		block
 
 mixin header (active)
 	header.header&attributes(attributes): .container: .header--in
-		a(href=links.home).header--logo: img(src="img/logotype.svg" alt="")
+		+logo ('header', links.home)
+
 		a(href="#").header--open
 
 		nav.header--nav: ul.header--list
@@ -84,49 +81,65 @@ mixin header (active)
 			else
 				li.header--item: a(href=links.messenger) Messenger
 
-			li.header--item.is-sub(class=(active == 2 || active == 3) ? 'is-active' : '')
-				span Solutions
-				ul
-					li(class=(active == 2) ? 'is-active' : ''): a(href=links.builders) Builders
-					li(class=(active == 3) ? 'is-active' : ''): a(href=links.owners) Owners
-
-			if (active == 4)
+			if (active == 2)
 				li.header--item.is-active: span About
 			else
 				li.header--item: a(href=links.about) About
 
-		.header--btn: a(href=links.signin data-app="true" data-app-label="Go to the app" data-app-url=links.app).btn Sign in
+		.header--apps
+			-// a(href=links.google).header--app: i.icon-android
+			.header--app #[i.icon-android]#[.tooltip Coming soon]
+			a(href=links.apple target="_blank").header--app: i.icon-ios
 
-		-//.header--btn: a(href=phoneTel).btn.is-grey #[i.icon-phone]#{phone}
+		.header--btn: a(href=links.signin data-app="true" data-app-label="Go to the app" data-app-url=links.app data-style="electric").btn Sign in
 
 mixin footer
 	footer.footer&attributes(attributes)
-		.container: .footer--box
-			.footer--col.hidden-xs
-				.footer--logo: img(src="img/logotype.svg" alt="")
+		.container
+			.footer--box.hidden-xs
+				.footer--col
+					+logo ('footer')
+					+footer--socials
 
-				a(href=links.careers).footer--hire We are hiring!
+				+footer--col ('Company', [[links.about, 'About'], [links.careers, 'Careers', true]])
+				+footer--col ('Legal', [[links.privacy, 'Privacy Policy'], [links.terms, 'Terms of Service']])
+				+footer--col ('Contacts', [[phoneTel, '<i class="icon-phone"></i>' + phone], [mailTo, '<i class="icon-mail"></i>' + mail]])
 
-				.visible-sm: +footer--socials
+				.footer--col
+					.footer--title Mobile apps
+					.footer--apps
+						a(href=links.apple target="_blank").footer--app.is-apple
+						-// a(href=links.google).footer--app.is-google
+						span.footer--app.is-google: .tooltip Coming soon
 
-			.footer--col
-				.footer--title Solutions
+			.footer--wrapper.visible-xs
+				+logo ('footer')
 
-				ul.footer--links
-					li: a(href=links.messenger) Messenger
-					li.is-sub
-						span Solutions
-						ul
-							li: a(href=links.builders) Builders
-							li: a(href=links.owners) Owners
+				.footer--box
+					+footer--col ('Company', [[links.about, 'About'], [links.careers, 'Careers', true]])
+					+footer--col ('Contacts', [[phoneTel, '<i class="icon-phone"></i>' + phone], [mailTo, '<i class="icon-mail"></i>' + mail]])
+					+footer--col ('Legal', [[links.privacy, 'Privacy Policy'], [links.terms, 'Terms of Service']])
 
-			+footer--col ('Company', [[links.about, 'About'], [links.careers, 'Careers', true]])
-			+footer--col ('Legal', [[links.privacy, 'Privacy Policy'], [links.terms, 'Terms of Service']])
-			+footer--col ('Contacts', [[phoneTel, '<i class="icon-phone"></i>' + phone], [mailTo, '<i class="icon-mail"></i>' + mail]])
+					.footer--col
+						.footer--title Mobile apps
+						.footer--apps
+							a(href=links.apple target="_blank").footer--app.is-apple
+							-// a(href=links.google).footer--app.is-google
+							span.footer--app.is-google
 
-			.footer--col.hidden-sm: +footer--socials
+				+footer--socials
 
-		.footer--info.hidden-xs &copy; 2018 Data Makes Perfect Inc.#[span Built in San Francisco]
+		.footer--info &copy; 2018 Data Makes Perfect Inc.#[span Built in San Francisco]
+
+mixin logo (box, href)
+	if (href)
+		a(href=href class=box + '--logo')
+			img(src="img/logotype.svg" alt="").is-default
+			img(src="img/logotype-hover.svg" alt="").is-hover
+	else
+		div(class=box + '--logo')
+			img(src="img/logotype.svg" alt="").is-default
+			img(src="img/logotype-hover.svg" alt="").is-hover
 
 mixin footer--socials
 	.footer--socials&attributes(attributes)
@@ -138,8 +151,8 @@ mixin footer--socials
 mixin signup
 	.signup(data-signup="box")&attributes(attributes)
 		.signup--variant.is-shown(data-signup="google"): .signup--btns
-			.signup--btn: a(href=links.signup + '?google=true').btn.is-block.is-blue #[i.icon-google]Sign up with Google
-			.signup--btn: a(href="#" data-signup="toggle" data-variant="mail").btn.is-block.is-outline #[i.icon-mail]Sign up with Email
+			.signup--btn: a(href=links.signup + '?google=true' data-style="primary").btn.is-block #[i.icon-google]Sign up with Google
+			.signup--btn: a(href="#" data-signup="toggle" data-variant="mail" data-style="ghost").btn.is-block #[i.icon-mail]Sign up with Email
 
 		.signup--variant(data-signup="mail")
 			form(method="GET" action=links.signup).signup--form
@@ -160,22 +173,17 @@ mixin menu (active)
 					li.menu--item: a(href=links.messenger) Messenger
 
 				if (active == 2)
-					li.menu--item.is-active: span Builders
-				else
-					li.menu--item: a(href=links.builders) Builders
-
-				if (active == 3)
-					li.menu--item.is-active: span Owners
-				else
-					li.menu--item: a(href=links.owners) Owners
-
-				if (active == 4)
 					li.menu--item.is-active: span About
 				else
 					li.menu--item: a(href=links.about) About
 
 				br
 				li.menu--item: a(href=links.signin) Sign in
+
+		.menu--apps
+			-// a(href=links.google).menu--app: i.icon-android
+			.menu--app #[i.icon-android]#[.tooltip Coming soon]
+			a(href=links.apple).menu--app: i.icon-ios
 
 mixin page (meta, active)
 	doctype html
@@ -220,17 +228,6 @@ mixin google-analytics
 
 		gtag('config', 'UA-115370014-1');
 
-mixin intro--row (features)
-	.intro--row&attributes(attributes)
-		each feature in features
-			.intro--feature= feature
-
-mixin features--item (icon, title, text)
-	.features--item&attributes(attributes)
-		.features--icon: img(src='/img/' + icon alt="")
-		.features--title!= title
-		.features--text!= text
-
 mixin footer--col (title, links)
 	.footer--col&attributes(attributes)
 		.footer--title= title
@@ -245,17 +242,12 @@ mixin footer--col (title, links)
 mixin member (photo, name, position, linkedin, mail)
 	.member&attributes(attributes)
 		.member--photo: img(src=photo alt="")
-		.member--name!= name
-		.member--position!= position
-		.member--links
-			a(href=linkedin).member--link: i.icon-lin
-			a(href='mailto:' + mail).member--link #[i.icon-mail]#{mail}
-
-mixin position (title, info, link)
-	.position&attributes(attributes)
-		.position--title!= title
-		.position--info!= info
-		.position--btn: a(href=link target="_blank").btn.is-smallblue.is-block Apply
+		.member--info
+			.member--name!= name
+			.member--position!= position
+			.member--links
+				a(href=linkedin).member--link: i.icon-lin
+				a(href='mailto:' + mail).member--link #[i.icon-mail]#{mail}
 
 mixin content--head (title, date)
 	.content--head
@@ -272,9 +264,3 @@ mixin content--wrap (links)
 
 		.content--box
 			block
-
-mixin messenger--item (icon, title, text)
-	.messenger--item&attributes(attributes)
-		.messenger--title!= title
-		.messenger--text!= text
-		.messenger--icon(class='is-i0' + icon)

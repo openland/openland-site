@@ -1,19 +1,19 @@
 @import "variables";
 
 @font-face {
-  font-family: 'icomoon';
-  src:  url('@{icomoon-font-path}/icomoon.eot?fr20px');
-  src:  url('@{icomoon-font-path}/icomoon.eot?fr20px#iefix') format('embedded-opentype'),
-    url('@{icomoon-font-path}/icomoon.ttf?fr20px') format('truetype'),
-    url('@{icomoon-font-path}/icomoon.woff?fr20px') format('woff'),
-    url('@{icomoon-font-path}/icomoon.svg?fr20px#icomoon') format('svg');
+  font-family: '@{icomoon-font-family}';
+  src:  url('@{icomoon-font-path}/@{icomoon-font-family}.eot?t44pjk');
+  src:  url('@{icomoon-font-path}/@{icomoon-font-family}.eot?t44pjk#iefix') format('embedded-opentype'),
+    url('@{icomoon-font-path}/@{icomoon-font-family}.ttf?t44pjk') format('truetype'),
+    url('@{icomoon-font-path}/@{icomoon-font-family}.woff?t44pjk') format('woff'),
+    url('@{icomoon-font-path}/@{icomoon-font-family}.svg?t44pjk#@{icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: '@{icomoon-font-family}' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -34,6 +34,16 @@
 .icon-burger {
   &:before {
     content: @icon-burger; 
+  }
+}
+.icon-android {
+  &:before {
+    content: @icon-android; 
+  }
+}
+.icon-ios {
+  &:before {
+    content: @icon-ios; 
   }
 }
 .icon-tw {

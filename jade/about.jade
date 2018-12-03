@@ -1,23 +1,23 @@
 -
 	meta = {
-		title: 'Openland – About',
-		description: 'Openland is a San Francisco-based real estate technology startup making it easier to acquire land for new construction. The company was founded in 2017 and is a graduate of YCombinartor’s Winter 2018 class.',
+		title: 'Openland · About',
+		description: 'Openland is a professional messenger designed to support all communication needs of a modern business. It can be used for fundraising, sales, recruiting, customer service, and business operations. The company is backed by 30 prominent venture investors, including Y Combinator, Gagarin Capital, Sinai Ventures, Soma Capital, Liquid 2 Ventures, and Rainfall Ventures.',
 
 		og: {
-			title: 'Openland – About',
+			title: 'Openland · About',
 			url: 'https://openland.com/about',
-			description: 'Openland is a San Francisco-based real estate technology startup making it easier to acquire land for new construction. The company was founded in 2017 and is a graduate of YCombinartor’s Winter 2018 class.',
-			image: 'https://openland.com/img/og-messenger-2.png'
+			description: 'Openland is a professional messenger designed to support all communication needs of a modern business. It can be used for fundraising, sales, recruiting, customer service, and business operations. The company is backed by 30 prominent venture investors, including Y Combinator, Gagarin Capital, Sinai Ventures, Soma Capital, Liquid 2 Ventures, and Rainfall Ventures.',
+			image: 'https://openland.com/img/og-messenger-6.png'
 		}
 	}
 
 include ./_components.jade
 
-+page (meta, 4)
++page (meta, 2)
 	.container: .about
 		.about--row
 			.about--label About Openland
-			.about--box: .about--text: p Openland is&nbsp;a&nbsp;San Francisco-based real estate technology startup. It&nbsp;provides professional messaging service to&nbsp;connect owners, builders, tenants, lenders, investors, brokers, and local officials. Openland messaging apps are used for market research, deal sourcing, and transaction management. The company was founded in&nbsp;2017, went through YCombinartor in&nbsp;Winter 2018, and is&nbsp;backed by&nbsp;a&nbsp;broad group of&nbsp;top-tier venture investors.
+			.about--box: .about--text: p Openland is&nbsp;a&nbsp;professional messenger designed to&nbsp;support all communication needs of&nbsp;a&nbsp;modern business. It&nbsp;can be&nbsp;used for fundraising, sales, recruiting, customer service, and business operations. The company was founded in&nbsp;2017 and is&nbsp;based in&nbsp;San Francisco. Openland is&nbsp;backed by&nbsp;30&nbsp;prominent venture investors, including Y&nbsp;Combinator, Gagarin Capital, Sinai Ventures, Soma Capital, Liquid 2&nbsp;Ventures, and Rainfall Ventures.
 
 		.about--row
 			.about--label Founders
@@ -25,19 +25,9 @@ include ./_components.jade
 				+member ('/img/yury.png', 'Yury Lifshits', 'CEO', 'https://www.linkedin.com/in/lifshits/', 'yury@openland.com')
 				+member ('/img/steve.png', 'Steve Korshakov', 'CTO', 'https://www.linkedin.com/in/ex3ndr/', 'steve@openland.com')
 
-		.about--row(style="display: none;")
-			.about--label Vision
-			.about--box: .about--text
-				p Openland makes it&nbsp;easier to&nbsp;buy land for new construction. We&nbsp;cover all types of&nbsp;development sites, including vacant land, parking lots, and buildings that can be&nbsp;demolished and replaced. We&nbsp;also support multiple transaction types: purchase, joint venture, ground lease, or&nbsp;option-to-buy. Today land acquisition is&nbsp;a&nbsp;slow, manual, relationship-driven process. Most deals happen off-market, without a&nbsp;public announcement or&nbsp;auction.
-				p Better land acquisition solutions are desperately needed to&nbsp;reallocate space from "old use" to&nbsp;"new use". The old use is&nbsp;parking, manufacturing, military, traditional retail, and dirty energy. New use is&nbsp;dense housing, modern workspaces, infrastructure for electric cars, clean energy, and delivery-oriented retail. A&nbsp;transparent and efficient land market will have massive positive impact on&nbsp;cities and economy. It&nbsp;will create more housing, more jobs and better infrastructure.
-
 		.about--row
 			.about--label Open positions
 				.about--info Up-to-date opportunities are posted at&nbsp;#[a(href=links.careers) angel.co]
 
 			.about--box
-				-//.positions
-				-//	+position ('Product Manager', 'San Francisco, San Francisco Bay Area · Full Time · $72K – $150K · 0.2% – 2.0%', 'https://angel.co/openland/jobs/365906-product-manager')
-				-//	+position ('Growth Manager', 'San Francisco, San Francisco Bay Area · Full Time · $72K – $150K · 0.2% – 2.0%', 'https://angel.co/openland/jobs/370594-growth-manager')
-
 				.about--additional If&nbsp;you don&rsquo;t see a&nbsp;matching opening for you or&nbsp;just want to&nbsp;say "Hi"#[br.hidden-xs] please reach&nbsp;us at&nbsp;#[a(href=mailTo)= mail]
