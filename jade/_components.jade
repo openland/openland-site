@@ -20,7 +20,7 @@
 		careers: 'https://angel.co/openland/jobs',
 
 		apple: 'https://oplnd.com/ios',
-		google: '#googleplay',
+		google: 'https://oplnd.com/android_beta',
 	};
 
 	socials = {
@@ -65,7 +65,7 @@ mixin head (d)
 		meta(name="msapplication-square150x150logo" content="/favicons/ms-icon-150x150.png")
 		meta(name="msapplication-square310x310logo" content="/favicons/ms-icon-310x310.png")
 
-		link(rel="stylesheet" type="text/css" href="css/style.css?v=11")
+		link(rel="stylesheet" type="text/css" href="css/style.css?v=12")
 
 		block
 
@@ -87,8 +87,7 @@ mixin header (active)
 				li.header--item: a(href=links.about) About
 
 		.header--apps
-			-// a(href=links.google).header--app: i.icon-android
-			.header--app #[i.icon-android]#[.tooltip Coming soon]
+			a(href=links.google target="_blank").header--app: i.icon-android
 			a(href=links.apple target="_blank").header--app: i.icon-ios
 
 		.header--btn: a(href=links.signin data-app="true" data-app-label="Go to the app" data-app-url=links.app data-style="electric").btn Sign in
@@ -109,8 +108,7 @@ mixin footer
 					.footer--title Mobile apps
 					.footer--apps
 						a(href=links.apple target="_blank").footer--app.is-apple
-						-// a(href=links.google).footer--app.is-google
-						span.footer--app.is-google: .tooltip Coming soon
+						a(href=links.google target="_blank").footer--app.is-google
 
 			.footer--wrapper.visible-xs
 				+logo ('footer')
@@ -123,9 +121,8 @@ mixin footer
 					.footer--col
 						.footer--title Mobile apps
 						.footer--apps
-							a(href=links.apple target="_blank").footer--app.is-apple
-							-// a(href=links.google).footer--app.is-google
-							span.footer--app.is-google
+							a(href=links.apple).footer--app.is-apple
+							a(href=links.google).footer--app.is-google
 
 				+footer--socials
 
@@ -181,8 +178,7 @@ mixin menu (active)
 				li.menu--item: a(href=links.signin) Sign in
 
 		.menu--apps
-			-// a(href=links.google).menu--app: i.icon-android
-			.menu--app #[i.icon-android]#[.tooltip Coming soon]
+			a(href=links.google).menu--app: i.icon-android
 			a(href=links.apple).menu--app: i.icon-ios
 
 mixin page (meta, active)

@@ -684,6 +684,8 @@ body {
 		margin: 0 0 0 -2px;
 
 		.font (0);
+
+		@media @md { margin-right: -20px; }
 	}
 
 	&--app {
@@ -706,7 +708,9 @@ body {
 		}
 
 		&.is-google { background-image: url(../img/googleplay.png);
-			.size (112px, 39px);
+			.size (135px, 40px);
+
+			@media @xs-sm { .size (120px, 35px); }
 		}
 
 		.tooltip { margin-top: 10px; }

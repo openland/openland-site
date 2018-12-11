@@ -1186,6 +1186,11 @@ a.header--app:hover {
   font-size: 0;
   line-height: 0;
 }
+@media (min-width: 1000px) {
+  .footer--apps {
+    margin-right: -20px;
+  }
+}
 .footer--app {
   margin: 0 15px 0 0;
   background: no-repeat;
@@ -1221,8 +1226,14 @@ a.footer--app:hover {
 }
 .footer--app.is-google {
   background-image: url(../img/googleplay.png);
-  width: 112px;
-  height: 39px;
+  width: 135px;
+  height: 40px;
+}
+@media (max-width: 999px) {
+  .footer--app.is-google {
+    width: 120px;
+    height: 35px;
+  }
 }
 .footer--app .tooltip {
   margin-top: 10px;
